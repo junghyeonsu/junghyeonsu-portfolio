@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { gsap } from 'gsap';
 
 const Container = styled.section`
   display: flex;
@@ -12,7 +13,16 @@ const Container = styled.section`
 `;
 
 const Main = () => {
-  return <Container>Hyeonsu Jung</Container>;
+  const myHeader = useRef(null);
+
+  useEffect(() => {
+    gsap.from(myHeader.current, {
+      opacity: 0,
+      duration: 2,
+    });
+  }, []);
+
+  return <Container ref={myHeader}>Hyeonsu Jung</Container>;
 };
 
 export default Main;

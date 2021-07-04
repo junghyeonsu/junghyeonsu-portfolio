@@ -5,9 +5,9 @@ import { normalize } from 'styled-normalize';
 const GlobalStyle = createGlobalStyle`
   ${normalize}
 
-  html,
-  body {
-    overflow: hidden;
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
   }
 
   a {
