@@ -16,7 +16,7 @@ const Main = () => {
   const myHeader = useRef(null);
 
   useEffect(() => {
-    gsap.to(myHeader.current, {
+    gsap.from(myHeader.current, {
       opacity: 0,
       duration: 2,
     });

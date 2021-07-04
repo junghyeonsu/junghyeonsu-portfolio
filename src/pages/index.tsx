@@ -1,8 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
-import Main from '#/components/main';
+import styled from 'styled-components';
 
-export default function Home() {
+import Introduction from '#/components/sections/introduction';
+import Skill from '#/components/sections/skill';
+import Experience from '#/components/sections/experience';
+import Contact from '#/components/sections/contact';
+
+const Section = styled.section``;
+
+export default function Main() {
   return (
     <div>
       <Head>
@@ -10,9 +17,14 @@ export default function Home() {
         <meta name="description" content="Hyeonsu Jung's portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Main />
-      </main>
+      <body>
+        <Section>
+          <Introduction />
+          <Skill />
+          <Experience />
+          <Contact />
+        </Section>
+      </body>
     </div>
   );
 }
