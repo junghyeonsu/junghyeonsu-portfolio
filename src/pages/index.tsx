@@ -17,14 +17,14 @@ export default function Main() {
         <meta name="description" content="Hyeonsu Jung's portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
+      <div>
         <Section>
           <Introduction />
           <Skill />
           <Experience />
           <Contact />
         </Section>
-      </body>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
+
+import { useLayoutContext } from '#/contexts/LayoutContext';
 
 const Container = styled.article`
   display: flex;
@@ -12,7 +14,16 @@ const Container = styled.article`
 `;
 
 const Contact = () => {
-  return <Container>Contact</Container>;
+  const { setContactOffsetTop }: any = useLayoutContext(); // eslint-disable-line 
+  const containerRef = useRef<any>(null); // eslint-disable-line
+
+  useEffect(() => {
+    const containerOffsetTop = containerRef.current.offsetTop;
+    console.log('setContactOffsetTop:', containerOffsetTop); // eslint-disable-line
+    setContactOffsetTop(containerOffsetTop);
+  }, [setContactOffsetTop]);
+
+  return <Container ref={containerRef}>Contact</Container>;
 };
 
 export default Contact;
