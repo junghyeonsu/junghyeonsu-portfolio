@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.10",
+    "babel-plugin-styled-components": "^1.13.1",
     "gsap": "^3.7.0",
     "next": "11.0.0",
     "react": "17.0.2",
