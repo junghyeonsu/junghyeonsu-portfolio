@@ -47,8 +47,12 @@ const LayoutProvider = ({
   const handleUpCurrentY = useCallback(() => {
     const { scrollY } = window; // eslint-disable-line no-undef
     console.log(scrollY, '위로 이동');
+    // 1에 있을 때
+    if (scrollY >= 0 && scrollY < skillOffsetTop) {
+      window.scrollTo({ top: introductionOffsetTop });
+    }
     // 2에 있을 때
-    if (scrollY >= skillOffsetTop && scrollY < experienceOffsetTop) {
+    else if (scrollY >= skillOffsetTop && scrollY < experienceOffsetTop) {
       window.scrollTo({ top: introductionOffsetTop });
     }
     // 3에 있을 때
