@@ -5,6 +5,7 @@ import { useLayoutContext } from '#/contexts/LayoutContext';
 
 const Container = styled.article`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -23,7 +24,11 @@ const Introduction = () => {
     setIntroductionOffsetTop(containerOffsetTop);
   }, [setIntroductionOffsetTop]);
 
-  return <Container ref={containerRef}>Introduction</Container>;
+  return (
+    <Container ref={containerRef}>
+      <p>Introduction</p>
+    </Container>
+  );
 };
 
 export default Introduction;

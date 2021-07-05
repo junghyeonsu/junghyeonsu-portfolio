@@ -6,6 +6,7 @@ import Introduction from '#/components/sections/introduction';
 import Skill from '#/components/sections/skill';
 import Experience from '#/components/sections/experience';
 import Contact from '#/components/sections/contact';
+import ScrollGauge from '#/components/scrollGauge';
 
 const Section = styled.section``;
 
@@ -25,6 +26,7 @@ export default function Main() {
           <Contact />
         </Section>
       </div>
+      <ScrollGauge />
     </div>
   );
 }
