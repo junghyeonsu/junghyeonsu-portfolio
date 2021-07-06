@@ -1,22 +1,32 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
 
 const Container = styled.article`
   position: fixed;
-  font-size: 20px;
-  bottom: 10px;
-  right: 10px;
+  font-size: 11px;
+  bottom: 37px;
+  right: 11px;
   padding: 10px;
-  background-color: black;
-  color: white;
+  color: red;
 `;
 
 const ScrollTimer = () => {
-  const { scrollGauge }: any = useLayoutContext(); // eslint-disable-line 
+  const { isPossibleMove }: any = useLayoutContext(); // eslint-disable-line 
+  const [counter, setCounter] = useState(1.5);
 
-  return <Container>{scrollGauge}</Container>;
+  useEffect(() => {
+    const timer =
+      counter >= 0 &&
+      setInterval(() => setCounter(Math.round(counter - 0.1)), 100);
+    return () => {
+      clearInterval(timer);
+      setCounter(1.5);
+    };
+  }, [isPossibleMove, counter]);
+
+  return <Container>{counter}</Container>;
 };
 
 export default ScrollTimer;

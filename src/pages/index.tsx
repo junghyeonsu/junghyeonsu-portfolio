@@ -7,6 +7,7 @@ import Skill from '#/components/sections/skill';
 import Experience from '#/components/sections/experience';
 import Contact from '#/components/sections/contact';
 import ScrollGauge from '#/components/scrollGauge';
+import ScrollTimer from '#/components/scrollTimer';
 
 const Section = styled.section``;
 
@@ -27,6 +28,7 @@ export default function Main() {
         </Section>
       </div>
       <ScrollGauge />
+      {/* <ScrollTimer /> */}
     </div>
   );
 }
