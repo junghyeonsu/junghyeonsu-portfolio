@@ -73,18 +73,17 @@ const LayoutProvider = ({
 
   // deltaY에 따라서 delta 값 반환 함수
   const checkDeltaPower = useCallback((deltaY: number) => {
-    switch (Math.abs(deltaY)) {
-      case 150:
-        return 1;
-      case 300:
-        return 2;
-      case 450:
-        return 3;
-      case 600:
-        return 4;
-      default:
-        return 0;
+    const delta = Math.abs(deltaY);
+    if (0 < delta && delta <= 100) {
+      return 1;
+    } else if (100 < delta && delta <= 250) {
+      return 2;
+    } else if (delta < 250 && delta <= 450) {
+      return 3;
+    } else if (delta < 450) {
+      return 4;
     }
+    return 0;
   }, []);
 
   // 아래로 이동 함수
