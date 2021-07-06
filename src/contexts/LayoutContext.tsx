@@ -91,19 +91,36 @@ const LayoutProvider = ({
   // 조금씩 위로
   // const handleMiniUpCurrentY = useCallback(() => {}, []);
 
+  // deltaY에 따라서 delta 값 반환 함수
+  const checkDeltaPower = useCallback(deltaY => {
+    switch (Math.abs(deltaY)) {
+      case 150:
+        return 1;
+      case 300:
+        return 2;
+      case 450:
+        return 3;
+      case 600:
+        return 4;
+      default:
+        return 0;
+    }
+  }, []);
+
   // 휠 이벤트
   const handleWheel = useCallback(
     event => {
       const { deltaY } = event; // eslint-disable-line no-undef
       const { scrollY } = window; // eslint-disable-line no-undef
       // 아래로
+
       if (deltaY > 0) {
-        setScrollGauge(scrollGauge + 1);
+        setScrollGauge(scrollGauge + checkDeltaPower(deltaY));
         handleMiniDownCurrentY();
       }
       // 위로
       else if (deltaY < 0) {
-        setScrollGauge(scrollGauge - 1);
+        setScrollGauge(scrollGauge - checkDeltaPower(deltaY));
       }
 
       // 40 도달
@@ -123,6 +140,7 @@ const LayoutProvider = ({
       handleDownCurrentY,
       handleUpCurrentY,
       handleMiniDownCurrentY,
+      checkDeltaPower,
     ],
   );
 
