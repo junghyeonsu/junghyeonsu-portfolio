@@ -33,38 +33,43 @@ const LayoutProvider = ({
 
   const [scrollGauge, setScrollGauge] = useState<number>(0);
   const [isPossibleMove, setIsPossibleMove] = useState<boolean>(true);
+  const [currentArea, setCurrentArea] = useState<string>(INTRO_ARTICLE_AREA);
+
+  // 초기 위치 설정
+  useEffect(() => {
+    window.scrollTo({ top: introductionOffsetTop });
+    setCurrentArea(INTRO_ARTICLE_AREA);
+  }, [introductionOffsetTop]);
 
   // 현재 위치 파악하는 함수
-  const checkCurrentY = useCallback(
-    (currentScrollY: number) => {
-      const halfHeight = (skillOffsetTop - introductionOffsetTop) / 2;
-      if (currentScrollY >= 0 && currentScrollY < skillOffsetTop - halfHeight) {
-        return INTRO_ARTICLE_AREA;
-      }
-      if (
-        skillOffsetTop - halfHeight <= currentScrollY &&
-        currentScrollY < experienceOffsetTop - halfHeight
-      ) {
-        return SKILL_ARTICLE_AREA;
-      }
-      if (
-        experienceOffsetTop - halfHeight <= currentScrollY &&
-        currentScrollY < contactOffsetTop - halfHeight
-      ) {
-        return EXP_ARTICLE_AREA;
-      }
-      if (contactOffsetTop - halfHeight <= currentScrollY) {
-        return CONTACT_ARTICLE_AREA;
-      }
-      return false;
-    },
-    [
-      skillOffsetTop,
-      experienceOffsetTop,
-      contactOffsetTop,
-      introductionOffsetTop,
-    ],
-  );
+  const checkCurrentY = useCallback(() => {
+    const { scrollY } = window; // eslint-disable-line no-undef
+    const halfHeight = (skillOffsetTop - introductionOffsetTop) / 2;
+    if (scrollY >= 0 && scrollY < skillOffsetTop - halfHeight) {
+      return INTRO_ARTICLE_AREA;
+    }
+    if (
+      skillOffsetTop - halfHeight <= scrollY &&
+      scrollY < experienceOffsetTop - halfHeight
+    ) {
+      return SKILL_ARTICLE_AREA;
+    }
+    if (
+      experienceOffsetTop - halfHeight <= scrollY &&
+      scrollY < contactOffsetTop - halfHeight
+    ) {
+      return EXP_ARTICLE_AREA;
+    }
+    if (contactOffsetTop - halfHeight <= scrollY) {
+      return CONTACT_ARTICLE_AREA;
+    }
+    return false;
+  }, [
+    skillOffsetTop,
+    experienceOffsetTop,
+    contactOffsetTop,
+    introductionOffsetTop,
+  ]);
 
   // deltaY에 따라서 delta 값 반환 함수
   const checkDeltaPower = useCallback((deltaY: number) => {
@@ -84,16 +89,18 @@ const LayoutProvider = ({
 
   // 아래로 이동 함수
   const handleDownCurrentY = useCallback(() => {
-    const { scrollY } = window; // eslint-disable-line no-undef
-    switch (checkCurrentY(scrollY)) {
+    switch (checkCurrentY()) {
       case INTRO_ARTICLE_AREA:
         window.scrollTo({ top: skillOffsetTop });
+        setCurrentArea(SKILL_ARTICLE_AREA);
         break;
       case SKILL_ARTICLE_AREA:
         window.scrollTo({ top: experienceOffsetTop });
+        setCurrentArea(EXP_ARTICLE_AREA);
         break;
       case EXP_ARTICLE_AREA:
         window.scrollTo({ top: contactOffsetTop });
+        setCurrentArea(CONTACT_ARTICLE_AREA);
         break;
       default:
         break;
@@ -102,19 +109,22 @@ const LayoutProvider = ({
 
   // 위로 이동 함수
   const handleUpCurrentY = useCallback(() => {
-    const { scrollY } = window; // eslint-disable-line no-undef
-    switch (checkCurrentY(scrollY)) {
+    switch (checkCurrentY()) {
       case INTRO_ARTICLE_AREA:
         window.scrollTo({ top: introductionOffsetTop });
+        setCurrentArea(INTRO_ARTICLE_AREA);
         break;
       case SKILL_ARTICLE_AREA:
         window.scrollTo({ top: introductionOffsetTop });
+        setCurrentArea(INTRO_ARTICLE_AREA);
         break;
       case EXP_ARTICLE_AREA:
         window.scrollTo({ top: skillOffsetTop });
+        setCurrentArea(SKILL_ARTICLE_AREA);
         break;
       case CONTACT_ARTICLE_AREA:
         window.scrollTo({ top: experienceOffsetTop });
+        setCurrentArea(EXP_ARTICLE_AREA);
         break;
       default:
         break;
@@ -154,8 +164,7 @@ const LayoutProvider = ({
 
   // 반대 방향 delta 값 들어올 시 0으로 초기화 하는 함수
   const resetGauge = useCallback(() => {
-    const { scrollY } = window; // eslint-disable-line no-undef
-    switch (checkCurrentY(scrollY)) {
+    switch (checkCurrentY()) {
       case INTRO_ARTICLE_AREA:
         setScrollGauge(0);
         window.scrollTo({ top: introductionOffsetTop });
@@ -267,6 +276,7 @@ const LayoutProvider = ({
         contactOffsetTop,
         scrollGauge,
         isPossibleMove,
+        currentArea,
         setIntroductionOffsetTop,
         setSkillOffsetTop,
         setExperienceOffsetTop,
