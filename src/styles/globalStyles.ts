@@ -5,9 +5,14 @@ import { normalize } from 'styled-normalize';
 const GlobalStyle = createGlobalStyle`
   ${normalize}
 
+  // scroll-snap-type: y mandatory;
+  
   html {
-    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+  }
+
+  body {
+    overflow: hidden;
   }
 
   a {
