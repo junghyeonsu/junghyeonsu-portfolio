@@ -35,12 +35,28 @@ const LayoutProvider = ({
   const [isPossibleMove, setIsPossibleMove] = useState<boolean>(true);
   const [isPossibleMiniMove, setIsPossibleMiniMove] = useState<boolean>(true);
   const [currentArea, setCurrentArea] = useState<string>(INTRO_ARTICLE_AREA);
+  const [isWhiteColor, setIsWhiteColor] = useState<boolean>(true);
 
   // 초기 위치 설정
   useEffect(() => {
     window.scrollTo({ top: introductionOffsetTop });
     setCurrentArea(INTRO_ARTICLE_AREA);
   }, [introductionOffsetTop]);
+
+  // 색상 설정
+  useEffect(() => {
+    if (
+      currentArea === INTRO_ARTICLE_AREA ||
+      currentArea === EXP_ARTICLE_AREA
+    ) {
+      setIsWhiteColor(true);
+    } else if (
+      currentArea === SKILL_ARTICLE_AREA ||
+      currentArea === CONTACT_ARTICLE_AREA
+    ) {
+      setIsWhiteColor(false);
+    }
+  }, [currentArea]);
 
   // 현재 위치 파악하는 함수
   const checkCurrentY = useCallback(() => {
@@ -282,6 +298,7 @@ const LayoutProvider = ({
         isPossibleMove,
         isPossibleMiniMove,
         currentArea,
+        isWhiteColor,
         setIntroductionOffsetTop,
         setSkillOffsetTop,
         setExperienceOffsetTop,
