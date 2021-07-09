@@ -7,11 +7,16 @@ import Skill from '#/components/sections/skill';
 import Experience from '#/components/sections/experience';
 import Contact from '#/components/sections/contact';
 import ScrollGauge from '#/components/scrollGauge';
-// import ScrollTimer from '#/components/scrollTimer';
+import ScrollTimer from '#/components/scrollTimer';
+import MiniScrollTimer from '#/components/miniScrollTimer';
+
+import { useLayoutContext } from '#/contexts/LayoutContext';
 
 const Section = styled.section``;
 
 export default function Main() {
+  const { isPossibleMove, isPossibleMiniMove }: any = useLayoutContext(); // eslint-disable-line
+
   return (
     <div>
       <Head>
@@ -28,7 +33,8 @@ export default function Main() {
         </Section>
       </div>
       <ScrollGauge />
-      {/* <ScrollTimer /> */}
+      {!isPossibleMove ? <ScrollTimer /> : ''}
+      {!isPossibleMiniMove ? <MiniScrollTimer /> : ''}
     </div>
   );
 }

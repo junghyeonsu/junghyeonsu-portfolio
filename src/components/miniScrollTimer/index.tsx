@@ -10,8 +10,8 @@ const Container = styled.article`
   color: red;
 `;
 
-const ScrollTimer = () => {
-  const [counter, setCounter] = useState(14);
+const MiniScrollTimer = () => {
+  const [counter, setCounter] = useState(4);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,4 +23,4 @@ const ScrollTimer = () => {
   return <Container>{counter}</Container>;
 };
 
-export default ScrollTimer;
+export default MiniScrollTimer;
