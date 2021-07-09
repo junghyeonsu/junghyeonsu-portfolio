@@ -33,6 +33,7 @@ const LayoutProvider = ({
 
   const [scrollGauge, setScrollGauge] = useState<number>(0);
   const [isPossibleMove, setIsPossibleMove] = useState<boolean>(true);
+  const [isPossibleMiniMove, setIsPossibleMiniMove] = useState<boolean>(true);
   const [currentArea, setCurrentArea] = useState<string>(INTRO_ARTICLE_AREA);
 
   // 초기 위치 설정
@@ -74,13 +75,16 @@ const LayoutProvider = ({
   // deltaY에 따라서 delta 값 반환 함수
   const checkDeltaPower = useCallback((deltaY: number) => {
     const delta = Math.abs(deltaY);
-    if (0 < delta && delta <= 100) {
+    if (delta > 0 && delta <= 100) {
       return 1;
-    } else if (100 < delta && delta <= 250) {
+    }
+    if (delta > 100 && delta <= 250) {
       return 2;
-    } else if (delta < 250 && delta <= 450) {
+    }
+    if (delta < 250 && delta <= 450) {
       return 3;
-    } else if (delta < 450) {
+    }
+    if (delta < 450) {
       return 4;
     }
     return 0;
@@ -195,15 +199,15 @@ const LayoutProvider = ({
   const handleWheel = useCallback(
     event => {
       const { deltaY } = event; // eslint-disable-line no-undef
-      if (!isPossibleMove) return false;
+      if (!isPossibleMove || !isPossibleMiniMove) return false;
 
       // 아래로
       if (deltaY > 0) {
         if (scrollGauge < 0) {
           resetGauge();
-          setIsPossibleMove(false);
+          setIsPossibleMiniMove(false);
           setTimeout(() => {
-            setIsPossibleMove(true);
+            setIsPossibleMiniMove(true);
           }, WHEEL_MINI_CONTROL_TIME);
         } else {
           setScrollGauge(scrollGauge + checkDeltaPower(deltaY));
@@ -214,9 +218,9 @@ const LayoutProvider = ({
       else if (deltaY < 0) {
         if (scrollGauge > 0) {
           resetGauge();
-          setIsPossibleMove(false);
+          setIsPossibleMiniMove(false);
           setTimeout(() => {
-            setIsPossibleMove(true);
+            setIsPossibleMiniMove(true);
           }, WHEEL_MINI_CONTROL_TIME);
         } else {
           setScrollGauge(scrollGauge - checkDeltaPower(deltaY));
@@ -255,6 +259,7 @@ const LayoutProvider = ({
       checkDeltaPower,
       resetGauge,
       isPossibleMove,
+      isPossibleMiniMove,
     ],
   );
 
@@ -275,6 +280,7 @@ const LayoutProvider = ({
         contactOffsetTop,
         scrollGauge,
         isPossibleMove,
+        isPossibleMiniMove,
         currentArea,
         setIntroductionOffsetTop,
         setSkillOffsetTop,
