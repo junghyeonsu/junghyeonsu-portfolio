@@ -1,16 +1,16 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 
-import ProgressItem from './progressItem';
+import ProgressItem from './ProgressItem';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { BLACK_TEXT_COLOR, WHITE_TEXT_COLOR } from '#/colors';
-import { COMMON_TRANSITION } from '#/constants';
+import { COMMON_TRANSITION, PROGRESS_BAR_HEIGHT } from '#/constants';
 
 const Container = styled.div`
   position: fixed;
   width: 0.3vw;
-  height: 50vh;
+  height: ${PROGRESS_BAR_HEIGHT}vh;
   right: 10px;
   top: 28vh;
   transition: ${COMMON_TRANSITION};
