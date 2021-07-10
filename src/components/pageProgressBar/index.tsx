@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 
-import ProgressItem from './ProgressItem';
+import ProgressItem from '#/components/pageProgressBar/ProgressItem';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { BLACK_UNACTIVE_TEXT_COLOR, WHITE_UNACTIVE_TEXT_COLOR } from '#/colors';
