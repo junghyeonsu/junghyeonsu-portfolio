@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { BLACK_UNACTIVE_TEXT_COLOR, WHITE_UNACTIVE_TEXT_COLOR } from '#/colors';
 import { COMMON_TRANSITION, PROGRESS_BAR_HEIGHT } from '#/constants';
-import ProgressItem from '#/components/pageProgressBar/ProgressItem';
+import ProgressItem from '#/components/pageProgressBar/progressItem';
 
 const Container = styled.div`
   position: fixed;
