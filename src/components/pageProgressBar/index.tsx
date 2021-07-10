@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ProgressItem from './ProgressItem';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
-import { BLACK_TEXT_COLOR, WHITE_TEXT_COLOR } from '#/colors';
+import { BLACK_UNACTIVE_TEXT_COLOR, WHITE_UNACTIVE_TEXT_COLOR } from '#/colors';
 import { COMMON_TRANSITION, PROGRESS_BAR_HEIGHT } from '#/constants';
 
 const Container = styled.div`
@@ -19,7 +19,8 @@ const Container = styled.div`
 const PageProgressBar = () => {
   const { isWhiteColor }: any = useLayoutContext(); // eslint-disable-line 
   const barColor = useMemo(
-    () => (isWhiteColor ? WHITE_TEXT_COLOR : BLACK_TEXT_COLOR),
+    () =>
+      isWhiteColor ? WHITE_UNACTIVE_TEXT_COLOR : BLACK_UNACTIVE_TEXT_COLOR,
     [isWhiteColor],
   );
 

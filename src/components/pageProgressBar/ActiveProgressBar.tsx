@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
-// import { BLACK_TEXT_COLOR, WHITE_TEXT_COLOR } from '#/colors';
+import { ACTIVE_BAR_WHITE, ACTIVE_BAR_BLACK } from '#/colors';
 import {
   COMMON_TRANSITION,
   PAGE_ORDER,
@@ -19,7 +19,7 @@ const Container = styled.div`
 `;
 
 const ActiveProgressBar = () => {
-  const { currentArea } = useLayoutContext();
+  const { currentArea, isWhiteColor } = useLayoutContext();
   const [pageOrder, setPageOrder] = useState(0);
 
   useEffect(() => {
@@ -30,16 +30,18 @@ const ActiveProgressBar = () => {
     });
   }, [currentArea]);
 
-  // 0 = 0
-  // 1 = 33
-  // 2 = 66
-  // 3 = 99
+  const barColor = useMemo(
+    () => (isWhiteColor ? ACTIVE_BAR_WHITE : ACTIVE_BAR_BLACK),
+    [isWhiteColor],
+  );
+
   return (
     <Container
       style={{
         height: `${
           pageOrder * (PROGRESS_BAR_HEIGHT / (PAGE_ORDER.length - 1))
         }vh`,
+        background: `${barColor}`,
       }}
     />
   );

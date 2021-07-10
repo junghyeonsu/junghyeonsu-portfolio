@@ -17,4 +17,4 @@ export const PAGE_ORDER = [
 
 export const COMMON_TRANSITION = 'all 0.3s ease';
 
-export const PROGRESS_BAR_HEIGHT = '50';
+export const PROGRESS_BAR_HEIGHT = 50;
