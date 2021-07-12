@@ -6,13 +6,14 @@ import React, {
   ReactElement,
 } from 'react';
 import styled from 'styled-components';
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 
 import { BOLD_TEXT } from '#/constants';
 
 const Container = styled.p`
   font-family: ${BOLD_TEXT};
   font-size: 40px;
+  letter-spacing: 2px;
 `;
 
 const HeaderText = ({
@@ -24,8 +25,12 @@ const HeaderText = ({
 
   useEffect(() => {
     gsap.from(myHeader.current, {
+      scrollTrigger: {
+        trigger: myHeader.current,
+        toggleActions: 'restart restart restart none',
+      },
       opacity: 0,
-      duration: 2,
+      duration: 1,
     });
   }, []);
 
