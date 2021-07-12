@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components';
-import { GAUGE_BLACK_COLOR, GAUGE_WHITE_COLOR } from '#/colors';
+import { BLACK_TEXT_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
 const theme: DefaultTheme = {
   basicWidth: '320px',
@@ -9,9 +9,18 @@ const theme: DefaultTheme = {
     sub: '#fff',
   },
 
+  common: {
+    white: {
+      text: WHITE_TEXT_COLOR,
+    },
+    dark: {
+      text: BLACK_TEXT_COLOR,
+    },
+  },
+
   scrollGauge: {
-    white: GAUGE_WHITE_COLOR,
-    dark: GAUGE_BLACK_COLOR,
+    white: WHITE_TEXT_COLOR,
+    dark: BLACK_TEXT_COLOR,
   },
 };
 

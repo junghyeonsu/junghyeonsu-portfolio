@@ -9,6 +9,8 @@ import Contact from '#/components/sections/contact';
 import ScrollGauge from '#/components/scrollGauge';
 import ScrollTimer from '#/components/scrollTimer';
 import MiniScrollTimer from '#/components/miniScrollTimer';
+import PageProgressBar from '#/components/pageProgressBar';
+import ActiveProgressBar from '#/components/pageProgressBar/ActiveProgressBar';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
 
@@ -35,6 +37,8 @@ export default function Main() {
       <ScrollGauge />
       {!isPossibleMove ? <ScrollTimer /> : ''}
       {!isPossibleMiniMove ? <MiniScrollTimer /> : ''}
+      <PageProgressBar />
+      <ActiveProgressBar />
     </div>
   );
 }

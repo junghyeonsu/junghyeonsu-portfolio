@@ -1,42 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
 
+import { COMMON_TRANSITION } from '#/constants';
 import { useLayoutContext } from '#/contexts/LayoutContext';
-import {
-  INTRO_ARTICLE_AREA,
-  SKILL_ARTICLE_AREA,
-  EXP_ARTICLE_AREA,
-  CONTACT_ARTICLE_AREA,
-} from '#/constants';
-import { GAUGE_BLACK_COLOR, GAUGE_WHITE_COLOR } from '#/colors';
+import { BLACK_TEXT_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
-const Container = styled.article`
+const Container = styled.div`
   position: fixed;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 2.3vw;
   bottom: 10px;
   right: 10px;
-  padding: 10px;
-  transition: all 0.5s ease;
+  transition: ${COMMON_TRANSITION};
 `;
 
 const ScrollGauge = () => {
-  const { scrollGauge, currentArea }: any = useLayoutContext(); // eslint-disable-line 
-  const [gaugeColor, setGaugeColor] = useState<string>(GAUGE_WHITE_COLOR);
-
-  useEffect(() => {
-    if (
-      currentArea === INTRO_ARTICLE_AREA ||
-      currentArea === EXP_ARTICLE_AREA
-    ) {
-      setGaugeColor(GAUGE_WHITE_COLOR);
-    } else if (
-      currentArea === SKILL_ARTICLE_AREA ||
-      currentArea === CONTACT_ARTICLE_AREA
-    ) {
-      setGaugeColor(GAUGE_BLACK_COLOR);
-    }
-  }, [currentArea]);
+  const { scrollGauge, isWhiteColor }: any = useLayoutContext(); // eslint-disable-line 
+  const gaugeColor = useMemo(
+    () => (isWhiteColor ? WHITE_TEXT_COLOR : BLACK_TEXT_COLOR),
+    [isWhiteColor],
+  );
 
   return <Container style={{ color: gaugeColor }}>{scrollGauge}</Container>;
 };
