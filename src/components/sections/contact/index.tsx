@@ -2,15 +2,15 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
+import { WHITE_BACKGROUND_COLOR, BLACK_TEXT_COLOR } from '#/colors';
 
 const Container = styled.article`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #edf2f7;
-  color: #4a5568;
-  scroll-snap-align: start;
+  background-color: ${WHITE_BACKGROUND_COLOR};
+  color: ${BLACK_TEXT_COLOR};
 `;
 
 const Contact = () => {
