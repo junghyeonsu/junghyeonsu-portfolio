@@ -34,7 +34,7 @@ const Introduction = () => {
   return (
     <Container ref={containerRef}>
       <Body>
-        <HeaderText>정현수입니다.</HeaderText>
+        <HeaderText>정현수입니다</HeaderText>
       </Body>
     </Container>
   );
