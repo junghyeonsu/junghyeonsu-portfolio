@@ -9,6 +9,11 @@ interface TextProps {
   delay: number;
 }
 
+interface UnderlineProps {
+  children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
+  delay: number;
+}
+
 const HeaderTextContainer = styled.p`
   position: relative;
   font-family: ${BOLD_TEXT};
@@ -22,6 +27,13 @@ const BodyTextContainer = styled.p`
   font-family: ${REGULAR_TEXT};
   font-size: 2vw;
   line-height: 0.5vw;
+`;
+
+const UnderlineContainer = styled.span`
+  background-image: linear-gradient(transparent 80%, #f8cd07 20%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  line-height: 0%;
 `;
 
 const HeaderText = ({ children, delay }: TextProps) => {
@@ -60,4 +72,22 @@ const BodyText = ({ children, delay }: TextProps) => {
   return <BodyTextContainer ref={target}>{children}</BodyTextContainer>;
 };
 
-export { HeaderText, BodyText };
+const Underline = ({ delay, children }: UnderlineProps) => {
+  const target = useRef(null);
+  useEffect(() => {
+    gsap.to(target.current, {
+      scrollTrigger: {
+        trigger: target.current,
+        toggleActions: 'restart reverse restart restart',
+      },
+      backgroundImage: 'linear-gradient(transparent 80%, #F8CD07 20%)',
+      backgroundSize: '100% 100%',
+      delay,
+      duration: 0.6,
+      ease: 'expo.out',
+    });
+  }, [delay]);
+  return <UnderlineContainer ref={target}>{children}</UnderlineContainer>;
+};
+
+export { HeaderText, BodyText, Underline };
