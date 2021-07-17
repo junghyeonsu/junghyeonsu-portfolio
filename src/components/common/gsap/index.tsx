@@ -25,11 +25,11 @@ const BodyTextContainer = styled.p`
 `;
 
 const HeaderText = ({ children, delay }: TextProps) => {
-  const myHeader = useRef(null);
+  const target = useRef(null);
   useEffect(() => {
-    gsap.from(myHeader.current, {
+    gsap.from(target.current, {
       scrollTrigger: {
-        trigger: myHeader.current,
+        trigger: target.current,
         toggleActions: 'restart reverse restart restart',
       },
       top: '-15%',
@@ -39,15 +39,15 @@ const HeaderText = ({ children, delay }: TextProps) => {
       ease: 'power3.out',
     });
   }, [delay]);
-  return <HeaderTextContainer ref={myHeader}>{children}</HeaderTextContainer>;
+  return <HeaderTextContainer ref={target}>{children}</HeaderTextContainer>;
 };
 
 const BodyText = ({ children, delay }: TextProps) => {
-  const myHeader = useRef(null);
+  const target = useRef(null);
   useEffect(() => {
-    gsap.from(myHeader.current, {
+    gsap.from(target.current, {
       scrollTrigger: {
-        trigger: myHeader.current,
+        trigger: target.current,
         toggleActions: 'restart reverse restart restart',
       },
       top: '-15%',
@@ -57,7 +57,7 @@ const BodyText = ({ children, delay }: TextProps) => {
       ease: 'power3.out',
     });
   }, [delay]);
-  return <BodyTextContainer ref={myHeader}>{children}</BodyTextContainer>;
+  return <BodyTextContainer ref={target}>{children}</BodyTextContainer>;
 };
 
 export { HeaderText, BodyText };
