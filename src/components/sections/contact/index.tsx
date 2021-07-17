@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { WHITE_BACKGROUND_COLOR, BLACK_TEXT_COLOR } from '#/colors';
 
+import { HeaderText } from '#/components/common/gsap';
+
 const Container = styled.article`
   display: flex;
   justify-content: center;
@@ -23,7 +25,11 @@ const Contact = () => {
     setContactOffsetTop(containerOffsetTop);
   }, [setContactOffsetTop]);
 
-  return <Container ref={containerRef}>Contact</Container>;
+  return (
+    <Container ref={containerRef}>
+      <HeaderText delay={1}>Contact</HeaderText>
+    </Container>
+  );
 };
 
 export default Contact;

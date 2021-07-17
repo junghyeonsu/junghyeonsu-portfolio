@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
+import { HeaderText } from '#/components/common/gsap';
+
 const Container = styled.article`
   display: flex;
   justify-content: center;
@@ -23,7 +25,11 @@ const Experience = () => {
     setExperienceOffsetTop(containerOffsetTop);
   }, [setExperienceOffsetTop]);
 
-  return <Container ref={containerRef}>Experience</Container>;
+  return (
+    <Container ref={containerRef}>
+      <HeaderText delay={1}>Experience</HeaderText>
+    </Container>
+  );
 };
 
 export default Experience;

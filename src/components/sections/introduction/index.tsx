@@ -5,7 +5,7 @@ import { useLayoutContext } from '#/contexts/LayoutContext';
 import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 import { COMMON_BODY_WIDTH } from '#/constants';
 
-import HeaderText from '#/components/common/headerText';
+import { HeaderText, BodyText } from '#/components/common/gsap';
 
 const Container = styled.article`
   display: flex;
@@ -34,7 +34,10 @@ const Introduction = () => {
   return (
     <Container ref={containerRef}>
       <Body>
-        <HeaderText>정현수입니다</HeaderText>
+        <HeaderText delay={1}>정현수입니다</HeaderText>
+        <BodyText delay={2}>저는</BodyText>
+        <BodyText delay={2.4}>저는</BodyText>
+        <BodyText delay={2.8}>저는</BodyText>
       </Body>
     </Container>
   );
