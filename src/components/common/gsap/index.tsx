@@ -10,10 +10,10 @@ interface TextProps {
   delay: number;
 }
 
-interface UnderlineProps {
-  children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
-  delay: number;
-}
+// interface UnderlineProps {
+//   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
+//   delay: number;
+// }
 
 const HeaderTextContainer = styled.p`
   position: relative;
@@ -30,12 +30,12 @@ const BodyTextContainer = styled.p`
   line-height: 0.5vw;
 `;
 
-const UnderlineContainer = styled.span`
-  background-image: linear-gradient(transparent 80%, #f8cd07 20%);
-  background-size: 0% 100%;
-  background-repeat: no-repeat;
-  line-height: 0%;
-`;
+// const UnderlineContainer = styled.span`
+//   background-image: linear-gradient(transparent 80%, #f8cd07 20%);
+//   background-size: 0% 100%;
+//   background-repeat: no-repeat;
+//   line-height: 0%;
+// `;
 
 const HeaderText = ({ children, delay }: TextProps) => {
   const target = useRef(null);
