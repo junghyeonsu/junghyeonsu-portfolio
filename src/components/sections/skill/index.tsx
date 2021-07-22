@@ -31,10 +31,10 @@ const Skill = () => {
     <Container ref={containerRef}>
       <FadeOutHeaderText delay={1}>Skill</FadeOutHeaderText>
       <SkillContainer>
-        <SkillItem>막대기</SkillItem>
-        <SkillItem>막대기</SkillItem>
-        <SkillItem>막대기</SkillItem>
-        <SkillItem>막대기</SkillItem>
+        <SkillItem delay={2}>막대기</SkillItem>
+        <SkillItem delay={2.1}>막대기</SkillItem>
+        <SkillItem delay={2.2}>막대기</SkillItem>
+        <SkillItem delay={2.3}>막대기</SkillItem>
       </SkillContainer>
     </Container>
   );
