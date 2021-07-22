@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { WHITE_BACKGROUND_COLOR, BLACK_TEXT_COLOR } from '#/colors';
 
-import { HeaderText } from '#/components/common/gsap';
+import { FadeOutHeaderText } from '#/components/common/gsap';
+import SkillContainer from '#/components/sections/skill/SkillContainer';
+import SkillItem from '#/components/sections/skill/SkillItem';
 
 const Container = styled.article`
   display: flex;
@@ -27,7 +29,13 @@ const Skill = () => {
 
   return (
     <Container ref={containerRef}>
-      <HeaderText delay={1}>Skill</HeaderText>
+      <FadeOutHeaderText delay={1}>Skill</FadeOutHeaderText>
+      <SkillContainer>
+        <SkillItem>막대기</SkillItem>
+        <SkillItem>막대기</SkillItem>
+        <SkillItem>막대기</SkillItem>
+        <SkillItem>막대기</SkillItem>
+      </SkillContainer>
     </Container>
   );
 };

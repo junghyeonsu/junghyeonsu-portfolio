@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { WHITE_BACKGROUND_COLOR, BLACK_TEXT_COLOR } from '#/colors';
 
-import { HeaderText } from '#/components/common/gsap';
+import { FadeOutHeaderText } from '#/components/common/gsap';
 
 const Container = styled.article`
   display: flex;
@@ -27,7 +27,7 @@ const Contact = () => {
 
   return (
     <Container ref={containerRef}>
-      <HeaderText delay={1}>Contact</HeaderText>
+      <FadeOutHeaderText delay={1}>Contact</FadeOutHeaderText>
     </Container>
   );
 };

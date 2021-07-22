@@ -12,12 +12,12 @@ interface TextProps {
 const HeaderTextContainer = styled.p`
   position: relative;
   font-family: ${BOLD_TEXT};
-  font-size: 5vw;
+  font-size: 7vw;
   letter-spacing: 2px;
   line-height: 2vw;
 `;
 
-const HeaderText = ({ children, delay }: TextProps) => {
+const FadeInHeaderText = ({ children, delay }: TextProps) => {
   const target = useRef(null);
   useEffect(() => {
     gsap.from(target.current, {
@@ -35,4 +35,4 @@ const HeaderText = ({ children, delay }: TextProps) => {
   return <HeaderTextContainer ref={target}>{children}</HeaderTextContainer>;
 };
 
-export default HeaderText;
+export default FadeInHeaderText;

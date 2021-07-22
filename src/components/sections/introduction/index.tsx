@@ -5,7 +5,11 @@ import { useLayoutContext } from '#/contexts/LayoutContext';
 import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 import { COMMON_BODY_WIDTH } from '#/constants';
 
-import { HeaderText, BodyText, Underline } from '#/components/common/gsap';
+import {
+  FadeInHeaderText,
+  FadeInBodyText,
+  Underline,
+} from '#/components/common/gsap';
 
 const Container = styled.article`
   display: flex;
@@ -34,16 +38,17 @@ const Introduction = () => {
   return (
     <Container ref={containerRef}>
       <Body>
-        <HeaderText delay={1}>
-          <Underline delay={4}>정현수</Underline>입니다
-        </HeaderText>
-        <BodyText delay={2}>
+        <FadeInHeaderText delay={1}>
+          <Underline delay={4}>정현수</Underline>
+          <span style={{ fontSize: '4vw' }}>입니다</span>
+        </FadeInHeaderText>
+        <FadeInBodyText delay={2}>
           저는
           <Underline delay={4.2}>현수</Underline>
           입니다.
-        </BodyText>
-        <BodyText delay={2.4}>저는</BodyText>
-        <BodyText delay={2.8}>저는</BodyText>
+        </FadeInBodyText>
+        <FadeInBodyText delay={2.4}>저는</FadeInBodyText>
+        <FadeInBodyText delay={2.8}>저는</FadeInBodyText>
       </Body>
     </Container>
   );

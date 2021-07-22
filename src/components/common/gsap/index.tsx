@@ -1,5 +1,6 @@
 import Underline from '#/components/common/gsap/Underline';
-import HeaderText from '#/components/common/gsap/HeaderText';
-import BodyText from '#/components/common/gsap/BodyText';
+import FadeInHeaderText from '#/components/common/gsap/FadeInHeaderText';
+import FadeInBodyText from '#/components/common/gsap/FadeInBodyText';
+import FadeOutHeaderText from '#/components/common/gsap/FadeOutHeaderText';
 
-export { HeaderText, BodyText, Underline };
+export { FadeInHeaderText, FadeInBodyText, FadeOutHeaderText, Underline };

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
-import { HeaderText } from '#/components/common/gsap';
+import { FadeOutHeaderText } from '#/components/common/gsap';
 
 const Container = styled.article`
   display: flex;
@@ -27,7 +27,7 @@ const Experience = () => {
 
   return (
     <Container ref={containerRef}>
-      <HeaderText delay={1}>Experience</HeaderText>
+      <FadeOutHeaderText delay={1}>Experience</FadeOutHeaderText>
     </Container>
   );
 };
