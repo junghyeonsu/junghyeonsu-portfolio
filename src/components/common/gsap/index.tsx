@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import gsap from 'gsap';
 
 import { BOLD_TEXT, REGULAR_TEXT } from '#/constants';
+import Underline from '#/components/common/gsap/Underline';
 
 interface TextProps {
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
@@ -72,22 +73,22 @@ const BodyText = ({ children, delay }: TextProps) => {
   return <BodyTextContainer ref={target}>{children}</BodyTextContainer>;
 };
 
-const Underline = ({ delay, children }: UnderlineProps) => {
-  const target = useRef(null);
-  useEffect(() => {
-    gsap.to(target.current, {
-      scrollTrigger: {
-        trigger: target.current,
-        toggleActions: 'restart reverse restart restart',
-      },
-      backgroundImage: 'linear-gradient(transparent 80%, #F8CD07 20%)',
-      backgroundSize: '100% 100%',
-      delay,
-      duration: 0.6,
-      ease: 'expo.out',
-    });
-  }, [delay]);
-  return <UnderlineContainer ref={target}>{children}</UnderlineContainer>;
-};
+// const Underline = ({ delay, children }: UnderlineProps) => {
+//   const target = useRef(null);
+//   useEffect(() => {
+//     gsap.to(target.current, {
+//       scrollTrigger: {
+//         trigger: target.current,
+//         toggleActions: 'restart reverse restart restart',
+//       },
+//       backgroundImage: 'linear-gradient(transparent 80%, #F8CD07 20%)',
+//       backgroundSize: '100% 100%',
+//       delay,
+//       duration: 0.6,
+//       ease: 'expo.out',
+//     });
+//   }, [delay]);
+//   return <UnderlineContainer ref={target}>{children}</UnderlineContainer>;
+// };
 
 export { HeaderText, BodyText, Underline };
