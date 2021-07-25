@@ -7,12 +7,13 @@ import {
   COMMON_TRANSITION,
   PAGE_ORDER,
   PROGRESS_BAR_HEIGHT,
+  PROGRESS_BAR_TOP,
 } from '#/constants';
 
 const Container = styled.div`
   position: fixed;
   width: 0.3vw;
-  top: 28vh;
+  top: ${PROGRESS_BAR_TOP}vh;
   right: 10px;
   transition: ${COMMON_TRANSITION};
 `;

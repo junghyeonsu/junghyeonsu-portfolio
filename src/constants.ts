@@ -18,7 +18,9 @@ export const PAGE_ORDER = [
 /* CSS */
 export const COMMON_TRANSITION = 'all 0.3s ease';
 export const COMMON_BODY_WIDTH = 70; // 80vh
+
 export const PROGRESS_BAR_HEIGHT = 50; // 50vh
+export const PROGRESS_BAR_TOP = 25.5; // vh
 
 /* font */
 export const REGULAR_TEXT = 'NEXON Lv2 Gothic';

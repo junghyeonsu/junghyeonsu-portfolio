@@ -40,10 +40,12 @@ const Skill = () => {
         <Underline delay={3.5}>Skill</Underline>
       </FadeInLeftTopText>
       <SkillContainer>
-        <SkillItem delay={2}>막대기</SkillItem>
-        <SkillItem delay={2.1}>막대기</SkillItem>
-        <SkillItem delay={2.2}>막대기</SkillItem>
-        <SkillItem delay={2.3}>막대기</SkillItem>
+        <SkillItem exp={90} delay={2} skill="HTML / CSS" />
+        <SkillItem exp={80} delay={2.1} skill="JAVASCRIPT" />
+        <SkillItem exp={70} delay={2.2} skill="TYPESCRIPT" />
+        <SkillItem exp={60} delay={2.3} skill="REACT.JS" />
+        <SkillItem exp={50} delay={2.3} skill="NEXT.JS" />
+        <SkillItem exp={40} delay={2.3} skill="GIT / GITHUB" />
       </SkillContainer>
     </Container>
   );

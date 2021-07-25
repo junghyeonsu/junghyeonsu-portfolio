@@ -4,6 +4,7 @@ import FadeInBodyText from '#/components/common/gsap/FadeInBodyText';
 import FadeInLeftTopText from '#/components/common/gsap/FadeInLeftTopText';
 import FadeOutHeaderText from '#/components/common/gsap/FadeOutHeaderText';
 import BounceFadeInText from '#/components/common/gsap/BounceFadeInText';
+import FadeInContent from '#/components/common/gsap/FadeInContent';
 
 export {
   FadeInHeaderText,
@@ -11,5 +12,6 @@ export {
   FadeInLeftTopText,
   FadeOutHeaderText,
   BounceFadeInText,
+  FadeInContent,
   Underline,
 };

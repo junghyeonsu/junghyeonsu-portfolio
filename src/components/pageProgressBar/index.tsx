@@ -3,7 +3,11 @@ import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { BLACK_UNACTIVE_TEXT_COLOR, WHITE_UNACTIVE_TEXT_COLOR } from '#/colors';
-import { COMMON_TRANSITION, PROGRESS_BAR_HEIGHT } from '#/constants';
+import {
+  COMMON_TRANSITION,
+  PROGRESS_BAR_HEIGHT,
+  PROGRESS_BAR_TOP,
+} from '#/constants';
 import ProgressItem from '#/components/pageProgressBar/progressItem';
 
 const Container = styled.div`
@@ -11,7 +15,7 @@ const Container = styled.div`
   width: 0.3vw;
   height: ${PROGRESS_BAR_HEIGHT}vh;
   right: 10px;
-  top: 28vh;
+  top: ${PROGRESS_BAR_TOP}vh;
   transition: ${COMMON_TRANSITION};
 `;
 
