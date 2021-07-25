@@ -4,10 +4,15 @@ import styled from 'styled-components';
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { WHITE_BACKGROUND_COLOR, BLACK_TEXT_COLOR } from '#/colors';
 
-import { FadeOutHeaderText } from '#/components/common/gsap';
+import {
+  FadeOutHeaderText,
+  FadeInLeftTopText,
+  Underline,
+} from '#/components/common/gsap';
 
 const Container = styled.article`
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -28,6 +33,9 @@ const Contact = () => {
   return (
     <Container ref={containerRef}>
       <FadeOutHeaderText delay={1}>Contact</FadeOutHeaderText>
+      <FadeInLeftTopText delay={2.5}>
+        <Underline delay={3.5}>Contact</Underline>
+      </FadeInLeftTopText>
     </Container>
   );
 };

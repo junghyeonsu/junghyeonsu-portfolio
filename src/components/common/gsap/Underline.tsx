@@ -12,6 +12,7 @@ const UnderlineContainer = styled.span`
   background-size: 0% 100%;
   background-repeat: no-repeat;
   line-height: 0%;
+  z-index: -1;
 `;
 
 const Underline = ({ delay, children }: UnderlineProps) => {
