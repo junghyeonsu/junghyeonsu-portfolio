@@ -26,8 +26,8 @@ function Counter({ number, delay, trigger }: CounterProps) {
   const [countDelay, setCountDelay] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // delay : number에 도달할 때 까지 1 ~ 121까지 오름
-  const delayUp = 120 / number;
+  // delay : number에 도달할 때 까지 1 ~ 101까지 오름
+  const delayUp = 100 / number;
 
   useEffect(() => {
     if (trigger === currentArea) {
@@ -35,8 +35,11 @@ function Counter({ number, delay, trigger }: CounterProps) {
         setIsPlaying(true);
       }, delay * 1000);
     } else {
-      setCount(0);
-      setCountDelay(1);
+      setTimeout(() => {
+        setCount(0);
+        setCountDelay(1);
+        setIsPlaying(false);
+      }, 150);
     }
   }, [currentArea, delay, trigger]);
 
