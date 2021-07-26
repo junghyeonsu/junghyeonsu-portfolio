@@ -18,7 +18,9 @@ interface CounterProps {
     | typeof EXP_ARTICLE_AREA
     | typeof CONTACT_ARTICLE_AREA;
   setGuage?:
-    | (() => React.Dispatch<React.SetStateAction<number>> | undefined)
+    | ((
+        arg0: number,
+      ) => React.Dispatch<React.SetStateAction<number>> | undefined)
     | undefined;
 }
 
