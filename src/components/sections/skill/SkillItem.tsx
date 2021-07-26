@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { BLACK_TEXT_COLOR } from '#/colors';
 import { SKILL_ARTICLE_AREA } from '#/constants';
-import { BounceFadeInText, FadeInContent } from '#/components/common/gsap';
+import { FadeInContent } from '#/components/common/gsap';
 import Counter from '#/components/common/counter';
 
 interface SkillItemProps {
@@ -70,26 +70,25 @@ const Exp = styled.p`
 const SkillItem = ({ exp, delay, skill }: SkillItemProps) => {
   const [barGuage, setBarGuage] = useState<number>(0);
   return (
-    <ItemContainer>
-      {/* <BounceFadeInText delay={delay}>{children}</BounceFadeInText> */}
-      <SkillNameContainer>
-        <Skill>{skill}</Skill>
-      </SkillNameContainer>
-      <SkillBarContainer>
-        <FullBar />
-        <ExpBar barGuage={barGuage} />
-        {/* <FadeInContent delay={delay}> */}
-        {/* </FadeInContent> */}
-      </SkillBarContainer>
-      <Exp>
-        <Counter
-          number={exp}
-          delay={delay}
-          trigger={SKILL_ARTICLE_AREA}
-          setGuage={setBarGuage}
-        />
-      </Exp>
-    </ItemContainer>
+    <FadeInContent delay={delay}>
+      <ItemContainer>
+        <SkillNameContainer>
+          <Skill>{skill}</Skill>
+        </SkillNameContainer>
+        <SkillBarContainer>
+          <FullBar />
+          <ExpBar barGuage={barGuage} />
+        </SkillBarContainer>
+        <Exp>
+          <Counter
+            number={exp}
+            delay={delay + 1.5}
+            trigger={SKILL_ARTICLE_AREA}
+            setGuage={setBarGuage}
+          />
+        </Exp>
+      </ItemContainer>
+    </FadeInContent>
   );
 };
 
