@@ -12,6 +12,10 @@ interface SkillItemProps {
   skill: string;
 }
 
+interface ExpBarProps {
+  barGuage: number;
+}
+
 const ItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -50,7 +54,7 @@ const ExpBar = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: ${props => (44 / 100) * props.barGuage}vw;
+  width: ${(props: ExpBarProps) => (44 / 100) * props.barGuage}vw;
   height: 2vw;
   background-color: #fff346;
   transition: width 3s ease;

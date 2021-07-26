@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import useInterval from '#/hooks/useInterval';
 
 import {
@@ -17,11 +17,7 @@ interface CounterProps {
     | typeof SKILL_ARTICLE_AREA
     | typeof EXP_ARTICLE_AREA
     | typeof CONTACT_ARTICLE_AREA;
-  setGuage?:
-    | ((
-        arg0: number,
-      ) => React.Dispatch<React.SetStateAction<number>> | undefined)
-    | undefined;
+  setGuage?: Dispatch<SetStateAction<number>> | undefined;
 }
 
 // number = 목표 숫자
