@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import React, { useState, useEffect } from 'react';
 import useInterval from '#/hooks/useInterval';
 
 import {
@@ -17,14 +17,13 @@ interface CounterProps {
     | typeof SKILL_ARTICLE_AREA
     | typeof EXP_ARTICLE_AREA
     | typeof CONTACT_ARTICLE_AREA;
-  setGuage?: Dispatch<SetStateAction<number>> | undefined;
 }
 
 // number = 목표 숫자
 // delay = 카운트 시작 딜레이
 // trigger = 시작이 되는 section
 // eslint-disable-next-line react/prop-types
-function Counter({ number, delay, trigger, setGuage }: CounterProps) {
+function Counter({ number, delay, trigger }: CounterProps) {
   const { currentArea }: any = useLayoutContext(); // eslint-disable-line 
   const [count, setCount] = useState(0);
   const [countDelay, setCountDelay] = useState(1);
@@ -37,17 +36,15 @@ function Counter({ number, delay, trigger, setGuage }: CounterProps) {
     if (trigger === currentArea) {
       setTimeout(() => {
         setIsPlaying(true);
-        if (setGuage) setGuage(number);
       }, delay * 1000);
     } else {
       setTimeout(() => {
-        if (setGuage) setGuage(0);
         setCount(0);
         setCountDelay(1);
         setIsPlaying(false);
       }, 150);
     }
-  }, [currentArea, delay, trigger, setGuage, number]);
+  }, [currentArea, delay, trigger, number]);
 
   useInterval(
     () => {

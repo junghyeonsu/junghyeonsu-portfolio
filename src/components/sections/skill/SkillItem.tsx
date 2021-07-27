@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { BLACK_TEXT_COLOR } from '#/colors';
-import { SKILL_ARTICLE_AREA } from '#/constants';
+import { SKILL_ARTICLE_AREA, BOLD_TEXT } from '#/constants';
 import { FadeInContent } from '#/components/common/gsap';
-import Counter from '#/components/common/counter';
+import { useLayoutContext } from '#/contexts/LayoutContext';
+import SkillBar from '#/components/sections/skill/SkillBar';
+import SkillGrowingBar from '#/components/sections/skill/SkillGrowingBar';
 
 interface SkillItemProps {
   exp: number;
   delay: number;
   skill: string;
-}
-
-interface ExpBarProps {
-  barGuage: number;
 }
 
 const ItemContainer = styled.div`
@@ -38,33 +36,7 @@ const SkillBarContainer = styled.div`
 const Skill = styled.p`
   text-align: right;
   font-size: 1.5vw;
-`;
-
-const FullBar = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 44vw;
-  height: 2vw;
-  background-color: #ffffff;
-  z-index: 0;
-`;
-
-const ExpBar = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: ${(props: ExpBarProps) => (44 / 100) * props.barGuage}vw;
-  height: 2vw;
-  background-color: #fff346;
-  transition: width 3s ease;
-  z-index: 1;
-`;
-
-const Exp = styled.p`
-  width: 5vw;
-  font-size: 1.5vw;
-  text-align: center;
+  font-family: ${BOLD_TEXT};
 `;
 
 // usage: 스킬 한 줄을 담고있는 컴포넌트
@@ -73,6 +45,21 @@ const Exp = styled.p`
 // skill: 기술 스택 이름
 const SkillItem = ({ exp, delay, skill }: SkillItemProps) => {
   const [barGuage, setBarGuage] = useState<number>(0);
+
+  const { currentArea }: any = useLayoutContext(); // eslint-disable-line 
+
+  useEffect(() => {
+    if (SKILL_ARTICLE_AREA === currentArea) {
+      setTimeout(() => {
+        setBarGuage(exp);
+      }, delay * 1000);
+    } else {
+      setTimeout(() => {
+        setBarGuage(0);
+      }, 150);
+    }
+  }, [currentArea, delay, exp]);
+
   return (
     <FadeInContent delay={delay}>
       <ItemContainer>
@@ -80,17 +67,9 @@ const SkillItem = ({ exp, delay, skill }: SkillItemProps) => {
           <Skill>{skill}</Skill>
         </SkillNameContainer>
         <SkillBarContainer>
-          <FullBar />
-          <ExpBar barGuage={barGuage} />
+          <SkillBar />
+          <SkillGrowingBar delay={delay} barGuage={barGuage} />
         </SkillBarContainer>
-        <Exp>
-          <Counter
-            number={exp}
-            delay={delay + 1.5}
-            trigger={SKILL_ARTICLE_AREA}
-            setGuage={setBarGuage}
-          />
-        </Exp>
       </ItemContainer>
     </FadeInContent>
   );
