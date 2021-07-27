@@ -27,10 +27,10 @@ const Bottom = styled.div`
 `;
 
 const Left = styled.div`
-  background-color: rgba(247, 243, 21, 0.9);
+  background-color: rgba(247, 243, 21, 1);
   position: absolute;
   left: 0;
-  transform: rotateX(60deg) rotateY(-90deg) translateX(${ROOT_HEIGHT + 1.2}vw)
+  transform: rotateX(61deg) rotateY(-90deg) translateX(${ROOT_HEIGHT + 1.2}vw)
     translateY(${ROOT_HEIGHT - 5}vw) translateZ(${ROOT_HEIGHT - 1.7}vw);
   width: ${ROOT_HEIGHT_WITH_VW};
   height: ${ROOT_HEIGHT_WITH_VW};

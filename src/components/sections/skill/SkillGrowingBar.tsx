@@ -28,7 +28,7 @@ const GrowBar = styled.div`
 `;
 
 const Bottom = styled.div`
-  background-color: rgba(247, 243, 21, 0.4);
+  background-color: rgba(247, 243, 21, 1);
   transform: rotateX(60deg) rotateY(0deg);
   width: ${(props: GrowBarProps) => (ROOT_WIDTH / 100) * props.barGuage}vw;
   height: ${ROOT_HEIGHT_WITH_VW};
@@ -36,18 +36,18 @@ const Bottom = styled.div`
 `;
 
 const Right = styled.div`
-  background-color: rgba(247, 243, 21, 0.8);
+  background-color: rgba(247, 243, 21, 1);
   position: absolute;
   right: 0;
   transform: rotateX(330deg) rotateY(-90deg) translateX(${ROOT_HEIGHT - 5}vw)
-    translateY(${ROOT_HEIGHT - 8.4}vw) translateZ(${ROOT_HEIGHT - 5}vw);
+    translateY(${ROOT_HEIGHT - 8.4}vw) translateZ(${ROOT_HEIGHT - 5.2}vw);
   width: ${ROOT_HEIGHT_WITH_VW};
   height: ${ROOT_HEIGHT_WITH_VW};
 `;
 
 const Back = styled.div`
   position: absolute;
-  background-color: rgba(247, 243, 21, 0.5);
+  background-color: rgba(247, 243, 21, 1);
   transform: rotateX(330deg) rotateY(0deg) translateX(0vw)
     translateY(${ROOT_HEIGHT - 8.4}vw) translateZ(${ROOT_HEIGHT - 6.7}vw);
   width: ${(props: GrowBarProps) => (ROOT_WIDTH / 100) * props.barGuage}vw;
@@ -62,7 +62,7 @@ const Front = styled.div`
   font-family: ${BOLD_TEXT};
   font-size: 1.5vw;
   position: absolute;
-  background-color: rgba(247, 243, 21, 0.5);
+  background-color: rgba(247, 243, 21, 1);
   transform: rotateX(330deg) rotateY(0deg) translateX(-0.3vw)
     translateY(-${ROOT_HEIGHT + 1.4}vw) translateZ(${ROOT_HEIGHT - 3.3}vw);
   width: ${(props: GrowBarProps) => (ROOT_WIDTH / 100) * props.barGuage}vw;
