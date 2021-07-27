@@ -48,7 +48,10 @@ function Counter({ number, delay, trigger }: CounterProps) {
 
   useInterval(
     () => {
-      if (count >= number - 1) setIsPlaying(false);
+      if (count === number) {
+        setIsPlaying(false);
+        return;
+      }
       setCount(count + 1);
       setCountDelay(countDelay + delayUp);
     },
