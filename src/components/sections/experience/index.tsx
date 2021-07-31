@@ -2,15 +2,22 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
+import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR } from '#/colors';
+
+import {
+  FadeOutHeaderText,
+  FadeInLeftTopText,
+  Underline,
+} from '#/components/common/gsap';
 
 const Container = styled.article`
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #2d3748;
-  color: #edf2f7;
-  scroll-snap-align: start;
+  background-color: ${BLACK_BACKGROUND_COLOR};
+  color: ${WHITE_TEXT_COLOR};
 `;
 
 const Experience = () => {
@@ -23,7 +30,14 @@ const Experience = () => {
     setExperienceOffsetTop(containerOffsetTop);
   }, [setExperienceOffsetTop]);
 
-  return <Container ref={containerRef}>Experience</Container>;
+  return (
+    <Container ref={containerRef}>
+      <FadeOutHeaderText delay={1}>Experience</FadeOutHeaderText>
+      <FadeInLeftTopText delay={2.5}>
+        <Underline delay={3.5}>Experience</Underline>
+      </FadeInLeftTopText>
+    </Container>
+  );
 };
 
 export default Experience;

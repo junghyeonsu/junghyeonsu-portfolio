@@ -2,15 +2,22 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
+import { WHITE_BACKGROUND_COLOR, BLACK_TEXT_COLOR } from '#/colors';
+
+import {
+  FadeOutHeaderText,
+  FadeInLeftTopText,
+  Underline,
+} from '#/components/common/gsap';
 
 const Container = styled.article`
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #edf2f7;
-  color: #4a5568;
-  scroll-snap-align: start;
+  background-color: ${WHITE_BACKGROUND_COLOR};
+  color: ${BLACK_TEXT_COLOR};
 `;
 
 const Contact = () => {
@@ -23,7 +30,14 @@ const Contact = () => {
     setContactOffsetTop(containerOffsetTop);
   }, [setContactOffsetTop]);
 
-  return <Container ref={containerRef}>Contact</Container>;
+  return (
+    <Container ref={containerRef}>
+      <FadeOutHeaderText delay={1}>Contact</FadeOutHeaderText>
+      <FadeInLeftTopText delay={2.5}>
+        <Underline delay={3.5}>Contact</Underline>
+      </FadeInLeftTopText>
+    </Container>
+  );
 };
 
 export default Contact;
