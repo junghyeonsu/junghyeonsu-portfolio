@@ -28,7 +28,7 @@ const GrowBar = styled.div`
 `;
 
 const Bottom = styled.div`
-  background-color: rgba(247, 243, 21, 1);
+  background-color: rgba(247, 243, 21, 0.5);
   transform: rotateX(60deg) rotateY(0deg);
   width: ${(props: GrowBarProps) => (ROOT_WIDTH / 100) * props.barGuage}vw;
   height: ${ROOT_HEIGHT_WITH_VW};
@@ -36,13 +36,14 @@ const Bottom = styled.div`
 `;
 
 const Right = styled.div`
-  background-color: rgba(247, 243, 21, 1);
+  background-color: rgba(247, 243, 21, 0.9);
   position: absolute;
   right: 0;
   transform: rotateX(330deg) rotateY(-90deg) translateX(${ROOT_HEIGHT - 5}vw)
     translateY(${ROOT_HEIGHT - 8.4}vw) translateZ(${ROOT_HEIGHT - 5.2}vw);
   width: ${ROOT_HEIGHT_WITH_VW};
   height: ${ROOT_HEIGHT_WITH_VW};
+  box-shadow: 1vw -0.5vw 3vw rgba(247, 243, 21, 0.5);
 `;
 
 const Back = styled.div`
@@ -55,6 +56,17 @@ const Back = styled.div`
   transition: width 3s ease;
 `;
 
+const Top = styled.div`
+  position: absolute;
+  background-color: rgba(247, 243, 21, 0.7);
+  transform: rotateX(60deg) rotateY(0deg) translateX(-0.3vw)
+    translateY(${ROOT_HEIGHT - 5.5}vw) translateZ(${ROOT_HEIGHT + 2.9}vw);
+  width: ${(props: GrowBarProps) => (ROOT_WIDTH / 100) * props.barGuage}vw;
+
+  height: ${ROOT_HEIGHT_WITH_VW};
+  transition: width 3s ease;
+`;
+
 const Front = styled.div`
   display: flex;
   justify-content: center;
@@ -62,7 +74,7 @@ const Front = styled.div`
   font-family: ${BOLD_TEXT};
   font-size: 1.5vw;
   position: absolute;
-  background-color: rgba(247, 243, 21, 1);
+  background-color: rgba(247, 243, 21, 0.7);
   transform: rotateX(330deg) rotateY(0deg) translateX(-0.3vw)
     translateY(-${ROOT_HEIGHT + 1.4}vw) translateZ(${ROOT_HEIGHT - 3.3}vw);
   width: ${(props: GrowBarProps) => (ROOT_WIDTH / 100) * props.barGuage}vw;
@@ -85,6 +97,7 @@ const SkillBar = ({ barGuage, delay }: SkillBarProps) => {
           trigger={SKILL_ARTICLE_AREA}
         />
       </Front>
+      <Top barGuage={barGuage} />
     </GrowBar>
   );
 };

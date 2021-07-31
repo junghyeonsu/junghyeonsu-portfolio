@@ -12,7 +12,7 @@ interface TextProps {
 const BodyTextContainer = styled.p`
   position: relative;
   font-family: ${REGULAR_TEXT};
-  font-size: 3vw;
+  font-size: 2.5vw;
   line-height: 0.5vw;
 `;
 

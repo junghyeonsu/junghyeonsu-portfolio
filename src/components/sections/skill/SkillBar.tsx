@@ -34,6 +34,7 @@ const Left = styled.div`
     translateY(${ROOT_HEIGHT - 5}vw) translateZ(${ROOT_HEIGHT - 1.7}vw);
   width: ${ROOT_HEIGHT_WITH_VW};
   height: ${ROOT_HEIGHT_WITH_VW};
+  box-shadow: 0.1vw 0vw 1vw rgba(247, 243, 21, 1);
 `;
 
 const Right = styled.div`
