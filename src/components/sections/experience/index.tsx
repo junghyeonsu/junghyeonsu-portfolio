@@ -9,6 +9,7 @@ import {
   FadeInLeftTopText,
   Underline,
 } from '#/components/common/gsap';
+import ExperienceCard from '#/components/sections/experience/ExperienceCard';
 
 const Container = styled.article`
   display: flex;
@@ -36,6 +37,7 @@ const Experience = () => {
       <FadeInLeftTopText delay={2.5}>
         <Underline delay={3.5}>Experience</Underline>
       </FadeInLeftTopText>
+      <ExperienceCard />
     </Container>
   );
 };
