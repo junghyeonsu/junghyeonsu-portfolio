@@ -287,6 +287,34 @@ const LayoutProvider = ({
     };
   }, [handleWheel]);
 
+  // 소개 섹션 이동 함수
+  const moveIntroArticle = useCallback(() => {
+    window.scrollTo({ top: introductionOffsetTop });
+    setCurrentArea(INTRO_ARTICLE_AREA);
+    setScrollGauge(0);
+  }, [introductionOffsetTop]);
+
+  // 스킬 섹션 이동 함수
+  const moveSkillArticle = useCallback(() => {
+    window.scrollTo({ top: skillOffsetTop });
+    setCurrentArea(SKILL_ARTICLE_AREA);
+    setScrollGauge(0);
+  }, [skillOffsetTop]);
+
+  // 경험 섹션 이동 함수
+  const moveExperienceArticle = useCallback(() => {
+    window.scrollTo({ top: experienceOffsetTop });
+    setCurrentArea(EXP_ARTICLE_AREA);
+    setScrollGauge(0);
+  }, [experienceOffsetTop]);
+
+  // 연락처 섹션 이동 함수
+  const moveContactArticle = useCallback(() => {
+    window.scrollTo({ top: contactOffsetTop });
+    setCurrentArea(CONTACT_ARTICLE_AREA);
+    setScrollGauge(0);
+  }, [contactOffsetTop]);
+
   return (
     <LayoutContext.Provider
       value={{
@@ -303,6 +331,12 @@ const LayoutProvider = ({
         setSkillOffsetTop,
         setExperienceOffsetTop,
         setContactOffsetTop,
+
+        // 화면 이동 함수
+        moveIntroArticle,
+        moveSkillArticle,
+        moveExperienceArticle,
+        moveContactArticle,
       }}
     >
       {children}

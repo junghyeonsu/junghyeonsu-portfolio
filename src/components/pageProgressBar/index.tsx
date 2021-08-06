@@ -20,7 +20,13 @@ const Container = styled.div`
 `;
 
 const PageProgressBar = () => {
-  const { isWhiteColor }: any = useLayoutContext(); // eslint-disable-line 
+  const {
+    isWhiteColor,
+    moveIntroArticle,
+    moveSkillArticle,
+    moveExperienceArticle,
+    moveContactArticle,
+  }: any = useLayoutContext(); // eslint-disable-line 
   const barColor = useMemo(
     () =>
       isWhiteColor ? WHITE_UNACTIVE_TEXT_COLOR : BLACK_UNACTIVE_TEXT_COLOR,
@@ -29,10 +35,14 @@ const PageProgressBar = () => {
 
   return (
     <Container style={{ background: barColor }}>
-      <ProgressItem text="Introduction" order={0} />
-      <ProgressItem text="Skills" order={1} />
-      <ProgressItem text="Experiences" order={2} />
-      <ProgressItem text="Contact" order={3} />
+      <ProgressItem onClick={moveIntroArticle} text="Introduction" order={0} />
+      <ProgressItem onClick={moveSkillArticle} text="Skills" order={1} />
+      <ProgressItem
+        onClick={moveExperienceArticle}
+        text="Experiences"
+        order={2}
+      />
+      <ProgressItem onClick={moveContactArticle} text="Contact" order={3} />
     </Container>
   );
 };
