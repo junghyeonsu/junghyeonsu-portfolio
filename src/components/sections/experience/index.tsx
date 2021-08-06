@@ -10,13 +10,15 @@ import {
   Underline,
 } from '#/components/common/gsap';
 import ExperienceCard from '#/components/sections/experience/ExperienceCard';
+import ExperienceCardList from '#/components/sections/experience/ExperienceCardList';
 
 const Container = styled.article`
-  display: flex;
   position: relative;
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100%;
   background-color: ${BLACK_BACKGROUND_COLOR};
   color: ${WHITE_TEXT_COLOR};
 `;
@@ -37,7 +39,11 @@ const Experience = () => {
       <FadeInLeftTopText delay={2.5}>
         <Underline delay={3.5}>Experience</Underline>
       </FadeInLeftTopText>
-      <ExperienceCard />
+      <ExperienceCardList>
+        <ExperienceCard index={1} />
+        <ExperienceCard index={2} />
+        <ExperienceCard index={3} />
+      </ExperienceCardList>
     </Container>
   );
 };
