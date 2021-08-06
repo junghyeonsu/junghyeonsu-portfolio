@@ -9,12 +9,13 @@ interface TextProps {
   delay: number;
 }
 
-const TextContainer = styled.p`
+const TextContainer = styled.div`
   position: absolute;
-  top: 1%;
+  top: 8%;
   left: 5%;
   font-family: ${BOLD_TEXT};
   font-size: 3.4vw;
+  z-index: 5;
 `;
 
 const FadeInLeftTopText = ({ children, delay }: TextProps) => {
@@ -25,7 +26,7 @@ const FadeInLeftTopText = ({ children, delay }: TextProps) => {
         trigger: target.current,
         toggleActions: 'restart reverse restart restart',
       },
-      top: '-20px',
+      top: '0%',
       opacity: 0,
       delay,
       duration: 1.5,

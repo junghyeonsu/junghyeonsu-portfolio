@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
@@ -9,7 +9,6 @@ import {
   FadeInLeftTopText,
   Underline,
 } from '#/components/common/gsap';
-import ExperienceCard from '#/components/sections/experience/ExperienceCard';
 import ExperienceCardList from '#/components/sections/experience/ExperienceCardList';
 
 const Container = styled.article`
@@ -26,6 +25,7 @@ const Container = styled.article`
 const Experience = () => {
   const { setExperienceOffsetTop }: any = useLayoutContext(); // eslint-disable-line 
   const containerRef = useRef<any>(null); // eslint-disable-line
+  const [year, setYear] = useState<number>(2019);
 
   useEffect(() => {
     const containerOffsetTop = containerRef.current.offsetTop;
@@ -39,11 +39,9 @@ const Experience = () => {
       <FadeInLeftTopText delay={2.5}>
         <Underline delay={3.5}>Experience</Underline>
       </FadeInLeftTopText>
-      <ExperienceCardList>
-        <ExperienceCard index={1} />
-        <ExperienceCard index={2} />
-        <ExperienceCard index={3} />
-      </ExperienceCardList>
+
+      {/* To do : 연도 별로 나눌 수 있어야 함  */}
+      <ExperienceCardList year={year} setYear={setYear} />
     </Container>
   );
 };

@@ -12,6 +12,7 @@ const Container = styled.div`
   bottom: 10px;
   right: 10px;
   transition: ${COMMON_TRANSITION};
+  z-index: 5;
 `;
 
 const ScrollGauge = () => {

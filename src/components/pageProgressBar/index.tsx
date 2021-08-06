@@ -17,6 +17,7 @@ const Container = styled.div`
   right: 10px;
   top: ${PROGRESS_BAR_TOP}vh;
   transition: ${COMMON_TRANSITION};
+  z-index: 5;
 `;
 
 const PageProgressBar = () => {

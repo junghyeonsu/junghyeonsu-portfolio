@@ -15,6 +15,7 @@ const HeaderTextContainer = styled.p`
   font-size: 7vw;
   letter-spacing: 2px;
   line-height: 2vw;
+  z-index: 5;
 `;
 
 const FadeInHeaderText = ({ children, delay }: TextProps) => {

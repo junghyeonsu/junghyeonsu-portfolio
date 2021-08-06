@@ -14,6 +14,7 @@ const TextContainer = styled.div`
   font-family: ${REGULAR_TEXT};
   font-size: 3vw;
   line-height: 0.5vw;
+  z-index: 5;
 `;
 
 const BounceFadeInText = ({ children, delay }: TextProps) => {
