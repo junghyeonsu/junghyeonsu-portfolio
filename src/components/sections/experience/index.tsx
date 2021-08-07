@@ -25,7 +25,6 @@ const Container = styled.article`
 const Experience = () => {
   const { setExperienceOffsetTop }: any = useLayoutContext(); // eslint-disable-line 
   const containerRef = useRef<any>(null); // eslint-disable-line
-  const [year, setYear] = useState<number>(2019);
 
   useEffect(() => {
     const containerOffsetTop = containerRef.current.offsetTop;
@@ -41,7 +40,7 @@ const Experience = () => {
       </FadeInLeftTopText>
 
       {/* To do : 연도 별로 나눌 수 있어야 함  */}
-      <ExperienceCardList year={year} setYear={setYear} />
+      <ExperienceCardList />
     </Container>
   );
 };
