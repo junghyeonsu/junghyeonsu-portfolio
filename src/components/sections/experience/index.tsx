@@ -10,6 +10,7 @@ import {
   Underline,
 } from '#/components/common/gsap';
 import ExperienceCardList from '#/components/sections/experience/ExperienceCardList';
+import ExperienceProgress from '#/components/sections/experience/ExperienceProgress';
 
 const Container = styled.article`
   position: relative;
@@ -41,6 +42,7 @@ const Experience = () => {
 
       {/* To do : 연도 별로 나눌 수 있어야 함  */}
       <ExperienceCardList />
+      <ExperienceProgress />
     </Container>
   );
 };

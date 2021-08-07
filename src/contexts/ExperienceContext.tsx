@@ -39,6 +39,7 @@ const ExperienceProvider = ({
   const [xLocation, setXLocation] = useState<number>(0);
   const [year, setYear] = useState<number>(2019);
   const [nowExperienceList, setNowExperienceList] = useState(ExperiencesOf2019);
+  const [nowExperienceIndex, setNowExperienceIndex] = useState(0);
 
   // year 바뀔 때 경험 리스트 변경
   useEffect(() => {
@@ -62,17 +63,28 @@ const ExperienceProvider = ({
     const { length } = nowExperienceList;
     const last = (length - 1) * -100;
     const first = 0;
-    if (xLocation > first) setXLocation(last); // 왼쪽으로 넘어갔을 때
-    if (xLocation < last) setXLocation(first); // 오른쪽으로 넘어갔을 때
+
+    // 왼쪽으로 넘어갔을 때
+    if (xLocation > first) {
+      setXLocation(last);
+      setNowExperienceIndex(length - 1);
+    }
+    // 오른쪽으로 넘어갔을 때
+    if (xLocation < last) {
+      setXLocation(first);
+      setNowExperienceIndex(0);
+    }
   }, [xLocation, nowExperienceList]);
 
   const onClickLeft = useCallback(() => {
     setXLocation(xLocation + 100);
-  }, [xLocation]);
+    setNowExperienceIndex(nowExperienceIndex - 1);
+  }, [xLocation, nowExperienceIndex]);
 
   const onClickRight = useCallback(() => {
     setXLocation(xLocation - 100);
-  }, [xLocation]);
+    setNowExperienceIndex(nowExperienceIndex + 1);
+  }, [xLocation, nowExperienceIndex]);
 
   // 2019년도로 변경하는 함수
   const onClick2019 = useCallback(() => {
@@ -95,6 +107,7 @@ const ExperienceProvider = ({
         xLocation,
         year,
         nowExperienceList,
+        nowExperienceIndex,
 
         setXLocation,
         setYear,
