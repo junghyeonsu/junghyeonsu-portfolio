@@ -9,8 +9,10 @@ import {
   FadeInLeftTopText,
   Underline,
 } from '#/components/common/gsap';
+
 import ExperienceCardList from '#/components/sections/experience/ExperienceCardList';
 import ExperienceProgress from '#/components/sections/experience/ExperienceProgress';
+import ExperienceYearSelect from '#/components/sections/experience/ExperienceYearSelect';
 
 const Container = styled.article`
   position: relative;
@@ -43,6 +45,7 @@ const Experience = () => {
       {/* To do : 연도 별로 나눌 수 있어야 함  */}
       <ExperienceCardList />
       <ExperienceProgress />
+      <ExperienceYearSelect delay={2.5} />
     </Container>
   );
 };

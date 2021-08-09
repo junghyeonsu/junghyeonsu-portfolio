@@ -26,7 +26,7 @@ const FadeOutHeaderText = ({ children, delay }: TextProps) => {
         trigger: target.current,
         toggleActions: 'restart reverse restart restart',
       },
-      top: '-20px',
+      top: '-5px',
       opacity: 0,
       delay,
       duration: 2,
