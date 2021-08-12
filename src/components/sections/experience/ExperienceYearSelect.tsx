@@ -4,7 +4,7 @@ import gsap from 'gsap';
 
 import { Underline } from '#/components/common/gsap';
 import { BOLD_TEXT, REGULAR_TEXT } from '#/constants';
-import { WHITE_UNACTIVE_TEXT_COLOR } from '#/colors';
+import { WHITE_UNACTIVE_TEXT_COLOR, WHITE_HOVER_TEXT_COLOR } from '#/colors';
 import { useExperienceContext } from '#/contexts/ExperienceContext';
 
 interface YearContainerProps {
@@ -15,7 +15,7 @@ const YearContainer = styled.div`
   display: flex;
   align-items: baseline;
   position: absolute;
-  top: 8%;
+  top: 8.2%;
   right: 5%;
   z-index: 5;
   column-gap: 10px;
@@ -25,6 +25,15 @@ const UnSelectYear = styled.div`
   font-size: 2vw;
   color: ${WHITE_UNACTIVE_TEXT_COLOR};
   font-family: ${REGULAR_TEXT};
+  padding: 10px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+
+  :hover {
+    color: ${WHITE_HOVER_TEXT_COLOR};
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+  }
 `;
 
 const SelectYear = styled.div`
