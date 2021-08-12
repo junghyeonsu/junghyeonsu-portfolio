@@ -13,9 +13,9 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   /* background-color: rgba(0, 0, 0, 0.25); */
-  backdrop-filter: blur(20px);
+  /* backdrop-filter: blur(20px); */
   border: 2px solid transparent;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); */
 `;
 
 const ExperienceCard = ({ index }: CardProps) => {

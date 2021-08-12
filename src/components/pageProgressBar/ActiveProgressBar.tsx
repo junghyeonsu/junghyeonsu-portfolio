@@ -12,9 +12,9 @@ import {
 
 const Container = styled.div`
   position: fixed;
-  width: 0.3vw;
+  width: 0.5vw;
   top: ${PROGRESS_BAR_TOP}vh;
-  right: 10px;
+  right: 2vw;
   transition: ${COMMON_TRANSITION};
   z-index: 5;
 `;
@@ -40,7 +40,7 @@ const ActiveProgressBar = () => {
     <Container
       style={{
         height: `${
-          pageOrder * (PROGRESS_BAR_HEIGHT / (PAGE_ORDER.length - 1)) + 1
+          pageOrder * (PROGRESS_BAR_HEIGHT / (PAGE_ORDER.length - 1)) + 0.5
         }vh`,
         background: `${barColor}`,
       }}

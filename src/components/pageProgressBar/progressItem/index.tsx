@@ -21,6 +21,7 @@ const Container = styled.div`
   right: 0.7vw;
   white-space: nowrap;
   transition: ${COMMON_TRANSITION};
+  padding: 10px;
 `;
 
 const ProgressItem = ({ text, order, onClick }: ProgressItemProps) => {
@@ -57,7 +58,7 @@ const ProgressItem = ({ text, order, onClick }: ProgressItemProps) => {
         top: `${order * (97 / (PAGE_ORDER.length - 1))}%`,
         color: `${itemColor}`,
         fontWeight: `${isActive ? 'bold' : 'normal'}`,
-        fontSize: `${isActive ? '1vw' : '0.5vw'}`,
+        fontSize: `${isActive ? '1.8vw' : '1.5vw'}`,
       }}
     >
       {text}

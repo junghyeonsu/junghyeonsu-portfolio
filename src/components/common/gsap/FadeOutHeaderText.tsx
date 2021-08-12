@@ -26,10 +26,10 @@ const FadeOutHeaderText = ({ children, delay }: TextProps) => {
         trigger: target.current,
         toggleActions: 'restart reverse restart restart',
       },
-      top: '-5px',
+      top: '-0.1%',
       opacity: 0,
       delay,
-      duration: 2,
+      duration: 1,
       ease: 'power3.out',
     });
   }, [delay]);

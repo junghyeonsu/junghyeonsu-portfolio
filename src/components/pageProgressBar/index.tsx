@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
@@ -9,12 +9,13 @@ import {
   PROGRESS_BAR_TOP,
 } from '#/constants';
 import ProgressItem from '#/components/pageProgressBar/progressItem';
+import ActiveProgressBar from '#/components/pageProgressBar/ActiveProgressBar';
 
-const Container = styled.div`
+const UnActiveProgressBar = styled.div`
   position: fixed;
-  width: 0.3vw;
+  width: 0.5vw;
   height: ${PROGRESS_BAR_HEIGHT}vh;
-  right: 10px;
+  right: 2vw;
   top: ${PROGRESS_BAR_TOP}vh;
   transition: ${COMMON_TRANSITION};
   z-index: 5;
@@ -28,23 +29,40 @@ const PageProgressBar = () => {
     moveExperienceArticle,
     moveContactArticle,
   }: any = useLayoutContext(); // eslint-disable-line 
+
   const barColor = useMemo(
     () =>
       isWhiteColor ? WHITE_UNACTIVE_TEXT_COLOR : BLACK_UNACTIVE_TEXT_COLOR,
     [isWhiteColor],
   );
+  const [isDevelopement] = useState(false);
 
   return (
-    <Container style={{ background: barColor }}>
-      <ProgressItem onClick={moveIntroArticle} text="Introduction" order={0} />
-      <ProgressItem onClick={moveSkillArticle} text="Skills" order={1} />
-      <ProgressItem
-        onClick={moveExperienceArticle}
-        text="Experiences"
-        order={2}
-      />
-      <ProgressItem onClick={moveContactArticle} text="Contact" order={3} />
-    </Container>
+    <>
+      <ActiveProgressBar />
+      <UnActiveProgressBar style={{ background: barColor }}>
+        {isDevelopement && (
+          <>
+            <ProgressItem
+              onClick={moveIntroArticle}
+              text="Introduction"
+              order={0}
+            />
+            <ProgressItem onClick={moveSkillArticle} text="Skills" order={1} />
+            <ProgressItem
+              onClick={moveExperienceArticle}
+              text="Experiences"
+              order={2}
+            />
+            <ProgressItem
+              onClick={moveContactArticle}
+              text="Contact"
+              order={3}
+            />
+          </>
+        )}
+      </UnActiveProgressBar>
+    </>
   );
 };
 

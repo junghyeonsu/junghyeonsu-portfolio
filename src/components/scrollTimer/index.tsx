@@ -9,6 +9,7 @@ const Container = styled.div`
   font-size: 1.2vw;
   bottom: 38px;
   right: 11px;
+  padding: 10px;
   color: gray;
 `;
 
