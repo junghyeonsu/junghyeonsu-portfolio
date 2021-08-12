@@ -17,37 +17,18 @@ const Container = styled.div`
     translateY(-50%);
 `;
 
-const ButtonCotainer = styled.div`
-  z-index: 5;
-  display: flex;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-`;
-
-const Button = styled.button``;
-
 const ExperienceCardList = () => {
-  const { xLocation, nowExperienceList, onClickLeft, onClickRight }: any =
-    useExperienceContext(); // eslint-disable-line
+  const { xLocation, nowExperienceList }: any = useExperienceContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
 
   return (
-    <>
-      <Container ref={containerRef} xLocation={xLocation}>
-        {nowExperienceList.map(
-          (experience: { id: number; card: JSX.Element }) => (
-            <div key={experience.id}>{experience.card}</div>
-          ),
-        )}
-      </Container>
-
-      <ButtonCotainer>
-        <Button onClick={onClickLeft}>왼쪽</Button>
-        <Button onClick={onClickRight}>오른쪽</Button>
-      </ButtonCotainer>
-    </>
+    <Container ref={containerRef} xLocation={xLocation}>
+      {nowExperienceList.map(
+        (experience: { id: number; card: JSX.Element }) => (
+          <div key={experience.id}>{experience.card}</div>
+        ),
+      )}
+    </Container>
   );
 };
 

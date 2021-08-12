@@ -3,17 +3,18 @@ import styled from 'styled-components';
 
 import { useExperienceContext } from '#/contexts/ExperienceContext';
 
-const Container = styled.div`
-  display: flex;
-  column-gap: 10px;
+const ProgressContainer = styled.div`
+  align-items: center;
   position: absolute;
-  bottom: 3%;
+  bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  column-gap: 10px;
 `;
 
 const UnActiveCircle = styled.div`
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
   height: 10px;
   width: 10px;
   border-radius: 50%;
@@ -29,7 +30,7 @@ const ActiveCircle = styled.div`
 const ExperienceProgress = () => {
   const { nowExperienceList, nowExperienceIndex }: any = useExperienceContext(); // eslint-disable-line
   return (
-    <Container>
+    <ProgressContainer>
       {nowExperienceList.map(
         (item: { id: number; card: JSX.Element }, idx: number) =>
           nowExperienceIndex === idx ? (
@@ -42,7 +43,7 @@ const ExperienceProgress = () => {
             </div>
           ),
       )}
-    </Container>
+    </ProgressContainer>
   );
 };
 

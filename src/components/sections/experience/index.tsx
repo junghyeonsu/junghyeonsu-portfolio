@@ -7,12 +7,14 @@ import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 import {
   FadeOutHeaderText,
   FadeInLeftTopText,
+  FadeInContent,
   Underline,
 } from '#/components/common/gsap';
 
 import ExperienceCardList from '#/components/sections/experience/ExperienceCardList';
 import ExperienceProgress from '#/components/sections/experience/ExperienceProgress';
 import ExperienceYearSelect from '#/components/sections/experience/ExperienceYearSelect';
+import ExperienceChangeButton from '#/components/sections/experience/ExperienceChangeButton';
 
 const Container = styled.article`
   position: relative;
@@ -44,8 +46,13 @@ const Experience = () => {
 
       {/* To do : 연도 별로 나눌 수 있어야 함  */}
       <ExperienceCardList />
-      <ExperienceProgress />
+      <FadeInContent delay={2.5}>
+        <ExperienceProgress />
+      </FadeInContent>
       <ExperienceYearSelect delay={2.5} />
+      <FadeInContent delay={2.5}>
+        <ExperienceChangeButton />
+      </FadeInContent>
     </Container>
   );
 };
