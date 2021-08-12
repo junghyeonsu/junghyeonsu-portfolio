@@ -29,7 +29,7 @@ const FadeInLeftTopText = ({ children, delay }: TextProps) => {
       top: '0%',
       opacity: 0,
       delay,
-      duration: 1.5,
+      duration: 2,
       ease: 'power3.out',
     });
   }, [delay]);

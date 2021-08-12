@@ -13,7 +13,7 @@ import ActiveProgressBar from '#/components/pageProgressBar/ActiveProgressBar';
 
 const UnActiveProgressBar = styled.div`
   position: fixed;
-  width: 0.5vw;
+  width: 0.4vw;
   height: ${PROGRESS_BAR_HEIGHT}vh;
   right: 2vw;
   top: ${PROGRESS_BAR_TOP}vh;

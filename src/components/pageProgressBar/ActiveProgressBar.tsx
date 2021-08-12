@@ -12,7 +12,7 @@ import {
 
 const Container = styled.div`
   position: fixed;
-  width: 0.5vw;
+  width: 0.4vw;
   top: ${PROGRESS_BAR_TOP}vh;
   right: 2vw;
   transition: ${COMMON_TRANSITION};

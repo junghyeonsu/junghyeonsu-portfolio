@@ -40,17 +40,17 @@ const Experience = () => {
   return (
     <Container ref={containerRef}>
       <FadeOutHeaderText delay={1}>Experience</FadeOutHeaderText>
-      <FadeInLeftTopText delay={2.5}>
+      <FadeInLeftTopText delay={3}>
         <Underline delay={3.5}>Experience</Underline>
       </FadeInLeftTopText>
 
-      {/* To do : 연도 별로 나눌 수 있어야 함  */}
-      <ExperienceCardList />
       <FadeInContent delay={2.5}>
+        <ExperienceCardList />
+
         <ExperienceProgress />
-      </FadeInContent>
-      <ExperienceYearSelect delay={2.5} />
-      <FadeInContent delay={2.5}>
+
+        <ExperienceYearSelect />
+
         <ExperienceChangeButton />
       </FadeInContent>
     </Container>

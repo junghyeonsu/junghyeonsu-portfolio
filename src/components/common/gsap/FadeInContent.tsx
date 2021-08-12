@@ -16,7 +16,7 @@ const FadeInContent = ({ children, delay }: TextProps) => {
       },
       opacity: 0,
       delay,
-      duration: 1,
+      duration: 1.5,
       ease: 'power3.out',
     });
   }, [delay]);

@@ -29,7 +29,7 @@ const FadeOutHeaderText = ({ children, delay }: TextProps) => {
       top: '-0.1%',
       opacity: 0,
       delay,
-      duration: 1,
+      duration: 1.2,
       ease: 'power3.out',
     });
   }, [delay]);

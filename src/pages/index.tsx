@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 
+import ExperienceProvider from '#/contexts/ExperienceContext';
 import Introduction from '#/components/sections/introduction';
 import Skill from '#/components/sections/skill';
 import Experience from '#/components/sections/experience';

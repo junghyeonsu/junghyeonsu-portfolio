@@ -28,7 +28,7 @@ const BounceFadeInText = ({ children, delay }: TextProps) => {
       transform: 'scale(0.1)',
       opacity: 0,
       delay,
-      duration: 1,
+      duration: 1.5,
       ease: 'Bounce.easeOut',
     });
   }, [delay]);
