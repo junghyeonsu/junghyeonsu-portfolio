@@ -6,12 +6,12 @@ import { WHITE_BACKGROUND_COLOR, BLACK_TEXT_COLOR } from '#/colors';
 
 import {
   FadeOutHeaderText,
-  FadeInLeftTopText,
   FadeInContent,
   Underline,
 } from '#/components/common/gsap';
 
 import ContactCard from '#/components/sections/contact/ContactCard';
+import ContactTitle from '#/components/sections/contact/ContactTitle';
 
 const Container = styled.article`
   display: flex;
@@ -24,7 +24,7 @@ const Container = styled.article`
 `;
 
 const Contact = () => {
-  const { setContactOffsetTop }: any = useLayoutContext(); // eslint-disable-line 
+  const { setContactOffsetTop }: any = useLayoutContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
 
   useEffect(() => {
@@ -36,13 +36,12 @@ const Contact = () => {
   return (
     <Container ref={containerRef}>
       <FadeOutHeaderText delay={1}>Contact</FadeOutHeaderText>
-      <FadeInLeftTopText delay={2.8}>
-        <Underline delay={3.5}>Contact</Underline>
-      </FadeInLeftTopText>
-
-      {/* <FadeInContent delay={3.5}> */}
-      <ContactCard />
-      {/* </FadeInContent> */}
+      <FadeInContent delay={2.5}>
+        <ContactTitle>
+          <Underline delay={3.5}>Contact</Underline>
+        </ContactTitle>
+        <ContactCard />
+      </FadeInContent>
     </Container>
   );
 };

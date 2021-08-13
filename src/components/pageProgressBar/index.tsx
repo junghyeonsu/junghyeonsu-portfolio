@@ -28,14 +28,14 @@ const PageProgressBar = () => {
     moveSkillArticle,
     moveExperienceArticle,
     moveContactArticle,
-  }: any = useLayoutContext(); // eslint-disable-line 
+  }: any = useLayoutContext(); // eslint-disable-line
 
   const barColor = useMemo(
     () =>
       isWhiteColor ? WHITE_UNACTIVE_TEXT_COLOR : BLACK_UNACTIVE_TEXT_COLOR,
     [isWhiteColor],
   );
-  const [isDevelopement] = useState(false);
+  const [isDevelopement] = useState(true);
 
   return (
     <>
