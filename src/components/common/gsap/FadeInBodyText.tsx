@@ -14,6 +14,7 @@ const BodyTextContainer = styled.p`
   font-family: ${REGULAR_TEXT};
   font-size: 2.5vw;
   line-height: 0.5vw;
+  z-index: 5;
 `;
 
 const FadeInBodyText = ({ children, delay }: TextProps) => {

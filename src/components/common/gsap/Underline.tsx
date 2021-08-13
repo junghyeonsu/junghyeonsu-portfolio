@@ -11,7 +11,6 @@ const UnderlineContainer = styled.span`
   background-image: linear-gradient(transparent 80%, #f8cd07 20%);
   background-size: 0% 100%;
   background-repeat: no-repeat;
-  line-height: 0%;
   z-index: -1;
 `;
 

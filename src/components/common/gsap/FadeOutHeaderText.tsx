@@ -10,11 +10,12 @@ interface TextProps {
 }
 
 const HeaderTextContainer = styled.p`
-  position: relative;
+  position: absolute;
   font-family: ${BOLD_TEXT};
   font-size: 7vw;
   letter-spacing: 2px;
   line-height: 2vw;
+  z-index: 5;
 `;
 
 const FadeOutHeaderText = ({ children, delay }: TextProps) => {
@@ -25,10 +26,10 @@ const FadeOutHeaderText = ({ children, delay }: TextProps) => {
         trigger: target.current,
         toggleActions: 'restart reverse restart restart',
       },
-      top: '-15%',
+      top: '-0.1%',
       opacity: 0,
       delay,
-      duration: 2,
+      duration: 1.2,
       ease: 'power3.out',
     });
   }, [delay]);

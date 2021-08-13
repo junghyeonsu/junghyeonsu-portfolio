@@ -13,6 +13,7 @@ import {
 interface ProgressItemProps {
   text: string;
   order: number;
+  onClick: () => void;
 }
 
 const Container = styled.div`
@@ -20,9 +21,10 @@ const Container = styled.div`
   right: 0.7vw;
   white-space: nowrap;
   transition: ${COMMON_TRANSITION};
+  padding: 10px;
 `;
 
-const ProgressItem = ({ text, order }: ProgressItemProps) => {
+const ProgressItem = ({ text, order, onClick }: ProgressItemProps) => {
   const { isWhiteColor, currentArea }: any = useLayoutContext(); // eslint-disable-line 
   const [itemColor, setItemColor] = useState('');
   const isActive = useMemo(
@@ -51,11 +53,12 @@ const ProgressItem = ({ text, order }: ProgressItemProps) => {
 
   return (
     <Container
+      onClick={onClick}
       style={{
         top: `${order * (97 / (PAGE_ORDER.length - 1))}%`,
         color: `${itemColor}`,
         fontWeight: `${isActive ? 'bold' : 'normal'}`,
-        fontSize: `${isActive ? '1vw' : '0.5vw'}`,
+        fontSize: `${isActive ? '1.8vw' : '1.5vw'}`,
       }}
     >
       {text}

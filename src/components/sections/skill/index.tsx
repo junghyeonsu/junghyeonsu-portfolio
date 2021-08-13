@@ -36,7 +36,7 @@ const Skill = () => {
   return (
     <Container ref={containerRef}>
       <FadeOutHeaderText delay={1}>Skill</FadeOutHeaderText>
-      <FadeInLeftTopText delay={2.5}>
+      <FadeInLeftTopText delay={2.8}>
         <Underline delay={3.5}>Skill</Underline>
       </FadeInLeftTopText>
       <SkillContainer>

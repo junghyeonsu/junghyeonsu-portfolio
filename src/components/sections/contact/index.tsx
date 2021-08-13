@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <Container ref={containerRef}>
       <FadeOutHeaderText delay={1}>Contact</FadeOutHeaderText>
-      <FadeInLeftTopText delay={2.5}>
+      <FadeInLeftTopText delay={2.8}>
         <Underline delay={3.5}>Contact</Underline>
       </FadeInLeftTopText>
     </Container>

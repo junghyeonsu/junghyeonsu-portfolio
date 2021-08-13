@@ -15,6 +15,7 @@ const HeaderTextContainer = styled.p`
   font-size: 7vw;
   letter-spacing: 2px;
   line-height: 2vw;
+  z-index: 5;
 `;
 
 const FadeInHeaderText = ({ children, delay }: TextProps) => {
@@ -28,7 +29,7 @@ const FadeInHeaderText = ({ children, delay }: TextProps) => {
       top: '-15%',
       opacity: 0,
       delay,
-      duration: 2,
+      duration: 1.5,
       ease: 'power3.out',
     });
   }, [delay]);

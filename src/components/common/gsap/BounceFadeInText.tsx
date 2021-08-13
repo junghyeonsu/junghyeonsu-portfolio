@@ -14,6 +14,7 @@ const TextContainer = styled.div`
   font-family: ${REGULAR_TEXT};
   font-size: 3vw;
   line-height: 0.5vw;
+  z-index: 5;
 `;
 
 const BounceFadeInText = ({ children, delay }: TextProps) => {
@@ -27,7 +28,7 @@ const BounceFadeInText = ({ children, delay }: TextProps) => {
       transform: 'scale(0.1)',
       opacity: 0,
       delay,
-      duration: 1,
+      duration: 1.5,
       ease: 'Bounce.easeOut',
     });
   }, [delay]);
