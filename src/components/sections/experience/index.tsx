@@ -40,7 +40,7 @@ const Experience = () => {
   return (
     <Container ref={containerRef}>
       <FadeOutHeaderText delay={1}>Experience</FadeOutHeaderText>
-      <FadeInLeftTopText delay={3}>
+      <FadeInLeftTopText delay={2.8}>
         <Underline delay={3.5}>Experience</Underline>
       </FadeInLeftTopText>
 
