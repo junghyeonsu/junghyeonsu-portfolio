@@ -1,0 +1,8 @@
+.card {
+    transform: rotateY(var(--rotate-y, 0));
+    transform-style: preserve-3d;   
+}
+
+.card.flip {
+     --rotate-y: 180deg;
+}

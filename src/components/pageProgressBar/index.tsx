@@ -35,7 +35,7 @@ const PageProgressBar = () => {
       isWhiteColor ? WHITE_UNACTIVE_TEXT_COLOR : BLACK_UNACTIVE_TEXT_COLOR,
     [isWhiteColor],
   );
-  const [isDevelopement] = useState(true);
+  const [isDevelopement] = useState(false);
 
   return (
     <>

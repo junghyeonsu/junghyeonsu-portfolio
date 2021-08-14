@@ -1,16 +1,21 @@
-import { motion, useMotionValue, useTransform } from 'framer-motion';
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
+import Tilt from 'react-parallax-tilt';
+
+import styles from './ContactCard.module.css';
+import ContactCardBack from '#/components/sections/contact/ContactCardBack';
+import ContactCardFront from '#/components/sections/contact/ContactCardFront';
+import ContactCardRotateButton from '#/components/sections/contact/ContactCardRotateButton';
 
 const CardWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  perspective: 2000;
+  perspective: 5000px;
 `;
 
-const Container = styled(motion.div)`
+const Container = styled.div`
   color: rgba(0, 0, 0, 0.5);
   background-color: rgba(255, 255, 255, 0.8);
 
@@ -25,31 +30,30 @@ const Container = styled(motion.div)`
   justify-content: center;
   align-items: center;
 
-  transform-style: preserve-3d;
-  transform-origin: center center;
+  transition: all 1.5s ease;
 
-  box-shadow: 10px 25px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 25px 100px rgba(0, 0, 0, 0.3);
 `;
 
 const ContactCard = () => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 100], [30, -30]);
-  const rotateY = useTransform(x, [-100, 100], [-30, 30]);
+  const [isFlip, setIsFlip] = useState(false);
+
+  const onClickButton = useCallback(() => {
+    setIsFlip(!isFlip);
+  }, [isFlip]);
 
   return (
-    <CardWrapper>
-      <Container
-        style={{ x, y, rotateX, rotateY, z: 100 }}
-        drag
-        dragElastic={0.16}
-        transition={{ stiffness: 30 }}
-        dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-        whileTap={{ cursor: 'grabbing' }}
-      >
-        카드
-      </Container>
-    </CardWrapper>
+    <>
+      <CardWrapper>
+        <Tilt>
+          <Container className={`${styles.card} ${isFlip ? styles.flip : ''}`}>
+            <ContactCardFront />
+            <ContactCardBack />
+          </Container>
+        </Tilt>
+      </CardWrapper>
+      <ContactCardRotateButton onClickButton={onClickButton} />
+    </>
   );
 };
 
