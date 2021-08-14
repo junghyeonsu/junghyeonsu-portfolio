@@ -10,6 +10,7 @@ const Front = styled.div`
   color: white;
   position: absolute;
   backface-visibility: hidden;
+  transform-style: preserve-3d;
 `;
 
 const Title = styled.div`
