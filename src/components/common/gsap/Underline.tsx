@@ -20,7 +20,7 @@ const Underline = ({ delay, children }: UnderlineProps) => {
     gsap.to(target.current, {
       scrollTrigger: {
         trigger: target.current,
-        toggleActions: 'restart reverse restart restart',
+        toggleActions: 'restart reset restart reset',
       },
       backgroundImage: 'linear-gradient(transparent 80%, #F8CD07 20%)',
       backgroundSize: '100% 100%',
