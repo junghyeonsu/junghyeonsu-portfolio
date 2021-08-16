@@ -34,13 +34,16 @@
 @keyframes wiggle {
     0% {
         transform: translateX(0px) rotateY(180deg);
+        background-color: rgba(255, 255, 255, 0.5);
     }
 
     50% {
         transform: translateX(10px) rotateY(180deg);
+        background-color: rgba(255, 255, 255, 0);
     }
     
     100% {
         transform: translateX(0px) rotateY(180deg);
+        background-color: rgba(255, 255, 255, 0.5);
     }
 }
