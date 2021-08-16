@@ -30,7 +30,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  transition: all 1.5s ease;
+  transition: all 1.2s ease;
 
   box-shadow: 10px 25px 100px rgba(0, 0, 0, 0.3);
 `;
