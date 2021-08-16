@@ -7,36 +7,11 @@ import {
   ColorProps,
 } from '#/contexts/ContactCardContext';
 
+import { CONTACT_COLOR_PICKER } from '#/colors';
+
 interface Color {
   color: string;
 }
-
-const colors = [
-  {
-    card: '#67595E',
-    background: '#A49393',
-    text: '#EED6D3',
-    point: '#E8B4B8',
-  },
-  {
-    card: '#F652A0',
-    background: '#4C5270',
-    text: '#EEEDE7',
-    point: '#0097d8',
-  },
-  {
-    card: '#46c4ff',
-    background: '#46c4ff',
-    text: '#46c4ff',
-    point: '#46c4ff',
-  },
-  {
-    card: '#ff1b5f',
-    background: '#ff1b5f',
-    text: '#ff1b5f',
-    point: '#ff1b5f',
-  },
-];
 
 const Container = styled.div`
   display: flex;
@@ -108,7 +83,7 @@ const ContactColorPicker = () => {
   return (
     <Container className={`${styles.picker} ${isOpen ? styles.open : ''}`}>
       <ColorPicker>
-        {colors.map(palette => {
+        {CONTACT_COLOR_PICKER.map(palette => {
           return (
             <ColorRow
               key={palette.card}

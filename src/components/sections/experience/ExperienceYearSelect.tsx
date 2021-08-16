@@ -3,7 +3,11 @@ import styled from 'styled-components';
 
 import { Underline } from '#/components/common/gsap';
 import { BOLD_TEXT, REGULAR_TEXT } from '#/constants';
-import { WHITE_UNACTIVE_TEXT_COLOR, WHITE_HOVER_TEXT_COLOR } from '#/colors';
+import {
+  WHITE_UNACTIVE_TEXT_COLOR,
+  WHITE_HOVER_TEXT_COLOR,
+  UNDER_LINE_COLOR,
+} from '#/colors';
 import { useExperienceContext } from '#/contexts/ExperienceContext';
 
 const YearContainer = styled.div`
@@ -43,7 +47,7 @@ const ExperienceYearSelect = () => {
 
   const YearOf2019 = useMemo(() => {
     return year === 2019 ? (
-      <Underline delay={0.7}>
+      <Underline color={UNDER_LINE_COLOR} delay={0.7}>
         <SelectYear>2019</SelectYear>
       </Underline>
     ) : (
@@ -53,7 +57,7 @@ const ExperienceYearSelect = () => {
 
   const YearOf2020 = useMemo(() => {
     return year === 2020 ? (
-      <Underline delay={0.7}>
+      <Underline color={UNDER_LINE_COLOR} delay={0.7}>
         <SelectYear>2020</SelectYear>
       </Underline>
     ) : (
@@ -63,7 +67,7 @@ const ExperienceYearSelect = () => {
 
   const YearOf2021 = useMemo(() => {
     return year === 2021 ? (
-      <Underline delay={0.7}>
+      <Underline color={UNDER_LINE_COLOR} delay={0.7}>
         <SelectYear>2021</SelectYear>
       </Underline>
     ) : (

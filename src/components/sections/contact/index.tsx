@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { useContactCardContext } from '#/contexts/ContactCardContext';
-import { WHITE_BACKGROUND_COLOR, BLACK_TEXT_COLOR } from '#/colors';
+import { BLACK_TEXT_COLOR } from '#/colors';
 
 import { FadeOutHeaderText, FadeInContent } from '#/components/common/gsap';
 
@@ -22,7 +22,7 @@ const Container = styled.article`
   align-items: center;
   position: relative;
   height: 100vh;
-  background-color: ${(props: Color) => props.color || WHITE_BACKGROUND_COLOR};
+  background-color: ${(props: Color) => props.color};
   color: ${BLACK_TEXT_COLOR};
 `;
 

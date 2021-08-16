@@ -24,10 +24,10 @@ const ContactCardProvider = ({
   '#fff020';
 
   const [color, setColor] = useState<ColorProps>({
-    card: '#fff020',
-    background: '#fff020',
-    text: '#fff020',
-    point: '#fff020',
+    card: '#2d282a',
+    background: '#ffc6c6',
+    text: '#ffffff',
+    point: '#ff3a4a',
   });
 
   return (
