@@ -27,8 +27,8 @@ export const CONTACT_COLOR_PICKER = [
   {
     card: '#ffdbec',
     background: '#636882',
-    text: '#2c2500',
-    point: '#ff2e2ebb',
+    text: '#161303',
+    point: '#ff0173',
   },
   {
     card: '#e8ffe7',
