@@ -37,7 +37,7 @@ export const CONTACT_COLOR_PICKER = [
     point: '#ff0073',
   },
   {
-    card: '#C7FFD8<div class="copied">Copied</div>',
+    card: '#Ffffff',
     background: '#dadada',
     text: '#3e7fff',
     point: '#000b7e',

@@ -21,8 +21,6 @@ const ContactCardProvider = ({
 }: {
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
 }): ReactElement => {
-  '#fff020';
-
   const [color, setColor] = useState<ColorProps>({
     card: '#2d282a',
     background: '#ffc6c6',

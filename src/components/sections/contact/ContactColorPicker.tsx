@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
-import styles from './ContactColorPicker.module.css';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
+import styles from './ContactColorPicker.module.css';
 import {
   useContactCardContext,
   ColorProps,
@@ -13,6 +14,10 @@ interface Color {
   color: string;
 }
 
+interface Row {
+  isSelect: boolean;
+}
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -20,17 +25,25 @@ const Container = styled.div`
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translate(-200px, -50%);
+  transform: translate(-180px, -50%);
   transition: all 0.5s ease;
+  z-index: 10;
 `;
 
 const Button = styled.div`
   width: 50px;
   height: 50px;
-  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s ease;
+  margin-left: 2px;
+  border-radius: 5px;
 
   :hover {
     cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
   }
 `;
 
@@ -39,8 +52,11 @@ const ColorPicker = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 230px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  row-gap: 10px;
 `;
 
 const ColorRow = styled.div`
@@ -51,6 +67,9 @@ const ColorRow = styled.div`
   column-gap: 10px;
   transition: all 0.3s ease;
   border-radius: 15px;
+  transform: ${(props: Row) => (props.isSelect ? 'scale(1.1)' : 'scale(1)')};
+  background-color: ${(props: Row) =>
+    props.isSelect ? 'rgba(255, 255, 255, 0.7)' : ''};
 
   :hover {
     background-color: rgba(255, 255, 255, 1);
@@ -66,7 +85,7 @@ const ColorCircle = styled.div`
 `;
 
 const ContactColorPicker = () => {
-  const { setColor }: any = useContactCardContext(); // eslint-disable-line
+  const { color, setColor }: any = useContactCardContext(); // eslint-disable-line
   const [isOpen, setIsOpen] = useState(false);
 
   const onClickOpenButton = useCallback(() => {
@@ -75,9 +94,10 @@ const ContactColorPicker = () => {
 
   const onClickColorRow = useCallback(
     (palette: ColorProps) => {
+      setIsOpen(!isOpen);
       setColor(palette);
     },
-    [setColor],
+    [setColor, isOpen],
   );
 
   return (
@@ -88,6 +108,7 @@ const ContactColorPicker = () => {
             <ColorRow
               key={palette.card}
               onClick={() => onClickColorRow(palette)}
+              isSelect={color === palette}
             >
               <ColorCircle color={palette.text} />
               <ColorCircle color={palette.background} />
@@ -97,7 +118,12 @@ const ContactColorPicker = () => {
           );
         })}
       </ColorPicker>
-      <Button onClick={onClickOpenButton}>버튼</Button>
+      <Button
+        className={`${styles.button} ${isOpen ? styles.open : styles.close}`}
+        onClick={onClickOpenButton}
+      >
+        <ChevronRightIcon fontSize="large" />
+      </Button>
     </Container>
   );
 };
