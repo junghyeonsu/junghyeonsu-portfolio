@@ -24,8 +24,8 @@ const ContactCardProvider = ({
   const [color, setColor] = useState<ColorProps>({
     card: '#Ffffff',
     background: '#dadada',
-    text: '#3e7fff',
-    point: '#000b7e',
+    text: '#000b7e',
+    point: '#2285ff',
   });
 
   return (

@@ -34,9 +34,9 @@ const Button = styled.div`
   width: 50px;
   height: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
   transition: all 0.3s ease;
   margin-left: 2px;
   border-radius: 5px;
@@ -45,6 +45,10 @@ const Button = styled.div`
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.5);
   }
+`;
+
+const ButtonText = styled.span`
+  font-size: 10px;
 `;
 
 const ColorPicker = styled.div`
@@ -123,6 +127,7 @@ const ContactColorPicker = () => {
         onClick={onClickOpenButton}
       >
         <ChevronRightIcon fontSize="large" />
+        {!isOpen ? <ButtonText>color pick</ButtonText> : ''}
       </Button>
     </Container>
   );
