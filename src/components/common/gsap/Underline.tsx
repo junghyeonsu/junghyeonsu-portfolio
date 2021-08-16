@@ -2,19 +2,27 @@ import React, { useRef, useEffect, ReactChild, ReactChildren } from 'react';
 import styled from 'styled-components';
 import gsap from 'gsap';
 
+interface Color {
+  color: string;
+}
+
 interface UnderlineProps {
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
   delay: number;
+  color: string;
 }
 
 const UnderlineContainer = styled.span`
-  background-image: linear-gradient(transparent 80%, #f8cd07 20%);
+  background-image: linear-gradient(
+    transparent 80%,
+    ${(props: Color) => props.color} 20%
+  );
   background-size: 0% 100%;
   background-repeat: no-repeat;
   z-index: -1;
 `;
 
-const Underline = ({ delay, children }: UnderlineProps) => {
+const Underline = ({ delay, children, color }: UnderlineProps) => {
   const target = useRef(null);
   useEffect(() => {
     gsap.to(target.current, {
@@ -22,14 +30,18 @@ const Underline = ({ delay, children }: UnderlineProps) => {
         trigger: target.current,
         toggleActions: 'restart reset restart reset',
       },
-      backgroundImage: 'linear-gradient(transparent 80%, #F8CD07 20%)',
+      backgroundImage: `linear-gradient(transparent 80%, ${color} 20%)`,
       backgroundSize: '100% 100%',
       delay,
       duration: 0.6,
       ease: 'expo.out',
     });
-  }, [delay]);
-  return <UnderlineContainer ref={target}>{children}</UnderlineContainer>;
+  }, [delay, color]);
+  return (
+    <UnderlineContainer color={color} ref={target}>
+      {children}
+    </UnderlineContainer>
+  );
 };
 
 export default Underline;

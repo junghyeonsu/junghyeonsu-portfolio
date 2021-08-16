@@ -10,3 +10,5 @@ export const ACTIVE_BAR_BLACK = 'black';
 
 export const WHITE_BACKGROUND_COLOR = '#edf2f7';
 export const BLACK_BACKGROUND_COLOR = '#2d3748';
+
+export const UNDER_LINE_COLOR = '#F8CD07';

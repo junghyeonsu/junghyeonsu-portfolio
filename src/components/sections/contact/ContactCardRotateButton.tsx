@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import CachedIcon from '@material-ui/icons/Cached';
 
+import { useContactCardContext } from '#/contexts/ContactCardContext';
+
 interface ButtonProps {
   onClickButton: () => void;
 }
@@ -21,9 +23,13 @@ const ButtonContainer = styled.div`
 `;
 
 const ContactCardRotateButton = ({ onClickButton }: ButtonProps) => {
+  const { color }: any = useContactCardContext(); // eslint-disable-line
+
   return (
     <ButtonContainer>
-      <CachedIcon fontSize="large" onClick={onClickButton} />
+      <span style={{ color: color.point }}>
+        <CachedIcon fontSize="large" onClick={onClickButton} />
+      </span>
     </ButtonContainer>
   );
 };

@@ -2,7 +2,11 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
-import { WHITE_BACKGROUND_COLOR, BLACK_TEXT_COLOR } from '#/colors';
+import {
+  WHITE_BACKGROUND_COLOR,
+  BLACK_TEXT_COLOR,
+  UNDER_LINE_COLOR,
+} from '#/colors';
 
 import {
   FadeOutHeaderText,
@@ -39,7 +43,9 @@ const Skill = () => {
       <FadeOutHeaderText delay={1}>Skill</FadeOutHeaderText>
       <FadeInContent delay={2.5}>
         <SkillTitle>
-          <Underline delay={3.5}>Skill</Underline>
+          <Underline color={UNDER_LINE_COLOR} delay={3.5}>
+            Skill
+          </Underline>
         </SkillTitle>
       </FadeInContent>
       <SkillContainer>

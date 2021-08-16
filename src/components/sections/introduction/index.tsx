@@ -2,7 +2,11 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
-import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR } from '#/colors';
+import {
+  BLACK_BACKGROUND_COLOR,
+  WHITE_TEXT_COLOR,
+  UNDER_LINE_COLOR,
+} from '#/colors';
 import { COMMON_BODY_WIDTH } from '#/constants';
 
 import {
@@ -39,7 +43,9 @@ const Introduction = () => {
     <Container ref={containerRef}>
       <Body>
         <FadeInHeaderText delay={1}>
-          <Underline delay={4}>정현수</Underline>
+          <Underline color={UNDER_LINE_COLOR} delay={4}>
+            정현수
+          </Underline>
           <span style={{ fontSize: '4vw' }}>입니다</span>
         </FadeInHeaderText>
         <FadeInBodyText delay={2}>

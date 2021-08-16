@@ -6,11 +6,16 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import PublicIcon from '@material-ui/icons/Public';
 
 import { BOLD_TEXT, LIGHT_TEXT } from '#/constants';
+import { useContactCardContext } from '#/contexts/ContactCardContext';
+
+interface Color {
+  color: string;
+}
 
 const Back = styled.div`
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: ${(props: Color) => props.color};
   color: white;
   position: absolute;
   transform: rotateY(180deg);
@@ -24,7 +29,7 @@ const CenterLine = styled.div`
   transform: translate(-50% -50%);
   height: 50%;
   width: 0.5%;
-  background-color: #fff020;
+  background-color: ${(props: Color) => props.color};
 `;
 
 const SNSList = styled.div`
@@ -38,6 +43,7 @@ const SNSList = styled.div`
 
 const Name = styled.div`
   position: absolute;
+  color: ${(props: Color) => props.color};
   font-size: 40px;
   font-family: ${BOLD_TEXT};
   letter-spacing: 5px;
@@ -48,6 +54,7 @@ const Name = styled.div`
 
 const School = styled.div`
   position: absolute;
+  color: ${(props: Color) => props.color};
   font-size: 16px;
   font-family: ${LIGHT_TEXT};
   letter-spacing: 5px;
@@ -60,35 +67,38 @@ const SNSItem = styled.div`
   display: flex;
   column-gap: 10px;
   align-items: center;
+  color: ${(props: Color) => props.color};
 `;
 
 const SNSText = styled.span`
   font-size: 12px;
   font-family: ${LIGHT_TEXT};
   :hover {
-    color: #fff020;
+    color: ${(props: Color) => props.color};
     cursor: pointer;
   }
 `;
 
 const Point = styled.span`
   font-family: ${BOLD_TEXT};
-  color: #fff020;
+  color: ${(props: Color) => props.color};
 `;
 
 const ContactCardBack = () => {
+  const { color }: any = useContactCardContext(); // eslint-disable-line
   return (
-    <Back>
-      <Name>
-        정현수<Point>.</Point>
+    <Back color={color.card}>
+      <Name color={color.text}>
+        정현수<Point color={color.point}>.</Point>
       </Name>
-      <School>
-        Senior<Point>,</Point> CNU<Point>.</Point>
+      <School color={color.text}>
+        Senior<Point color={color.point}>,</Point> CNU
+        <Point color={color.point}>.</Point>
       </School>
       <SNSList>
-        <SNSItem>
+        <SNSItem color={color.text}>
           <GitHubIcon />
-          <SNSText>
+          <SNSText color={color.point}>
             <a
               href="https://github.com/junghyeonsu"
               target="_blank"
@@ -98,9 +108,9 @@ const ContactCardBack = () => {
             </a>
           </SNSText>
         </SNSItem>
-        <SNSItem>
+        <SNSItem color={color.text}>
           <PublicIcon />
-          <SNSText>
+          <SNSText color={color.point}>
             <a
               href="https://junghyeonsu.tistory.com/"
               target="_blank"
@@ -110,9 +120,10 @@ const ContactCardBack = () => {
             </a>
           </SNSText>
         </SNSItem>
-        <SNSItem>
+        <SNSItem color={color.text}>
           <PublicIcon />
-          <SNSText>
+
+          <SNSText color={color.point}>
             <a
               href="https://velog.io/@junghyeonsu"
               target="_blank"
@@ -122,12 +133,13 @@ const ContactCardBack = () => {
             </a>
           </SNSText>
         </SNSItem>
-        <SNSItem>
+        <SNSItem color={color.text}>
           <MailOutlineIcon />
-          <SNSText>jung660317@naver.com</SNSText>
+
+          <SNSText color={color.point}>jung660317@naver.com</SNSText>
         </SNSItem>
       </SNSList>
-      <CenterLine />
+      <CenterLine color={color.point} />
     </Back>
   );
 };

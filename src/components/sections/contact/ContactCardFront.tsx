@@ -2,11 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { BOLD_TEXT } from '#/constants';
+import { useContactCardContext } from '#/contexts/ContactCardContext';
+
+interface Color {
+  color: string;
+}
 
 const Front = styled.div`
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: ${(props: Color) => props.color};
   color: white;
   position: absolute;
   backface-visibility: hidden;
@@ -20,6 +25,7 @@ const Title = styled.div`
   top: 10%;
   left: 5%;
   letter-spacing: 2px;
+  color: ${(props: Color) => props.color};
 `;
 
 const Name = styled.div`
@@ -30,6 +36,7 @@ const Name = styled.div`
   right: 5%;
   z-index: 5;
   letter-spacing: 2px;
+  color: ${(props: Color) => props.color};
 `;
 
 const BottomLine = styled.div`
@@ -38,21 +45,22 @@ const BottomLine = styled.div`
   left: 0%;
   height: 10px;
   width: 100%;
-  background-color: #0978ff;
+  background-color: ${(props: Color) => props.color};
 `;
 
 const Point = styled.span`
-  color: #0978ff;
+  color: ${(props: Color) => props.color};
 `;
 
 const ContactCardFront = () => {
+  const { color }: any = useContactCardContext(); // eslint-disable-line
   return (
-    <Front>
-      <Title>
-        Frontend Developer<Point>.</Point>
+    <Front color={color.card}>
+      <Title color={color.text}>
+        Frontend Developer<Point color={color.point}>.</Point>
       </Title>
-      <Name>정현수</Name>
-      <BottomLine />
+      <Name color={color.text}>정현수</Name>
+      <BottomLine color={color.point} />
     </Front>
   );
 };

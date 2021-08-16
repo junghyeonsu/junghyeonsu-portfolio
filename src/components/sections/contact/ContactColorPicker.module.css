@@ -1,0 +1,3 @@
+.picker.open {
+    transform: translate(0%, -50%);
+}
