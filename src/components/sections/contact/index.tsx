@@ -5,15 +5,12 @@ import { useLayoutContext } from '#/contexts/LayoutContext';
 import { useContactCardContext } from '#/contexts/ContactCardContext';
 import { WHITE_BACKGROUND_COLOR, BLACK_TEXT_COLOR } from '#/colors';
 
-import {
-  FadeOutHeaderText,
-  FadeInContent,
-  Underline,
-} from '#/components/common/gsap';
+import { FadeOutHeaderText, FadeInContent } from '#/components/common/gsap';
 
 import ContactCard from '#/components/sections/contact/ContactCard';
 import ContactTitle from '#/components/sections/contact/ContactTitle';
 import ContactColorPicker from '#/components/sections/contact/ContactColorPicker';
+import ContactUnderline from '#/components/sections/contact/ContactUnderline';
 
 interface Color {
   color: string;
@@ -48,9 +45,7 @@ const Contact = () => {
       </FadeOutHeaderText>
       <FadeInContent delay={2.5}>
         <ContactTitle color={color.text}>
-          <Underline color={color.point} delay={0}>
-            Contact
-          </Underline>
+          <ContactUnderline color={color.point}>Contact</ContactUnderline>
         </ContactTitle>
         <ContactCard />
         <ContactColorPicker />

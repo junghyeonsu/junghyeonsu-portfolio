@@ -19,10 +19,10 @@ const colors = [
     point: '#E8B4B8',
   },
   {
-    card: '#41ff8a',
-    background: '#41ff8a',
-    text: '#41ff8a',
-    point: '#41ff8a',
+    card: '#F652A0',
+    background: '#4C5270',
+    text: '#EEEDE7',
+    point: '#0097d8',
   },
   {
     card: '#46c4ff',
