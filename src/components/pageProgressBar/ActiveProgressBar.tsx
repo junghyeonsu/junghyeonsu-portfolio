@@ -2,12 +2,15 @@ import React, { useEffect, useState, useMemo } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
+import { useContactCardContext } from '#/contexts/ContactCardContext';
+
 import { ACTIVE_BAR_WHITE, ACTIVE_BAR_BLACK } from '#/colors';
 import {
   COMMON_TRANSITION,
   PAGE_ORDER,
   PROGRESS_BAR_HEIGHT,
   PROGRESS_BAR_TOP,
+  CONTACT_ARTICLE_AREA,
 } from '#/constants';
 
 const Container = styled.div`
@@ -16,11 +19,13 @@ const Container = styled.div`
   top: ${PROGRESS_BAR_TOP}vh;
   right: 2vw;
   transition: ${COMMON_TRANSITION};
-  z-index: 5;
+  z-index: 6;
 `;
 
 const ActiveProgressBar = () => {
   const { currentArea, isWhiteColor } = useLayoutContext();
+  const { color }: any = useContactCardContext(); // eslint-disable-line
+
   const [pageOrder, setPageOrder] = useState(0);
 
   useEffect(() => {
@@ -31,10 +36,11 @@ const ActiveProgressBar = () => {
     });
   }, [currentArea]);
 
-  const barColor = useMemo(
-    () => (isWhiteColor ? ACTIVE_BAR_WHITE : ACTIVE_BAR_BLACK),
-    [isWhiteColor],
-  );
+  const barColor = useMemo(() => {
+    if (currentArea === CONTACT_ARTICLE_AREA) return color.point;
+
+    return isWhiteColor ? ACTIVE_BAR_WHITE : ACTIVE_BAR_BLACK;
+  }, [isWhiteColor, currentArea, color]);
 
   return (
     <Container
@@ -42,7 +48,7 @@ const ActiveProgressBar = () => {
         height: `${
           pageOrder * (PROGRESS_BAR_HEIGHT / (PAGE_ORDER.length - 1)) + 0.5
         }vh`,
-        background: `${barColor}`,
+        background: barColor,
       }}
     />
   );

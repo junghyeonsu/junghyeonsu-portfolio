@@ -2,15 +2,20 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
-import { WHITE_BACKGROUND_COLOR, BLACK_TEXT_COLOR } from '#/colors';
+import {
+  WHITE_BACKGROUND_COLOR,
+  BLACK_TEXT_COLOR,
+  UNDER_LINE_COLOR,
+} from '#/colors';
 
 import {
   FadeOutHeaderText,
-  FadeInLeftTopText,
+  FadeInContent,
   Underline,
 } from '#/components/common/gsap';
 import SkillContainer from '#/components/sections/skill/SkillContainer';
 import SkillItem from '#/components/sections/skill/SkillItem';
+import SkillTitle from '#/components/sections/skill/SkillTitle';
 
 const Container = styled.article`
   display: flex;
@@ -24,7 +29,7 @@ const Container = styled.article`
 `;
 
 const Skill = () => {
-  const { setSkillOffsetTop }: any = useLayoutContext(); // eslint-disable-line 
+  const { setSkillOffsetTop }: any = useLayoutContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
 
   useEffect(() => {
@@ -36,9 +41,13 @@ const Skill = () => {
   return (
     <Container ref={containerRef}>
       <FadeOutHeaderText delay={1}>Skill</FadeOutHeaderText>
-      <FadeInLeftTopText delay={2.8}>
-        <Underline delay={3.5}>Skill</Underline>
-      </FadeInLeftTopText>
+      <FadeInContent delay={2.5}>
+        <SkillTitle>
+          <Underline color={UNDER_LINE_COLOR} delay={3.5}>
+            Skill
+          </Underline>
+        </SkillTitle>
+      </FadeInContent>
       <SkillContainer>
         <SkillItem exp={90} delay={2} skill="HTML / CSS" />
         <SkillItem exp={80} delay={2.1} skill="JAVASCRIPT" />
