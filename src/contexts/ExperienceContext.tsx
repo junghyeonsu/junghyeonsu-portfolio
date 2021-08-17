@@ -8,19 +8,22 @@ import React, {
   ReactChildren,
   ReactElement,
 } from 'react';
-import ExperienceCard from '#/components/sections/experience/ExperienceCard';
+
+import Outsourcing from '#/components/sections/experience/cards/2020/Outsourcing';
+import SatrecInitiative from '#/components/sections/experience/cards/2020/SatrecInitiative';
+import Hackerton from '#/components/sections/experience/cards/2021/Hackerton';
+import HayanMind from '#/components/sections/experience/cards/2021/HayanMind';
+import Portfolio from '#/components/sections/experience/cards/2021/Portfolio';
 
 const ExperiencesOf2020 = [
-  { id: 1, card: <ExperienceCard index={4} /> },
-  { id: 2, card: <ExperienceCard index={5} /> },
-  { id: 3, card: <ExperienceCard index={6} /> },
+  { id: 1, card: <Outsourcing /> },
+  { id: 2, card: <SatrecInitiative /> },
 ];
 
 const ExperiencesOf2021 = [
-  { id: 1, card: <ExperienceCard index={7} /> },
-  { id: 2, card: <ExperienceCard index={8} /> },
-  { id: 3, card: <ExperienceCard index={9} /> },
-  { id: 4, card: <ExperienceCard index={10} /> },
+  { id: 1, card: <Hackerton /> },
+  { id: 2, card: <HayanMind /> },
+  { id: 3, card: <Portfolio /> },
 ];
 
 const ExperienceContext = createContext<Record<string, unknown>>({});
