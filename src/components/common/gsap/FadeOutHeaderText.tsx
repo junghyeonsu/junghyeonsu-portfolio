@@ -7,6 +7,7 @@ import { BOLD_TEXT } from '#/constants';
 interface TextProps {
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
   delay: number;
+  color?: string;
 }
 
 const HeaderTextContainer = styled.p`
@@ -18,13 +19,13 @@ const HeaderTextContainer = styled.p`
   z-index: 5;
 `;
 
-const FadeOutHeaderText = ({ children, delay }: TextProps) => {
+const FadeOutHeaderText = ({ children, delay, color }: TextProps) => {
   const target = useRef(null);
   useEffect(() => {
     gsap.to(target.current, {
       scrollTrigger: {
         trigger: target.current,
-        toggleActions: 'restart reverse restart restart',
+        toggleActions: 'restart reset restart reset',
       },
       top: '-0.1%',
       opacity: 0,
@@ -33,7 +34,11 @@ const FadeOutHeaderText = ({ children, delay }: TextProps) => {
       ease: 'power3.out',
     });
   }, [delay]);
-  return <HeaderTextContainer ref={target}>{children}</HeaderTextContainer>;
+  return (
+    <HeaderTextContainer ref={target}>
+      <span style={{ color }}>{children}</span>
+    </HeaderTextContainer>
+  );
 };
 
 export default FadeOutHeaderText;
