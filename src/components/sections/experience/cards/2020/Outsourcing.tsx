@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { FadeInContent } from '#/components/common/gsap';
+import { FADE_IN_DELAY } from '#/constants';
 
 const Container = styled.div`
   display: flex;
@@ -9,12 +10,12 @@ const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: firebrick;
+  background-color: #ff7e28;
 `;
 
 const Component = () => {
   return (
-    <FadeInContent delay={2.5}>
+    <FadeInContent delay={FADE_IN_DELAY}>
       <Container>Outsourcing</Container>
     </FadeInContent>
   );

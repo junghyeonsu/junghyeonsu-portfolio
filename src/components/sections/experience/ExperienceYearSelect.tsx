@@ -2,12 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Underline } from '#/components/common/gsap';
-import { BOLD_TEXT, REGULAR_TEXT } from '#/constants';
-import {
-  WHITE_UNACTIVE_TEXT_COLOR,
-  WHITE_HOVER_TEXT_COLOR,
-  UNDER_LINE_COLOR,
-} from '#/colors';
+import { BOLD_TEXT, REGULAR_TEXT, UNDER_LINE_DELAY } from '#/constants';
+import { WHITE_UNACTIVE_TEXT_COLOR, WHITE_HOVER_TEXT_COLOR } from '#/colors';
+
 import { useExperienceContext } from '#/contexts/ExperienceContext';
 
 interface UnSelectYearProps {
@@ -71,14 +68,14 @@ const YEAR_LIST = [2020, 2021];
 
 const ExperienceYearSelect = () => {
   // eslint-disable-next-line
-  const { year, onClickYear, isActive }: any =
+  const { year, onClickYear, isActive, lineColor }: any =
     useExperienceContext();
 
   return (
     <YearContainer>
       {YEAR_LIST.map(yearItem => {
         return year === yearItem ? (
-          <Underline key={yearItem} color={UNDER_LINE_COLOR} delay={0.7}>
+          <Underline key={yearItem} color={lineColor} delay={UNDER_LINE_DELAY}>
             <SelectYear>{yearItem}</SelectYear>
           </Underline>
         ) : (

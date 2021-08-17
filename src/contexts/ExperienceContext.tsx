@@ -21,9 +21,9 @@ const ExperiencesOf2020 = [
 ];
 
 const ExperiencesOf2021 = [
-  { id: 1, card: <Hackerton /> },
-  { id: 2, card: <HayanMind /> },
-  { id: 3, card: <Portfolio /> },
+  { id: 4, card: <Hackerton /> },
+  { id: 5, card: <HayanMind /> },
+  { id: 6, card: <Portfolio /> },
 ];
 
 const ExperienceContext = createContext<Record<string, unknown>>({});
@@ -38,11 +38,42 @@ const ExperienceProvider = ({
   const [nowExperienceList, setNowExperienceList] = useState(ExperiencesOf2020);
   const [nowExperienceIndex, setNowExperienceIndex] = useState(0);
   const [isActive, setIsActive] = useState(true);
+  const [lineColor, setLineColor] = useState('#F8CD07');
 
+  // 카드 변할 때마다 색 변하는 hook
   useEffect(() => {
-    console.log('nowExperienceIndex', nowExperienceIndex);
-    console.log('year', year);
-  }, [year, nowExperienceIndex, nowExperienceList]);
+    switch (year) {
+      case 2020:
+        // Outsourcing
+        if (nowExperienceIndex === 0) {
+          setLineColor('#292929');
+        }
+        // Satrec I
+        else if (nowExperienceIndex === 1) {
+          setLineColor('#030041');
+        }
+
+        break;
+
+      case 2021:
+        // Hackerton
+        if (nowExperienceIndex === 0) {
+          setLineColor('#00d897');
+        }
+        // HayanMind
+        else if (nowExperienceIndex === 1) {
+          setLineColor('#F6D167');
+        }
+        // Portfolio
+        else if (nowExperienceIndex === 2) {
+          setLineColor('#101820');
+        }
+        break;
+
+      default:
+        break;
+    }
+  }, [year, nowExperienceIndex]);
 
   // year 바뀔 때 경험 리스트 변경
   useEffect(() => {
@@ -100,6 +131,7 @@ const ExperienceProvider = ({
       value={{
         xLocation,
         year,
+        lineColor,
         nowExperienceList,
         nowExperienceIndex,
         isActive,
