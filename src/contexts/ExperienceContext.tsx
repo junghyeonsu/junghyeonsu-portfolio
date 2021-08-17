@@ -10,12 +10,6 @@ import React, {
 } from 'react';
 import ExperienceCard from '#/components/sections/experience/ExperienceCard';
 
-const ExperiencesOf2019 = [
-  { id: 1, card: <ExperienceCard index={1} /> },
-  { id: 2, card: <ExperienceCard index={2} /> },
-  { id: 3, card: <ExperienceCard index={3} /> },
-];
-
 const ExperiencesOf2020 = [
   { id: 1, card: <ExperienceCard index={4} /> },
   { id: 2, card: <ExperienceCard index={5} /> },
@@ -37,16 +31,14 @@ const ExperienceProvider = ({
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
 }): ReactElement => {
   const [xLocation, setXLocation] = useState<number>(0);
-  const [year, setYear] = useState<number>(2019);
-  const [nowExperienceList, setNowExperienceList] = useState(ExperiencesOf2019);
+  const [year, setYear] = useState<number>(2020);
+  const [nowExperienceList, setNowExperienceList] = useState(ExperiencesOf2020);
   const [nowExperienceIndex, setNowExperienceIndex] = useState(0);
+  const [isActive, setIsActive] = useState(true);
 
   // year 바뀔 때 경험 리스트 변경
   useEffect(() => {
     switch (year) {
-      case 2019:
-        setNowExperienceList(ExperiencesOf2019);
-        break;
       case 2020:
         setNowExperienceList(ExperiencesOf2020);
         break;
@@ -86,19 +78,13 @@ const ExperienceProvider = ({
     setNowExperienceIndex(nowExperienceIndex + 1);
   }, [xLocation, nowExperienceIndex]);
 
-  // 2019년도로 변경하는 함수
-  const onClick2019 = useCallback(() => {
-    setYear(2019);
-  }, []);
-
-  // 2020년도로 변경하는 함수
-  const onClick2020 = useCallback(() => {
-    setYear(2020);
-  }, []);
-
-  // 2021년도로 변경하는 함수
-  const onClick2021 = useCallback(() => {
-    setYear(2021);
+  // 연도 변경 함수
+  const onClickYear = useCallback((selectYear: number) => {
+    setYear(selectYear);
+    setIsActive(false);
+    setTimeout(() => {
+      setIsActive(true);
+    }, 3000);
   }, []);
 
   return (
@@ -108,14 +94,11 @@ const ExperienceProvider = ({
         year,
         nowExperienceList,
         nowExperienceIndex,
+        isActive,
 
         setXLocation,
         setYear,
-
-        onClick2019,
-        onClick2020,
-        onClick2021,
-
+        onClickYear,
         onClickLeft,
         onClickRight,
       }}
