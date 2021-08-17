@@ -2,23 +2,22 @@ import React, { useRef, useEffect, ReactChild, ReactChildren } from 'react';
 import styled from 'styled-components';
 import gsap from 'gsap';
 
-import { BOLD_TEXT } from '#/constants';
+import { REGULAR_TEXT } from '#/constants';
 
 interface TextProps {
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
   delay: number;
 }
 
-const HeaderTextContainer = styled.p`
+const TextContainer = styled.div`
   position: relative;
-  font-family: ${BOLD_TEXT};
-  font-size: 7vw;
-  letter-spacing: 2px;
-  line-height: 2vw;
+  font-family: ${REGULAR_TEXT};
+  font-size: 3vw;
+  line-height: 0.5vw;
   z-index: 5;
 `;
 
-const FadeInHeaderText = ({ children, delay }: TextProps) => {
+const BounceFadeInText = ({ children, delay }: TextProps) => {
   const target = useRef(null);
   useEffect(() => {
     gsap.from(target.current, {
@@ -26,14 +25,14 @@ const FadeInHeaderText = ({ children, delay }: TextProps) => {
         trigger: target.current,
         toggleActions: 'restart reverse restart restart',
       },
-      top: '-15%',
+      transform: 'scale(0.1)',
       opacity: 0,
       delay,
       duration: 1.5,
-      ease: 'power3.out',
+      ease: 'Bounce.easeOut',
     });
   }, [delay]);
-  return <HeaderTextContainer ref={target}>{children}</HeaderTextContainer>;
+  return <TextContainer ref={target}>{children}</TextContainer>;
 };
 
-export default FadeInHeaderText;
+export default BounceFadeInText;

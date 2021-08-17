@@ -1,4 +1,4 @@
-export const SCROLL_ACTIVE_VALUE = 20;
+export const SCROLL_ACTIVE_VALUE = 40;
 
 export const INTRO_ARTICLE_AREA = 'introduction article area';
 export const SKILL_ARTICLE_AREA = 'skill article area';

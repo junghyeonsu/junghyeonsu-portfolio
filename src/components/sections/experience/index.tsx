@@ -2,14 +2,11 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
-import {
-  BLACK_BACKGROUND_COLOR,
-  WHITE_TEXT_COLOR,
-  UNDER_LINE_COLOR,
-} from '#/colors';
+import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
 import {
   FadeOutHeaderText,
+  FadeInLeftTopText,
   FadeInContent,
   Underline,
 } from '#/components/common/gsap';
@@ -18,7 +15,6 @@ import ExperienceCardList from '#/components/sections/experience/ExperienceCardL
 import ExperienceProgress from '#/components/sections/experience/ExperienceProgress';
 import ExperienceYearSelect from '#/components/sections/experience/ExperienceYearSelect';
 import ExperienceChangeButton from '#/components/sections/experience/ExperienceChangeButton';
-import ExperienceTitle from '#/components/sections/experience/ExperienceTitle';
 
 const Container = styled.article`
   position: relative;
@@ -32,7 +28,7 @@ const Container = styled.article`
 `;
 
 const Experience = () => {
-  const { setExperienceOffsetTop }: any = useLayoutContext(); // eslint-disable-line
+  const { setExperienceOffsetTop }: any = useLayoutContext(); // eslint-disable-line 
   const containerRef = useRef<any>(null); // eslint-disable-line
 
   useEffect(() => {
@@ -44,15 +40,17 @@ const Experience = () => {
   return (
     <Container ref={containerRef}>
       <FadeOutHeaderText delay={1}>Experience</FadeOutHeaderText>
+      <FadeInLeftTopText delay={2.8}>
+        <Underline delay={3.5}>Experience</Underline>
+      </FadeInLeftTopText>
+
       <FadeInContent delay={2.5}>
-        <ExperienceTitle>
-          <Underline color={UNDER_LINE_COLOR} delay={3.5}>
-            Experience
-          </Underline>
-        </ExperienceTitle>
         <ExperienceCardList />
+
         <ExperienceProgress />
+
         <ExperienceYearSelect />
+
         <ExperienceChangeButton />
       </FadeInContent>
     </Container>

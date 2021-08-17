@@ -1,10 +1,8 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 
+import { COMMON_TRANSITION } from '#/constants';
 import { useLayoutContext } from '#/contexts/LayoutContext';
-import { useContactCardContext } from '#/contexts/ContactCardContext';
-
-import { COMMON_TRANSITION, CONTACT_ARTICLE_AREA } from '#/constants';
 import { BLACK_TEXT_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
 const Container = styled.div`
@@ -19,14 +17,11 @@ const Container = styled.div`
 `;
 
 const ScrollGauge = () => {
-  const { scrollGauge, isWhiteColor, currentArea }: any = useLayoutContext(); // eslint-disable-line 
-  const { color }: any = useContactCardContext(); // eslint-disable-line
-
-  const gaugeColor = useMemo(() => {
-    if (currentArea === CONTACT_ARTICLE_AREA) return color.text;
-
-    return isWhiteColor ? WHITE_TEXT_COLOR : BLACK_TEXT_COLOR;
-  }, [isWhiteColor, currentArea, color]);
+  const { scrollGauge, isWhiteColor }: any = useLayoutContext(); // eslint-disable-line 
+  const gaugeColor = useMemo(
+    () => (isWhiteColor ? WHITE_TEXT_COLOR : BLACK_TEXT_COLOR),
+    [isWhiteColor],
+  );
 
   return <Container style={{ color: gaugeColor }}>{scrollGauge}</Container>;
 };

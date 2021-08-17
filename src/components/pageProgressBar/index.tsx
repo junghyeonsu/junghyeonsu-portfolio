@@ -28,7 +28,7 @@ const PageProgressBar = () => {
     moveSkillArticle,
     moveExperienceArticle,
     moveContactArticle,
-  }: any = useLayoutContext(); // eslint-disable-line
+  }: any = useLayoutContext(); // eslint-disable-line 
 
   const barColor = useMemo(
     () =>

@@ -9,16 +9,15 @@ interface TextProps {
   delay: number;
 }
 
-const HeaderTextContainer = styled.p`
-  position: relative;
+const TextContainer = styled.p`
+  position: absolute;
+  top: 1%;
+  left: 5%;
   font-family: ${BOLD_TEXT};
-  font-size: 7vw;
-  letter-spacing: 2px;
-  line-height: 2vw;
-  z-index: 5;
+  font-size: 3.4vw;
 `;
 
-const FadeInHeaderText = ({ children, delay }: TextProps) => {
+const FadeInLeftTopText = ({ children, delay }: TextProps) => {
   const target = useRef(null);
   useEffect(() => {
     gsap.from(target.current, {
@@ -26,14 +25,14 @@ const FadeInHeaderText = ({ children, delay }: TextProps) => {
         trigger: target.current,
         toggleActions: 'restart reverse restart restart',
       },
-      top: '-15%',
+      top: '-20px',
       opacity: 0,
       delay,
       duration: 1.5,
       ease: 'power3.out',
     });
   }, [delay]);
-  return <HeaderTextContainer ref={target}>{children}</HeaderTextContainer>;
+  return <TextContainer ref={target}>{children}</TextContainer>;
 };
 
-export default FadeInHeaderText;
+export default FadeInLeftTopText;
