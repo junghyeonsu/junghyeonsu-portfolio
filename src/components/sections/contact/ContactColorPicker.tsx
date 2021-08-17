@@ -48,7 +48,7 @@ const Button = styled.div`
 `;
 
 const ButtonText = styled.span`
-  font-size: 10px;
+  font-size: 8px;
 `;
 
 const ColorPicker = styled.div`

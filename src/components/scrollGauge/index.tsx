@@ -23,7 +23,7 @@ const ScrollGauge = () => {
   const { color }: any = useContactCardContext(); // eslint-disable-line
 
   const gaugeColor = useMemo(() => {
-    if (currentArea === CONTACT_ARTICLE_AREA) return color.text;
+    if (currentArea === CONTACT_ARTICLE_AREA) return color.card;
 
     return isWhiteColor ? WHITE_TEXT_COLOR : BLACK_TEXT_COLOR;
   }, [isWhiteColor, currentArea, color]);
