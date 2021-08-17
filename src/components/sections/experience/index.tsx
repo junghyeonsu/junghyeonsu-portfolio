@@ -6,11 +6,7 @@ import { useExperienceContext } from '#/contexts/ExperienceContext';
 
 import { UNDER_LINE_DELAY } from '#/constants';
 
-import {
-  BLACK_BACKGROUND_COLOR,
-  WHITE_TEXT_COLOR,
-  UNDER_LINE_COLOR,
-} from '#/colors';
+import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
 import {
   FadeOutHeaderText,
