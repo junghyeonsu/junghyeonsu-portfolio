@@ -39,6 +39,11 @@ const ExperienceProvider = ({
   const [nowExperienceIndex, setNowExperienceIndex] = useState(0);
   const [isActive, setIsActive] = useState(true);
 
+  useEffect(() => {
+    console.log('nowExperienceIndex', nowExperienceIndex);
+    console.log('year', year);
+  }, [year, nowExperienceIndex, nowExperienceList]);
+
   // year 바뀔 때 경험 리스트 변경
   useEffect(() => {
     switch (year) {
