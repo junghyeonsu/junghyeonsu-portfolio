@@ -28,14 +28,10 @@ const data = {
   date: '2021년 7월 - 2021년 8월',
   bodyTexts: ['나만의 포트폴리오 페이지 개발'],
   hyperlinks: [
-    // {
-    //   href: ' https://github.com/junghyeonsu/tour_react_app',
-    //   text: '깃허브 주소',
-    // },
-    // {
-    //   href: 'https://www.youtube.com/watch?v=decpJ3a0ow0',
-    //   text: '행사 영상',
-    // },
+    {
+      href: 'https://github.com/junghyeonsu/hyeonsu-jung',
+      text: '깃허브 주소',
+    },
   ],
   skills: ['React', 'Typescript', 'NextJS', 'styled-components', 'Vercel'],
 };
