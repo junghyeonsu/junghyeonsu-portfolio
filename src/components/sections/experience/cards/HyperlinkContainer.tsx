@@ -1,7 +1,7 @@
 import React, { ReactChild, ReactChildren } from 'react';
 import styled from 'styled-components';
 
-interface CardBodyProps {
+interface HyperlinkContainerProps {
   children?:
     | ReactChild
     | ReactChildren
@@ -10,10 +10,13 @@ interface CardBodyProps {
     | void[];
 }
 
-const Body = styled.div``;
+const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-const CardBody = ({ children }: CardBodyProps) => {
+const HyperlinkContainer = ({ children }: HyperlinkContainerProps) => {
   return <Body>{children}</Body>;
 };
 
-export default CardBody;
+export default HyperlinkContainer;

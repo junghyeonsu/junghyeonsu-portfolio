@@ -8,6 +8,7 @@ interface SkillListProps {
 const Containr = styled.div`
   position: absolute;
   display: flex;
+  column-gap: 5px;
   bottom: 0;
   right: 0;
 `;

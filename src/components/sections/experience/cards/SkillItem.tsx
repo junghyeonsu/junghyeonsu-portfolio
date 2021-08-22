@@ -17,16 +17,10 @@ const Container = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 15px;
-  height: 30px;
-  column-gap: 5px;
-  border-radius: 7px;
+  font-size: 14px;
+  padding: 5px;
+  transition: all 1s ease;
   background-color: ${(props: Color) => props.color};
-  transition: all 0.3s ease;
-
-  :hover {
-    transform: scale(1.03);
-  }
 `;
 
 const Skill = styled.span`
@@ -34,7 +28,7 @@ const Skill = styled.span`
 `;
 
 const SkillItem = ({ skill }: HyperlinkProps) => {
-    const { lineColor }: any = useExperienceContext(); // eslint-disable-line
+  const { lineColor }: any = useExperienceContext(); // eslint-disable-line
   return (
     <Container color={lineColor}>
       <Skill>{skill}</Skill>
