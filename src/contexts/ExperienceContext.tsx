@@ -16,14 +16,14 @@ import HayanMind from '#/components/sections/experience/cards/2021/HayanMind';
 import Portfolio from '#/components/sections/experience/cards/2021/Portfolio';
 
 const ExperiencesOf2020 = [
-  { id: 1, card: <Outsourcing /> },
-  { id: 2, card: <SatrecInitiative /> },
+  { id: 1, card: <SatrecInitiative /> },
+  { id: 2, card: <Outsourcing /> },
 ];
 
 const ExperiencesOf2021 = [
-  { id: 4, card: <Hackerton /> },
-  { id: 5, card: <HayanMind /> },
-  { id: 6, card: <Portfolio /> },
+  { id: 3, card: <HayanMind /> },
+  { id: 4, card: <Portfolio /> },
+  { id: 5, card: <Hackerton /> },
 ];
 
 const ExperienceContext = createContext<Record<string, unknown>>({});
@@ -34,7 +34,7 @@ const ExperienceProvider = ({
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
 }): ReactElement => {
   const [xLocation, setXLocation] = useState<number>(0);
-  const [year, setYear] = useState<number>(2020);
+  const [year, setYear] = useState<number>(2021);
   const [nowExperienceList, setNowExperienceList] = useState(ExperiencesOf2020);
   const [nowExperienceIndex, setNowExperienceIndex] = useState(0);
   const [isActive, setIsActive] = useState(true);
@@ -44,29 +44,31 @@ const ExperienceProvider = ({
   useEffect(() => {
     switch (year) {
       case 2020:
-        // Outsourcing
-        if (nowExperienceIndex === 0) {
-          setLineColor('#292929');
-        }
         // Satrec I
-        else if (nowExperienceIndex === 1) {
+        if (nowExperienceIndex === 0) {
           setLineColor('#030041');
+        }
+
+        // Outsourcing
+        else if (nowExperienceIndex === 1) {
+          setLineColor('#55B3B1');
         }
 
         break;
 
       case 2021:
-        // Hackerton
-        if (nowExperienceIndex === 0) {
-          setLineColor('#00d897');
-        }
         // HayanMind
-        else if (nowExperienceIndex === 1) {
-          setLineColor('#F6D167');
+        if (nowExperienceIndex === 0) {
+          setLineColor('#ffc831');
         }
         // Portfolio
+        else if (nowExperienceIndex === 1) {
+          setLineColor('#21094E');
+        }
+
+        // Hackerton
         else if (nowExperienceIndex === 2) {
-          setLineColor('#101820');
+          setLineColor('#00d897');
         }
         break;
 

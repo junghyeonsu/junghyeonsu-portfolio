@@ -20,7 +20,7 @@ const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #294aed;
+  background-color: #2c5aa7;
 `;
 
 const data = {

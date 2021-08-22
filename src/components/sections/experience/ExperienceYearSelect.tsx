@@ -64,7 +64,7 @@ const SelectYear = styled.div`
   font-family: ${BOLD_TEXT};
 `;
 
-const YEAR_LIST = [2020, 2021];
+const YEAR_LIST = [2021, 2020];
 
 const ExperienceYearSelect = () => {
   // eslint-disable-next-line
