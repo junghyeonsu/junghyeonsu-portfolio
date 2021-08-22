@@ -1,14 +1,15 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { Underline } from '#/components/common/gsap';
-import { BOLD_TEXT, REGULAR_TEXT } from '#/constants';
-import {
-  WHITE_UNACTIVE_TEXT_COLOR,
-  WHITE_HOVER_TEXT_COLOR,
-  UNDER_LINE_COLOR,
-} from '#/colors';
+import { BOLD_TEXT, REGULAR_TEXT, UNDER_LINE_DELAY } from '#/constants';
+import { WHITE_UNACTIVE_TEXT_COLOR, WHITE_HOVER_TEXT_COLOR } from '#/colors';
+
 import { useExperienceContext } from '#/contexts/ExperienceContext';
+
+interface UnSelectYearProps {
+  isActive: boolean;
+}
 
 const YearContainer = styled.div`
   display: flex;
@@ -27,11 +28,34 @@ const UnSelectYear = styled.div`
   padding: 10px;
   border-radius: 2px;
   transition: all 0.3s ease;
+  animation: init 3s ease;
 
   :hover {
-    color: ${WHITE_HOVER_TEXT_COLOR};
-    background-color: rgba(255, 255, 255, 0.1);
-    cursor: pointer;
+    color: ${(props: UnSelectYearProps) =>
+      props.isActive ? WHITE_HOVER_TEXT_COLOR : ''};
+    background-color: ${(props: UnSelectYearProps) =>
+      props.isActive ? 'rgba(255, 255, 255, 0.1)' : ''};
+    cursor: ${(props: UnSelectYearProps) =>
+      props.isActive ? 'pointer' : 'not-allowed'};
+  }
+
+  @keyframes init {
+    0% {
+      color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0);
+    }
+    80% {
+      color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0);
+    }
+    90% {
+      color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    100% {
+      color: ${WHITE_UNACTIVE_TEXT_COLOR};
+      background-color: rgba(255, 255, 255, 0);
+    }
   }
 `;
 
@@ -40,46 +64,30 @@ const SelectYear = styled.div`
   font-family: ${BOLD_TEXT};
 `;
 
+const YEAR_LIST = [2021, 2020];
+
 const ExperienceYearSelect = () => {
   // eslint-disable-next-line
-  const { year, onClick2019, onClick2020, onClick2021 }: any =
+  const { year, onClickYear, isActive, lineColor }: any =
     useExperienceContext();
-
-  const YearOf2019 = useMemo(() => {
-    return year === 2019 ? (
-      <Underline color={UNDER_LINE_COLOR} delay={0.7}>
-        <SelectYear>2019</SelectYear>
-      </Underline>
-    ) : (
-      <UnSelectYear onClick={onClick2019}>2019</UnSelectYear>
-    );
-  }, [year, onClick2019]);
-
-  const YearOf2020 = useMemo(() => {
-    return year === 2020 ? (
-      <Underline color={UNDER_LINE_COLOR} delay={0.7}>
-        <SelectYear>2020</SelectYear>
-      </Underline>
-    ) : (
-      <UnSelectYear onClick={onClick2020}>2020</UnSelectYear>
-    );
-  }, [year, onClick2020]);
-
-  const YearOf2021 = useMemo(() => {
-    return year === 2021 ? (
-      <Underline color={UNDER_LINE_COLOR} delay={0.7}>
-        <SelectYear>2021</SelectYear>
-      </Underline>
-    ) : (
-      <UnSelectYear onClick={onClick2021}>2021</UnSelectYear>
-    );
-  }, [year, onClick2021]);
 
   return (
     <YearContainer>
-      {YearOf2019}
-      {YearOf2020}
-      {YearOf2021}
+      {YEAR_LIST.map(yearItem => {
+        return year === yearItem ? (
+          <Underline key={yearItem} color={lineColor} delay={UNDER_LINE_DELAY}>
+            <SelectYear>{yearItem}</SelectYear>
+          </Underline>
+        ) : (
+          <UnSelectYear
+            isActive={isActive}
+            key={yearItem}
+            onClick={isActive ? () => onClickYear(yearItem) : undefined}
+          >
+            {yearItem}
+          </UnSelectYear>
+        );
+      })}
     </YearContainer>
   );
 };

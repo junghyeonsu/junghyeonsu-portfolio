@@ -26,3 +26,7 @@ export const PROGRESS_BAR_TOP = 30; // vh
 export const REGULAR_TEXT = 'NEXON Lv2 Gothic';
 export const BOLD_TEXT = 'NEXON Lv2 Gothic Bold';
 export const LIGHT_TEXT = 'NEXON Lv2 Gothic Light';
+
+/* Card */
+export const FADE_IN_DELAY = 0.7;
+export const UNDER_LINE_DELAY = 0.5;

@@ -40,11 +40,11 @@ const Contact = () => {
 
   return (
     <Container color={color.background} ref={containerRef}>
-      <FadeOutHeaderText color={color.text} delay={1}>
+      <FadeOutHeaderText color={color.card} delay={1}>
         Contact
       </FadeOutHeaderText>
       <FadeInContent delay={2.5}>
-        <ContactTitle color={color.text}>
+        <ContactTitle color={color.card}>
           <ContactUnderline color={color.point}>Contact</ContactUnderline>
         </ContactTitle>
         <ContactCard />

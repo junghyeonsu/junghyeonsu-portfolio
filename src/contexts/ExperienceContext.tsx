@@ -8,25 +8,22 @@ import React, {
   ReactChildren,
   ReactElement,
 } from 'react';
-import ExperienceCard from '#/components/sections/experience/ExperienceCard';
 
-const ExperiencesOf2019 = [
-  { id: 1, card: <ExperienceCard index={1} /> },
-  { id: 2, card: <ExperienceCard index={2} /> },
-  { id: 3, card: <ExperienceCard index={3} /> },
-];
+import Outsourcing from '#/components/sections/experience/cards/2020/Outsourcing';
+import SatrecInitiative from '#/components/sections/experience/cards/2020/SatrecInitiative';
+import Hackerton from '#/components/sections/experience/cards/2021/Hackerton';
+import HayanMind from '#/components/sections/experience/cards/2021/HayanMind';
+import Portfolio from '#/components/sections/experience/cards/2021/Portfolio';
 
 const ExperiencesOf2020 = [
-  { id: 1, card: <ExperienceCard index={4} /> },
-  { id: 2, card: <ExperienceCard index={5} /> },
-  { id: 3, card: <ExperienceCard index={6} /> },
+  { id: 1, card: <SatrecInitiative /> },
+  { id: 2, card: <Outsourcing /> },
 ];
 
 const ExperiencesOf2021 = [
-  { id: 1, card: <ExperienceCard index={7} /> },
-  { id: 2, card: <ExperienceCard index={8} /> },
-  { id: 3, card: <ExperienceCard index={9} /> },
-  { id: 4, card: <ExperienceCard index={10} /> },
+  { id: 3, card: <HayanMind /> },
+  { id: 4, card: <Portfolio /> },
+  { id: 5, card: <Hackerton /> },
 ];
 
 const ExperienceContext = createContext<Record<string, unknown>>({});
@@ -37,16 +34,52 @@ const ExperienceProvider = ({
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
 }): ReactElement => {
   const [xLocation, setXLocation] = useState<number>(0);
-  const [year, setYear] = useState<number>(2019);
-  const [nowExperienceList, setNowExperienceList] = useState(ExperiencesOf2019);
+  const [year, setYear] = useState<number>(2021);
+  const [nowExperienceList, setNowExperienceList] = useState(ExperiencesOf2020);
   const [nowExperienceIndex, setNowExperienceIndex] = useState(0);
+  const [isActive, setIsActive] = useState(true);
+  const [lineColor, setLineColor] = useState('#F8CD07');
+
+  // 카드 변할 때마다 색 변하는 hook
+  useEffect(() => {
+    switch (year) {
+      case 2020:
+        // Satrec I
+        if (nowExperienceIndex === 0) {
+          setLineColor('#030041');
+        }
+
+        // Outsourcing
+        else if (nowExperienceIndex === 1) {
+          setLineColor('#55B3B1');
+        }
+
+        break;
+
+      case 2021:
+        // HayanMind
+        if (nowExperienceIndex === 0) {
+          setLineColor('#ffc831');
+        }
+        // Portfolio
+        else if (nowExperienceIndex === 1) {
+          setLineColor('#21094E');
+        }
+
+        // Hackerton
+        else if (nowExperienceIndex === 2) {
+          setLineColor('#00d897');
+        }
+        break;
+
+      default:
+        break;
+    }
+  }, [year, nowExperienceIndex]);
 
   // year 바뀔 때 경험 리스트 변경
   useEffect(() => {
     switch (year) {
-      case 2019:
-        setNowExperienceList(ExperiencesOf2019);
-        break;
       case 2020:
         setNowExperienceList(ExperiencesOf2020);
         break;
@@ -86,19 +119,13 @@ const ExperienceProvider = ({
     setNowExperienceIndex(nowExperienceIndex + 1);
   }, [xLocation, nowExperienceIndex]);
 
-  // 2019년도로 변경하는 함수
-  const onClick2019 = useCallback(() => {
-    setYear(2019);
-  }, []);
-
-  // 2020년도로 변경하는 함수
-  const onClick2020 = useCallback(() => {
-    setYear(2020);
-  }, []);
-
-  // 2021년도로 변경하는 함수
-  const onClick2021 = useCallback(() => {
-    setYear(2021);
+  // 연도 변경 함수
+  const onClickYear = useCallback((selectYear: number) => {
+    setYear(selectYear);
+    setIsActive(false);
+    setTimeout(() => {
+      setIsActive(true);
+    }, 3000);
   }, []);
 
   return (
@@ -106,16 +133,14 @@ const ExperienceProvider = ({
       value={{
         xLocation,
         year,
+        lineColor,
         nowExperienceList,
         nowExperienceIndex,
+        isActive,
 
         setXLocation,
         setYear,
-
-        onClick2019,
-        onClick2020,
-        onClick2021,
-
+        onClickYear,
         onClickLeft,
         onClickRight,
       }}

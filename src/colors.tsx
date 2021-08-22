@@ -31,10 +31,10 @@ export const CONTACT_COLOR_PICKER = [
     point: '#ff0173',
   },
   {
-    card: '#e8ffe7',
-    background: '#28FFBF',
-    text: '#ff1e83',
-    point: '#ff0073',
+    card: '#654062',
+    background: '#FFD66B',
+    text: '#F4F4F4',
+    point: '#FF7600',
   },
   {
     card: '#Ffffff',

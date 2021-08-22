@@ -2,11 +2,11 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
-import {
-  BLACK_BACKGROUND_COLOR,
-  WHITE_TEXT_COLOR,
-  UNDER_LINE_COLOR,
-} from '#/colors';
+import { useExperienceContext } from '#/contexts/ExperienceContext';
+
+import { UNDER_LINE_DELAY } from '#/constants';
+
+import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
 import {
   FadeOutHeaderText,
@@ -33,6 +33,7 @@ const Container = styled.article`
 
 const Experience = () => {
   const { setExperienceOffsetTop }: any = useLayoutContext(); // eslint-disable-line
+  const { lineColor }: any = useExperienceContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
 
   useEffect(() => {
@@ -46,7 +47,7 @@ const Experience = () => {
       <FadeOutHeaderText delay={1}>Experience</FadeOutHeaderText>
       <FadeInContent delay={2.5}>
         <ExperienceTitle>
-          <Underline color={UNDER_LINE_COLOR} delay={3.5}>
+          <Underline color={lineColor} delay={UNDER_LINE_DELAY}>
             Experience
           </Underline>
         </ExperienceTitle>
