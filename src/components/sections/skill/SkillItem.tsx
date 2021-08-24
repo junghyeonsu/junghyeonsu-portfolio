@@ -19,7 +19,13 @@ const ItemContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 65vw;
+  height: 40px;
   color: ${BLACK_TEXT_COLOR};
+  transition: all 0.3s ease;
+
+  :hover {
+    transform: scale(1.05);
+  }
 `;
 
 const SkillNameContainer = styled.div`
@@ -28,15 +34,16 @@ const SkillNameContainer = styled.div`
 
 const SkillBarContainer = styled.div`
   width: 50vw;
-  height: 2vw;
+  height: 25px;
   margin-left: 1.5vw;
   position: relative;
 `;
 
 const Skill = styled.p`
   text-align: right;
-  font-size: 1.5vw;
+  font-size: 1.1vw;
   font-family: ${BOLD_TEXT};
+  margin: 0;
 `;
 
 // usage: 스킬 한 줄을 담고있는 컴포넌트
@@ -46,7 +53,7 @@ const Skill = styled.p`
 const SkillItem = ({ exp, delay, skill }: SkillItemProps) => {
   const [barGuage, setBarGuage] = useState<number>(0);
 
-  const { currentArea }: any = useLayoutContext(); // eslint-disable-line 
+  const { currentArea }: any = useLayoutContext(); // eslint-disable-line
 
   useEffect(() => {
     if (SKILL_ARTICLE_AREA === currentArea) {
@@ -67,8 +74,8 @@ const SkillItem = ({ exp, delay, skill }: SkillItemProps) => {
           <Skill>{skill}</Skill>
         </SkillNameContainer>
         <SkillBarContainer>
-          <SkillBar />
-          <SkillGrowingBar delay={delay} barGuage={barGuage} />
+          <SkillBar delay={delay} barGuage={barGuage} />
+          <SkillGrowingBar barGuage={barGuage} />
         </SkillBarContainer>
       </ItemContainer>
     </FadeInContent>
