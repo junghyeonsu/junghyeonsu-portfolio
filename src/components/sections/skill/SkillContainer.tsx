@@ -16,6 +16,7 @@ const Skills = styled.div`
   color: ${BLACK_TEXT_COLOR};
   margin-right: 5vw;
   row-gap: 1vw;
+  z-index: 5;
 `;
 
 const SkillContainer = ({ children }: Props) => {

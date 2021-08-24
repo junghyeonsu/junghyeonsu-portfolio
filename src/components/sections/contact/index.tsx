@@ -27,7 +27,7 @@ const Container = styled.article`
 `;
 
 const Contact = () => {
-  const { setContactOffsetTop }: any = useLayoutContext(); // eslint-disable-line
+  const { setContactOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
   const { color }: any = useContactCardContext(); // eslint-disable-line
 
   const containerRef = useRef<any>(null); // eslint-disable-line
@@ -35,7 +35,7 @@ const Contact = () => {
   useEffect(() => {
     const containerOffsetTop = containerRef.current.offsetTop;
     setContactOffsetTop(containerOffsetTop);
-  }, [setContactOffsetTop]);
+  }, [setContactOffsetTop, windowWidth]);
 
   return (
     <Container color={color.background} ref={containerRef}>

@@ -9,6 +9,8 @@ import React, {
   ReactElement,
 } from 'react';
 
+import _ from 'lodash';
+
 import {
   SCROLL_ACTIVE_VALUE,
   EXP_ARTICLE_AREA,
@@ -26,6 +28,8 @@ const LayoutProvider = ({
 }: {
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
 }): ReactElement => {
+  const [windowWidth, setWindowWidth] = useState(0);
+
   const [introductionOffsetTop, setIntroductionOffsetTop] = useState(0); // 1
   const [skillOffsetTop, setSkillOffsetTop] = useState(0); // 2
   const [experienceOffsetTop, setExperienceOffsetTop] = useState(0); // 3
@@ -279,13 +283,22 @@ const LayoutProvider = ({
     ],
   );
 
+  // 리사이즈 이벤트
+  // 휠 이벤트
+  const handleResize = useCallback(() => {
+    const { innerWidth } = window; // eslint-disable-line no-undef
+    setWindowWidth(innerWidth);
+  }, []);
+
   // 휠 이벤트 감지
   useEffect(() => {
     window.addEventListener('wheel', handleWheel); // eslint-disable-line no-undef
+    window.addEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
     return () => {
       window.removeEventListener('wheel', handleWheel); // eslint-disable-line no-undef
+      window.removeEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
     };
-  }, [handleWheel]);
+  }, [handleWheel, handleResize]);
 
   // 소개 섹션 이동 함수
   const moveIntroArticle = useCallback(() => {
@@ -327,6 +340,7 @@ const LayoutProvider = ({
         isPossibleMiniMove,
         currentArea,
         isWhiteColor,
+        windowWidth,
         setIntroductionOffsetTop,
         setSkillOffsetTop,
         setExperienceOffsetTop,

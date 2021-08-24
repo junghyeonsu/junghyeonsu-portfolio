@@ -32,14 +32,14 @@ const Container = styled.article`
 `;
 
 const Experience = () => {
-  const { setExperienceOffsetTop }: any = useLayoutContext(); // eslint-disable-line
+  const { setExperienceOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
   const { lineColor }: any = useExperienceContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
 
   useEffect(() => {
     const containerOffsetTop = containerRef.current.offsetTop;
     setExperienceOffsetTop(containerOffsetTop);
-  }, [setExperienceOffsetTop]);
+  }, [setExperienceOffsetTop, windowWidth]);
 
   return (
     <Container ref={containerRef}>
