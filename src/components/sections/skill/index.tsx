@@ -28,13 +28,23 @@ const Container = styled.article`
   color: ${BLACK_TEXT_COLOR};
 `;
 
-const Circle = styled.div`
+const LeftCircle = styled.div`
   position: absolute;
   bottom: 0;
   left: -10%;
   background-color: rgba(0, 0, 0, 0.05);
   width: 30vw;
   height: 30vw;
+  border-radius: 100%;
+`;
+
+const RightCircle = styled.div`
+  position: absolute;
+  top: 0;
+  right: -10%;
+  background-color: rgba(0, 0, 0, 0.03);
+  width: 20vw;
+  height: 20vw;
   border-radius: 100%;
 `;
 
@@ -65,7 +75,8 @@ const Skill = () => {
         <SkillItem exp={50} delay={2.3} skill="NEXT.JS" />
         <SkillItem exp={40} delay={2.3} skill="GIT / GITHUB" />
       </SkillContainer>
-      <Circle />
+      <LeftCircle />
+      <RightCircle />
     </Container>
   );
 };

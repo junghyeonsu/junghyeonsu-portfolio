@@ -1,7 +1,17 @@
 import { DefaultTheme } from 'styled-components';
 import { BLACK_TEXT_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
+const size = {
+  mobile: '600px',
+  laptop: '1200px',
+  desktop: '1800px',
+};
+
 const theme: DefaultTheme = {
+  mobile: `(max-width: ${size.mobile})`,
+  laptop: `(max-width: ${size.laptop})`,
+  desktop: `(min-width: ${size.desktop})`,
+
   basicWidth: '320px',
 
   color: {
