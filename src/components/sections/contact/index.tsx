@@ -34,7 +34,6 @@ const Contact = () => {
 
   useEffect(() => {
     const containerOffsetTop = containerRef.current.offsetTop;
-    console.log('setContactOffsetTop:', containerOffsetTop); // eslint-disable-line
     setContactOffsetTop(containerOffsetTop);
   }, [setContactOffsetTop]);
 

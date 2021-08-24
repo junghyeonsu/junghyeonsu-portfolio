@@ -38,7 +38,6 @@ const Experience = () => {
 
   useEffect(() => {
     const containerOffsetTop = containerRef.current.offsetTop;
-    console.log('setExperienceOffsetTop:', containerOffsetTop); // eslint-disable-line
     setExperienceOffsetTop(containerOffsetTop);
   }, [setExperienceOffsetTop]);
 

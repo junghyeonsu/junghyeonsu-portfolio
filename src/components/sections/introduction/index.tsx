@@ -12,12 +12,15 @@ import { COMMON_BODY_WIDTH } from '#/constants';
 import {
   FadeInHeaderText,
   FadeInBodyText,
+  FadeInContent,
   Underline,
 } from '#/components/common/gsap';
 
+import SvgWithGsap from '#/components/sections/introduction/SvgWithGsap';
+
 const Container = styled.article`
   display: flex;
-  flex-direction: column;
+  position: relative;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -27,6 +30,7 @@ const Container = styled.article`
 
 const Body = styled.div`
   width: ${COMMON_BODY_WIDTH}vw;
+  z-index: 5;
 `;
 
 const Point = styled.span`
@@ -34,12 +38,11 @@ const Point = styled.span`
 `;
 
 const Introduction = () => {
-  const { setIntroductionOffsetTop }: any = useLayoutContext(); // eslint-disable-line 
+  const { setIntroductionOffsetTop }: any = useLayoutContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
 
   useEffect(() => {
     const containerOffsetTop = containerRef.current.offsetTop;
-    console.log('setIntroductionOffsetTop:', containerOffsetTop); // eslint-disable-line
     setIntroductionOffsetTop(containerOffsetTop);
   }, [setIntroductionOffsetTop]);
 
@@ -69,6 +72,9 @@ const Introduction = () => {
           개발자를 꿈꾸고 있습니다<Point>.</Point>
         </FadeInBodyText>
       </Body>
+      <FadeInContent delay={1.9}>
+        <SvgWithGsap delay={2} />
+      </FadeInContent>
     </Container>
   );
 };

@@ -12,7 +12,7 @@ interface TextProps {
 const HeaderTextContainer = styled.p`
   position: relative;
   font-family: ${BOLD_TEXT};
-  font-size: 7vw;
+  font-size: 6vw;
   letter-spacing: 2px;
   line-height: 2vw;
   z-index: 5;
@@ -26,7 +26,7 @@ const FadeInHeaderText = ({ children, delay }: TextProps) => {
         trigger: target.current,
         toggleActions: 'restart reset restart reset',
       },
-      top: '-15%',
+      top: '-10%',
       opacity: 0,
       delay,
       duration: 1.5,

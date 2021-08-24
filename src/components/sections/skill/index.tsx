@@ -34,7 +34,6 @@ const Skill = () => {
 
   useEffect(() => {
     const containerOffsetTop = containerRef.current.offsetTop;
-    console.log('setSkillOffsetTop:', containerOffsetTop); // eslint-disable-line
     setSkillOffsetTop(containerOffsetTop);
   }, [setSkillOffsetTop]);
 
