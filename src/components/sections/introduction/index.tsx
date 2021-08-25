@@ -18,14 +18,19 @@ import {
 
 import SvgWithGsap from '#/components/sections/introduction/SvgWithGsap';
 
-const Container = styled.article`
+const Container = styled.div`
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: calc(var(--vw, 1vw) * 100);
   background-color: ${BLACK_BACKGROUND_COLOR};
   color: ${WHITE_TEXT_COLOR};
+
+  @media ${props => props.theme.mobile} {
+    // 모바일
+  }
 `;
 
 const Body = styled.div`

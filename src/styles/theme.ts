@@ -12,13 +12,6 @@ const theme: DefaultTheme = {
   laptop: `(max-width: ${size.laptop})`,
   desktop: `(min-width: ${size.desktop})`,
 
-  basicWidth: '320px',
-
-  color: {
-    main: 'white',
-    sub: '#fff',
-  },
-
   common: {
     white: {
       text: WHITE_TEXT_COLOR,

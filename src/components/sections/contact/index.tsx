@@ -21,7 +21,8 @@ const Container = styled.article`
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: calc(var(--vw, 1vw) * 100);
   background-color: ${(props: Color) => props.color};
   color: ${BLACK_TEXT_COLOR};
 `;

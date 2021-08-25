@@ -41,6 +41,18 @@ const LayoutProvider = ({
   const [currentArea, setCurrentArea] = useState<string>(INTRO_ARTICLE_AREA);
   const [isWhiteColor, setIsWhiteColor] = useState<boolean>(true);
 
+  // 초기 width, height 설정
+  useEffect(() => {
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    const vw = window.innerWidth * 0.01;
+    const vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vw', `${vw}px`);
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    setWindowWidth(vw * 100);
+  }, []);
+
   // 초기 위치 설정
   useEffect(() => {
     window.scrollTo({ top: introductionOffsetTop });
@@ -284,10 +296,15 @@ const LayoutProvider = ({
   );
 
   // 리사이즈 이벤트
-  // 휠 이벤트
   const handleResize = useCallback(() => {
-    const { innerWidth } = window; // eslint-disable-line no-undef
-    setWindowWidth(innerWidth);
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    const vw = window.innerWidth * 0.01;
+    const vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vw', `${vw}px`);
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    setWindowWidth(vw * 100);
   }, []);
 
   // 휠 이벤트 감지
