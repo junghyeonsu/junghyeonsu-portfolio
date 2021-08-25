@@ -22,20 +22,40 @@ const Container = styled.article`
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  width: calc(var(--vw, 1vw) * 100);
   background-color: ${WHITE_BACKGROUND_COLOR};
   color: ${BLACK_TEXT_COLOR};
 `;
 
+const LeftCircle = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  background-color: rgba(0, 0, 0, 0.05);
+  width: 30vw;
+  height: 30vw;
+  border-radius: 100%;
+`;
+
+const RightCircle = styled.div`
+  position: absolute;
+  top: 0;
+  right: -10%;
+  background-color: rgba(0, 0, 0, 0.03);
+  width: 20vw;
+  height: 20vw;
+  border-radius: 100%;
+`;
+
 const Skill = () => {
-  const { setSkillOffsetTop }: any = useLayoutContext(); // eslint-disable-line
+  const { setSkillOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
 
   useEffect(() => {
     const containerOffsetTop = containerRef.current.offsetTop;
     setSkillOffsetTop(containerOffsetTop);
-  }, [setSkillOffsetTop]);
+  }, [setSkillOffsetTop, windowWidth]);
 
   return (
     <Container ref={containerRef}>
@@ -55,6 +75,8 @@ const Skill = () => {
         <SkillItem exp={50} delay={2.3} skill="NEXT.JS" />
         <SkillItem exp={40} delay={2.3} skill="GIT / GITHUB" />
       </SkillContainer>
+      <LeftCircle />
+      <RightCircle />
     </Container>
   );
 };

@@ -24,7 +24,7 @@ const FadeInHeaderText = ({ children, delay }: TextProps) => {
     gsap.from(target.current, {
       scrollTrigger: {
         trigger: target.current,
-        toggleActions: 'restart reset restart reset',
+        toggleActions: 'restart reverse restart reverse',
       },
       top: '-10%',
       opacity: 0,

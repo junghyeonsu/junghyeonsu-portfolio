@@ -13,8 +13,10 @@ const Container = styled.div`
   top: 50%;
   left: 0;
   transition: transform 1s ease;
-  transform: translateX(${(props: ContainerProps) => props.xLocation}vw)
-    translateY(-50%);
+  transform: translate(
+    calc(var(--vw, 1vw) * ${(props: ContainerProps) => props.xLocation}),
+    -50%
+  );
 `;
 
 const ExperienceCardList = () => {
