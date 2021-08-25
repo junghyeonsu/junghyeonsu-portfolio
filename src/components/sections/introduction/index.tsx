@@ -29,7 +29,7 @@ const Container = styled.div`
   color: ${WHITE_TEXT_COLOR};
 
   @media ${props => props.theme.mobile} {
-    // 모바일
+    /* color: black; */
   }
 `;
 

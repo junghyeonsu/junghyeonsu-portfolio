@@ -8,9 +8,9 @@ const size = {
 };
 
 const theme: DefaultTheme = {
-  mobile: `(max-width: ${size.mobile})`,
-  laptop: `(max-width: ${size.laptop})`,
-  desktop: `(min-width: ${size.desktop})`,
+  mobile: `screen and (max-width: ${size.mobile})`,
+  laptop: `screen and (max-width: ${size.laptop})`,
+  desktop: `screen and (min-width: ${size.desktop})`,
 
   common: {
     white: {
