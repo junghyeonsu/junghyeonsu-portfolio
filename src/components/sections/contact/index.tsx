@@ -21,14 +21,13 @@ const Container = styled.article`
   justify-content: center;
   align-items: center;
   position: relative;
-  height: calc(var(--vh, 1vh) * 100);
-  width: calc(var(--vw, 1vw) * 100);
+  height: 100vh;
   background-color: ${(props: Color) => props.color};
   color: ${BLACK_TEXT_COLOR};
 `;
 
 const Contact = () => {
-  const { setContactOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
+  const { setContactOffsetTop }: any = useLayoutContext(); // eslint-disable-line
   const { color }: any = useContactCardContext(); // eslint-disable-line
 
   const containerRef = useRef<any>(null); // eslint-disable-line
@@ -36,7 +35,7 @@ const Contact = () => {
   useEffect(() => {
     const containerOffsetTop = containerRef.current.offsetTop;
     setContactOffsetTop(containerOffsetTop);
-  }, [setContactOffsetTop, windowWidth]);
+  }, [setContactOffsetTop]);
 
   return (
     <Container color={color.background} ref={containerRef}>

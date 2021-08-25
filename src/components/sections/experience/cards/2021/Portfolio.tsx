@@ -18,8 +18,8 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(var(--vh, 1vh) * 100);
-  width: calc(var(--vw, 1vw) * 100);
+  width: 100vw;
+  height: 100vh;
   background-color: #511281;
 `;
 

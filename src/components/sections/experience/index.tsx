@@ -25,21 +25,21 @@ const Container = styled.article`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(var(--vh, 1vh) * 100);
-  width: calc(var(--vw, 1vw) * 100);
+  height: 100vh;
+  width: 100%;
   background-color: ${BLACK_BACKGROUND_COLOR};
   color: ${WHITE_TEXT_COLOR};
 `;
 
 const Experience = () => {
-  const { setExperienceOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
+  const { setExperienceOffsetTop }: any = useLayoutContext(); // eslint-disable-line
   const { lineColor }: any = useExperienceContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
 
   useEffect(() => {
     const containerOffsetTop = containerRef.current.offsetTop;
     setExperienceOffsetTop(containerOffsetTop);
-  }, [setExperienceOffsetTop, windowWidth]);
+  }, [setExperienceOffsetTop]);
 
   return (
     <Container ref={containerRef}>

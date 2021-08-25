@@ -13,10 +13,7 @@ import PageProgressBar from '#/components/pageProgressBar';
 
 // import { useLayoutContext } from '#/contexts/LayoutContext';
 
-const Section = styled.section`
-  display: flex;
-  flex-direction: column;
-`;
+const Section = styled.section``;
 
 export default function Main() {
   // const { isPossibleMove, isPossibleMiniMove }: any = useLayoutContext(); // eslint-disable-line
@@ -26,10 +23,6 @@ export default function Main() {
       <Head>
         <title>Hyeonsu Jung</title>
         <meta name="description" content="Hyeonsu Jung's portfolio" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1"
-        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>

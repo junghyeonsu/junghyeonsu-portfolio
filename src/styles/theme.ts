@@ -1,16 +1,13 @@
 import { DefaultTheme } from 'styled-components';
 import { BLACK_TEXT_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
-const size = {
-  mobile: '600px',
-  laptop: '1200px',
-  desktop: '1800px',
-};
-
 const theme: DefaultTheme = {
-  mobile: `screen and (max-width: ${size.mobile})`,
-  laptop: `screen and (max-width: ${size.laptop})`,
-  desktop: `screen and (min-width: ${size.desktop})`,
+  basicWidth: '320px',
+
+  color: {
+    main: 'white',
+    sub: '#fff',
+  },
 
   common: {
     white: {

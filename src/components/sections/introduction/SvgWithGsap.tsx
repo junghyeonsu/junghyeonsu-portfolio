@@ -10,10 +10,9 @@ interface SvgWithGsapProps {
 
 const ImageBox = styled.div`
   position: absolute;
-  top: 10%;
+  top: 0;
   right: 0;
   width: 50vw;
-  height: 10vh;
 `;
 
 const SvgWithGsap = ({ delay }: SvgWithGsapProps) => {
@@ -25,7 +24,7 @@ const SvgWithGsap = ({ delay }: SvgWithGsapProps) => {
         trigger: containerRef.current,
         toggleActions: 'restart reverse restart reverse',
       },
-      top: '30%',
+      top: '50%',
       delay,
       duration: 2,
       ease: 'elastic.out',
