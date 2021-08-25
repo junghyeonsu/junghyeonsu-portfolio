@@ -9,6 +9,8 @@ import React, {
   ReactElement,
 } from 'react';
 
+import _ from 'lodash';
+
 import {
   SCROLL_ACTIVE_VALUE,
   EXP_ARTICLE_AREA,
@@ -26,6 +28,8 @@ const LayoutProvider = ({
 }: {
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
 }): ReactElement => {
+  const [windowWidth, setWindowWidth] = useState(0);
+
   const [introductionOffsetTop, setIntroductionOffsetTop] = useState(0); // 1
   const [skillOffsetTop, setSkillOffsetTop] = useState(0); // 2
   const [experienceOffsetTop, setExperienceOffsetTop] = useState(0); // 3
@@ -36,6 +40,18 @@ const LayoutProvider = ({
   const [isPossibleMiniMove, setIsPossibleMiniMove] = useState<boolean>(true);
   const [currentArea, setCurrentArea] = useState<string>(INTRO_ARTICLE_AREA);
   const [isWhiteColor, setIsWhiteColor] = useState<boolean>(true);
+
+  // 초기 width, height 설정
+  useEffect(() => {
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    const vw = window.innerWidth * 0.01;
+    const vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vw', `${vw}px`);
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    setWindowWidth(vw * 100);
+  }, []);
 
   // 초기 위치 설정
   useEffect(() => {
@@ -279,13 +295,27 @@ const LayoutProvider = ({
     ],
   );
 
+  // 리사이즈 이벤트
+  const handleResize = useCallback(() => {
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    const vw = window.innerWidth * 0.01;
+    const vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vw', `${vw}px`);
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    setWindowWidth(vw * 100);
+  }, []);
+
   // 휠 이벤트 감지
   useEffect(() => {
     window.addEventListener('wheel', handleWheel); // eslint-disable-line no-undef
+    window.addEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
     return () => {
       window.removeEventListener('wheel', handleWheel); // eslint-disable-line no-undef
+      window.removeEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
     };
-  }, [handleWheel]);
+  }, [handleWheel, handleResize]);
 
   // 소개 섹션 이동 함수
   const moveIntroArticle = useCallback(() => {
@@ -327,6 +357,7 @@ const LayoutProvider = ({
         isPossibleMiniMove,
         currentArea,
         isWhiteColor,
+        windowWidth,
         setIntroductionOffsetTop,
         setSkillOffsetTop,
         setExperienceOffsetTop,
