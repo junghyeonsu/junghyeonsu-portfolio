@@ -16,10 +16,14 @@ const Container = styled.div`
   padding: 10px;
   transition: ${COMMON_TRANSITION};
   z-index: 5;
+
+  @media ${props => props.theme.mobile} {
+    font-size: 5vw;
+  }
 `;
 
 const ScrollGauge = () => {
-  const { scrollGauge, isWhiteColor, currentArea }: any = useLayoutContext(); // eslint-disable-line 
+  const { scrollGauge, isWhiteColor, currentArea }: any = useLayoutContext(); // eslint-disable-line
   const { color }: any = useContactCardContext(); // eslint-disable-line
 
   const gaugeColor = useMemo(() => {

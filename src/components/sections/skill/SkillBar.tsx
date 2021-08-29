@@ -17,6 +17,10 @@ const FullBar = styled.div`
   height: 25px;
   border-radius: 5px;
   background-color: #ffffff;
+
+  @media ${props => props.theme.mobile} {
+    height: 20px;
+  }
 `;
 
 const CounterBox = styled.div`
@@ -27,6 +31,10 @@ const CounterBox = styled.div`
   font-size: 0.8vw;
   margin-right: 5px;
   z-index: 5;
+
+  @media ${props => props.theme.mobile} {
+    font-size: 2vw;
+  }
 `;
 
 // usage: 바 디자인을 위한 컴포넌트

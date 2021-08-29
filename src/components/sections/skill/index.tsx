@@ -36,6 +36,12 @@ const LeftCircle = styled.div`
   width: 30vw;
   height: 30vw;
   border-radius: 100%;
+
+  @media ${props => props.theme.mobile} {
+    left: -20%;
+    width: 60vw;
+    height: 60vw;
+  }
 `;
 
 const RightCircle = styled.div`
@@ -46,6 +52,12 @@ const RightCircle = styled.div`
   width: 20vw;
   height: 20vw;
   border-radius: 100%;
+
+  @media ${props => props.theme.mobile} {
+    right: -20%;
+    width: 40vw;
+    height: 40vw;
+  }
 `;
 
 const Skill = () => {
