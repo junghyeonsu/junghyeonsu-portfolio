@@ -9,12 +9,10 @@ import {
 } from '#/colors';
 import { COMMON_BODY_WIDTH } from '#/constants';
 
-import {
-  FadeInHeaderText,
-  FadeInBodyText,
-  FadeInContent,
-  Underline,
-} from '#/components/common/gsap';
+import { FadeInContent, Underline } from '#/components/common/gsap';
+
+import FadeInBodyText from '#/components/sections/introduction/FadeInBodyText';
+import FadeInHeaderText from '#/components/sections/introduction/FadeInHeaderText';
 
 import SvgWithGsap from '#/components/sections/introduction/SvgWithGsap';
 
@@ -27,15 +25,15 @@ const Container = styled.div`
   width: 100vw;
   background-color: ${BLACK_BACKGROUND_COLOR};
   color: ${WHITE_TEXT_COLOR};
-
-  @media ${props => props.theme.mobile} {
-    /* color: black; */
-  }
 `;
 
 const Body = styled.div`
   width: ${COMMON_BODY_WIDTH}vw;
   z-index: 5;
+
+  @media ${props => props.theme.mobile} {
+    width: 90vw;
+  }
 `;
 
 const Point = styled.span`
