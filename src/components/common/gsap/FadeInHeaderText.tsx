@@ -16,6 +16,10 @@ const HeaderTextContainer = styled.p`
   letter-spacing: 2px;
   line-height: 2vw;
   z-index: 5;
+
+  @media ${props => props.theme.mobile} {
+    font-size: 10vw;
+  }
 `;
 
 const FadeInHeaderText = ({ children, delay }: TextProps) => {

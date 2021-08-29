@@ -7,13 +7,12 @@ import { BOLD_TEXT } from '#/constants';
 interface TextProps {
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
   delay: number;
-  color?: string;
 }
 
 const HeaderTextContainer = styled.p`
-  position: absolute;
+  position: relative;
   font-family: ${BOLD_TEXT};
-  font-size: 7vw;
+  font-size: 6vw;
   letter-spacing: 2px;
   line-height: 2vw;
   z-index: 5;
@@ -23,26 +22,22 @@ const HeaderTextContainer = styled.p`
   }
 `;
 
-const FadeOutHeaderText = ({ children, delay, color }: TextProps) => {
+const FadeInHeaderText = ({ children, delay }: TextProps) => {
   const target = useRef(null);
   useEffect(() => {
-    gsap.to(target.current, {
+    gsap.from(target.current, {
       scrollTrigger: {
         trigger: target.current,
-        toggleActions: 'restart reset restart reset',
+        toggleActions: 'restart reverse restart reverse',
       },
-      top: '-0.1%',
+      top: '-10%',
       opacity: 0,
       delay,
-      duration: 1.2,
+      duration: 1.5,
       ease: 'power3.out',
     });
   }, [delay]);
-  return (
-    <HeaderTextContainer ref={target}>
-      <span style={{ color }}>{children}</span>
-    </HeaderTextContainer>
-  );
+  return <HeaderTextContainer ref={target}>{children}</HeaderTextContainer>;
 };
 
-export default FadeOutHeaderText;
+export default FadeInHeaderText;

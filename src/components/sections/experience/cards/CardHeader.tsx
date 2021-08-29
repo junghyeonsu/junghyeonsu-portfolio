@@ -13,10 +13,20 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 36px;
+  font-size: 34px;
+
+  @media ${props => props.theme.mobile} {
+    font-size: 5vw;
+  }
 `;
 
-const Date = styled.p``;
+const Date = styled.p`
+  font-size: 12px;
+
+  @media ${props => props.theme.mobile} {
+    font-size: 2.6vw;
+  }
+`;
 
 const CardTitle = ({ title, date }: CardTitleProps) => {
   return (

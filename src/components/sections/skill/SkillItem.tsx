@@ -26,10 +26,22 @@ const ItemContainer = styled.div`
   :hover {
     transform: scale(1.05);
   }
+
+  @media ${props => props.theme.mobile} {
+    align-items: baseline;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 80vw;
+    height: 50px;
+  }
 `;
 
 const SkillNameContainer = styled.div`
   width: 15vw;
+
+  @media ${props => props.theme.mobile} {
+    width: 80vw;
+  }
 `;
 
 const SkillBarContainer = styled.div`
@@ -37,6 +49,12 @@ const SkillBarContainer = styled.div`
   height: 25px;
   margin-left: 1.5vw;
   position: relative;
+
+  @media ${props => props.theme.mobile} {
+    width: 100%;
+    height: 25px;
+    margin-left: 0;
+  }
 `;
 
 const Skill = styled.p`
@@ -44,6 +62,12 @@ const Skill = styled.p`
   font-size: 1.1vw;
   font-family: ${BOLD_TEXT};
   margin: 0;
+
+  @media ${props => props.theme.mobile} {
+    text-align: left;
+    font-size: 2.8vw;
+    margin-bottom: 5px;
+  }
 `;
 
 // usage: 스킬 한 줄을 담고있는 컴포넌트

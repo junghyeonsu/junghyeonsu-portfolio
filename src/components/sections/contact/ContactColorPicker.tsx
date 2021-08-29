@@ -28,6 +28,10 @@ const Container = styled.div`
   transform: translate(-180px, -50%);
   transition: all 0.5s ease;
   z-index: 10;
+
+  @media ${props => props.theme.mobile} {
+    top: 75%;
+  }
 `;
 
 const Button = styled.div`
@@ -44,6 +48,11 @@ const Button = styled.div`
   :hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media ${props => props.theme.mobile} {
+    width: 30px;
+    height: 30px;
   }
 `;
 
@@ -126,8 +135,8 @@ const ContactColorPicker = () => {
         className={`${styles.button} ${isOpen ? styles.open : styles.close}`}
         onClick={onClickOpenButton}
       >
-        <ChevronRightIcon fontSize="large" />
-        {!isOpen ? <ButtonText>color pick</ButtonText> : ''}
+        <ChevronRightIcon fontSize="small" />
+        {!isOpen ? <ButtonText>color</ButtonText> : ''}
       </Button>
     </Container>
   );

@@ -13,6 +13,11 @@ const TextContainer = styled.div`
   font-family: ${BOLD_TEXT};
   font-size: 3.4vw;
   z-index: 5;
+
+  @media ${props => props.theme.mobile} {
+    top: 3%;
+    font-size: 8vw;
+  }
 `;
 
 const SkillTitle = ({ children }: TextProps) => {

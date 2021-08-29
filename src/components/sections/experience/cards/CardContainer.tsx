@@ -10,14 +10,15 @@ const Container = styled.div`
   flex-direction: column;
   position: relative;
 
-  min-width: 474px;
-  min-height: 300px;
   width: 79vw;
-  height: 48vh;
-  max-width: 800px;
-  /* max-height: 600px; */
+  height: 55vh;
 
   /* background-color: rgba(255, 255, 255, 0.05); */
+
+  @media ${props => props.theme.mobile} {
+    width: 85vw;
+    height: 50vh;
+  }
 `;
 
 const CardContainer = ({ children }: CardContainerProps) => {

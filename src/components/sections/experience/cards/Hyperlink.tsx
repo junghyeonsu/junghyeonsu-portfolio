@@ -14,6 +14,11 @@ const Containr = styled.div`
   padding: 5px;
   transition: all 0.3s ease;
 
+  @media ${props => props.theme.mobile} {
+    column-gap: 1vw;
+    padding: 1vw;
+  }
+
   :hover {
     background-color: rgba(0, 0, 0, 0.2);
   }
@@ -21,6 +26,10 @@ const Containr = styled.div`
 
 const Link = styled.a`
   width: 100%;
+
+  @media ${props => props.theme.mobile} {
+    font-size: 3vw;
+  }
 `;
 
 const Hyperlink = ({ href, text }: HyperlinkProps) => {

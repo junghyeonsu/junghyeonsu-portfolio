@@ -20,6 +20,11 @@ const GrowBar = styled.div`
   width: ${(props: GrowBarProps) => (ROOT_WIDTH / 100) * props.barGuage}vw;
   background-color: #ffd82a;
   transition: width 3s ease;
+
+  @media ${props => props.theme.mobile} {
+    width: ${(props: GrowBarProps) => (80 / 100) * props.barGuage}vw;
+    height: 20px;
+  }
 `;
 
 // usage: 바 디자인을 위한 컴포넌트

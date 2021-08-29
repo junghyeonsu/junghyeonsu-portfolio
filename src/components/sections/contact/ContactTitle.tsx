@@ -19,6 +19,10 @@ const TextContainer = styled.div`
   font-size: 3.4vw;
   z-index: 5;
   color: ${(props: Color) => props.color};
+
+  @media ${props => props.theme.mobile} {
+    font-size: 7vw;
+  }
 `;
 
 const ContactTitle = ({ children, color }: TextProps) => {

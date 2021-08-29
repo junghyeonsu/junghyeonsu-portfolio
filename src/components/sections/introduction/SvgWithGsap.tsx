@@ -14,6 +14,10 @@ const ImageBox = styled.div`
   right: 0;
   width: 50vw;
   height: 10vh;
+
+  @media ${props => props.theme.mobile} {
+    width: 70vw;
+  }
 `;
 
 const SvgWithGsap = ({ delay }: SvgWithGsapProps) => {

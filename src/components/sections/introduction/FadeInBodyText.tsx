@@ -2,47 +2,41 @@ import React, { useRef, useEffect, ReactChild, ReactChildren } from 'react';
 import styled from 'styled-components';
 import gsap from 'gsap';
 
-import { BOLD_TEXT } from '#/constants';
+import { REGULAR_TEXT } from '#/constants';
 
 interface TextProps {
   children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
   delay: number;
-  color?: string;
 }
 
-const HeaderTextContainer = styled.p`
-  position: absolute;
-  font-family: ${BOLD_TEXT};
-  font-size: 7vw;
-  letter-spacing: 2px;
-  line-height: 2vw;
+const BodyTextContainer = styled.p`
+  position: relative;
+  font-family: ${REGULAR_TEXT};
+  font-size: 2.5vw;
+  line-height: 0.5vw;
   z-index: 5;
 
   @media ${props => props.theme.mobile} {
-    font-size: 13vw;
+    font-size: 4.5vw;
   }
 `;
 
-const FadeOutHeaderText = ({ children, delay, color }: TextProps) => {
+const FadeInBodyText = ({ children, delay }: TextProps) => {
   const target = useRef(null);
   useEffect(() => {
-    gsap.to(target.current, {
+    gsap.from(target.current, {
       scrollTrigger: {
         trigger: target.current,
         toggleActions: 'restart reset restart reset',
       },
-      top: '-0.1%',
+      top: '-15%',
       opacity: 0,
       delay,
-      duration: 1.2,
+      duration: 1.5,
       ease: 'power3.out',
     });
   }, [delay]);
-  return (
-    <HeaderTextContainer ref={target}>
-      <span style={{ color }}>{children}</span>
-    </HeaderTextContainer>
-  );
+  return <BodyTextContainer ref={target}>{children}</BodyTextContainer>;
 };
 
-export default FadeOutHeaderText;
+export default FadeInBodyText;
