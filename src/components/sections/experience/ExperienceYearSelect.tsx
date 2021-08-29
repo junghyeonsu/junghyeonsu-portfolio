@@ -21,7 +21,7 @@ const YearContainer = styled.div`
   column-gap: 10px;
 
   @media ${props => props.theme.mobile} {
-    top: 3%;
+    top: 7%;
     font-size: 7vw;
   }
 `;

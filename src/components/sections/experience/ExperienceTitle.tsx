@@ -15,7 +15,7 @@ const TextContainer = styled.div`
   z-index: 5;
 
   @media ${props => props.theme.mobile} {
-    top: 3%;
+    top: 7%;
     font-size: 7vw;
   }
 `;
