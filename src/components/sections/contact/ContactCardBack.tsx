@@ -38,7 +38,15 @@ const SNSList = styled.div`
   flex-direction: column;
   top: 30%;
   left: 60%;
-  row-gap: 1.5vw;
+  height: 43%;
+  justify-content: space-around;
+
+  @media ${props => props.theme.mobile} {
+    row-gap: 2vw;
+    top: 25%;
+    left: 55%;
+    height: 50%;
+  }
 `;
 
 const Name = styled.div`
@@ -50,6 +58,10 @@ const Name = styled.div`
   top: 50%;
   left: 27%;
   transform: translate(-50%, -50%);
+
+  @media ${props => props.theme.mobile} {
+    font-size: 5vw;
+  }
 `;
 
 const School = styled.div`
@@ -61,6 +73,10 @@ const School = styled.div`
   top: 60%;
   left: 27%;
   transform: translate(-50%, -50%);
+
+  @media ${props => props.theme.mobile} {
+    font-size: 2vw;
+  }
 `;
 
 const SNSItem = styled.div`
@@ -68,6 +84,10 @@ const SNSItem = styled.div`
   column-gap: 10px;
   align-items: center;
   color: ${(props: Color) => props.color};
+
+  @media ${props => props.theme.mobile} {
+    column-gap: 1.5vw;
+  }
 `;
 
 const SNSText = styled.span`
@@ -76,6 +96,13 @@ const SNSText = styled.span`
   :hover {
     color: ${(props: Color) => props.color};
     cursor: pointer;
+  }
+
+  @media ${props => props.theme.mobile} {
+    font-size: 1.5vw;
+    a {
+      font-size: 1.5vw;
+    }
   }
 `;
 
@@ -97,7 +124,7 @@ const ContactCardBack = () => {
       </School>
       <SNSList>
         <SNSItem color={color.text}>
-          <GitHubIcon />
+          <GitHubIcon fontSize="small" />
           <SNSText color={color.point}>
             <a
               href="https://github.com/junghyeonsu"
@@ -109,7 +136,7 @@ const ContactCardBack = () => {
           </SNSText>
         </SNSItem>
         <SNSItem color={color.text}>
-          <PublicIcon />
+          <PublicIcon fontSize="small" />
           <SNSText color={color.point}>
             <a
               href="https://junghyeonsu.tistory.com/"
@@ -121,8 +148,7 @@ const ContactCardBack = () => {
           </SNSText>
         </SNSItem>
         <SNSItem color={color.text}>
-          <PublicIcon />
-
+          <PublicIcon fontSize="small" />
           <SNSText color={color.point}>
             <a
               href="https://velog.io/@junghyeonsu"
@@ -134,8 +160,7 @@ const ContactCardBack = () => {
           </SNSText>
         </SNSItem>
         <SNSItem color={color.text}>
-          <MailOutlineIcon />
-
+          <MailOutlineIcon fontSize="small" />
           <SNSText color={color.point}>jung660317@naver.com</SNSText>
         </SNSItem>
       </SNSList>

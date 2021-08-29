@@ -33,6 +33,11 @@ const Container = styled.div`
   transition: all 1.2s ease;
 
   box-shadow: 10px 25px 100px rgba(0, 0, 0, 0.3);
+
+  @media ${props => props.theme.mobile} {
+    min-width: 80vw;
+    min-height: 50vw;
+  }
 `;
 
 const ContactCard = () => {

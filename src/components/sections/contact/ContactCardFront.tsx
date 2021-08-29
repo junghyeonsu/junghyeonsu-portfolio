@@ -26,6 +26,10 @@ const Title = styled.div`
   left: 5%;
   letter-spacing: 2px;
   color: ${(props: Color) => props.color};
+
+  @media ${props => props.theme.mobile} {
+    font-size: 5vw;
+  }
 `;
 
 const Name = styled.div`
@@ -37,6 +41,10 @@ const Name = styled.div`
   z-index: 5;
   letter-spacing: 2px;
   color: ${(props: Color) => props.color};
+
+  @media ${props => props.theme.mobile} {
+    font-size: 6vw;
+  }
 `;
 
 const BottomLine = styled.div`
@@ -46,6 +54,10 @@ const BottomLine = styled.div`
   height: 10px;
   width: 100%;
   background-color: ${(props: Color) => props.color};
+
+  @media ${props => props.theme.mobile} {
+    height: 5px;
+  }
 `;
 
 const Point = styled.span`
