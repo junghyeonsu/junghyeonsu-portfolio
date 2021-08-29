@@ -11,6 +11,12 @@ const Containr = styled.div`
   column-gap: 5px;
   bottom: 0;
   right: 0;
+  flex-wrap: wrap;
+
+  @media ${props => props.theme.mobile} {
+    flex-wrap: wrap;
+    row-gap: 5px;
+  }
 `;
 
 const SkillList = ({ children }: SkillListProps) => {

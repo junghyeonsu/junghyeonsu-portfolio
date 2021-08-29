@@ -14,6 +14,11 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+
+  @media ${props => props.theme.mobile} {
+    align-items: flex-start;
+    width: 80vw;
+  }
 `;
 
 const CardBodyTextContainer = ({ children }: CardBodyTextContainerProps) => {

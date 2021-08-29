@@ -21,6 +21,10 @@ const Container = styled.div`
   padding: 5px;
   transition: all 1s ease;
   background-color: ${(props: Color) => props.color};
+
+  @media ${props => props.theme.mobile} {
+    font-size: 3.5vw;
+  }
 `;
 
 const Skill = styled.span`

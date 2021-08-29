@@ -19,6 +19,11 @@ const YearContainer = styled.div`
   right: 5%;
   z-index: 5;
   column-gap: 10px;
+
+  @media ${props => props.theme.mobile} {
+    top: 3%;
+    font-size: 7vw;
+  }
 `;
 
 const UnSelectYear = styled.div`
@@ -29,6 +34,10 @@ const UnSelectYear = styled.div`
   border-radius: 2px;
   transition: all 0.3s ease;
   animation: init 3s ease;
+
+  @media ${props => props.theme.mobile} {
+    font-size: 5vw;
+  }
 
   :hover {
     color: ${(props: UnSelectYearProps) =>
@@ -62,6 +71,10 @@ const UnSelectYear = styled.div`
 const SelectYear = styled.div`
   font-size: 3.4vw;
   font-family: ${BOLD_TEXT};
+
+  @media ${props => props.theme.mobile} {
+    font-size: 7vw;
+  }
 `;
 
 const YEAR_LIST = [2021, 2020];
