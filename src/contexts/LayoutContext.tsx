@@ -43,9 +43,9 @@ const LayoutProvider = ({
 
   // 초기 위치 설정
   useEffect(() => {
-    window.scrollTo({ top: introductionOffsetTop });
+    window.scrollTo({ top: 0 });
     setCurrentArea(INTRO_ARTICLE_AREA);
-  }, [introductionOffsetTop]);
+  }, []);
 
   // 색상 설정
   useEffect(() => {

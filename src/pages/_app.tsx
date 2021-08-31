@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
+import smoothscroll from 'smoothscroll-polyfill';
 import GlobalStyle from '#/styles/globalStyles';
 import LayoutProvider from '#/contexts/LayoutContext';
 import ExperienceProvider from '#/contexts/ExperienceContext';
@@ -15,6 +16,10 @@ if (typeof window !== 'undefined') {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    smoothscroll.polyfill();
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <LayoutProvider>
