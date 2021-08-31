@@ -16,6 +16,8 @@ import {
 import SkillContainer from '#/components/sections/skill/SkillContainer';
 import SkillItem from '#/components/sections/skill/SkillItem';
 import SkillTitle from '#/components/sections/skill/SkillTitle';
+import SectionDownButton from '#/components/common/SectionDownButton';
+import SectionUpButton from '#/components/common/SectionUpButton';
 
 const Container = styled.article`
   display: flex;
@@ -78,6 +80,8 @@ const Skill = () => {
             Skill
           </Underline>
         </SkillTitle>
+        <SectionUpButton />
+        <SectionDownButton />
       </FadeInContent>
       <SkillContainer>
         <SkillItem exp={90} delay={2} skill="HTML / CSS" />

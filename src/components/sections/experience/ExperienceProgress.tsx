@@ -6,7 +6,7 @@ import { useExperienceContext } from '#/contexts/ExperienceContext';
 const ProgressContainer = styled.div`
   align-items: center;
   position: absolute;
-  bottom: 8%;
+  bottom: 12%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

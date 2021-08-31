@@ -19,6 +19,8 @@ import ExperienceProgress from '#/components/sections/experience/ExperienceProgr
 import ExperienceYearSelect from '#/components/sections/experience/ExperienceYearSelect';
 import ExperienceChangeButton from '#/components/sections/experience/ExperienceChangeButton';
 import ExperienceTitle from '#/components/sections/experience/ExperienceTitle';
+import SectionDownButton from '#/components/common/SectionDownButton';
+import SectionUpButton from '#/components/common/SectionUpButton';
 
 const Container = styled.article`
   position: relative;
@@ -54,6 +56,8 @@ const Experience = () => {
         <ExperienceProgress />
         <ExperienceYearSelect />
         <ExperienceChangeButton />
+        <SectionDownButton />
+        <SectionUpButton />
       </FadeInContent>
     </Container>
   );
