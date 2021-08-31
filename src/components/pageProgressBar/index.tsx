@@ -17,13 +17,14 @@ const UnActiveProgressBar = styled.div`
   position: fixed;
   width: 0.4vw;
   height: ${PROGRESS_BAR_HEIGHT}vh;
-  right: 2vw;
+  right: 2.5vw;
   top: ${PROGRESS_BAR_TOP}vh;
   transition: ${COMMON_TRANSITION};
   z-index: 5;
 
   @media ${props => props.theme.mobile} {
     right: 5vw;
+    width: 1vw;
   }
 `;
 

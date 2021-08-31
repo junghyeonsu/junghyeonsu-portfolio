@@ -8,6 +8,7 @@ import { COMMON_TRANSITION, CONTACT_ARTICLE_AREA } from '#/constants';
 import { BLACK_TEXT_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
 const Container = styled.div`
+  display: block;
   position: fixed;
   font-weight: bold;
   font-size: 2.3vw;
@@ -18,6 +19,7 @@ const Container = styled.div`
   z-index: 5;
 
   @media ${props => props.theme.mobile} {
+    display: none;
     font-size: 5vw;
   }
 `;

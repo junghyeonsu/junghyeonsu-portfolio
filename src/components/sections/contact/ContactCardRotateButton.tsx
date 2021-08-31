@@ -20,6 +20,10 @@ const ButtonContainer = styled.div`
     cursor: pointer;
     transform: translate(-50%) scale(1.1);
   }
+
+  @media ${props => props.theme.mobile} {
+    bottom: 25%;
+  }
 `;
 
 const ContactCardRotateButton = ({ onClickButton }: ButtonProps) => {

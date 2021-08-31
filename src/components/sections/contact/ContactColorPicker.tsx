@@ -28,10 +28,6 @@ const Container = styled.div`
   transform: translate(-180px, -50%);
   transition: all 0.5s ease;
   z-index: 10;
-
-  @media ${props => props.theme.mobile} {
-    top: 75%;
-  }
 `;
 
 const Button = styled.div`

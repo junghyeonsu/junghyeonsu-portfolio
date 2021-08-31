@@ -31,6 +31,10 @@ export default function Main() {
           content="width=device-width, initial-scale=1, minimum-scale=1"
         />
         <link rel="icon" href="/favicon.ico" />
+        <script
+          defer
+          src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+        />
       </Head>
       <div>
         <Section>

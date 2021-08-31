@@ -12,6 +12,7 @@ interface TextProps {
 
 const HeaderTextContainer = styled.p`
   position: absolute;
+  top: 30%;
   font-family: ${BOLD_TEXT};
   font-size: 7vw;
   letter-spacing: 2px;
@@ -19,6 +20,7 @@ const HeaderTextContainer = styled.p`
   z-index: 5;
 
   @media ${props => props.theme.mobile} {
+    top: 40%;
     font-size: 13vw;
   }
 `;
@@ -31,7 +33,7 @@ const FadeOutHeaderText = ({ children, delay, color }: TextProps) => {
         trigger: target.current,
         toggleActions: 'restart reset restart reset',
       },
-      top: '-0.1%',
+      top: '20%',
       opacity: 0,
       delay,
       duration: 1.2,

@@ -11,7 +11,7 @@ interface Color {
 const Container = styled.div`
   display: none;
   position: fixed;
-  top: 75vh;
+  top: 73vh;
   right: 3vw;
   z-index: 10;
   color: ${(props: Color) =>
@@ -34,15 +34,15 @@ const Container = styled.div`
 
   @keyframes wiggleAtBottom {
     0% {
-      top: 75vh;
+      top: 73vh;
     }
 
     50% {
-      top: 77vh;
+      top: 74vh;
     }
 
     100% {
-      top: 75vh;
+      top: 73vh;
     }
   }
 `;
