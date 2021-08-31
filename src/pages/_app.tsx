@@ -12,8 +12,6 @@ import ExperienceProvider from '#/contexts/ExperienceContext';
 import ContactCardProvider from '#/contexts/ContactCardContext';
 import { theme } from '#/styles/theme';
 
-window.forceSmoothScrollPolyfill = true;
-
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
   smoothscroll.polyfill();
