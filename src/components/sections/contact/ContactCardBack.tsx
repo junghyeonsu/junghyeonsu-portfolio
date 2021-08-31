@@ -20,6 +20,7 @@ const Back = styled.div`
   position: absolute;
   transform: rotateY(180deg);
   backface-visibility: hidden;
+  transform-style: preserve-3d;
 `;
 
 const CenterLine = styled.div`

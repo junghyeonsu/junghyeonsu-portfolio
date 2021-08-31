@@ -17,13 +17,13 @@ const Container = styled.div`
   position: fixed;
   width: 0.4vw;
   top: ${PROGRESS_BAR_TOP}vh;
-  right: 2.5vw;
+  right: 2vw;
   transition: ${COMMON_TRANSITION};
   z-index: 6;
 
   @media ${props => props.theme.mobile} {
-    right: 5vw;
-    width: 1vw;
+    right: 6.5vw;
+    width: 0.6vw;
   }
 `;
 
