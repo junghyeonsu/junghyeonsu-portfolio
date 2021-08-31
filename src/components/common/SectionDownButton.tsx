@@ -10,15 +10,13 @@ interface Color {
 
 const Container = styled.div`
   display: none;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  position: fixed;
+  top: 75vh;
+  right: 3vw;
   z-index: 10;
   color: ${(props: Color) =>
     props.isWhiteColor ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.4)'};
-  margin: 10px;
-  padding: 10px;
+  padding: 1vw;
   border-radius: 10px;
   transition: all 0.3s ease;
   animation: wiggleAtBottom 1s ease infinite;
@@ -36,15 +34,15 @@ const Container = styled.div`
 
   @keyframes wiggleAtBottom {
     0% {
-      bottom: 0;
+      top: 75vh;
     }
 
     50% {
-      bottom: 5px;
+      top: 77vh;
     }
 
     100% {
-      bottom: 0;
+      top: 75vh;
     }
   }
 `;

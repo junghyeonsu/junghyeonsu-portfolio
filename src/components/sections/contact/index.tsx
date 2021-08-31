@@ -11,7 +11,6 @@ import ContactCard from '#/components/sections/contact/ContactCard';
 import ContactTitle from '#/components/sections/contact/ContactTitle';
 import ContactColorPicker from '#/components/sections/contact/ContactColorPicker';
 import ContactUnderline from '#/components/sections/contact/ContactUnderline';
-import SectionUpButton from '#/components/common/SectionUpButton';
 
 interface Color {
   color: string;
@@ -50,7 +49,6 @@ const Contact = () => {
         </ContactTitle>
         <ContactCard />
         <ContactColorPicker />
-        <SectionUpButton />
       </FadeInContent>
     </Container>
   );

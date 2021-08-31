@@ -20,6 +20,10 @@ const Container = styled.div`
   right: 2vw;
   transition: ${COMMON_TRANSITION};
   z-index: 6;
+
+  @media ${props => props.theme.mobile} {
+    right: 5vw;
+  }
 `;
 
 const ActiveProgressBar = () => {

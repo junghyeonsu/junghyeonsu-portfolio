@@ -10,6 +10,8 @@ import {
 } from '#/constants';
 import ProgressItem from '#/components/pageProgressBar/progressItem';
 import ActiveProgressBar from '#/components/pageProgressBar/ActiveProgressBar';
+import SectionUpButton from '#/components/common/SectionUpButton';
+import SectionDownButton from '#/components/common/SectionDownButton';
 
 const UnActiveProgressBar = styled.div`
   position: fixed;
@@ -19,6 +21,10 @@ const UnActiveProgressBar = styled.div`
   top: ${PROGRESS_BAR_TOP}vh;
   transition: ${COMMON_TRANSITION};
   z-index: 5;
+
+  @media ${props => props.theme.mobile} {
+    right: 5vw;
+  }
 `;
 
 const PageProgressBar = () => {
@@ -39,6 +45,7 @@ const PageProgressBar = () => {
 
   return (
     <>
+      <SectionUpButton />
       <ActiveProgressBar />
       <UnActiveProgressBar style={{ background: barColor }}>
         {isDevelopement && (
@@ -62,6 +69,7 @@ const PageProgressBar = () => {
           </>
         )}
       </UnActiveProgressBar>
+      <SectionDownButton />
     </>
   );
 };
