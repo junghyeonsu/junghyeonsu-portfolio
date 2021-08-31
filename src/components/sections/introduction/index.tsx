@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
-
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import {
   BLACK_BACKGROUND_COLOR,
@@ -8,13 +7,11 @@ import {
   UNDER_LINE_COLOR,
 } from '#/colors';
 import { COMMON_BODY_WIDTH } from '#/constants';
-
 import { FadeInContent, Underline } from '#/components/common/gsap';
-
 import FadeInBodyText from '#/components/sections/introduction/FadeInBodyText';
 import FadeInHeaderText from '#/components/sections/introduction/FadeInHeaderText';
-
 import SvgWithGsap from '#/components/sections/introduction/SvgWithGsap';
+import SectionDownButton from '#/components/common/SectionDownButton';
 
 const Container = styled.div`
   display: flex;
@@ -77,6 +74,9 @@ const Introduction = () => {
       </Body>
       <FadeInContent delay={1.9}>
         <SvgWithGsap delay={2} />
+      </FadeInContent>
+      <FadeInContent delay={1.9}>
+        <SectionDownButton />
       </FadeInContent>
     </Container>
   );

@@ -327,6 +327,43 @@ const LayoutProvider = ({
     setScrollGauge(0);
   }, [contactOffsetTop]);
 
+  const onClickSectionDownButton = useCallback(() => {
+    switch (currentArea) {
+      case INTRO_ARTICLE_AREA:
+        moveSkillArticle();
+        break;
+      case SKILL_ARTICLE_AREA:
+        moveExperienceArticle();
+        break;
+      case EXP_ARTICLE_AREA:
+        moveContactArticle();
+        break;
+      default:
+        break;
+    }
+  }, [
+    currentArea,
+    moveSkillArticle,
+    moveExperienceArticle,
+    moveContactArticle,
+  ]);
+
+  const onClickSectionUpButton = useCallback(() => {
+    switch (currentArea) {
+      case SKILL_ARTICLE_AREA:
+        moveIntroArticle();
+        break;
+      case EXP_ARTICLE_AREA:
+        moveSkillArticle();
+        break;
+      case CONTACT_ARTICLE_AREA:
+        moveExperienceArticle();
+        break;
+      default:
+        break;
+    }
+  }, [currentArea, moveSkillArticle, moveExperienceArticle, moveIntroArticle]);
+
   return (
     <LayoutContext.Provider
       value={{
@@ -350,6 +387,8 @@ const LayoutProvider = ({
         moveSkillArticle,
         moveExperienceArticle,
         moveContactArticle,
+        onClickSectionDownButton,
+        onClickSectionUpButton,
       }}
     >
       {children}
