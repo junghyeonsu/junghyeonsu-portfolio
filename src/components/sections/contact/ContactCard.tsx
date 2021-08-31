@@ -16,9 +16,6 @@ const CardWrapper = styled.div`
 `;
 
 const Container = styled.div`
-  color: rgba(0, 0, 0, 0.5);
-  background-color: rgba(255, 255, 255, 0.8);
-
   min-width: 474px;
   min-height: 300px;
   width: 47.4vw;
