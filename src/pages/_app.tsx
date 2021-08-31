@@ -14,11 +14,11 @@ import { theme } from '#/styles/theme';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
-  smoothscroll.polyfill();
-  disableScroll.off();
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
+  smoothscroll.polyfill();
+  disableScroll.off();
   return (
     <ThemeProvider theme={theme}>
       <LayoutProvider>
