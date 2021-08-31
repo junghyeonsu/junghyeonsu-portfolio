@@ -28,7 +28,7 @@ export default function Main() {
         <meta name="description" content="Hyeonsu Jung's portfolio" />
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1"
+          content="width=device-width, initial-scale=1, minimum-scale=1 maximum-scale=1, user-scalable=no"
         />
         <link rel="icon" href="/favicon.ico" />
         <script
