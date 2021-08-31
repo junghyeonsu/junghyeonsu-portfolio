@@ -15,6 +15,7 @@
     "@types/lodash": "^4.14.172",
     "@types/smoothscroll-polyfill": "^0.3.1",
     "babel-plugin-styled-components": "^1.13.1",
+    "disable-scroll": "^0.6.0",
     "gsap": "^3.7.0",
     "lodash": "^4.17.21",
     "next": "11.0.0",

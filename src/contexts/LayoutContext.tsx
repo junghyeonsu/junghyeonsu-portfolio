@@ -38,29 +38,9 @@ const LayoutProvider = ({
   const [scrollGauge, setScrollGauge] = useState<number>(0);
   const [isPossibleMove, setIsPossibleMove] = useState<boolean>(true);
   const [isPossibleMiniMove, setIsPossibleMiniMove] = useState<boolean>(true);
-  const [currentArea, setCurrentArea] = useState<string>(INTRO_ARTICLE_AREA);
   const [isWhiteColor, setIsWhiteColor] = useState<boolean>(true);
 
-  // 초기 위치 설정
-  useEffect(() => {
-    window.scrollTo({ top: 0 });
-    setCurrentArea(INTRO_ARTICLE_AREA);
-  }, []);
-
-  // 색상 설정
-  useEffect(() => {
-    if (
-      currentArea === INTRO_ARTICLE_AREA ||
-      currentArea === EXP_ARTICLE_AREA
-    ) {
-      setIsWhiteColor(true);
-    } else if (
-      currentArea === SKILL_ARTICLE_AREA ||
-      currentArea === CONTACT_ARTICLE_AREA
-    ) {
-      setIsWhiteColor(false);
-    }
-  }, [currentArea]);
+  const [currentArea, setCurrentArea] = useState<string>(INTRO_ARTICLE_AREA);
 
   // 현재 위치 파악하는 함수
   const checkCurrentY = useCallback(() => {
@@ -84,13 +64,34 @@ const LayoutProvider = ({
     if (contactOffsetTop - halfHeight <= scrollY) {
       return CONTACT_ARTICLE_AREA;
     }
-    return false;
+    return INTRO_ARTICLE_AREA;
   }, [
     skillOffsetTop,
     experienceOffsetTop,
     contactOffsetTop,
     introductionOffsetTop,
   ]);
+
+  // 초기 위치 설정
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+    setCurrentArea(INTRO_ARTICLE_AREA);
+  }, []);
+
+  // 색상 설정
+  useEffect(() => {
+    if (
+      currentArea === INTRO_ARTICLE_AREA ||
+      currentArea === EXP_ARTICLE_AREA
+    ) {
+      setIsWhiteColor(true);
+    } else if (
+      currentArea === SKILL_ARTICLE_AREA ||
+      currentArea === CONTACT_ARTICLE_AREA
+    ) {
+      setIsWhiteColor(false);
+    }
+  }, [currentArea]);
 
   // deltaY에 따라서 delta 값 반환 함수
   const checkDeltaPower = useCallback((deltaY: number) => {
