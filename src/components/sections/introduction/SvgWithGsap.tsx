@@ -16,7 +16,7 @@ const ImageBox = styled.div`
   height: 10vh;
 
   @media ${props => props.theme.mobile} {
-    width: 70vw;
+    width: 95vw;
   }
 `;
 

@@ -29,6 +29,7 @@ const Body = styled.div`
 
   @media ${props => props.theme.mobile} {
     width: 90vw;
+    -webkit-text-stroke: 0.1px #000;
   }
 `;
 
