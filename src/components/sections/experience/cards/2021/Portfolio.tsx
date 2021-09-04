@@ -32,6 +32,10 @@ const data = {
       href: 'https://github.com/junghyeonsu/hyeonsu-jung',
       text: '깃허브 주소',
     },
+    {
+      href: 'https://velog.io/@junghyeonsu/%EB%82%98%EB%A7%8C%EC%9D%98-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%EA%B8%B0',
+      text: '개발 후기',
+    },
   ],
   skills: ['React', 'Typescript', 'NextJS', 'styled-components', 'Vercel'],
 };
