@@ -27,7 +27,7 @@ const SvgWithGsap = ({ delay }: SvgWithGsapProps) => {
     gsap.from(containerRef.current, {
       scrollTrigger: {
         trigger: containerRef.current,
-        toggleActions: 'restart reverse restart reverse',
+        toggleActions: 'play none none none',
       },
       top: '30%',
       delay,
