@@ -27,7 +27,7 @@ const FadeInBodyText = ({ children, delay }: TextProps) => {
     gsap.from(target.current, {
       scrollTrigger: {
         trigger: target.current,
-        toggleActions: 'restart reset restart reset',
+        toggleActions: 'play none none none',
       },
       top: '-15%',
       opacity: 0,

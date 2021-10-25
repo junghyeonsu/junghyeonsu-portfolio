@@ -1,3 +1,4 @@
+// 요기서 height를 지정해주지 말고 그냥 바로 ㄱ ㄱ
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
@@ -19,13 +20,14 @@ import ExperienceProgress from '#/components/sections/experience/ExperienceProgr
 import ExperienceYearSelect from '#/components/sections/experience/ExperienceYearSelect';
 import ExperienceChangeButton from '#/components/sections/experience/ExperienceChangeButton';
 import ExperienceTitle from '#/components/sections/experience/ExperienceTitle';
+import TextComponents from './TextComponents';
 
 const Container = styled.article`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 150vh; */
   width: 100vw;
   background-color: ${BLACK_BACKGROUND_COLOR};
   color: ${WHITE_TEXT_COLOR};
@@ -45,7 +47,8 @@ const Experience = () => {
     <Container ref={containerRef}>
       <FadeOutHeaderText delay={1}>Experience</FadeOutHeaderText>
       <FadeInContent delay={2.5}>
-        <ExperienceTitle>
+        <TextComponents />
+        {/* <ExperienceTitle>
           <Underline color={lineColor} delay={UNDER_LINE_DELAY}>
             Experience
           </Underline>
@@ -53,7 +56,7 @@ const Experience = () => {
         <ExperienceCardList />
         <ExperienceProgress />
         <ExperienceYearSelect />
-        <ExperienceChangeButton />
+        <ExperienceChangeButton /> */}
       </FadeInContent>
     </Container>
   );

@@ -27,13 +27,12 @@ const GlobalStyle = createGlobalStyle`
   }
   
   html {
-    scroll-behavior: smooth;
     font-family: "NEXON Lv2 Gothic";
     height: -webkit-fill-available;
   }
 
   body {
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   a {

@@ -15,7 +15,7 @@ import { theme } from '#/styles/theme';
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
   smoothscroll.polyfill();
-  disableScroll.off();
+  // disableScroll.off();
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
