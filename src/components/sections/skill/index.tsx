@@ -14,7 +14,6 @@ import {
   Underline,
 } from '#/components/common/gsap';
 import SkillContainer from '#/components/sections/skill/SkillContainer';
-import SkillItem from '#/components/sections/skill/SkillItem';
 import SkillTitle from '#/components/sections/skill/SkillTitle';
 
 const Container = styled.article`
@@ -80,12 +79,9 @@ const Skill = () => {
         </SkillTitle>
       </FadeInContent>
       <SkillContainer>
-        <SkillItem exp={90} delay={2} skill="HTML / CSS" />
-        <SkillItem exp={80} delay={2.1} skill="JAVASCRIPT" />
-        <SkillItem exp={70} delay={2.2} skill="TYPESCRIPT" />
-        <SkillItem exp={60} delay={2.3} skill="REACT.JS" />
-        <SkillItem exp={50} delay={2.3} skill="NEXT.JS" />
-        <SkillItem exp={40} delay={2.3} skill="GIT / GITHUB" />
+        <FadeInContent delay={2.5}>
+          <div>hi</div>
+        </FadeInContent>
       </SkillContainer>
       <LeftCircle />
       <RightCircle />
