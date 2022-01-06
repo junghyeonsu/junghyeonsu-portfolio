@@ -12,13 +12,10 @@ import React, {
 import _ from 'lodash';
 
 import {
-  SCROLL_ACTIVE_VALUE,
   EXP_ARTICLE_AREA,
   INTRO_ARTICLE_AREA,
   SKILL_ARTICLE_AREA,
   CONTACT_ARTICLE_AREA,
-  WHEEL_CONTROL_TIME,
-  WHEEL_MINI_CONTROL_TIME,
 } from '#/constants';
 
 const LayoutContext = createContext<Record<string, unknown>>({});
@@ -35,42 +32,9 @@ const LayoutProvider = ({
   const [experienceOffsetTop, setExperienceOffsetTop] = useState(0); // 3
   const [contactOffsetTop, setContactOffsetTop] = useState(0); // 4
 
-  const [scrollGauge, setScrollGauge] = useState<number>(0);
-  const [isPossibleMove, setIsPossibleMove] = useState<boolean>(true);
-  const [isPossibleMiniMove, setIsPossibleMiniMove] = useState<boolean>(true);
   const [isWhiteColor, setIsWhiteColor] = useState<boolean>(true);
 
   const [currentArea, setCurrentArea] = useState<string>(INTRO_ARTICLE_AREA);
-
-  // 현재 위치 파악하는 함수
-  const checkCurrentY = useCallback(() => {
-    const { scrollY } = window; // eslint-disable-line no-undef
-    const halfHeight = (skillOffsetTop - introductionOffsetTop) / 2;
-    if (scrollY >= 0 && scrollY < skillOffsetTop - halfHeight) {
-      return INTRO_ARTICLE_AREA;
-    }
-    if (
-      skillOffsetTop - halfHeight <= scrollY &&
-      scrollY < experienceOffsetTop - halfHeight
-    ) {
-      return SKILL_ARTICLE_AREA;
-    }
-    if (
-      experienceOffsetTop - halfHeight <= scrollY &&
-      scrollY < contactOffsetTop - halfHeight
-    ) {
-      return EXP_ARTICLE_AREA;
-    }
-    if (contactOffsetTop - halfHeight <= scrollY) {
-      return CONTACT_ARTICLE_AREA;
-    }
-    return INTRO_ARTICLE_AREA;
-  }, [
-    skillOffsetTop,
-    experienceOffsetTop,
-    contactOffsetTop,
-    introductionOffsetTop,
-  ]);
 
   // 초기 위치 설정
   useEffect(() => {
@@ -93,239 +57,59 @@ const LayoutProvider = ({
     }
   }, [currentArea]);
 
-  // deltaY에 따라서 delta 값 반환 함수
-  const checkDeltaPower = useCallback((deltaY: number) => {
-    const delta = Math.abs(deltaY);
-    if (delta > 0 && delta <= 100) {
-      return 1;
-    }
-    if (delta > 100 && delta <= 250) {
-      return 2;
-    }
-    if (delta < 250 && delta <= 450) {
-      return 3;
-    }
-    if (delta < 450) {
-      return 4;
-    }
-    return 0;
-  }, []);
-
-  // 아래로 이동 함수
-  const handleDownCurrentY = useCallback(() => {
-    switch (checkCurrentY()) {
-      case INTRO_ARTICLE_AREA:
-        window.scrollTo({ top: skillOffsetTop });
-        setCurrentArea(SKILL_ARTICLE_AREA);
-        break;
-      case SKILL_ARTICLE_AREA:
-        window.scrollTo({ top: experienceOffsetTop });
-        setCurrentArea(EXP_ARTICLE_AREA);
-        break;
-      case EXP_ARTICLE_AREA:
-        window.scrollTo({ top: contactOffsetTop });
-        setCurrentArea(CONTACT_ARTICLE_AREA);
-        break;
-      default:
-        break;
-    }
-  }, [skillOffsetTop, contactOffsetTop, experienceOffsetTop, checkCurrentY]);
-
-  // 위로 이동 함수
-  const handleUpCurrentY = useCallback(() => {
-    switch (checkCurrentY()) {
-      case INTRO_ARTICLE_AREA:
-        window.scrollTo({ top: introductionOffsetTop });
-        setCurrentArea(INTRO_ARTICLE_AREA);
-        break;
-      case SKILL_ARTICLE_AREA:
-        window.scrollTo({ top: introductionOffsetTop });
-        setCurrentArea(INTRO_ARTICLE_AREA);
-        break;
-      case EXP_ARTICLE_AREA:
-        window.scrollTo({ top: skillOffsetTop });
-        setCurrentArea(SKILL_ARTICLE_AREA);
-        break;
-      case CONTACT_ARTICLE_AREA:
-        window.scrollTo({ top: experienceOffsetTop });
-        setCurrentArea(EXP_ARTICLE_AREA);
-        break;
-      default:
-        break;
-    }
-  }, [
-    skillOffsetTop,
-    experienceOffsetTop,
-    introductionOffsetTop,
-    checkCurrentY,
-  ]);
-
-  // 조금씩 아래로
-  const handleMiniDownCurrentY = useCallback(
-    (deltaY: number) => {
-      const { scrollY } = window; // eslint-disable-line no-undef
-      const deltaPower = checkDeltaPower(deltaY);
-      if (scrollGauge < 0) {
-        return;
-      }
-      window.scrollTo({ top: scrollY + deltaPower });
-    },
-    [scrollGauge, checkDeltaPower],
-  );
-
-  // 조금씩 위로
-  const handleMiniUpCurrentY = useCallback(
-    (deltaY: number) => {
-      const { scrollY } = window; // eslint-disable-line no-undef
-      const deltaPower = checkDeltaPower(deltaY);
-      if (scrollGauge > 0) {
-        return;
-      }
-      window.scrollTo({ top: scrollY - deltaPower });
-    },
-    [scrollGauge, checkDeltaPower],
-  );
-
-  // 반대 방향 delta 값 들어올 시 0으로 초기화 하는 함수
-  const resetGauge = useCallback(() => {
-    switch (checkCurrentY()) {
-      case INTRO_ARTICLE_AREA:
-        setScrollGauge(0);
-        window.scrollTo({ top: introductionOffsetTop });
-        break;
-      case SKILL_ARTICLE_AREA:
-        setScrollGauge(0);
-        window.scrollTo({ top: skillOffsetTop });
-        break;
-      case EXP_ARTICLE_AREA:
-        setScrollGauge(0);
-        window.scrollTo({ top: experienceOffsetTop });
-        break;
-      case CONTACT_ARTICLE_AREA:
-        setScrollGauge(0);
-        window.scrollTo({ top: contactOffsetTop });
-        break;
-      default:
-        break;
-    }
-  }, [
-    contactOffsetTop,
-    introductionOffsetTop,
-    skillOffsetTop,
-    experienceOffsetTop,
-    checkCurrentY,
-  ]);
-
-  // 휠 이벤트
-  const handleWheel = useCallback(
-    event => {
-      const { deltaY } = event; // eslint-disable-line no-undef
-      if (!isPossibleMove || !isPossibleMiniMove) return false;
-
-      // 아래로
-      if (deltaY > 0) {
-        if (scrollGauge < 0) {
-          resetGauge();
-          setIsPossibleMiniMove(false);
-          setTimeout(() => {
-            setIsPossibleMiniMove(true);
-          }, WHEEL_MINI_CONTROL_TIME);
-        } else {
-          setScrollGauge(scrollGauge + checkDeltaPower(deltaY));
-          handleMiniDownCurrentY(deltaY);
-        }
-      }
-      // 위로
-      else if (deltaY < 0) {
-        if (scrollGauge > 0) {
-          resetGauge();
-          setIsPossibleMiniMove(false);
-          setTimeout(() => {
-            setIsPossibleMiniMove(true);
-          }, WHEEL_MINI_CONTROL_TIME);
-        } else {
-          setScrollGauge(scrollGauge - checkDeltaPower(deltaY));
-          handleMiniUpCurrentY(deltaY);
-        }
-      }
-
-      // 40 도달
-      if (scrollGauge >= SCROLL_ACTIVE_VALUE) {
-        setIsPossibleMove(false);
-        setTimeout(() => {
-          setIsPossibleMove(true);
-        }, WHEEL_CONTROL_TIME);
-        setScrollGauge(0);
-        handleDownCurrentY();
-      }
-      // -40 도달
-      else if (scrollGauge <= -SCROLL_ACTIVE_VALUE) {
-        setIsPossibleMove(false);
-        setTimeout(() => {
-          setIsPossibleMove(true);
-        }, WHEEL_CONTROL_TIME);
-        setScrollGauge(0);
-        handleUpCurrentY();
-      }
-
-      return false;
-    },
-    [
-      setScrollGauge,
-      scrollGauge,
-      handleDownCurrentY,
-      handleUpCurrentY,
-      handleMiniUpCurrentY,
-      handleMiniDownCurrentY,
-      checkDeltaPower,
-      resetGauge,
-      isPossibleMove,
-      isPossibleMiniMove,
-    ],
-  );
-
   // 리사이즈 이벤트
   const handleResize = useCallback(() => {
     const { innerWidth } = window;
     setWindowWidth(innerWidth);
   }, []);
 
+  const handleScroll = useCallback(() => {
+    const { scrollY } = window;
+    console.log(scrollY);
+    console.log(
+      introductionOffsetTop,
+      skillOffsetTop,
+      experienceOffsetTop,
+      contactOffsetTop,
+    );
+  }, [
+    contactOffsetTop,
+    experienceOffsetTop,
+    introductionOffsetTop,
+    skillOffsetTop,
+  ]);
+
   // 휠 이벤트 감지
   useEffect(() => {
-    window.addEventListener('wheel', handleWheel); // eslint-disable-line no-undef
     window.addEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
+    window.addEventListener('scroll', _.throttle(handleScroll, 50)); // eslint-disable-line no-undef
     return () => {
-      window.removeEventListener('wheel', handleWheel); // eslint-disable-line no-undef
       window.removeEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
     };
-  }, [handleWheel, handleResize]);
+  }, [handleResize, handleScroll]);
 
   // 소개 섹션 이동 함수
   const moveIntroArticle = useCallback(() => {
     window.scrollTo({ top: introductionOffsetTop });
     setCurrentArea(INTRO_ARTICLE_AREA);
-    setScrollGauge(0);
   }, [introductionOffsetTop]);
 
   // 스킬 섹션 이동 함수
   const moveSkillArticle = useCallback(() => {
     window.scrollTo({ top: skillOffsetTop });
     setCurrentArea(SKILL_ARTICLE_AREA);
-    setScrollGauge(0);
   }, [skillOffsetTop]);
 
   // 경험 섹션 이동 함수
   const moveExperienceArticle = useCallback(() => {
     window.scrollTo({ top: experienceOffsetTop });
     setCurrentArea(EXP_ARTICLE_AREA);
-    setScrollGauge(0);
   }, [experienceOffsetTop]);
 
   // 연락처 섹션 이동 함수
   const moveContactArticle = useCallback(() => {
     window.scrollTo({ top: contactOffsetTop });
     setCurrentArea(CONTACT_ARTICLE_AREA);
-    setScrollGauge(0);
   }, [contactOffsetTop]);
 
   const onClickSectionDownButton = useCallback(() => {
@@ -372,9 +156,6 @@ const LayoutProvider = ({
         skillOffsetTop,
         experienceOffsetTop,
         contactOffsetTop,
-        scrollGauge,
-        isPossibleMove,
-        isPossibleMiniMove,
         currentArea,
         isWhiteColor,
         windowWidth,
