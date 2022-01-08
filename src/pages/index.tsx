@@ -6,14 +6,12 @@ import Introduction from '#/components/sections/introduction';
 import Skill from '#/components/sections/skill';
 import Experience from '#/components/sections/experience';
 import Contact from '#/components/sections/contact';
-import ScrollGauge from '#/components/scrollGauge';
-// import ScrollTimer from '#/components/scrollTimer';
-// import MiniScrollTimer from '#/components/miniScrollTimer';
-import PageProgressBar from '#/components/pageProgressBar';
+import ScrollPosition from '#/components/scrollPosition';
 
 // import { useLayoutContext } from '#/contexts/LayoutContext';
 
 const Section = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
 `;
@@ -34,6 +32,7 @@ export default function Main() {
       </Head>
       <body>
         <Section>
+          <ScrollPosition />
           <Introduction />
           <Skill />
           <Experience />
@@ -42,10 +41,6 @@ export default function Main() {
         <script src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js" />
         <script src="https://unpkg.com/smoothscroll-anchor-polyfill" />
       </body>
-      <ScrollGauge />
-      {/* {!isPossibleMove ? <ScrollTimer /> : ''}
-      {!isPossibleMiniMove ? <MiniScrollTimer /> : ''} */}
-      <PageProgressBar />
     </div>
   );
 }
