@@ -26,6 +26,7 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "linebreak-style": "off",
     "object-curly-newline": "off",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "prettier/prettier": "off"
   }
 }

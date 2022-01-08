@@ -27,12 +27,11 @@ const LayoutProvider = ({
 }): ReactElement => {
   const [windowWidth, setWindowWidth] = useState(0);
 
+  // 각 섹션의 top offset
   const [introductionOffsetTop, setIntroductionOffsetTop] = useState(0); // 1
   const [skillOffsetTop, setSkillOffsetTop] = useState(0); // 2
   const [experienceOffsetTop, setExperienceOffsetTop] = useState(0); // 3
   const [contactOffsetTop, setContactOffsetTop] = useState(0); // 4
-
-  const [isWhiteColor, setIsWhiteColor] = useState<boolean>(true);
 
   const [currentArea, setCurrentArea] = useState<string>(INTRO_ARTICLE_AREA);
 
@@ -40,22 +39,8 @@ const LayoutProvider = ({
   useEffect(() => {
     window.scrollTo({ top: 0 });
     setCurrentArea(INTRO_ARTICLE_AREA);
+    setWindowWidth(window.innerWidth);
   }, []);
-
-  // 색상 설정
-  useEffect(() => {
-    if (
-      currentArea === INTRO_ARTICLE_AREA ||
-      currentArea === EXP_ARTICLE_AREA
-    ) {
-      setIsWhiteColor(true);
-    } else if (
-      currentArea === SKILL_ARTICLE_AREA ||
-      currentArea === CONTACT_ARTICLE_AREA
-    ) {
-      setIsWhiteColor(false);
-    }
-  }, [currentArea]);
 
   // 리사이즈 이벤트
   const handleResize = useCallback(() => {
@@ -63,30 +48,13 @@ const LayoutProvider = ({
     setWindowWidth(innerWidth);
   }, []);
 
-  const handleScroll = useCallback(() => {
-    const { scrollY } = window;
-    console.log(scrollY);
-    console.log(
-      introductionOffsetTop,
-      skillOffsetTop,
-      experienceOffsetTop,
-      contactOffsetTop,
-    );
-  }, [
-    contactOffsetTop,
-    experienceOffsetTop,
-    introductionOffsetTop,
-    skillOffsetTop,
-  ]);
-
   // 휠 이벤트 감지
   useEffect(() => {
     window.addEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
-    window.addEventListener('scroll', _.throttle(handleScroll, 50)); // eslint-disable-line no-undef
     return () => {
       window.removeEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
     };
-  }, [handleResize, handleScroll]);
+  }, [handleResize]);
 
   // 소개 섹션 이동 함수
   const moveIntroArticle = useCallback(() => {
@@ -112,42 +80,37 @@ const LayoutProvider = ({
     setCurrentArea(CONTACT_ARTICLE_AREA);
   }, [contactOffsetTop]);
 
-  const onClickSectionDownButton = useCallback(() => {
-    switch (currentArea) {
-      case INTRO_ARTICLE_AREA:
-        moveSkillArticle();
-        break;
-      case SKILL_ARTICLE_AREA:
-        moveExperienceArticle();
-        break;
-      case EXP_ARTICLE_AREA:
-        moveContactArticle();
-        break;
-      default:
-        break;
-    }
-  }, [
-    currentArea,
-    moveSkillArticle,
-    moveExperienceArticle,
-    moveContactArticle,
-  ]);
+  // const onClickSectionDownButton = useCallback(() => {
+  //   switch (currentArea) {
+  //     case INTRO_ARTICLE_AREA:
+  //       moveSkillArticle();
+  //       break;
+  //     case SKILL_ARTICLE_AREA:
+  //       moveExperienceArticle();
+  //       break;
+  //     case EXP_ARTICLE_AREA:
+  //       moveContactArticle();
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // }, [currentArea, moveSkillArticle, moveExperienceArticle, moveContactArticle]);
 
-  const onClickSectionUpButton = useCallback(() => {
-    switch (currentArea) {
-      case SKILL_ARTICLE_AREA:
-        moveIntroArticle();
-        break;
-      case EXP_ARTICLE_AREA:
-        moveSkillArticle();
-        break;
-      case CONTACT_ARTICLE_AREA:
-        moveExperienceArticle();
-        break;
-      default:
-        break;
-    }
-  }, [currentArea, moveSkillArticle, moveExperienceArticle, moveIntroArticle]);
+  // const onClickSectionUpButton = useCallback(() => {
+  //   switch (currentArea) {
+  //     case SKILL_ARTICLE_AREA:
+  //       moveIntroArticle();
+  //       break;
+  //     case EXP_ARTICLE_AREA:
+  //       moveSkillArticle();
+  //       break;
+  //     case CONTACT_ARTICLE_AREA:
+  //       moveExperienceArticle();
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // }, [currentArea, moveSkillArticle, moveExperienceArticle, moveIntroArticle]);
 
   return (
     <LayoutContext.Provider
@@ -157,8 +120,8 @@ const LayoutProvider = ({
         experienceOffsetTop,
         contactOffsetTop,
         currentArea,
-        isWhiteColor,
         windowWidth,
+
         setIntroductionOffsetTop,
         setSkillOffsetTop,
         setExperienceOffsetTop,
@@ -169,8 +132,8 @@ const LayoutProvider = ({
         moveSkillArticle,
         moveExperienceArticle,
         moveContactArticle,
-        onClickSectionDownButton,
-        onClickSectionUpButton,
+        // onClickSectionDownButton,
+        // onClickSectionUpButton,
       }}
     >
       {children}
