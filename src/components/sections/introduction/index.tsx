@@ -1,16 +1,13 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { useLayoutContext } from '#/contexts/LayoutContext';
-import {
-  BLACK_BACKGROUND_COLOR,
-  WHITE_TEXT_COLOR,
-  UNDER_LINE_COLOR,
-} from '#/colors';
+import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR, UNDER_LINE_COLOR } from '#/colors';
 import { COMMON_BODY_WIDTH } from '#/constants';
 import { FadeInContent, Underline } from '#/components/common/gsap';
 import FadeInBodyText from '#/components/sections/introduction/FadeInBodyText';
 import FadeInHeaderText from '#/components/sections/introduction/FadeInHeaderText';
 import SvgWithGsap from '#/components/sections/introduction/SvgWithGsap';
+import YellowPoint from '#/components/common/YellowPoint';
 
 const Container = styled.div`
   display: flex;
@@ -33,10 +30,6 @@ const Body = styled.div`
   }
 `;
 
-const Point = styled.span`
-  color: ${UNDER_LINE_COLOR};
-`;
-
 const Introduction = () => {
   const { setIntroductionOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
@@ -54,22 +47,22 @@ const Introduction = () => {
             정현수
           </Underline>
           <span style={{ fontSize: '4vw' }}>입니다</span>
-          <Point>.</Point>
+          <YellowPoint>.</YellowPoint>
         </FadeInHeaderText>
         <FadeInBodyText delay={2}>
           많은 사람들에게 영향을 주는 서비스를 만드는
-          <Point>,</Point>
+          <YellowPoint>,</YellowPoint>
         </FadeInBodyText>
         <FadeInBodyText delay={2.4}>
           무언가를 예쁘게 꾸미고 디자인하는
-          <Point>,</Point>
+          <YellowPoint>,</YellowPoint>
         </FadeInBodyText>
         <FadeInBodyText delay={2.8}>
           끊임없이 아이디어를 내고 기획을 잘하는
-          <Point>,</Point>
+          <YellowPoint>,</YellowPoint>
         </FadeInBodyText>
         <FadeInBodyText delay={3.2}>
-          개발자를 꿈꾸고 있습니다<Point>.</Point>
+          개발자를 꿈꾸고 있습니다<YellowPoint>.</YellowPoint>
         </FadeInBodyText>
       </Body>
       <FadeInContent delay={1.9}>
