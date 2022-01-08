@@ -21,7 +21,7 @@ const Container = styled.article`
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 120vh;
   width: 100vw;
   background-color: ${WHITE_BACKGROUND_COLOR};
   color: ${BLACK_TEXT_COLOR};
