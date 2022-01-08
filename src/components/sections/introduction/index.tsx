@@ -17,7 +17,7 @@ const Container = styled.div`
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   background-color: ${BLACK_BACKGROUND_COLOR};
   color: ${WHITE_TEXT_COLOR};
