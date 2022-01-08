@@ -1,26 +1,18 @@
-// 요기서 height를 지정해주지 말고 그냥 바로 ㄱ ㄱ
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutContext } from '#/contexts/LayoutContext';
-import { useExperienceContext } from '#/contexts/ExperienceContext';
 
 import { UNDER_LINE_DELAY } from '#/constants';
 
-import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR } from '#/colors';
+import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR, UNDER_LINE_COLOR } from '#/colors';
 
-import {
-  FadeOutHeaderText,
-  FadeInContent,
-  Underline,
-} from '#/components/common/gsap';
+import { FadeOutHeaderText, FadeInContent, Underline } from '#/components/common/gsap';
 
-import ExperienceCardList from '#/components/sections/experience/ExperienceCardList';
-import ExperienceProgress from '#/components/sections/experience/ExperienceProgress';
-import ExperienceYearSelect from '#/components/sections/experience/ExperienceYearSelect';
-import ExperienceChangeButton from '#/components/sections/experience/ExperienceChangeButton';
 import ExperienceTitle from '#/components/sections/experience/ExperienceTitle';
-import TextComponents from './TextComponents';
+import ExperienceCard from '#/components/sections/experience/ExperienceCard';
+import ExperienceCardTitle from '#/components/sections/experience/ExperienceCardTitle';
+import YellowPoint from '#/components/common/YellowPoint';
 
 const Container = styled.article`
   position: relative;
@@ -33,9 +25,18 @@ const Container = styled.article`
   color: ${WHITE_TEXT_COLOR};
 `;
 
+const ExperienceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 200px;
+  align-items: center;
+  margin-top: 400px;
+  margin-bottom: 250px;
+`;
+
 const Experience = () => {
   const { setExperienceOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
-  const { lineColor }: any = useExperienceContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
 
   useEffect(() => {
@@ -47,16 +48,31 @@ const Experience = () => {
     <Container ref={containerRef}>
       <FadeOutHeaderText delay={1}>Experience</FadeOutHeaderText>
       <FadeInContent delay={2.5}>
-        <TextComponents />
-        {/* <ExperienceTitle>
-          <Underline color={lineColor} delay={UNDER_LINE_DELAY}>
+        <ExperienceTitle>
+          <Underline color={UNDER_LINE_COLOR} delay={3.5}>
             Experience
           </Underline>
         </ExperienceTitle>
-        <ExperienceCardList />
-        <ExperienceProgress />
-        <ExperienceYearSelect />
-        <ExperienceChangeButton /> */}
+
+        <ExperienceContainer>
+          {/* Content 1 */}
+          <FadeInContent delay={3}>
+            <ExperienceCard>
+              <ExperienceCardTitle>
+                하얀마인드 인턴<YellowPoint>.</YellowPoint>
+              </ExperienceCardTitle>
+            </ExperienceCard>
+          </FadeInContent>
+
+          {/* Content 2 */}
+          <FadeInContent delay={3.5}>
+            <ExperienceCard>
+              <ExperienceCardTitle>
+                세트렉아이 인턴<YellowPoint>.</YellowPoint>
+              </ExperienceCardTitle>
+            </ExperienceCard>
+          </FadeInContent>
+        </ExperienceContainer>
       </FadeInContent>
     </Container>
   );
