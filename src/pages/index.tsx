@@ -6,7 +6,7 @@ import Introduction from '#/components/sections/introduction';
 import Skill from '#/components/sections/skill';
 import Experience from '#/components/sections/experience';
 import Contact from '#/components/sections/contact';
-import ScrollPosition from '#/components/scrollPosition';
+import ScrollProgressBar from '#/components/ScrollProgressBar';
 
 // import { useLayoutContext } from '#/contexts/LayoutContext';
 
@@ -32,7 +32,7 @@ export default function Main() {
       </Head>
       <body>
         <Section>
-          <ScrollPosition />
+          <ScrollProgressBar />
           <Introduction />
           <Skill />
           <Experience />
