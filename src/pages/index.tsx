@@ -8,8 +8,6 @@ import Experience from '#/components/sections/experience';
 import Contact from '#/components/sections/contact';
 import ScrollProgressBar from '#/components/ScrollProgressBar';
 
-// import { useLayoutContext } from '#/contexts/LayoutContext';
-
 const Section = styled.section`
   position: relative;
   display: flex;
@@ -17,8 +15,6 @@ const Section = styled.section`
 `;
 
 export default function Main() {
-  // const { isPossibleMove, isPossibleMiniMove }: any = useLayoutContext(); // eslint-disable-line
-
   return (
     <div>
       <Head>
