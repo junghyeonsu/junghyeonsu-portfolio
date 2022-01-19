@@ -14,7 +14,7 @@ const HeaderTextContainer = styled.p`
   font-family: ${BOLD_TEXT};
   font-size: 6vw;
   letter-spacing: 2px;
-  line-height: 2vw;
+  line-height: 20px;
   z-index: 5;
 
   @media ${props => props.theme.mobile} {

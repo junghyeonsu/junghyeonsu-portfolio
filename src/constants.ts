@@ -1,5 +1,7 @@
 export const SCROLL_ACTIVE_VALUE = 20;
 
+export const LAST_UPDATED = '2022/01/19';
+
 export const INTRO_ARTICLE_AREA = 'introduction article area';
 export const SKILL_ARTICLE_AREA = 'skill article area';
 export const EXP_ARTICLE_AREA = 'experience article area';
@@ -17,7 +19,7 @@ export const PAGE_ORDER = [
 
 /* CSS */
 export const COMMON_TRANSITION = 'all 0.3s ease';
-export const COMMON_BODY_WIDTH = 70; // 80vh
+export const COMMON_BODY_WIDTH = 40; // 80vh
 
 export const PROGRESS_BAR_HEIGHT = 40; // 50vh
 export const PROGRESS_BAR_TOP = 30; // vh
