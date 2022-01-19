@@ -6,7 +6,6 @@ import Introduction from '#/components/sections/introduction';
 import Skill from '#/components/sections/skill';
 import Experience from '#/components/sections/experience';
 import Contact from '#/components/sections/contact';
-import ScrollProgressBar from '#/components/ScrollProgressBar';
 
 const Section = styled.section`
   position: relative;
@@ -18,7 +17,7 @@ export default function Main() {
   return (
     <div>
       <Head>
-        <title>Hyeonsu Jung</title>
+        <title>정현수를 소개합니다.</title>
         <meta name="description" content="Hyeonsu Jung's portfolio" />
         <meta
           name="viewport"
@@ -28,14 +27,11 @@ export default function Main() {
       </Head>
       <body>
         <Section>
-          <ScrollProgressBar />
           <Introduction />
           <Skill />
           <Experience />
           <Contact />
         </Section>
-        <script src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js" />
-        <script src="https://unpkg.com/smoothscroll-anchor-polyfill" />
       </body>
     </div>
   );
