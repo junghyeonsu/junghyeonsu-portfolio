@@ -1,12 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { useLayoutContext } from '#/contexts/LayoutContext';
-import { BLACK_BACKGROUND_COLOR, WHITE_TEXT_COLOR, UNDER_LINE_COLOR } from '#/colors';
-import { COMMON_BODY_WIDTH } from '#/constants';
+import { BLACK_BACKGROUND_COLOR, UNDER_LINE_COLOR } from '#/colors';
+import { LAST_UPDATED } from '#/constants';
 import { FadeInContent, Underline } from '#/components/common/gsap';
 import FadeInBodyText from '#/components/sections/introduction/FadeInBodyText';
 import FadeInHeaderText from '#/components/sections/introduction/FadeInHeaderText';
-import SvgWithGsap from '#/components/sections/introduction/SvgWithGsap';
 import YellowPoint from '#/components/common/YellowPoint';
 
 const Container = styled.div`
@@ -14,19 +13,87 @@ const Container = styled.div`
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 110vh;
+  height: 100vh;
   width: 100vw;
   background-color: ${BLACK_BACKGROUND_COLOR};
-  color: ${WHITE_TEXT_COLOR};
-`;
-
-const Body = styled.div`
-  width: ${COMMON_BODY_WIDTH}vw;
-  z-index: 5;
+  color: white;
 
   @media ${props => props.theme.mobile} {
+    flex-direction: column;
+  }
+`;
+
+const Left = styled.div`
+  position: absolute;
+  left: 0;
+  width: 50vw;
+  z-index: 5;
+  text-align: center;
+
+  @media ${props => props.theme.mobile} {
+    position: relative;
     width: 90vw;
     -webkit-text-stroke: 0.1px #000;
+  }
+`;
+
+const Right = styled.div`
+  position: absolute;
+  right: 0;
+  width: 40vw;
+  z-index: 5;
+  text-align: left;
+
+  @media ${props => props.theme.mobile} {
+    position: relative;
+    text-align: center;
+    width: 90vw;
+    -webkit-text-stroke: 0.1px #000;
+  }
+`;
+
+const ImageBox = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  width: 100vw;
+
+  img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+`;
+
+const LeftCircle = styled.div`
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  width: 10vw;
+  height: 10vw;
+  border-top: white 4px solid;
+  border-left: white 2px solid;
+`;
+
+const RightCircle = styled.div`
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  width: 10vw;
+  height: 10vw;
+  border-bottom: white 4px solid;
+  border-right: white 2px solid;
+`;
+
+const LastUpdated = styled.p`
+  position: absolute;
+  bottom: 40px;
+  left: 50px;
+  color: rgba(255, 255, 255, 0.7);
+
+  @media ${props => props.theme.mobile} {
+    display: none;
   }
 `;
 
@@ -41,32 +108,43 @@ const Introduction = () => {
 
   return (
     <Container ref={containerRef}>
-      <Body>
-        <FadeInHeaderText delay={1}>
-          <Underline color={UNDER_LINE_COLOR} delay={4}>
-            정현수
-          </Underline>
+      <Left>
+        <FadeInHeaderText delay={2}>
+          <span style={{ fontSize: '3vw' }}>기록과 공유를 좋아하는</span>
+        </FadeInHeaderText>
+        <FadeInHeaderText delay={3}>
+          <Underline color={UNDER_LINE_COLOR} delay={4}>정현수</Underline>
           <span style={{ fontSize: '4vw' }}>입니다</span>
           <YellowPoint>.</YellowPoint>
         </FadeInHeaderText>
-        <FadeInBodyText delay={2}>
-          많은 사람들에게 영향을 주는 서비스를 만드는
-          <YellowPoint>,</YellowPoint>
+      </Left>
+      <Right>
+        <FadeInHeaderText delay={4}>
+          <span style={{ fontSize: '4vw' }}>Contact</span>
+          <YellowPoint>.</YellowPoint>
+        </FadeInHeaderText>
+        <FadeInBodyText delay={5}>
+          <div>  
+            <p style={{ fontSize: '1.7vw' }}>Email: jung660317@naver.com</p>
+            <p style={{ fontSize: '1.7vw' }}>GitHub: jung660317@naver.com</p>
+            <p style={{ fontSize: '1.7vw' }}>Tistory Blog: jung660317@naver.com</p>
+            <p style={{ fontSize: '1.7vw' }}>Velog: jung660317@naver.com</p>
+          </div>
         </FadeInBodyText>
-        <FadeInBodyText delay={2.4}>
-          무언가를 예쁘게 꾸미고 디자인하는
-          <YellowPoint>,</YellowPoint>
-        </FadeInBodyText>
-        <FadeInBodyText delay={2.8}>
-          끊임없이 아이디어를 내고 기획을 잘하는
-          <YellowPoint>,</YellowPoint>
-        </FadeInBodyText>
-        <FadeInBodyText delay={3.2}>
-          개발자를 꿈꾸고 있습니다<YellowPoint>.</YellowPoint>
-        </FadeInBodyText>
-      </Body>
-      <FadeInContent delay={1.9}>
-        <SvgWithGsap delay={2} />
+      </Right>
+      <FadeInContent delay={1}>
+        <ImageBox>
+          <img src="/hyeonsu.jpeg" alt="hyeonsu" draggable={false} />
+        </ImageBox>
+      </FadeInContent>
+      <FadeInContent delay={2}>
+        <LeftCircle />
+      </FadeInContent>
+      <FadeInContent delay={2}>
+        <RightCircle />
+      </FadeInContent>
+      <FadeInContent delay={2}>
+        <LastUpdated>Last update: {LAST_UPDATED}</LastUpdated>
       </FadeInContent>
     </Container>
   );
