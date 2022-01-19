@@ -113,7 +113,7 @@ const Introduction = () => {
           <span style={{ fontSize: '3vw' }}>기록과 공유를 좋아하는</span>
         </FadeInHeaderText>
         <FadeInHeaderText delay={3}>
-          <Underline color={UNDER_LINE_COLOR} delay={4}>정현수</Underline>
+          <Underline color={UNDER_LINE_COLOR} delay={3.6}>정현수</Underline>
           <span style={{ fontSize: '4vw' }}>입니다</span>
           <YellowPoint>.</YellowPoint>
         </FadeInHeaderText>
