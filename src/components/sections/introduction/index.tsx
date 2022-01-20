@@ -97,6 +97,10 @@ const LastUpdated = styled.p`
   }
 `;
 
+const Link = styled.a`
+  color: #a6cfff;
+`;
+
 const Introduction = () => {
   const { setIntroductionOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
@@ -125,10 +129,23 @@ const Introduction = () => {
         </FadeInHeaderText>
         <FadeInBodyText delay={5}>
           <div>  
-            <p style={{ fontSize: '1.7vw' }}>Email: jung660317@naver.com</p>
-            <p style={{ fontSize: '1.7vw' }}>GitHub: jung660317@naver.com</p>
-            <p style={{ fontSize: '1.7vw' }}>Tistory Blog: jung660317@naver.com</p>
-            <p style={{ fontSize: '1.7vw' }}>Velog: jung660317@naver.com</p>
+            <p style={{ fontSize: '1.7vw' }}>
+              Email:{' '}
+              <Link href="mailto:jung660317@naver.com">jung660317@naver.com</Link>
+            </p>
+            <p style={{ fontSize: '1.7vw' }}>
+              GitHub:{' '}
+              <Link href="https://github.com/junghyeonsu" target="_blank">junghyeonsu</Link>
+            </p>
+            <p style={{ fontSize: '1.7vw' }}>
+              Tistory Blog:{' '}
+              <Link href="https://junghyeonsu.tistory.com/" target="_blank">현수 세상</Link>
+            </p>
+            <p style={{ fontSize: '1.7vw' }}>
+              Velog:{' '}
+              <Link href="https://velog.io/@junghyeonsu" target="_blank">정현수</Link>
+            </p>
+
           </div>
         </FadeInBodyText>
       </Right>
