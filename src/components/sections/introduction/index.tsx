@@ -25,10 +25,10 @@ const Container = styled.div`
 
 const Left = styled.div`
   position: absolute;
-  left: 0;
-  width: 50vw;
+  left: 10vw;
+  width: 40vw;
   z-index: 5;
-  text-align: center;
+  text-align: left;
 
   @media ${props => props.theme.mobile} {
     position: relative;
@@ -39,10 +39,10 @@ const Left = styled.div`
 
 const Right = styled.div`
   position: absolute;
-  right: 0;
+  right: 10vw;
   width: 40vw;
   z-index: 5;
-  text-align: left;
+  text-align: right;
 
   @media ${props => props.theme.mobile} {
     position: relative;
@@ -98,7 +98,11 @@ const LastUpdated = styled.p`
 `;
 
 const Link = styled.a`
-  color: #a6cfff;
+  text-decoration: underline;
+
+  :hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
 `;
 
 const Introduction = () => {
@@ -113,39 +117,39 @@ const Introduction = () => {
   return (
     <Container ref={containerRef}>
       <Left>
-        <FadeInHeaderText delay={2}>
+        <FadeInHeaderText delay={2.7}>
           <span style={{ fontSize: '3vw' }}>기록과 공유를 좋아하는</span>
         </FadeInHeaderText>
-        <FadeInHeaderText delay={3}>
-          <Underline color={UNDER_LINE_COLOR} delay={3.6}>정현수</Underline>
+        <FadeInHeaderText delay={3.4}>
+          <Underline color={UNDER_LINE_COLOR} delay={4}>정현수</Underline>
           <span style={{ fontSize: '4vw' }}>입니다</span>
           <YellowPoint>.</YellowPoint>
         </FadeInHeaderText>
+        <FadeInBodyText delay={4.2}>
+          <p style={{ fontSize: '1.5vw' }}>충남대학교 졸업을 앞두고 있고, 학부 3학년부터 프론트엔드에 관심을 가져 열심히 배워가고 있습니다. 학교에 다니면서 다양한 프로젝트와 스타트업 인턴을 통해서 실무를 경험했습니다.</p>
+          <p style={{ fontSize: '1.5vw' }}>새로운 기술에 대한 두려움이 없으며, 배운 모든 것을 기록하고 공유하는 것을 좋아합니다. 공유의 중요성을 잘 알기에 항상 새기고 실천하려고 노력합니다.</p>
+        </FadeInBodyText>
       </Left>
       <Right>
-        <FadeInHeaderText delay={4}>
+        <FadeInHeaderText delay={5}>
           <span style={{ fontSize: '4vw' }}>Contact</span>
           <YellowPoint>.</YellowPoint>
         </FadeInHeaderText>
-        <FadeInBodyText delay={5}>
+        <FadeInBodyText delay={5.8}>
           <div>  
             <p style={{ fontSize: '1.7vw' }}>
               Email:{' '}
               <Link href="mailto:jung660317@naver.com">jung660317@naver.com</Link>
             </p>
             <p style={{ fontSize: '1.7vw' }}>
-              GitHub:{' '}
-              <Link href="https://github.com/junghyeonsu" target="_blank">junghyeonsu</Link>
+              <Link href="https://github.com/junghyeonsu" target="_blank">GitHub</Link>
             </p>
             <p style={{ fontSize: '1.7vw' }}>
-              Tistory Blog:{' '}
-              <Link href="https://junghyeonsu.tistory.com/" target="_blank">현수 세상</Link>
+              <Link href="https://junghyeonsu.tistory.com/" target="_blank">Tistory Blog</Link>
             </p>
             <p style={{ fontSize: '1.7vw' }}>
-              Velog:{' '}
-              <Link href="https://velog.io/@junghyeonsu" target="_blank">정현수</Link>
+              <Link href="https://velog.io/@junghyeonsu" target="_blank">Velog</Link>
             </p>
-
           </div>
         </FadeInBodyText>
       </Right>
