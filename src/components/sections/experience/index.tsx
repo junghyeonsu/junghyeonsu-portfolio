@@ -53,6 +53,7 @@ const Experience = () => {
           Experience
         </Underline>
       </Styled.ExperienceTitle>
+
       <FadeInContent delay={2}>
         <ExperienceContainer>
           <Styled.ExperienceCard>
@@ -75,11 +76,13 @@ const Experience = () => {
           </Styled.ExperienceCard>
         </ExperienceContainer>
       </FadeInContent>
+
       <Styled.ExperienceTitle>
         <Underline color={UNDER_LINE_COLOR} delay={1}>
           Skill
         </Underline>
       </Styled.ExperienceTitle>
+
       <FadeInContent delay={2}>
         <ExperienceContainer>
           <Styled.ExperienceCard>
@@ -102,6 +105,7 @@ const Experience = () => {
           </Styled.ExperienceCard>
         </ExperienceContainer>
       </FadeInContent>
+      
     </Container>
   );
 };
