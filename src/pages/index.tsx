@@ -3,9 +3,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 
 import Introduction from '#/components/sections/introduction';
-import Skill from '#/components/sections/skill';
-import Experience from '#/components/sections/experience';
-import Contact from '#/components/sections/contact';
+import Skill from '#/components/sections/experience';
 
 const Section = styled.section`
   position: relative;
@@ -29,8 +27,6 @@ export default function Main() {
         <Section>
           <Introduction />
           <Skill />
-          <Experience />
-          <Contact />
         </Section>
       </body>
     </div>
