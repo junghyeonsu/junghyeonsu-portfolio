@@ -7,7 +7,7 @@ interface HyperlinkProps {
   text: string;
 }
 
-const Containr = styled.div`
+const Container = styled.div`
   display: flex;
   align-items: center;
   column-gap: 5px;
@@ -34,12 +34,12 @@ const Link = styled.a`
 
 const Hyperlink = ({ href, text }: HyperlinkProps) => {
   return (
-    <Containr>
+    <Container>
       <LinkIcon />
       <Link target="_blank" href={href}>
         {text}
       </Link>
-    </Containr>
+    </Container>
   );
 };
 
