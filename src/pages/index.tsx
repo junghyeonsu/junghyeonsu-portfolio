@@ -15,7 +15,7 @@ export default function Main() {
   return (
     <div>
       <Head>
-        <title>정현수를 소개합니다.</title>
+        <title>정현수 포트폴리오</title>
         <meta name="description" content="Hyeonsu Jung's portfolio" />
         <meta
           name="viewport"

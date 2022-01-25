@@ -39,25 +39,42 @@ export const ExperienceCard = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 600px;
   width: 1100px;
   background-color: rgba(255, 255, 255, 0.705);
   box-shadow: 17px 20px 13px -4px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),4px -1px 15px -3px rgba(0,0,0,0.1);
   border-radius: 30px;
   color: rgba(0, 0, 0, 0.8);
+
+  @media ${props => props.theme.laptop} {
+    width: 80vw;
+  }
+`;
+
+export const ExperienceCardTopContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: space-between;
+`;
+
+export const ExperienceCardTitleType = styled.span`
+  font-size: 26px;
 `;
 
 export const ExperienceCardTitle = styled.h1`
-  position: absolute;
-  top: 30px;
-  left: 60px;
   font-size: 40px;
+  margin: 0;
   color: ${BLACK_TEXT_COLOR};
   font-family: ${BOLD_TEXT};
 
   @media ${props => props.theme.mobile} {
     font-size: 5vw;
   }
+`;
+
+export const ExperienceCardPeriod = styled.span`
+  font-size: 20px;
+  color: #6e6e6e;
 `;
 
 export const HyperlinkContainer = styled.div`
