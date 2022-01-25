@@ -13,8 +13,9 @@ import {
   Underline,
 } from '#/components/common/gsap';
 
+import Content from '#/components/sections/experience/content';
 import * as Styled from '#/components/sections/experience/styled';
-import Hyperlink from '#/components/sections/experience/Hyperlink';
+// import Hyperlink from '#/components/sections/experience/Hyperlink';
 
 const Container = styled.article`
   display: flex;
@@ -50,30 +51,49 @@ const Experience = () => {
     <Container ref={containerRef}>
       <Styled.ExperienceTitle>
         <Underline color={UNDER_LINE_COLOR} delay={1}>
-          Experience
+          Work
         </Underline>
       </Styled.ExperienceTitle>
 
       <FadeInContent delay={2}>
         <ExperienceContainer>
-          <Styled.ExperienceCard>
-            <Styled.ExperienceCardTitle>
-              하얀마인드 인턴
-            </Styled.ExperienceCardTitle>
-          </Styled.ExperienceCard>
-          <Styled.ExperienceCard>
-            <Styled.ExperienceCardTitle>
-              하얀마인드 인턴
-              <Styled.HyperlinkContainer>
-                <Hyperlink href="#" text="하이" />
-              </Styled.HyperlinkContainer>
-            </Styled.ExperienceCardTitle>
-          </Styled.ExperienceCard>
-          <Styled.ExperienceCard>
-            <Styled.ExperienceCardTitle>
-              하얀마인드 인턴
-            </Styled.ExperienceCardTitle>
-          </Styled.ExperienceCard>
+          {Content.work.map(work => {
+            return (
+              <Styled.ExperienceCard>
+                <Styled.ExperienceCardTopContainer>
+                  <Styled.ExperienceCardTitleType>
+                    {work.type}
+                  </Styled.ExperienceCardTitleType>
+                  <Styled.ExperienceCardTitle>
+                    {work.title}
+                  </Styled.ExperienceCardTitle>
+                  <Styled.ExperienceCardPeriod>
+                    {work.period}
+                  </Styled.ExperienceCardPeriod>
+                </Styled.ExperienceCardTopContainer>
+              </Styled.ExperienceCard>
+            );
+          })}
+        </ExperienceContainer>
+      </FadeInContent>
+
+      <Styled.ExperienceTitle>
+        <Underline color={UNDER_LINE_COLOR} delay={1}>
+          Project
+        </Underline>
+      </Styled.ExperienceTitle>
+
+      <FadeInContent delay={2}>
+        <ExperienceContainer>
+          {Content.project.map(project => {
+            return (
+              <Styled.ExperienceCard>
+                <Styled.ExperienceCardTitle>
+                  {project.title}
+                </Styled.ExperienceCardTitle>
+              </Styled.ExperienceCard>
+            )
+          })}
         </ExperienceContainer>
       </FadeInContent>
 
@@ -82,29 +102,6 @@ const Experience = () => {
           Skill
         </Underline>
       </Styled.ExperienceTitle>
-
-      <FadeInContent delay={2}>
-        <ExperienceContainer>
-          <Styled.ExperienceCard>
-            <Styled.ExperienceCardTitle>
-              하얀마인드 인턴
-            </Styled.ExperienceCardTitle>
-          </Styled.ExperienceCard>
-          <Styled.ExperienceCard>
-            <Styled.ExperienceCardTitle>
-              하얀마인드 인턴
-              <Styled.HyperlinkContainer>
-                <Hyperlink href="#" text="하이" />
-              </Styled.HyperlinkContainer>
-            </Styled.ExperienceCardTitle>
-          </Styled.ExperienceCard>
-          <Styled.ExperienceCard>
-            <Styled.ExperienceCardTitle>
-              하얀마인드 인턴
-            </Styled.ExperienceCardTitle>
-          </Styled.ExperienceCard>
-        </ExperienceContainer>
-      </FadeInContent>
       
     </Container>
   );
