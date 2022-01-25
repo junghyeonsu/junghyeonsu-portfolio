@@ -18,7 +18,7 @@ export const ExperienceContainer = styled.div`
 `;
 
 export const ExperienceTitle = styled.div`
-  text-align: left;
+  text-align: center;
   width: 100%;
   padding: 100px;
   font-family: ${BOLD_TEXT};
