@@ -12,14 +12,8 @@ interface TextProps {
 const HeaderTextContainer = styled.p`
   position: relative;
   font-family: ${BOLD_TEXT};
-  font-size: 6vw;
   letter-spacing: 2px;
-  line-height: 20px;
   z-index: 5;
-
-  @media ${props => props.theme.mobile} {
-    font-size: 13vw;
-  }
 `;
 
 const FadeInHeaderText = ({ children, delay }: TextProps) => {
