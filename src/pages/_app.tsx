@@ -7,7 +7,6 @@ import smoothscroll from 'smoothscroll-polyfill';
 
 import GlobalStyle from '#/styles/globalStyles';
 import LayoutProvider from '#/contexts/LayoutContext';
-import ContactCardProvider from '#/contexts/ContactCardContext';
 import { theme } from '#/styles/theme';
 
 if (typeof window !== 'undefined') {
@@ -20,11 +19,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <LayoutProvider>
-        <ContactCardProvider>
-          <GlobalStyle />
-          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          <Component {...pageProps} />
-        </ContactCardProvider>
+        <GlobalStyle />
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <Component {...pageProps} />
       </LayoutProvider>
     </ThemeProvider>
   );

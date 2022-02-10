@@ -12,13 +12,8 @@ interface TextProps {
 const BodyTextContainer = styled.p`
   position: relative;
   font-family: ${REGULAR_TEXT};
-  font-size: 2.5vw;
   color: white;
   z-index: 5;
-
-  @media ${props => props.theme.mobile} {
-    font-size: 4.5vw;
-  }
 `;
 
 const FadeInBodyText = ({ children, delay }: TextProps) => {

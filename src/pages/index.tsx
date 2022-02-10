@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 
 import Introduction from '#/components/sections/introduction';
-import Skill from '#/components/sections/experience';
+import Experience from '#/components/sections/experience';
 
 const Section = styled.section`
   position: relative;
@@ -26,7 +26,7 @@ export default function Main() {
       <body>
         <Section>
           <Introduction />
-          <Skill />
+          <Experience />
         </Section>
       </body>
     </div>
