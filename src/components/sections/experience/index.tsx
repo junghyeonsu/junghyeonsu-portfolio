@@ -16,7 +16,7 @@ const Container = styled.article`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  background-color: white;
+  background-color: rgb(245, 245, 245);
   color: black;
 `;
 
@@ -24,7 +24,7 @@ const ExperienceContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  row-gap: 100px;
+  row-gap: 70px;
   align-items: center;
   margin-top: 50px;
   margin-bottom: 100px;
@@ -41,7 +41,7 @@ const Experience = () => {
 
   return (
     <Container ref={containerRef}>
-      <FadeInContent delay={1}>
+      <FadeInContent delay={0.5}>
         <ExperienceContainer>
           <Styled.ExperienceTitle>
             Work<YellowPoint>.</YellowPoint>
@@ -75,8 +75,6 @@ const Experience = () => {
                         </Styled.HyperLink>
                       ))}
                   </Styled.HyperLinkContainer>
-
-                  {work.gif && <img src={work.gif} alt="로딩중..." />}
                 </Styled.ExperienceCardTopContainer>
               </Styled.ExperienceCard>
             );
@@ -84,7 +82,7 @@ const Experience = () => {
         </ExperienceContainer>
       </FadeInContent>
 
-      <FadeInContent delay={1}>
+      <FadeInContent delay={0.5}>
         <ExperienceContainer>
           <Styled.ExperienceTitle>
             Project<YellowPoint>.</YellowPoint>
@@ -104,7 +102,7 @@ const Experience = () => {
         </ExperienceContainer>
       </FadeInContent>
 
-      <FadeInContent delay={1}>
+      <FadeInContent delay={0.5}>
         <ExperienceContainer>
           <Styled.ExperienceTitle>
             Open Source<YellowPoint>.</YellowPoint>
@@ -124,7 +122,7 @@ const Experience = () => {
         </ExperienceContainer>
       </FadeInContent>
 
-      <FadeInContent delay={1}>
+      <FadeInContent delay={0.5}>
         <ExperienceContainer>
           <Styled.ExperienceTitle>
             Skill<YellowPoint>.</YellowPoint>

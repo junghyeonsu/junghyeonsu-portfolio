@@ -13,7 +13,6 @@ export interface Work {
   type: ExperienceType;
   period: string;
   explains: string[];
-  gif?: string;
   link?: Link[];
 }
 
