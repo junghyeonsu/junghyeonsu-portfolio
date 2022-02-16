@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import LinkIcon from '@material-ui/icons/Link';
+import CheckIcon from '@material-ui/icons/Check';
 
 import { BOLD_TEXT } from '#/constants';
 
@@ -18,7 +20,7 @@ export const ExperienceTitle = styled.div`
   text-align: left;
   width: 100%;
   font-family: ${BOLD_TEXT};
-  font-size: 80px;
+  font-size: 100px;
   z-index: 5;
 
   @media ${props => props.theme.mobile} {
@@ -46,14 +48,16 @@ export const ExperienceCard = styled.div`
 export const ExperienceCardTopContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  row-gap: 20px;
 `;
 
 export const ExperienceCardTitleType = styled.span`
-  font-size: 26px;
+  font-size: 30px;
 `;
 
 export const ExperienceCardTitle = styled.h1`
-  font-size: 40px;
+  font-size: 50px;
   margin: 0;
   font-family: ${BOLD_TEXT};
 
@@ -64,10 +68,48 @@ export const ExperienceCardTitle = styled.h1`
 
 export const ExperienceCardPeriod = styled.span`
   font-size: 20px;
-  color: #6e6e6e;
+  color: #000000;
 `;
 
-export const HyperlinkContainer = styled.div`
+export const ExperienceCardExplainContainer = styled.div`
   display: flex;
   flex-direction: column;
+  row-gap: 5px;
 `;
+
+export const ExperienceCardExplain = styled.span`
+  display: flex;
+  column-gap: 10px;
+  font-size: 23px;
+`;
+
+export const ExplainCheckIcon = styled(CheckIcon)`
+  color: rgb(255, 174, 0);
+`;
+
+export const HyperLinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+`;
+
+export const HyperLink = styled.a`
+  display: flex;
+  column-gap: 10px;
+
+  text-decoration: none;
+  font-size: 23px;
+  width: fit-content;
+
+  background: linear-gradient(to right, transparent 50%, rgb(255, 218, 55) 50%);
+  background-size: 200%;
+  background-position: 0 0;
+
+  transition: 0.25s ease;
+
+  :hover {
+    background-position: -100% 0;
+  }
+`;
+
+export const HyperLinkIcon = styled(LinkIcon)``;
