@@ -28,19 +28,31 @@ export const Sidebar = styled.aside`
 
 export const LinkContainer = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
+  justify-content: center;
   margin-top: 57px;
   font-family: ${BOLD_TEXT};
   row-gap: 15px;
+  width: 100%;
 `;
 
 export const Link = styled.a`
-  transition: 0.2s color ease;
   text-decoration: none;
+  width: 100%;
+  height: 100%;
   font-size: 30px;
+  text-align: center;
+  padding: 10px;
+
+  background: linear-gradient(to right, transparent 50%, rgb(248, 205, 7) 50%);
+  background-size: 200%;
+  background-position: 0 0;
+
+  transition: 0.25s ease;
 
   :hover {
-    color: rgba(255, 255, 255, 0.3);
+    background-position: -100% 0;
   }
 `;
 
