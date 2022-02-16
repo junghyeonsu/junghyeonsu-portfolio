@@ -12,7 +12,6 @@ const content: Content = {
         'B2B 소개 페이지 제작 프로젝트 참여 [디자이너1, 개발자1]',
         'react-admin 프레임워크를 활용한 B2B 사이트 유지보수',
       ],
-      gif: '/redkiwi.gif',
       link: [
         {
           text: 'B2B 프로그램 소개 페이지',

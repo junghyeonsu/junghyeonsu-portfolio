@@ -38,7 +38,7 @@ export const ExperienceCard = styled.div`
   align-items: center;
   position: relative;
   width: 1100px;
-  background-color: white;
+  background-color: rgb(245, 245, 245);
 
   @media ${props => props.theme.laptop} {
     width: 80vw;
