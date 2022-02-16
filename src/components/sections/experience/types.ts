@@ -3,28 +3,30 @@ import { INTERN, PROJECT, REACT, TYPESCRIPT } from './constants';
 export type ExperienceType = typeof INTERN | typeof PROJECT;
 export type Skill = typeof REACT | typeof TYPESCRIPT;
 
-export interface Explain {
-	explain: string;
-	link: string;
+export interface Link {
+  text: string;
+  href: string;
 }
 
 export interface Work {
-	title: string;
-	type: ExperienceType;
-	period: string;
-	explains: Explain[];
+  title: string;
+  type: ExperienceType;
+  period: string;
+  explains: string[];
+  gif?: string;
+  link?: Link[];
 }
 
 export interface Project {
-	title: string;
-	type: ExperienceType;
-	period: string;
-	explains: Explain[];
-	skills: Skill[];
+  title: string;
+  type: ExperienceType;
+  period: string;
+  explains: string[];
+  skills: Skill[];
 }
 
 export interface Content {
-	work: Work[];
-	project: Project[];
-	skill: Skill[];
+  work: Work[];
+  project: Project[];
+  skill: Skill[];
 }

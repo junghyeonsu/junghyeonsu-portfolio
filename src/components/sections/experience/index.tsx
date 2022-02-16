@@ -8,7 +8,6 @@ import YellowPoint from '#/components/common/YellowPoint';
 
 import Content from '#/components/sections/experience/content';
 import * as Styled from '#/components/sections/experience/styled';
-// import Hyperlink from '#/components/sections/experience/Hyperlink';
 
 const Container = styled.article`
   display: flex;
@@ -55,6 +54,29 @@ const Experience = () => {
                   <Styled.ExperienceCardTitleType>{work.type}</Styled.ExperienceCardTitleType>
                   <Styled.ExperienceCardTitle>{work.title}</Styled.ExperienceCardTitle>
                   <Styled.ExperienceCardPeriod>{work.period}</Styled.ExperienceCardPeriod>
+
+                  <Styled.ExperienceCardExplainContainer>
+                    {work.explains.map(explain => {
+                      return (
+                        <Styled.ExperienceCardExplain>
+                          <Styled.ExplainCheckIcon />
+                          {explain}
+                        </Styled.ExperienceCardExplain>
+                      );
+                    })}
+                  </Styled.ExperienceCardExplainContainer>
+
+                  <Styled.HyperLinkContainer>
+                    {work.link &&
+                      work.link.map(link => (
+                        <Styled.HyperLink href={link.href} target="_blank">
+                          <Styled.HyperLinkIcon />
+                          {link.text}
+                        </Styled.HyperLink>
+                      ))}
+                  </Styled.HyperLinkContainer>
+
+                  {work.gif && <img src={work.gif} alt="로딩중..." />}
                 </Styled.ExperienceCardTopContainer>
               </Styled.ExperienceCard>
             );
