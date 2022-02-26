@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 
-import Introduction from '#/components/sections/introduction';
-import Experience from '#/components/sections/experience';
+import Introduction from '#/components/introduction';
+import Experience from '#/components/experience';
 
 const Section = styled.section`
   position: relative;
