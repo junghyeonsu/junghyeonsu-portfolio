@@ -34,7 +34,6 @@ export const LinkContainer = styled.div`
   margin-top: 57px;
   font-family: ${BOLD_TEXT};
   row-gap: 15px;
-  width: 100%;
 `;
 
 export const Link = styled.a`
@@ -42,7 +41,7 @@ export const Link = styled.a`
   width: 100%;
   height: 100%;
   font-size: 30px;
-  text-align: center;
+  text-align: left;
   padding: 10px;
 
   background: linear-gradient(to right, transparent 50%, rgb(248, 205, 7) 50%);
