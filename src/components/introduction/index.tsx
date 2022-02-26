@@ -2,10 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { UNDER_LINE_COLOR } from '#/colors';
 import { LAST_UPDATED } from '#/constants';
-import { FadeInContent, Underline } from '#/components/common/gsap';
-import YellowPoint from '#/components/common/YellowPoint';
-import FadeInBodyText from '#/components/sections/introduction/FadeInBodyText';
-import FadeInHeaderText from '#/components/sections/introduction/FadeInHeaderText';
+import { FadeInContent, Underline, FadeInBodyText, FadeInHeaderText } from '#/components/gsap';
+import YellowPoint from '#/components/YellowPoint';
 import * as Styled from './styled';
 
 const Introduction = () => {

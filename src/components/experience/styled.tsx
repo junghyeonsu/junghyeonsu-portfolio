@@ -5,15 +5,25 @@ import CheckIcon from '@material-ui/icons/Check';
 import { BOLD_TEXT } from '#/constants';
 
 // All
+export const Container = styled.article`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: rgb(245, 245, 245);
+  color: black;
+`;
 
 export const ExperienceContainer = styled.div`
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  row-gap: 70px;
   align-items: center;
-  margin-right: 5vw;
-  z-index: 5;
+  margin-top: 50px;
+  margin-bottom: 100px;
 `;
 
 export const ExperienceTitle = styled.div`
