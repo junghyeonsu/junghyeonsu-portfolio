@@ -6,6 +6,7 @@ import { BOLD_TEXT } from '#/constants';
 
 // All
 export const Container = styled.article`
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -70,10 +71,16 @@ export const ExperienceCardTitle = styled.h1`
   font-size: 50px;
   margin: 0;
   font-family: ${BOLD_TEXT};
-
+  /* 
   @media ${props => props.theme.mobile} {
     font-size: 5vw;
-  }
+  } */
+`;
+
+export const ExperienceCardSubTitle = styled.h2`
+  font-size: 40px;
+  margin: 0;
+  font-family: ${BOLD_TEXT};
 `;
 
 export const ExperienceCardPeriod = styled.span`
@@ -89,11 +96,23 @@ export const ExperienceCardExplainContainer = styled.div`
 
 export const ExperienceCardExplain = styled.span`
   display: flex;
-  column-gap: 10px;
   font-size: 23px;
 `;
 
+export const ExplainLinkText = styled.a`
+  background: linear-gradient(to right, transparent 50%, rgb(255, 218, 55) 50%);
+  background-size: 200%;
+  background-position: 0 0;
+
+  transition: 0.25s ease;
+
+  :hover {
+    background-position: -100% 0;
+  }
+`;
+
 export const ExplainCheckIcon = styled(CheckIcon)`
+  margin-right: 10px;
   color: rgb(255, 174, 0);
 `;
 
@@ -106,6 +125,7 @@ export const HyperLinkContainer = styled.div`
 export const HyperLink = styled.a`
   display: flex;
   column-gap: 10px;
+  font-family: ${BOLD_TEXT};
 
   text-decoration: none;
   font-size: 23px;
@@ -123,3 +143,9 @@ export const HyperLink = styled.a`
 `;
 
 export const HyperLinkIcon = styled(LinkIcon)``;
+
+export const SkillContainer = styled.div`
+  display: flex;
+`;
+
+export const SkillItem = styled.div``;

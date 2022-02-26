@@ -4,7 +4,7 @@ import { useLayoutContext } from '#/contexts/LayoutContext';
 import { FadeInContent } from '#/components/gsap';
 import YellowPoint from '#/components/YellowPoint';
 import * as Styled from '#/components/experience/styled';
-import { Hayanmind, SatrecI } from './contents';
+import { Hayanmind, SatrecI, ReactSeasonComponent, FindDifferentColor, Portfolio, Tistory, Velog, YouTube } from './contents';
 
 const Experience = () => {
   const { setSkillOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
@@ -33,7 +33,20 @@ const Experience = () => {
           <Styled.ExperienceTitle>
             Project<YellowPoint>.</YellowPoint>
           </Styled.ExperienceTitle>
-          <Hayanmind />
+          <ReactSeasonComponent />
+          <FindDifferentColor />
+          <Portfolio />
+        </Styled.ExperienceContainer>
+      </FadeInContent>
+
+      <FadeInContent delay={0.5}>
+        <Styled.ExperienceContainer>
+          <Styled.ExperienceTitle>
+            Share<YellowPoint>.</YellowPoint>
+          </Styled.ExperienceTitle>
+          <Tistory />
+          <Velog />
+          <YouTube />
         </Styled.ExperienceContainer>
       </FadeInContent>
 
