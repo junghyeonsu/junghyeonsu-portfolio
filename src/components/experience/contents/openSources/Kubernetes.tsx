@@ -9,7 +9,7 @@ const Kubernetes = () => {
         <Styled.ExperienceCardTitleType>번역</Styled.ExperienceCardTitleType>
         <Styled.ExperienceCardTitle>
           <Styled.SkillIcon src="/icons/kubernetes.png" alt="kubernetes" />
-          <InlineLinkText href="https://kubernetes.io/ko/">Kubernetes</InlineLinkText>
+          Kubernetes
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>

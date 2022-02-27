@@ -4,9 +4,10 @@ import YellowPoint from '#/components/YellowPoint';
 
 import { BOLD_TEXT } from '#/constants';
 
-export const StyledExperienceTitle = styled.div`
+export const StyledExperienceTitle = styled.h1`
   text-align: left;
   width: 100%;
+  margin: 0;
   font-family: ${BOLD_TEXT};
   font-size: 100px;
   z-index: 5;
