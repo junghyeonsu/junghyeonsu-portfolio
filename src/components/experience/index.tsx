@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import ExperienceTitle from './common/ExperienceTitle';
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { FadeInContent } from '#/components/gsap';
-import * as Styled from '#/components/Experience/styled';
+import * as Styled from './styled';
 import {
   Hayanmind,
   SatrecI,

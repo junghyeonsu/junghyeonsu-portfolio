@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Introduction from '#/components/Introduction';
 import Experience from '#/components/Experience';
-import ContentOfTable from '#/components/ContentOfTable';
+// import ContentOfTable from '#/components/ContentOfTable';
 
 const Section = styled.section`
   position: relative;
