@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 
-import Introduction from '../components/Introduction/index';
-import Experience from '../components/Experience/index';
+import Introduction from '#/components/introduction';
+import Experience from '#/components/experience';
 // import ContentOfTable from '#/components/ContentOfTable';
 
 const Section = styled.section`
