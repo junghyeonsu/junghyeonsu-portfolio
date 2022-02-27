@@ -1,12 +1,38 @@
 import React from 'react';
-import * as Styled from '../styled';
+import styled from 'styled-components';
+import LinkIcon from '@material-ui/icons/Link';
+
+const HyperLink = styled.div`
+  display: flex;
+  column-gap: 10px;
+`;
+
+const HyperLinkIcon = styled(LinkIcon)``;
+
+const HyperLinkText = styled.a`
+  text-underline-offset: 5px;
+  font-size: 23px;
+  width: fit-content;
+
+  background: linear-gradient(to right, transparent 50%, rgb(255, 218, 55) 50%);
+  background-size: 200%;
+  background-position: 0 0;
+
+  transition: 0.25s ease;
+
+  :hover {
+    background-position: -100% 0;
+  }
+`;
 
 const Link = ({ children, href }: { children: React.ReactNode; href: string }) => {
   return (
-    <Styled.HyperLink href={href} target="_blank">
-      <Styled.HyperLinkIcon />
-      {children}
-    </Styled.HyperLink>
+    <HyperLink>
+      <HyperLinkIcon />
+      <HyperLinkText href={href} target="_blank">
+        {children}
+      </HyperLinkText>
+    </HyperLink>
   );
 };
 
