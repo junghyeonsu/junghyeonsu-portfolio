@@ -51,7 +51,7 @@ export const ExperienceCardTitleType = styled.span`
   font-size: 30px;
 `;
 
-export const ExperienceCardTitle = styled.h1`
+export const ExperienceCardTitle = styled.h2`
   font-size: 50px;
   margin: 0;
   font-family: ${BOLD_TEXT};
@@ -61,7 +61,7 @@ export const ExperienceCardTitle = styled.h1`
   } */
 `;
 
-export const ExperienceCardSubTitle = styled.h2`
+export const ExperienceCardSubTitle = styled.h3`
   font-size: 40px;
   margin: 0;
   font-family: ${BOLD_TEXT};
@@ -86,9 +86,20 @@ export const HyperLinkContainer = styled.div`
 
 export const SkillContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
-export const SkillItem = styled.div``;
+export const SkillItem = styled.div`
+  &:after {
+    content: '·';
+    margin: 0 6px;
+  }
+
+  &:last-child::after {
+    content: '';
+    margin: 0;
+  }
+`;
 
 export const SkillIcon = styled.img`
   object-fit: contain;

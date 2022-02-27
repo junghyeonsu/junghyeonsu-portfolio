@@ -30,6 +30,12 @@ const ReactSeasonComponent = () => {
         <Styled.SkillContainer>
           <Styled.SkillItem>React</Styled.SkillItem>
           <Styled.SkillItem>TypeScript</Styled.SkillItem>
+          <Styled.SkillItem>styled-components</Styled.SkillItem>
+          <Styled.SkillItem>MUI</Styled.SkillItem>
+          <Styled.SkillItem>ESLint</Styled.SkillItem>
+          <Styled.SkillItem>Prettier</Styled.SkillItem>
+          <Styled.SkillItem>github pages</Styled.SkillItem>
+          <Styled.SkillItem>github actions</Styled.SkillItem>
         </Styled.SkillContainer>
       </Styled.ExperienceCardTopContainer>
     </Styled.ExperienceCard>

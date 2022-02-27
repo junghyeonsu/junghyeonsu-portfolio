@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from '../../styled';
-import { Explain, InlineLinkText, MergedWithLink } from '../../common';
+import { Explain, MergedWithLink } from '../../common';
 
 const ReactContribute = () => {
   return (
@@ -9,7 +9,7 @@ const ReactContribute = () => {
         <Styled.ExperienceCardTitleType>번역</Styled.ExperienceCardTitleType>
         <Styled.ExperienceCardTitle>
           <Styled.SkillIcon src="/icons/React.png" alt="React" />
-          <InlineLinkText href="https://ko.reactjs.org/">React</InlineLinkText>
+          React
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>
