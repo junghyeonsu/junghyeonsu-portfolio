@@ -1,6 +1,6 @@
 export const SCROLL_ACTIVE_VALUE = 20;
 
-export const LAST_UPDATED = '2022/02/26';
+export const LAST_UPDATED = '2022/02/27';
 
 export const INTRO_ARTICLE_AREA = 'introduction article area';
 export const SKILL_ARTICLE_AREA = 'skill article area';
@@ -10,12 +10,7 @@ export const CONTACT_ARTICLE_AREA = 'contact article area';
 export const WHEEL_CONTROL_TIME = 1500; // 1500MS === 1.5초
 export const WHEEL_MINI_CONTROL_TIME = 500; // 500MS === 0.5초
 
-export const PAGE_ORDER = [
-  { page: INTRO_ARTICLE_AREA },
-  { page: SKILL_ARTICLE_AREA },
-  { page: EXP_ARTICLE_AREA },
-  { page: CONTACT_ARTICLE_AREA },
-];
+export const PAGE_ORDER = [{ page: INTRO_ARTICLE_AREA }, { page: SKILL_ARTICLE_AREA }, { page: EXP_ARTICLE_AREA }, { page: CONTACT_ARTICLE_AREA }];
 
 /* CSS */
 export const COMMON_TRANSITION = 'all 0.3s ease';

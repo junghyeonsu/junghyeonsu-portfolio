@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import LinkIcon from '@material-ui/icons/Link';
-import CheckIcon from '@material-ui/icons/Check';
 
 import { BOLD_TEXT } from '#/constants';
 
@@ -25,20 +23,6 @@ export const ExperienceContainer = styled.div`
   align-items: center;
   margin-top: 50px;
   margin-bottom: 100px;
-`;
-
-export const ExperienceTitle = styled.div`
-  text-align: left;
-  width: 100%;
-  font-family: ${BOLD_TEXT};
-  font-size: 100px;
-  z-index: 5;
-
-  @media ${props => props.theme.mobile} {
-    font-size: 40px;
-    text-align: left;
-    padding: 50px;
-  }
 `;
 
 // Card
@@ -91,61 +75,23 @@ export const ExperienceCardPeriod = styled.span`
 export const ExperienceCardExplainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 5px;
-`;
-
-export const ExperienceCardExplain = styled.span`
-  display: flex;
-  font-size: 23px;
-`;
-
-export const ExplainLinkText = styled.a`
-  background: linear-gradient(to right, transparent 50%, rgb(255, 218, 55) 50%);
-  background-size: 200%;
-  background-position: 0 0;
-
-  transition: 0.25s ease;
-
-  :hover {
-    background-position: -100% 0;
-  }
-`;
-
-export const ExplainCheckIcon = styled(CheckIcon)`
-  margin-right: 10px;
-  color: rgb(255, 174, 0);
+  row-gap: 7px;
 `;
 
 export const HyperLinkContainer = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 5px;
+  row-gap: 7px;
 `;
-
-export const HyperLink = styled.a`
-  display: flex;
-  column-gap: 10px;
-  font-family: ${BOLD_TEXT};
-
-  text-decoration: none;
-  font-size: 23px;
-  width: fit-content;
-
-  background: linear-gradient(to right, transparent 50%, rgb(255, 218, 55) 50%);
-  background-size: 200%;
-  background-position: 0 0;
-
-  transition: 0.25s ease;
-
-  :hover {
-    background-position: -100% 0;
-  }
-`;
-
-export const HyperLinkIcon = styled(LinkIcon)``;
 
 export const SkillContainer = styled.div`
   display: flex;
 `;
 
 export const SkillItem = styled.div``;
+
+export const SkillIcon = styled.img`
+  object-fit: contain;
+  width: 50px;
+  height: 50px;
+`;

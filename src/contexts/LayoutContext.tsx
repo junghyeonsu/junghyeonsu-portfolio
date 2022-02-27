@@ -1,37 +1,17 @@
-import React, {
-  useContext,
-  useCallback,
-  useEffect,
-  createContext,
-  useState,
-  ReactChild,
-  ReactChildren,
-  ReactElement,
-} from 'react';
+import React, { useContext, useCallback, useEffect, createContext, useState, ReactChild, ReactChildren, ReactElement } from 'react';
 
 import _ from 'lodash';
 
-import {
-  EXP_ARTICLE_AREA,
-  INTRO_ARTICLE_AREA,
-  SKILL_ARTICLE_AREA,
-  CONTACT_ARTICLE_AREA,
-} from '#/constants';
+import { EXP_ARTICLE_AREA, INTRO_ARTICLE_AREA } from '#/constants';
 
 const LayoutContext = createContext<Record<string, unknown>>({});
 
-const LayoutProvider = ({
-  children,
-}: {
-  children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[];
-}): ReactElement => {
+const LayoutProvider = ({ children }: { children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[] }): ReactElement => {
   const [windowWidth, setWindowWidth] = useState(0);
 
   // 각 섹션의 top offset
   const [introductionOffsetTop, setIntroductionOffsetTop] = useState(0); // 1
-  const [skillOffsetTop, setSkillOffsetTop] = useState(0); // 2
-  const [experienceOffsetTop, setExperienceOffsetTop] = useState(0); // 3
-  const [contactOffsetTop, setContactOffsetTop] = useState(0); // 4
+  const [experienceOffsetTop, setExperienceOffsetTop] = useState(0); // 2
 
   const [currentArea, setCurrentArea] = useState<string>(INTRO_ARTICLE_AREA);
 
@@ -62,23 +42,11 @@ const LayoutProvider = ({
     setCurrentArea(INTRO_ARTICLE_AREA);
   }, [introductionOffsetTop]);
 
-  // 스킬 섹션 이동 함수
-  const moveSkillArticle = useCallback(() => {
-    window.scrollTo({ top: skillOffsetTop });
-    setCurrentArea(SKILL_ARTICLE_AREA);
-  }, [skillOffsetTop]);
-
   // 경험 섹션 이동 함수
   const moveExperienceArticle = useCallback(() => {
     window.scrollTo({ top: experienceOffsetTop });
     setCurrentArea(EXP_ARTICLE_AREA);
   }, [experienceOffsetTop]);
-
-  // 연락처 섹션 이동 함수
-  const moveContactArticle = useCallback(() => {
-    window.scrollTo({ top: contactOffsetTop });
-    setCurrentArea(CONTACT_ARTICLE_AREA);
-  }, [contactOffsetTop]);
 
   // const onClickSectionDownButton = useCallback(() => {
   //   switch (currentArea) {
@@ -116,22 +84,21 @@ const LayoutProvider = ({
     <LayoutContext.Provider
       value={{
         introductionOffsetTop,
-        skillOffsetTop,
+
         experienceOffsetTop,
-        contactOffsetTop,
+
         currentArea,
         windowWidth,
 
         setIntroductionOffsetTop,
-        setSkillOffsetTop,
+
         setExperienceOffsetTop,
-        setContactOffsetTop,
 
         // 화면 이동 함수
         moveIntroArticle,
-        moveSkillArticle,
+
         moveExperienceArticle,
-        moveContactArticle,
+
         // onClickSectionDownButton,
         // onClickSectionUpButton,
       }}
