@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { BOLD_TEXT } from '#/constants';
+import { BOLD_TEXT, DESKTOP_CONTENT_WIDTH } from '#/constants';
 
 // All
 export const Container = styled.article`
@@ -33,11 +33,19 @@ export const ExperienceCard = styled.div`
   justify-content: start;
   align-items: center;
   position: relative;
-  width: 1100px;
+  width: ${DESKTOP_CONTENT_WIDTH};
   background-color: rgb(245, 245, 245);
 
-  @media ${props => props.theme.laptop} {
+  @media ${props => props.theme.desktop} {
+    width: ${DESKTOP_CONTENT_WIDTH};
+  }
+
+  @media ${props => props.theme.tablet} {
     width: 80vw;
+  }
+
+  @media ${props => props.theme.mobile} {
+    width: 90vw;
   }
 `;
 
