@@ -18,6 +18,8 @@ import {
   Vite,
 } from './contents';
 
+const CONTENT_DELAY_TIME = 0.8;
+
 const Experience = () => {
   const { setExperienceOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
   const containerRef = useRef<any>(null); // eslint-disable-line
@@ -29,41 +31,74 @@ const Experience = () => {
 
   return (
     <Styled.Container ref={containerRef}>
-      <FadeInContent delay={0.5}>
-        <Styled.ExperienceContainer>
-          <ExperienceTitle title="Work" />
+      <Styled.ExperienceContainer>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
+          <ExperienceTitle title="Education" />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <Hayanmind />
+        </FadeInContent>
+      </Styled.ExperienceContainer>
+
+      <Styled.ExperienceContainer>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
+          <ExperienceTitle title="Work" />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
+          <Hayanmind />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <SatrecI />
-        </Styled.ExperienceContainer>
-      </FadeInContent>
+        </FadeInContent>
+      </Styled.ExperienceContainer>
 
-      <FadeInContent delay={0.5}>
-        <Styled.ExperienceContainer>
+      <Styled.ExperienceContainer>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <ExperienceTitle title="Project" />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <ReactSeasonComponent />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <FindDifferentColor />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <Portfolio />
-        </Styled.ExperienceContainer>
-      </FadeInContent>
+        </FadeInContent>
+      </Styled.ExperienceContainer>
 
-      <FadeInContent delay={0.5}>
-        <Styled.ExperienceContainer>
+      <Styled.ExperienceContainer>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <ExperienceTitle title="Share" />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <Tistory />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <Velog />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <YouTube />
-        </Styled.ExperienceContainer>
-      </FadeInContent>
+        </FadeInContent>
+      </Styled.ExperienceContainer>
 
-      <FadeInContent delay={0.5}>
-        <Styled.ExperienceContainer>
+      <Styled.ExperienceContainer>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <ExperienceTitle title="Open Source" />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <Vite />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <GoogleWebFundamentals />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <ReactContribute />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <Kubernetes />
-        </Styled.ExperienceContainer>
-      </FadeInContent>
+        </FadeInContent>
+      </Styled.ExperienceContainer>
 
       {/* <FadeInContent delay={0.5}>
         <Styled.ExperienceContainer>
