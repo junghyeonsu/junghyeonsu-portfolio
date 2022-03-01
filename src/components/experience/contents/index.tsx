@@ -1,5 +1,7 @@
 /* Education */
 export { default as Univercity } from './educations/Univercity';
+export { default as NextStepCleanCodeWithJavaScript } from './educations/NextStepCleanCodeWithJavaScript';
+export { default as WooahanTechCource } from './educations/WooAHanTechCource';
 
 /* Works */
 export { default as Hayanmind } from './works/Hayanmind';
