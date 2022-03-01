@@ -4,19 +4,22 @@ import YellowPoint from '#/components/YellowPoint';
 
 import { BOLD_TEXT } from '#/constants';
 
-export const StyledExperienceTitle = styled.h1`
-  text-align: left;
-  width: 100%;
-  margin: 0;
+const StyledExperienceTitle = styled.h1`
+  width: 1100px;
+  font-size: 80px;
   font-family: ${BOLD_TEXT};
-  font-size: 100px;
-  z-index: 5;
+  margin: 0;
 
   @media ${props => props.theme.mobile} {
     font-size: 40px;
-    text-align: left;
-    padding: 50px;
   }
+`;
+
+const Divide = styled.div`
+  width: 1100px;
+  height: 6.5px;
+  margin-top: 30px;
+  background-color: #f8cd07;
 `;
 
 const ExperienceTitle = ({ title }: { title: string }) => {
@@ -24,6 +27,7 @@ const ExperienceTitle = ({ title }: { title: string }) => {
     <StyledExperienceTitle>
       {title}
       <YellowPoint>.</YellowPoint>
+      <Divide />
     </StyledExperienceTitle>
   );
 };

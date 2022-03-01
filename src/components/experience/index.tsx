@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import ExperienceTitle from './common/ExperienceTitle';
+import { ExperienceTitle } from './common';
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { FadeInContent } from '#/components/gsap';
 import * as Styled from './styled';
