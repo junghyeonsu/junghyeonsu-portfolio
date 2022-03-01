@@ -17,6 +17,7 @@ export const Container = styled.article`
 
 export const ExperienceContainer = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   row-gap: 70px;

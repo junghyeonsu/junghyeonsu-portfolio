@@ -7,7 +7,7 @@ const WooahanTechCource = () => {
     <Styled.ExperienceCard>
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>교육</Styled.ExperienceCardTitleType>
-        <Styled.ExperienceCardTitle>우아한테크코스 4기 프리코스</Styled.ExperienceCardTitle>
+        <Styled.ExperienceCardTitle>우아한테크코스 4기</Styled.ExperienceCardTitle>
         <Styled.ExperienceCardExplainContainer>
           <Explain>서류 합격 후 2021/11/24 - 2021/12/18 프리코스 진행</Explain>
           <Explain>
