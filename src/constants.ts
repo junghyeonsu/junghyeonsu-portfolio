@@ -1,6 +1,6 @@
 export const SCROLL_ACTIVE_VALUE = 20;
 
-export const LAST_UPDATED = '2022/02/27';
+export const LAST_UPDATED = '2022/03/01';
 
 export const INTRO_ARTICLE_AREA = 'introduction article area';
 export const SKILL_ARTICLE_AREA = 'skill article area';
