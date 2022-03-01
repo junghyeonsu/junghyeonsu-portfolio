@@ -3,13 +3,12 @@ import { BLACK_TEXT_COLOR, WHITE_TEXT_COLOR } from '#/colors';
 
 const size = {
   mobile: '600px',
-  laptop: '1200px',
-  desktop: '1800px',
+  desktop: '1080px',
 };
 
 const theme: DefaultTheme = {
   mobile: `screen and (max-width: ${size.mobile})`,
-  laptop: `screen and (max-width: ${size.laptop})`,
+  tablet: `screen and (max-width: ${size.desktop})`,
   desktop: `screen and (min-width: ${size.desktop})`,
 
   common: {
