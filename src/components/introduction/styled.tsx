@@ -9,8 +9,9 @@ export const Container = styled.div`
   background-color: #202224;
   color: white;
 
-  @media ${props => props.theme.mobile} {
+  @media ${props => props.theme.tablet} {
     flex-direction: column;
+    height: 150vh;
   }
 `;
 
@@ -21,9 +22,14 @@ export const Sidebar = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   width: 20vw;
   height: 100%;
+
+  @media ${props => props.theme.tablet} {
+    width: 100vw;
+    height: 100%;
+    row-gap: 30px;
+  }
 `;
 
 export const LinkContainer = styled.div`
@@ -34,6 +40,10 @@ export const LinkContainer = styled.div`
   margin-top: 57px;
   font-family: ${BOLD_TEXT};
   row-gap: 15px;
+
+  @media ${props => props.theme.tablet} {
+    row-gap: 5px;
+  }
 `;
 
 export const Link = styled.a`
@@ -86,14 +96,40 @@ export const Main = styled.div`
   align-items: center;
   width: 80vw;
   height: 100%;
+
+  @media ${props => props.theme.tablet} {
+    width: 100vw;
+    height: 200vh;
+  }
+
+  @media ${props => props.theme.mobile} {
+    width: 100vw;
+    height: 200vh;
+  }
 `;
 
 export const SubTitle = styled.span`
-  font-size: 3vw;
+  font-size: 50px;
+
+  @media ${props => props.theme.tablet} {
+    font-size: 40px;
+  }
+
+  @media ${props => props.theme.mobile} {
+    font-size: 28px;
+  }
 `;
 
 export const Title = styled.span`
-  font-size: 6vw;
+  font-size: 85px;
+
+  @media ${props => props.theme.tablet} {
+    font-size: 70px;
+  }
+
+  @media ${props => props.theme.mobile} {
+    font-size: 38px;
+  }
 `;
 
 export const BodyTextContainer = styled.div`
@@ -105,6 +141,14 @@ export const BodyTextContainer = styled.div`
 
 export const BodyText = styled.span`
   font-size: 30px;
+
+  @media ${props => props.theme.tablet} {
+    font-size: 23px;
+  }
+
+  @media ${props => props.theme.mobile} {
+    font-size: 16px;
+  }
 `;
 
 export const ImageBox = styled.div`
@@ -118,5 +162,21 @@ export const ImageBox = styled.div`
     width: 80vw;
     height: 100vh;
     object-fit: cover;
+  }
+
+  @media ${props => props.theme.tablet} {
+    position: absolute;
+    left: 0;
+    img {
+      width: 100vw;
+    }
+  }
+
+  @media ${props => props.theme.mobile} {
+    position: absolute;
+    left: 0;
+    img {
+      width: 100vw;
+    }
   }
 `;
