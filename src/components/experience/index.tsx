@@ -5,6 +5,8 @@ import { FadeInContent } from '#/components/gsap';
 import * as Styled from './styled';
 import {
   Univercity,
+  WooahanTechCource,
+  NextStepCleanCodeWithJavaScript,
   Hayanmind,
   SatrecI,
   ReactSeasonComponent,
@@ -19,7 +21,7 @@ import {
   Vite,
 } from './contents';
 
-const CONTENT_DELAY_TIME = 0.8;
+const CONTENT_DELAY_TIME = 0.6;
 
 const Experience = () => {
   const { setExperienceOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
@@ -38,6 +40,12 @@ const Experience = () => {
         </FadeInContent>
         <FadeInContent delay={CONTENT_DELAY_TIME}>
           <Univercity />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
+          <WooahanTechCource />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
+          <NextStepCleanCodeWithJavaScript />
         </FadeInContent>
       </Styled.ExperienceContainer>
 
