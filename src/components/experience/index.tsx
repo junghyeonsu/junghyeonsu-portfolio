@@ -4,6 +4,7 @@ import { useLayoutContext } from '#/contexts/LayoutContext';
 import { FadeInContent } from '#/components/gsap';
 import * as Styled from './styled';
 import {
+  Univercity,
   Hayanmind,
   SatrecI,
   ReactSeasonComponent,
@@ -36,7 +37,7 @@ const Experience = () => {
           <ExperienceTitle title="Education" />
         </FadeInContent>
         <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <Hayanmind />
+          <Univercity />
         </FadeInContent>
       </Styled.ExperienceContainer>
 
