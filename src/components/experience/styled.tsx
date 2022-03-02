@@ -24,6 +24,10 @@ export const ExperienceContainer = styled.div`
   align-items: center;
   margin-top: 50px;
   margin-bottom: 100px;
+
+  @media ${props => props.theme.mobile} {
+    row-gap: 55px;
+  }
 `;
 
 // Card
@@ -53,32 +57,46 @@ export const ExperienceCardTopContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  row-gap: 20px;
+  row-gap: 25px;
+
+  @media ${props => props.theme.mobile} {
+    row-gap: 15px;
+  }
 `;
 
 export const ExperienceCardTitleType = styled.span`
-  font-size: 30px;
+  font-size: 24px;
+
+  @media ${props => props.theme.mobile} {
+    font-size: 20px;
+  }
 `;
 
 export const ExperienceCardTitle = styled.h2`
-  font-size: 50px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  font-size: 40px;
   margin: 0;
   font-family: ${BOLD_TEXT};
-  /* 
+
   @media ${props => props.theme.mobile} {
-    font-size: 5vw;
-  } */
+    font-size: 32px;
+  }
 `;
 
 export const ExperienceCardSubTitle = styled.h3`
-  font-size: 40px;
+  font-size: 30px;
   margin: 0;
   font-family: ${BOLD_TEXT};
 `;
 
 export const ExperienceCardPeriod = styled.span`
-  font-size: 20px;
-  color: #000000;
+  font-size: 18px;
+
+  @media ${props => props.theme.mobile} {
+    font-size: 16px;
+  }
 `;
 
 export const ExperienceCardExplainContainer = styled.div`

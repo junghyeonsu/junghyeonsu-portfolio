@@ -6,7 +6,7 @@ import { BOLD_TEXT, DESKTOP_CONTENT_WIDTH } from '#/constants';
 
 const StyledExperienceTitle = styled.h1`
   width: ${DESKTOP_CONTENT_WIDTH};
-  font-size: 60px;
+  font-size: 70px;
   font-family: ${BOLD_TEXT};
   margin: 0;
 
@@ -20,6 +20,7 @@ const StyledExperienceTitle = styled.h1`
 
   @media ${props => props.theme.mobile} {
     width: 90vw;
+    text-align: center;
   }
 `;
 

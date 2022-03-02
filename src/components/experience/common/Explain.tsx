@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import CheckIcon from '@material-ui/icons/Check';
 
+const ExplainContainer = styled.div`
+  display: flex;
+`;
+
 const ExperienceCardExplain = styled.div`
   font-size: 20px;
 
-  @media ${props => props.theme.tablet} {
-    font-size: 18px;
-  }
-
   @media ${props => props.theme.mobile} {
-    font-size: 17px;
+    font-size: 16px;
   }
 `;
 
@@ -21,10 +21,10 @@ const ExplainCheckIcon = styled(CheckIcon)`
 
 const Explain = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ExperienceCardExplain>
+    <ExplainContainer>
       <ExplainCheckIcon />
-      {children}
-    </ExperienceCardExplain>
+      <ExperienceCardExplain>{children}</ExperienceCardExplain>
+    </ExplainContainer>
   );
 };
 

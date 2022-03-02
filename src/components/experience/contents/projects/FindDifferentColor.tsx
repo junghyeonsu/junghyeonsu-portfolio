@@ -8,7 +8,7 @@ const FindDifferentColor = () => {
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>프로젝트</Styled.ExperienceCardTitleType>
         <Styled.ExperienceCardTitle>
-          🧑‍💻 <InlineLinkText href="https://find-different-color.vercel.app/">다른 색깔 찾기 게임</InlineLinkText>
+          <InlineLinkText href="https://find-different-color.vercel.app/">다른 색깔 찾기 게임</InlineLinkText>
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>

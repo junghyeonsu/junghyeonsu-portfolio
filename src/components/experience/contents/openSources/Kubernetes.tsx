@@ -13,6 +13,7 @@ const Kubernetes = () => {
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>
+          <MergedWithLink href="https://github.com/kubernetes/website/pull/23690" date="2020/07/11" merged />
           <Explain>
             인턴 진행하며 공부한{' '}
             <InlineLinkText href="https://v1-22.docs.kubernetes.io/ko/docs/reference/scheduling/policies/">
@@ -20,7 +21,6 @@ const Kubernetes = () => {
             </InlineLinkText>{' '}
             번역 (현재 deprecated)
           </Explain>
-          <MergedWithLink href="https://github.com/kubernetes/website/pull/23690" date="2020/07/11" merged />
         </Styled.ExperienceCardExplainContainer>
       </Styled.ExperienceCardTopContainer>
     </Styled.ExperienceCard>

@@ -9,6 +9,10 @@ const MergedContainer = styled.div`
   align-items: center;
   column-gap: 7px;
   font-size: 20px;
+
+  @media ${props => props.theme.mobile} {
+    font-size: 16px;
+  }
 `;
 
 const ExplainCheckIcon = styled(CheckIcon)`
@@ -27,12 +31,23 @@ const Date = styled.div`
   background-color: #facd17;
   font-size: 17px;
   color: white;
+
+  @media ${props => props.theme.mobile} {
+    font-size: 12px;
+    width: 110px;
+    height: 26px;
+  }
 `;
 
 const Image = styled.img`
   object-fit: contain;
   width: 90px;
   border-radius: 20px;
+
+  @media ${props => props.theme.mobile} {
+    width: 80px;
+    border-radius: 20px;
+  }
 `;
 
 const MergedWithLink = ({ href, date, merged }: { href: string; date: string; merged: boolean }) => {
@@ -43,12 +58,17 @@ const MergedWithLink = ({ href, date, merged }: { href: string; date: string; me
   const text = useMemo(() => (merged ? 'merge된 pull request 링크' : 'open된 pull request 링크'), [merged]);
 
   return (
-    <MergedContainer>
-      <ExplainCheckIcon />
-      {image}
-      <Date>{date}</Date>
-      <InlineLinkText href={href}>{text}</InlineLinkText>
-    </MergedContainer>
+    <>
+      <MergedContainer>
+        <ExplainCheckIcon />
+        {image}
+        {merged && <Date>{date}</Date>}
+      </MergedContainer>
+      <MergedContainer>
+        <ExplainCheckIcon />
+        <InlineLinkText href={href}>{text}</InlineLinkText>
+      </MergedContainer>
+    </>
   );
 };
 

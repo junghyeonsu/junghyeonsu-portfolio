@@ -13,13 +13,13 @@ const ReactContribute = () => {
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>
+          <MergedWithLink href="https://github.com/google/WebFundamentals/pull/9483" date="2022/1/14" merged={false} />
           <Explain>
             <InlineLinkText href="https://developers.google.com/web/updates/2019/02/rendering-on-the-web?hl=ko">
               구글 개발자 문서 (웹 렌더링)
             </InlineLinkText>{' '}
             오타 수정
           </Explain>
-          <MergedWithLink href="https://github.com/google/WebFundamentals/pull/9483" date="2022/1/14" merged={false} />
         </Styled.ExperienceCardExplainContainer>
       </Styled.ExperienceCardTopContainer>
     </Styled.ExperienceCard>

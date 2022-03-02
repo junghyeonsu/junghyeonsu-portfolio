@@ -8,7 +8,7 @@ const SatrecI = () => {
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>인턴</Styled.ExperienceCardTitleType>
         <Styled.ExperienceCardTitle>
-          📌 <InlineLinkText href="https://www.satreci.com/korean">쎄트렉아이</InlineLinkText> 인턴
+          <InlineLinkText href="https://www.satreci.com/korean">쎄트렉아이</InlineLinkText>
         </Styled.ExperienceCardTitle>
         <Styled.ExperienceCardPeriod>2020년 7월 - 2020년 8월</Styled.ExperienceCardPeriod>
 
@@ -18,9 +18,7 @@ const SatrecI = () => {
         </Styled.ExperienceCardExplainContainer>
 
         <Styled.HyperLinkContainer>
-          <Link href="https://junghyeonsu.tistory.com/60?category=797646">
-            인턴 중 올린 포스트 모음
-          </Link>
+          <Link href="https://junghyeonsu.tistory.com/60?category=797646">인턴 중 올린 포스트 모음</Link>
         </Styled.HyperLinkContainer>
       </Styled.ExperienceCardTopContainer>
     </Styled.ExperienceCard>

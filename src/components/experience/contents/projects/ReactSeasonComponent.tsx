@@ -8,7 +8,7 @@ const ReactSeasonComponent = () => {
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>프로젝트</Styled.ExperienceCardTitleType>
         <Styled.ExperienceCardTitle>
-          🧑‍💻 <InlineLinkText href="https://www.npmjs.com/package/react-season-component">리액트 컴포넌트 라이브러리</InlineLinkText> 개발
+          <InlineLinkText href="https://www.npmjs.com/package/react-season-component">리액트 컴포넌트 라이브러리</InlineLinkText>
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>

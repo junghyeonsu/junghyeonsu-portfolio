@@ -8,7 +8,7 @@ const Tistory = () => {
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>블로그</Styled.ExperienceCardTitleType>
         <Styled.ExperienceCardTitle>
-          📝 <InlineLinkText href="https://junghyeonsu.tistory.com/">티스토리</InlineLinkText>
+          <InlineLinkText href="https://junghyeonsu.tistory.com/">티스토리</InlineLinkText>
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>
