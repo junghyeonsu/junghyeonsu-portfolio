@@ -8,7 +8,7 @@ const MergedContainer = styled.div`
   display: flex;
   align-items: center;
   column-gap: 7px;
-  font-size: 23px;
+  font-size: 20px;
 `;
 
 const ExplainCheckIcon = styled(CheckIcon)`
@@ -21,17 +21,17 @@ const Date = styled.div`
   justify-content: center;
   align-items: center;
   font-family: ${BOLD_TEXT};
-  width: 150px;
-  height: 35.35px;
+  width: 130px;
+  height: 30px;
   border-radius: 20px;
   background-color: #facd17;
-  font-size: 20px;
+  font-size: 17px;
   color: white;
 `;
 
 const Image = styled.img`
   object-fit: contain;
-  width: 110px;
+  width: 90px;
   border-radius: 20px;
 `;
 
