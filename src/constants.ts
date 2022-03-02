@@ -1,4 +1,4 @@
-export const LAST_UPDATED = '2022/03/01';
+export const LAST_UPDATED = '2022/03/02';
 
 export const INTRO_ARTICLE_AREA = 'introduction article area';
 export const SKILL_ARTICLE_AREA = 'skill article area';
