@@ -6,7 +6,7 @@ import { BOLD_TEXT, DESKTOP_CONTENT_WIDTH } from '#/constants';
 
 const StyledExperienceTitle = styled.h1`
   width: ${DESKTOP_CONTENT_WIDTH};
-  font-size: 80px;
+  font-size: 60px;
   font-family: ${BOLD_TEXT};
   margin: 0;
 
