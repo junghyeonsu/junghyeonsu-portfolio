@@ -147,7 +147,7 @@ export const BodyText = styled.span`
   }
 
   @media ${props => props.theme.mobile} {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 

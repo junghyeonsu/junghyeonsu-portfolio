@@ -11,7 +11,7 @@ const HyperLinkIcon = styled(LinkIcon)``;
 
 const HyperLinkText = styled.a`
   text-underline-offset: 5px;
-  font-size: 23px;
+  font-size: 20px;
   width: fit-content;
 
   background: linear-gradient(to right, transparent 50%, rgb(255, 218, 55) 50%);
@@ -22,6 +22,10 @@ const HyperLinkText = styled.a`
 
   :hover {
     background-position: -100% 0;
+  }
+
+  @media ${props => props.theme.mobile} {
+    font-size: 16px;
   }
 `;
 

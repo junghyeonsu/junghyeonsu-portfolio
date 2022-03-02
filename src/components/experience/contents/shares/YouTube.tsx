@@ -8,7 +8,7 @@ const YouTube = () => {
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>유튜브</Styled.ExperienceCardTitleType>
         <Styled.ExperienceCardTitle>
-          📝 <InlineLinkText href="https://www.youtube.com/channel/UCkC6sYPPSvpnRprmp2GcXZw">유튜브</InlineLinkText>
+          <InlineLinkText href="https://www.youtube.com/channel/UCkC6sYPPSvpnRprmp2GcXZw">유튜브</InlineLinkText>
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>

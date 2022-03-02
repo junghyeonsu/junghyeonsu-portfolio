@@ -8,7 +8,7 @@ const Velog = () => {
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>블로그</Styled.ExperienceCardTitleType>
         <Styled.ExperienceCardTitle>
-          📝 <InlineLinkText href="https://velog.io/@junghyeonsu">벨로그</InlineLinkText>
+          <InlineLinkText href="https://velog.io/@junghyeonsu">벨로그</InlineLinkText>
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>
