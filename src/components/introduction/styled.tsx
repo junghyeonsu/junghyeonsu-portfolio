@@ -183,8 +183,7 @@ export const ImageBox = styled.div`
 `;
 
 export const DownAnimatedArrow = styled(KeyboardArrowDownIcon)`
-  position: absolute;
-  bottom: 100px;
+  margin-top: 100px;
   animation: bounce 1.5s ease infinite;
   color: white;
 
