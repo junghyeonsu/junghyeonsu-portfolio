@@ -13,7 +13,7 @@ const SatrecI = () => {
         <Styled.ExperienceCardPeriod>2020년 7월 - 2020년 8월</Styled.ExperienceCardPeriod>
 
         <Styled.ExperienceCardExplainContainer>
-          <Explain>약 두 달간 회사의 데브옵스 적용을 위한 작업</Explain>
+          <Explain>약 두 달간 회사에 DevOps를 적용하기 전에 DevOps를 먼저 사용해보고 발표하는 인턴 진행</Explain>
           <Explain>Ansible을 이용해 Kubernetes 환경 구축 및 고가용성 유지를 위한 테스트</Explain>
         </Styled.ExperienceCardExplainContainer>
 
