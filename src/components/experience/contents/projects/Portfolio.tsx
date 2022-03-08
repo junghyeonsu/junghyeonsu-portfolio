@@ -8,10 +8,11 @@ const Portfolio = () => {
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>프로젝트</Styled.ExperienceCardTitleType>
         <Styled.ExperienceCardTitle>나만의 포트폴리오 개발</Styled.ExperienceCardTitle>
+        <Explain>남들 다 쓰는 notion 포트폴리오 말고, 나만의 포트폴리오를 가지기 위해서 개발</Explain>
 
         {/* Version 1 */}
         <Styled.ExperienceCardSubTitle>
-          <InlineLinkText href="https://junghyeonsu.github.io/introduce-myself/">첫번째 포트폴리오</InlineLinkText>
+          <InlineLinkText href="https://junghyeonsu.github.io/introduce-myself/">Version 1</InlineLinkText>
         </Styled.ExperienceCardSubTitle>
         <Styled.ExperienceCardPeriod>2020년 12월 개발</Styled.ExperienceCardPeriod>
         <Styled.ExperienceCardExplainContainer>
@@ -29,7 +30,7 @@ const Portfolio = () => {
 
         {/* Version 2 */}
         <Styled.ExperienceCardSubTitle>
-          <InlineLinkText href="https://hyeonsu-jung-f2yuujuwd-junghyeonsu.vercel.app/">두번째 포트폴리오</InlineLinkText>
+          <InlineLinkText href="https://hyeonsu-jung-f2yuujuwd-junghyeonsu.vercel.app/">Version 2</InlineLinkText>
         </Styled.ExperienceCardSubTitle>
         <Styled.ExperienceCardPeriod>2021년 7월 - 8월 개발</Styled.ExperienceCardPeriod>
         <Styled.ExperienceCardExplainContainer>
@@ -56,7 +57,7 @@ const Portfolio = () => {
         </Styled.SkillContainer>
 
         {/* Version 3 */}
-        <Styled.ExperienceCardSubTitle>현재 포트폴리오</Styled.ExperienceCardSubTitle>
+        <Styled.ExperienceCardSubTitle>Version 3 (현재 포트폴리오)</Styled.ExperienceCardSubTitle>
         <Styled.ExperienceCardPeriod>2022년 1월 - 2월 개발</Styled.ExperienceCardPeriod>
         <Styled.ExperienceCardExplainContainer>
           <Explain>포트폴리오는 내용이 중요할 것 같아서 다시 리모델링</Explain>
