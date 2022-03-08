@@ -36,21 +36,6 @@ const Experience = () => {
     <Styled.Container ref={containerRef}>
       <Styled.ExperienceContainer>
         <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <ExperienceTitle title="Education" />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <Univercity />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <WooahanTechCource />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <NextStepCleanCodeWithJavaScript />
-        </FadeInContent>
-      </Styled.ExperienceContainer>
-
-      <Styled.ExperienceContainer>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
           <ExperienceTitle title="Work" />
         </FadeInContent>
         <FadeInContent delay={CONTENT_DELAY_TIME}>
@@ -88,6 +73,21 @@ const Experience = () => {
         </FadeInContent>
         <FadeInContent delay={CONTENT_DELAY_TIME}>
           <YouTube />
+        </FadeInContent>
+      </Styled.ExperienceContainer>
+
+      <Styled.ExperienceContainer>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
+          <ExperienceTitle title="Education" />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
+          <Univercity />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
+          <WooahanTechCource />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
+          <NextStepCleanCodeWithJavaScript />
         </FadeInContent>
       </Styled.ExperienceContainer>
 
