@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 import { BOLD_TEXT } from '#/constants';
 
@@ -177,6 +178,29 @@ export const ImageBox = styled.div`
     left: 0;
     img {
       width: 100vw;
+    }
+  }
+`;
+
+export const DownAnimatedArrow = styled(KeyboardArrowDownIcon)`
+  position: absolute;
+  bottom: 100px;
+  animation: bounce 1.5s ease infinite;
+  color: white;
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-27px);
+    }
+    60% {
+      transform: translateY(-10px);
     }
   }
 `;

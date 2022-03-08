@@ -67,6 +67,9 @@ const Introduction = () => {
             <img src="/hyeonsu.jpeg" alt="hyeonsu-background" draggable={false} />
           </FadeInContent>
         </Styled.ImageBox>
+        <FadeInContent delay={3.5}>
+          <Styled.DownAnimatedArrow fontSize="large" />
+        </FadeInContent>
       </Styled.Main>
     </Styled.Container>
   );
