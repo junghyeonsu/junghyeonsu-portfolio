@@ -8,16 +8,16 @@ const ReactSeasonComponent = () => {
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>프로젝트</Styled.ExperienceCardTitleType>
         <Styled.ExperienceCardTitle>
-          <InlineLinkText href="https://www.npmjs.com/package/react-season-component">리액트 컴포넌트 라이브러리</InlineLinkText>
+          <InlineLinkText href="https://www.npmjs.com/package/react-season-component">react-season-component</InlineLinkText>
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>
-          <Explain>react background component 라이브러리 개발</Explain>
+          <Explain>React background component npm 라이브러리 개발</Explain>
           <Explain>
             <InlineLinkText href="https://velog.io/@teo/google-sprint-4">테오 구글 스프린트 4기</InlineLinkText>에 참여
           </Explain>
-          <Explain>디자인 1명, 개발자 7명으로 스프린트 진행</Explain>
-          <Explain>프로젝트 리더로 시간 조율 역할 분배 및 배포 담당</Explain>
+          <Explain>디자인 1명, 개발자 7명에서 프로젝트 리더로 시간 조율 및 회의 진행 담당</Explain>
+          <Explain>npm 배포 과정 및 3개의 컴포넌트 중 Time 컴포넌트 개발 담당</Explain>
         </Styled.ExperienceCardExplainContainer>
 
         <Styled.HyperLinkContainer>
