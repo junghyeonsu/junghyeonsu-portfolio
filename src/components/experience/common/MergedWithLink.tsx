@@ -7,7 +7,6 @@ import { BOLD_TEXT } from '#/constants';
 const MergedContainer = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 7px;
   font-size: 20px;
 
   @media ${props => props.theme.mobile} {
@@ -27,6 +26,7 @@ const Date = styled.div`
   font-family: ${BOLD_TEXT};
   width: 130px;
   height: 30px;
+  margin-left: 7px;
   border-radius: 20px;
   background-color: #facd17;
   font-size: 17px;
