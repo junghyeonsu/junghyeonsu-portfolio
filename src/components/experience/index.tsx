@@ -19,6 +19,7 @@ import {
   ReactContribute,
   GoogleWebFundamentals,
   Vite,
+  MDNWebDocsClass,
 } from './contents';
 
 const CONTENT_DELAY_TIME = 0.6;
@@ -94,6 +95,9 @@ const Experience = () => {
       <Styled.ExperienceContainer>
         <FadeInContent delay={CONTENT_DELAY_TIME}>
           <ExperienceTitle title="Open Source" />
+        </FadeInContent>
+        <FadeInContent delay={CONTENT_DELAY_TIME}>
+          <MDNWebDocsClass />
         </FadeInContent>
         <FadeInContent delay={CONTENT_DELAY_TIME}>
           <Vite />
