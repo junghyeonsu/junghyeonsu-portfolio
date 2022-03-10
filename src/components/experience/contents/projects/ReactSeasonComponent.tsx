@@ -7,7 +7,7 @@ const ReactSeasonComponent = () => {
     <Styled.ExperienceCard>
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>프로젝트</Styled.ExperienceCardTitleType>
-        <Styled.ExperienceCardTitle>
+        <Styled.ExperienceCardTitle id="react-season-component">
           <InlineLinkText href="https://www.npmjs.com/package/react-season-component">react-season-component</InlineLinkText>
         </Styled.ExperienceCardTitle>
 

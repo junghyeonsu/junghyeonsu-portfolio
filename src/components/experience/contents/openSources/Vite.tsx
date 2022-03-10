@@ -7,9 +7,9 @@ const Vite = () => {
     <Styled.ExperienceCard>
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>오타 수정</Styled.ExperienceCardTitleType>
-        <Styled.ExperienceCardTitle>
-          <Styled.SkillIcon src="/icons/Vite.png" alt="Vite" />
-          Vite
+        <Styled.ExperienceCardTitle id="vite-docs">
+          <Styled.SkillIcon src="/icons/Vite.png" alt="Vite Docs" />
+          Vite Docs
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>

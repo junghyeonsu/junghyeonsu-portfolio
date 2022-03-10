@@ -7,7 +7,7 @@ const Hayanmind = () => {
     <Styled.ExperienceCard>
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>인턴</Styled.ExperienceCardTitleType>
-        <Styled.ExperienceCardTitle>
+        <Styled.ExperienceCardTitle id="하얀마인드">
           <InlineLinkText href="https://hayanmind.com/ko-KR/">하얀마인드</InlineLinkText>
         </Styled.ExperienceCardTitle>
         <Styled.ExperienceCardPeriod>2021년 3월 - 2021년 6월, 2021년 9월 - 2021년 12월 (약 8개월)</Styled.ExperienceCardPeriod>

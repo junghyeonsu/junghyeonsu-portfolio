@@ -45,7 +45,7 @@ const Divide = styled.div`
 
 const ExperienceTitle = ({ title }: { title: string }) => {
   return (
-    <StyledExperienceTitle>
+    <StyledExperienceTitle id={title}>
       {title}
       <YellowPoint>.</YellowPoint>
       <Divide />

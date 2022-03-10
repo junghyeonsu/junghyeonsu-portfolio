@@ -7,8 +7,8 @@ const MDNWebDocsClass = () => {
     <Styled.ExperienceCard>
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>오타 수정</Styled.ExperienceCardTitleType>
-        <Styled.ExperienceCardTitle>
-          <Styled.SkillIcon src="/icons/MDNWebDocs.jpeg" alt="MDNWebDocs" />
+        <Styled.ExperienceCardTitle id="MDN-web-docs">
+          <Styled.SkillIcon src="/icons/MDNWebDocs.jpeg" alt="MDN Web Docs" />
           MDN Web Docs
         </Styled.ExperienceCardTitle>
 
