@@ -2,8 +2,6 @@ import React, { useContext, useCallback, useEffect, createContext, useState, Rea
 
 import _ from 'lodash';
 
-import { EXP_ARTICLE_AREA, INTRO_ARTICLE_AREA } from '#/constants';
-
 const LayoutContext = createContext<Record<string, unknown>>({});
 
 const LayoutProvider = ({ children }: { children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[] }): ReactElement => {
@@ -11,7 +9,6 @@ const LayoutProvider = ({ children }: { children?: ReactChild | ReactChildren | 
   const [currentScrollTop, setCurrentScrollTop] = useState(0);
   const [introductionOffsetTop, setIntroductionOffsetTop] = useState(0); // 1
   const [experienceOffsetTop, setExperienceOffsetTop] = useState(0); // 2
-  const [currentArea, setCurrentArea] = useState<string>(INTRO_ARTICLE_AREA);
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -47,13 +44,11 @@ const LayoutProvider = ({ children }: { children?: ReactChild | ReactChildren | 
   // 소개 섹션 이동 함수
   const moveIntroArticle = useCallback(() => {
     window.scrollTo({ top: introductionOffsetTop });
-    setCurrentArea(INTRO_ARTICLE_AREA);
   }, [introductionOffsetTop]);
 
   // 경험 섹션 이동 함수
   const moveExperienceArticle = useCallback(() => {
     window.scrollTo({ top: experienceOffsetTop });
-    setCurrentArea(EXP_ARTICLE_AREA);
   }, [experienceOffsetTop]);
 
   return (
@@ -62,7 +57,6 @@ const LayoutProvider = ({ children }: { children?: ReactChild | ReactChildren | 
         introductionOffsetTop,
         experienceOffsetTop,
         currentScrollTop,
-        currentArea,
         windowWidth,
         setIntroductionOffsetTop,
         setExperienceOffsetTop,

@@ -7,9 +7,9 @@ const ReactContribute = () => {
     <Styled.ExperienceCard>
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>번역</Styled.ExperienceCardTitleType>
-        <Styled.ExperienceCardTitle>
-          <Styled.SkillIcon src="/icons/React.png" alt="React" />
-          React
+        <Styled.ExperienceCardTitle id="react-docs">
+          <Styled.SkillIcon src="/icons/React.png" alt="React Docs" />
+          React Docs
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>

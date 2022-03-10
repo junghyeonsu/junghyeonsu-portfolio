@@ -7,9 +7,9 @@ const Kubernetes = () => {
     <Styled.ExperienceCard>
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>번역</Styled.ExperienceCardTitleType>
-        <Styled.ExperienceCardTitle>
-          <Styled.SkillIcon src="/icons/kubernetes.png" alt="kubernetes" />
-          Kubernetes
+        <Styled.ExperienceCardTitle id="kubernetes-docs">
+          <Styled.SkillIcon src="/icons/kubernetes.png" alt="Kubernetes Docs" />
+          Kubernetes Docs
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>

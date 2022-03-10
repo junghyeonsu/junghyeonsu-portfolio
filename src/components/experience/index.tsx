@@ -34,7 +34,7 @@ const Experience = () => {
   }, [setExperienceOffsetTop, windowWidth]);
 
   return (
-    <Styled.Container ref={containerRef}>
+    <Styled.Container id="experience-container" ref={containerRef}>
       <Styled.ExperienceContainer>
         <FadeInContent delay={CONTENT_DELAY_TIME}>
           <ExperienceTitle title="Work" />

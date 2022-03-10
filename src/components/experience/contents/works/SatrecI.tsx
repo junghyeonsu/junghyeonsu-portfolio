@@ -7,7 +7,7 @@ const SatrecI = () => {
     <Styled.ExperienceCard>
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>인턴</Styled.ExperienceCardTitleType>
-        <Styled.ExperienceCardTitle>
+        <Styled.ExperienceCardTitle id="쎄트렉아이">
           <InlineLinkText href="https://www.satreci.com/korean">쎄트렉아이</InlineLinkText>
         </Styled.ExperienceCardTitle>
         <Styled.ExperienceCardPeriod>2020년 7월 - 2020년 8월</Styled.ExperienceCardPeriod>

@@ -7,9 +7,9 @@ const ReactContribute = () => {
     <Styled.ExperienceCard>
       <Styled.ExperienceCardTopContainer>
         <Styled.ExperienceCardTitleType>오타 수정</Styled.ExperienceCardTitleType>
-        <Styled.ExperienceCardTitle>
-          <Styled.SkillIcon src="/icons/Google.png" alt="Google" />
-          Google
+        <Styled.ExperienceCardTitle id="google-developers">
+          <Styled.SkillIcon src="/icons/Google.png" alt="Google Web Docs" />
+          Google Developers
         </Styled.ExperienceCardTitle>
 
         <Styled.ExperienceCardExplainContainer>
