@@ -94,7 +94,7 @@ const Experience = () => {
 
       <Styled.ExperienceContainer>
         <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <ExperienceTitle title="Open Source" />
+          <ExperienceTitle title="OpenSource" />
         </FadeInContent>
         <FadeInContent delay={CONTENT_DELAY_TIME}>
           <MDNWebDocsClass />
