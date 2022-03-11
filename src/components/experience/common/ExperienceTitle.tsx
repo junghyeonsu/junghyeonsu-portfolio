@@ -20,7 +20,7 @@ const StyledExperienceTitle = styled.h1`
 
   @media ${props => props.theme.mobile} {
     width: 90vw;
-    text-align: center;
+    font-size: 50px;
   }
 `;
 
