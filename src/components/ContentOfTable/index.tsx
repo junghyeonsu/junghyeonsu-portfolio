@@ -91,48 +91,48 @@ const ContentOfTable = () => {
     });
   }, []);
 
-  return (
-    isOver600px && (
-      <Styled.Container isOver1600px={isOver1600px} visible={visible}>
-        {nestedHeadings.map(heading => {
-          const { nodeName, text, id } = heading;
-          const active = id === activeId;
+  return isOver600px ? (
+    <Styled.Container isOver1600px={isOver1600px} visible={visible}>
+      {nestedHeadings.map(heading => {
+        const { nodeName, text, id } = heading;
+        const active = id === activeId;
 
-          switch (nodeName) {
-            case 'H1':
-              return (
-                <Styled.AnchorContainer key={text}>
-                  <Styled.H1 active={active}>{isUnder1200px ? text?.split('')[0] : text}</Styled.H1>
-                </Styled.AnchorContainer>
-              );
-            case 'H2':
-              return (
-                <Styled.AnchorContainer key={text}>
-                  <Styled.H2Circle active={active} />
-                  {isOver1600px && (
-                    <Styled.Anchor href={`#${text}`} onClick={e => onClickAnchor(e, id)}>
-                      <Styled.H2 active={active}>{text}</Styled.H2>
-                    </Styled.Anchor>
-                  )}
-                </Styled.AnchorContainer>
-              );
-            case 'H3':
-              return (
-                <Styled.AnchorContainer key={text}>
-                  <Styled.H3Circle isOver1600px={isOver1600px} active={active} />
-                  {isOver1600px && (
-                    <Styled.Anchor href={`#${text}`} onClick={e => onClickAnchor(e, id)}>
-                      <Styled.H3 active={active}>{text}</Styled.H3>
-                    </Styled.Anchor>
-                  )}
-                </Styled.AnchorContainer>
-              );
-            default:
-              return '';
-          }
-        })}
-      </Styled.Container>
-    )
+        switch (nodeName) {
+          case 'H1':
+            return (
+              <Styled.AnchorContainer key={text}>
+                <Styled.H1 active={active}>{isUnder1200px ? text?.split('')[0] : text}</Styled.H1>
+              </Styled.AnchorContainer>
+            );
+          case 'H2':
+            return (
+              <Styled.AnchorContainer key={text}>
+                <Styled.H2Circle active={active} />
+                {isOver1600px && (
+                  <Styled.Anchor href={`#${text}`} onClick={e => onClickAnchor(e, id)}>
+                    <Styled.H2 active={active}>{text}</Styled.H2>
+                  </Styled.Anchor>
+                )}
+              </Styled.AnchorContainer>
+            );
+          case 'H3':
+            return (
+              <Styled.AnchorContainer key={text}>
+                <Styled.H3Circle isOver1600px={isOver1600px} active={active} />
+                {isOver1600px && (
+                  <Styled.Anchor href={`#${text}`} onClick={e => onClickAnchor(e, id)}>
+                    <Styled.H3 active={active}>{text}</Styled.H3>
+                  </Styled.Anchor>
+                )}
+              </Styled.AnchorContainer>
+            );
+          default:
+            return '';
+        }
+      })}
+    </Styled.Container>
+  ) : (
+    <></>
   );
 };
 
