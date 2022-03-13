@@ -3,8 +3,9 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 import { BOLD_TEXT } from '#/constants';
 
-export const Container = styled.article`
+export const Container = styled.section`
   display: flex;
+  position: relative;
   height: 100vh;
   width: 100vw;
   background-color: #202224;
@@ -89,7 +90,7 @@ export const LastUpdated = styled.p`
 
 // Main
 
-export const Main = styled.div`
+export const Main = styled.article`
   display: flex;
   position: relative;
   flex-direction: column;
