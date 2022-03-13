@@ -35,90 +35,86 @@ const Experience = () => {
 
   return (
     <Styled.Container id="experience-container" ref={containerRef}>
-      <Styled.ExperienceContainer>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <ExperienceTitle title="Work" />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <Hayanmind />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <SatrecI />
-        </FadeInContent>
-      </Styled.ExperienceContainer>
-
-      <Styled.ExperienceContainer>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <ExperienceTitle title="Project" />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <ReactSeasonComponent />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <FindDifferentColor />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <Portfolio />
-        </FadeInContent>
-      </Styled.ExperienceContainer>
-
-      <Styled.ExperienceContainer>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <ExperienceTitle title="Share" />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <Tistory />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <Velog />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <YouTube />
-        </FadeInContent>
-      </Styled.ExperienceContainer>
-
-      <Styled.ExperienceContainer>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <ExperienceTitle title="Education" />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <Univercity />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <WooahanTechCource />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <NextStepCleanCodeWithJavaScript />
-        </FadeInContent>
-      </Styled.ExperienceContainer>
-
-      <Styled.ExperienceContainer>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <ExperienceTitle title="OpenSource" />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <MDNWebDocsClass />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <Vite />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <GoogleWebFundamentals />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <ReactContribute />
-        </FadeInContent>
-        <FadeInContent delay={CONTENT_DELAY_TIME}>
-          <Kubernetes />
-        </FadeInContent>
-      </Styled.ExperienceContainer>
-
-      {/* <FadeInContent delay={0.5}>
+      <Styled.TableOfContents>dd</Styled.TableOfContents>
+      <Styled.Contents>
         <Styled.ExperienceContainer>
-          <ExperienceTitle title="Skill" />
-          <Hayanmind />
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <ExperienceTitle title="Work" />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Hayanmind />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <SatrecI />
+          </FadeInContent>
         </Styled.ExperienceContainer>
-      </FadeInContent> */}
+
+        <Styled.ExperienceContainer>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <ExperienceTitle title="Project" />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <ReactSeasonComponent />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <FindDifferentColor />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Portfolio />
+          </FadeInContent>
+        </Styled.ExperienceContainer>
+
+        <Styled.ExperienceContainer>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <ExperienceTitle title="Share" />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Tistory />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Velog />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <YouTube />
+          </FadeInContent>
+        </Styled.ExperienceContainer>
+
+        <Styled.ExperienceContainer>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <ExperienceTitle title="Education" />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Univercity />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <WooahanTechCource />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <NextStepCleanCodeWithJavaScript />
+          </FadeInContent>
+        </Styled.ExperienceContainer>
+
+        <Styled.ExperienceContainer>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <ExperienceTitle title="OpenSource" />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <MDNWebDocsClass />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Vite />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <GoogleWebFundamentals />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <ReactContribute />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Kubernetes />
+          </FadeInContent>
+        </Styled.ExperienceContainer>
+      </Styled.Contents>
     </Styled.Container>
   );
 };

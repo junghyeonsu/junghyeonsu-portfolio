@@ -4,18 +4,25 @@ import { BOLD_TEXT, DESKTOP_CONTENT_WIDTH } from '#/constants';
 
 // All
 export const Container = styled.section`
-  padding-top: 100px;
   display: flex;
-  flex-direction: column;
   position: relative;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   background-color: rgb(245, 245, 245);
-  color: black;
 `;
 
-export const Contents = styled.article``;
+export const TableOfContents = styled.nav`
+  width: 20vw;
+`;
+
+export const Contents = styled.article`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  padding-top: 100px;
+  color: black;
+`;
 
 export const ExperienceContainer = styled.article`
   display: flex;
