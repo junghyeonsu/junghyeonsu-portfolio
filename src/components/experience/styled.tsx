@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { BOLD_TEXT, DESKTOP_CONTENT_WIDTH } from '#/constants';
 
 // All
-export const Container = styled.article`
+export const Container = styled.section`
   padding-top: 100px;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,9 @@ export const Container = styled.article`
   color: black;
 `;
 
-export const ExperienceContainer = styled.div`
+export const Contents = styled.article``;
+
+export const ExperienceContainer = styled.article`
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -32,7 +34,7 @@ export const ExperienceContainer = styled.div`
 
 // Card
 
-export const ExperienceCard = styled.div`
+export const ExperienceCard = styled.article`
   display: flex;
   justify-content: start;
   align-items: center;
@@ -99,13 +101,13 @@ export const ExperienceCardPeriod = styled.span`
   }
 `;
 
-export const ExperienceCardExplainContainer = styled.div`
+export const ExperienceCardExplainContainer = styled.article`
   display: flex;
   flex-direction: column;
   row-gap: 7px;
 `;
 
-export const HyperLinkContainer = styled.div`
+export const HyperLinkContainer = styled.article`
   display: flex;
   flex-direction: column;
   row-gap: 7px;
