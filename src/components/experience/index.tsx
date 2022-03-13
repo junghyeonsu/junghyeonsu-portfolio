@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { ExperienceTitle } from './common';
 import { useLayoutContext } from '#/contexts/LayoutContext';
 import { FadeInContent } from '#/components/gsap';
+import TableOfContents from '../TableOfContents';
 import * as Styled from './styled';
 import {
   Univercity,
@@ -35,7 +36,7 @@ const Experience = () => {
 
   return (
     <Styled.Container id="experience-container" ref={containerRef}>
-      <Styled.TableOfContents>dd</Styled.TableOfContents>
+      <TableOfContents />
       <Styled.Contents>
         <Styled.ExperienceContainer>
           <FadeInContent delay={CONTENT_DELAY_TIME}>

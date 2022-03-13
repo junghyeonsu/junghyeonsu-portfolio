@@ -2,7 +2,6 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useMediaQuery } from '@material-ui/core';
 import * as Styled from './styled';
-import { useLayoutContext } from '#/contexts/LayoutContext';
 
 interface NestedHeadingType {
   nodeName: string;
@@ -51,25 +50,14 @@ const useIntersectionObserver = (setActiveId: any) => {
   }, [setActiveId]);
 };
 
-const ContentOfTable = () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { currentScrollTop, experienceOffsetTop }: any = useLayoutContext();
-  const isOver1600px = useMediaQuery('(min-width:1600px)');
-  const isUnder1200px = useMediaQuery('(max-width:1200px)');
+const TableOfContents = () => {
+  const isOver1100px = useMediaQuery('(min-width:1100px)');
+  const isUnder1100px = useMediaQuery('(max-width:1100px)');
   const isOver600px = useMediaQuery('(min-width:600px)');
   const [nestedHeadings, setNestedHeadings] = useState<NestedHeadingType[]>([]);
   const [activeId, setActiveId] = useState();
-  const [visible, setVisible] = useState(false);
 
   useIntersectionObserver(setActiveId);
-
-  useEffect(() => {
-    if (currentScrollTop > experienceOffsetTop) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-  }, [currentScrollTop, experienceOffsetTop]);
 
   useEffect(() => {
     const headingElements = Array.from(document.querySelectorAll('h1, h2, h3'));
@@ -91,8 +79,8 @@ const ContentOfTable = () => {
     });
   }, []);
 
-  return isOver600px ? (
-    <Styled.Container isOver1600px={isOver1600px} visible={visible}>
+  return isOver1100px ? (
+    <Styled.Container>
       {nestedHeadings.map(heading => {
         const { nodeName, text, id } = heading;
         const active = id === activeId;
@@ -101,29 +89,25 @@ const ContentOfTable = () => {
           case 'H1':
             return (
               <Styled.AnchorContainer key={text}>
-                <Styled.H1 active={active}>{isUnder1200px ? text?.split('')[0] : text}</Styled.H1>
+                <Styled.H1 active={active}>{text}</Styled.H1>
               </Styled.AnchorContainer>
             );
           case 'H2':
             return (
               <Styled.AnchorContainer key={text}>
                 <Styled.H2Circle active={active} />
-                {isOver1600px && (
-                  <Styled.Anchor href={`#${text}`} onClick={e => onClickAnchor(e, id)}>
-                    <Styled.H2 active={active}>{text}</Styled.H2>
-                  </Styled.Anchor>
-                )}
+                <Styled.Anchor href={`#${text}`} onClick={e => onClickAnchor(e, id)}>
+                  <Styled.H2 active={active}>{text}</Styled.H2>
+                </Styled.Anchor>
               </Styled.AnchorContainer>
             );
           case 'H3':
             return (
               <Styled.AnchorContainer key={text}>
-                <Styled.H3Circle isOver1600px={isOver1600px} active={active} />
-                {isOver1600px && (
-                  <Styled.Anchor href={`#${text}`} onClick={e => onClickAnchor(e, id)}>
-                    <Styled.H3 active={active}>{text}</Styled.H3>
-                  </Styled.Anchor>
-                )}
+                <Styled.H3Circle active={active} />
+                <Styled.Anchor href={`#${text}`} onClick={e => onClickAnchor(e, id)}>
+                  <Styled.H3 active={active}>{text}</Styled.H3>
+                </Styled.Anchor>
               </Styled.AnchorContainer>
             );
           default:
@@ -136,4 +120,4 @@ const ContentOfTable = () => {
   );
 };
 
-export default ContentOfTable;
+export default TableOfContents;

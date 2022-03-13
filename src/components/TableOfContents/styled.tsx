@@ -2,27 +2,16 @@ import styled from 'styled-components';
 import { UNDER_LINE_COLOR } from '#/colors';
 import { BOLD_TEXT } from '#/constants';
 
-interface ContainerProps {
-  visible: boolean;
-  isOver1600px: boolean;
-}
-
-interface H3CircleProps {
-  active: boolean;
-  isOver1600px: boolean;
-}
-
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.nav`
   display: flex;
-  position: fixed;
   flex-direction: column;
-  right: 20px;
-  top: 20px;
-  height: 50vh;
   justify-content: space-between;
-  align-items: ${({ isOver1600px }) => (isOver1600px ? '' : 'flex-end')};
+  position: sticky;
+  padding: 20px;
+  top: 20px;
+  width: 20vw;
+  height: 80vh;
   transition: all 0.1s ease;
-  opacity: ${({ visible }) => (visible ? 1 : 0)};
 `;
 
 export const AnchorContainer = styled.div`
@@ -45,7 +34,7 @@ export const H1 = styled.div`
 `;
 
 export const H2 = styled.div`
-  font-size: 15px;
+  font-size: 12px;
   transition: all 0.2s ease;
   color: ${({ active }: { active: boolean }) => (active ? UNDER_LINE_COLOR : '#6e6e6e')};
 
@@ -64,7 +53,7 @@ export const H2Circle = styled.div`
 export const H3 = styled.div`
   position: relative;
   left: 20px;
-  font-size: 15px;
+  font-size: 12px;
   transition: all 0.2s ease;
   color: ${({ active }: { active: boolean }) => (active ? UNDER_LINE_COLOR : '#6e6e6e')};
 
@@ -73,11 +62,11 @@ export const H3 = styled.div`
   }
 `;
 
-export const H3Circle = styled.div<H3CircleProps>`
+export const H3Circle = styled.div`
   position: relative;
-  left: ${({ isOver1600px }) => (isOver1600px ? '20px' : '0px')};
+  left: 20px;
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: ${({ active }) => (active ? UNDER_LINE_COLOR : '#6e6e6e')};
+  background-color: ${({ active }: { active: boolean }) => (active ? UNDER_LINE_COLOR : '#6e6e6e')};
 `;
