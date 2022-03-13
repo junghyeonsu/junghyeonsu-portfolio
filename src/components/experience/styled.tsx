@@ -11,16 +11,17 @@ export const Container = styled.section`
 `;
 
 export const TableOfContents = styled.nav`
+  position: sticky;
+  top: 0;
   width: 20vw;
+  height: 100vh;
 `;
 
 export const Contents = styled.article`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 80vw;
-  padding-top: 100px;
+  padding: 40px;
   color: black;
 `;
 
@@ -28,9 +29,7 @@ export const ExperienceContainer = styled.article`
   display: flex;
   width: 100%;
   flex-direction: column;
-  justify-content: center;
   row-gap: 70px;
-  align-items: center;
   margin-top: 50px;
   margin-bottom: 100px;
 
@@ -58,7 +57,7 @@ export const ExperienceCard = styled.article`
   }
 
   @media ${props => props.theme.mobile} {
-    width: 90vw;
+    width: 80vw;
   }
 `;
 

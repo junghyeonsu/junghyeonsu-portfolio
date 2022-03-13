@@ -6,12 +6,9 @@ export const Container = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: sticky;
   padding: 20px;
-  top: 20px;
   width: 20vw;
-  height: 80vh;
-  transition: all 0.1s ease;
+  height: 60vh;
 `;
 
 export const AnchorContainer = styled.div`
