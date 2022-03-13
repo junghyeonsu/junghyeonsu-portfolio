@@ -14,7 +14,7 @@ const Section = styled.section`
 
 export default function Main() {
   return (
-    <div>
+    <>
       <Head>
         <title>정현수 포트폴리오</title>
         <meta property="og:url" content="https://hyeonsu-jung.vercel.app/" />
@@ -29,13 +29,13 @@ export default function Main() {
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 maximum-scale=1, user-scalable=no" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
+      <main>
         <Section>
           <Introduction />
           <Experience />
           <ContentOfTable />
         </Section>
-      </body>
-    </div>
+      </main>
+    </>
   );
 }
