@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { useMediaQuery } from '@material-ui/core';
 import * as Styled from './styled';
 
 interface NestedHeadingType {
@@ -51,9 +50,6 @@ const useIntersectionObserver = (setActiveId: any) => {
 };
 
 const TableOfContents = () => {
-  const isOver1100px = useMediaQuery('(min-width:1100px)');
-  const isUnder1100px = useMediaQuery('(max-width:1100px)');
-  const isOver600px = useMediaQuery('(min-width:600px)');
   const [nestedHeadings, setNestedHeadings] = useState<NestedHeadingType[]>([]);
   const [activeId, setActiveId] = useState();
 
@@ -79,7 +75,7 @@ const TableOfContents = () => {
     });
   }, []);
 
-  return isOver1100px ? (
+  return (
     <Styled.Container>
       {nestedHeadings.map(heading => {
         const { nodeName, text, id } = heading;
@@ -115,8 +111,6 @@ const TableOfContents = () => {
         }
       })}
     </Styled.Container>
-  ) : (
-    <></>
   );
 };
 
