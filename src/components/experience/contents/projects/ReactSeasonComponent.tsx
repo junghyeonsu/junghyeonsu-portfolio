@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from '../../styled';
-import { Explain, Todos, InlineLinkText, Skills, Links } from '../../common';
+import { Explain, InlineLinkText, Skills, Links } from '../../common';
 
 const LINKS = [
   {
@@ -15,16 +15,16 @@ const LINKS = [
 
 const SKILLS = ['React', 'TypeScript', 'styled-components', 'MUI', 'ESLint', 'Prettier', 'github pages', 'github actions'];
 
-const TODOS = [
-  {
-    text: 'todo1',
-    checked: true,
-  },
-  {
-    text: 'todo2',
-    checked: false,
-  },
-];
+// const TODOS = [
+//   {
+//     text: 'todo1',
+//     checked: true,
+//   },
+//   {
+//     text: 'todo2',
+//     checked: false,
+//   },
+// ];
 
 const ReactSeasonComponent = () => {
   return (
@@ -44,7 +44,7 @@ const ReactSeasonComponent = () => {
       </Styled.ExperienceCardExplainContainer>
       <Links links={LINKS} />
       <Skills skills={SKILLS} />
-      <Todos todos={TODOS} />
+      {/* <Todos todos={TODOS} /> */}
     </Styled.ExperienceCard>
   );
 };
