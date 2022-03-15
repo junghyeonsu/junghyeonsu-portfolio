@@ -1,6 +1,13 @@
 import React from 'react';
 import * as Styled from '../../styled';
-import { Explain, Link, InlineLinkText } from '../../common';
+import { Explain, Links, InlineLinkText } from '../../common';
+
+const LINKS = [
+  {
+    href: 'https://junghyeonsu.tistory.com/60?category=797646',
+    text: '인턴 중 올린 포스트 모음',
+  },
+];
 
 const SatrecI = () => {
   return (
@@ -16,9 +23,7 @@ const SatrecI = () => {
         <Explain>Ansible을 이용해 Kubernetes 환경 구축 및 고가용성 유지를 위한 테스트</Explain>
       </Styled.ExperienceCardExplainContainer>
 
-      <Styled.HyperLinkContainer>
-        <Link href="https://junghyeonsu.tistory.com/60?category=797646">인턴 중 올린 포스트 모음</Link>
-      </Styled.HyperLinkContainer>
+      <Links links={LINKS} />
     </Styled.ExperienceCard>
   );
 };

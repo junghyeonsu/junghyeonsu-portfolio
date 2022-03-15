@@ -131,3 +131,35 @@ export const SkillIcon = styled.img`
   width: 50px;
   height: 50px;
 `;
+
+export const CommonArticleContainer = styled.article`
+  /* border-radius: 7px; */
+  /* padding: 15px; */
+  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: rgba(255, 255, 255, 0.8); */
+
+  @media ${props => props.theme.desktop} {
+    width: 60vw;
+  }
+
+  @media ${props => props.theme.tablet} {
+    width: 90vw;
+  }
+
+  @media ${props => props.theme.mobile} {
+    width: 80vw;
+  }
+`;
+
+export const CommonArticleContainerTitle = styled.p`
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  margin-top: 0;
+  font-size: 24px;
+  font-family: ${BOLD_TEXT};
+
+  @media ${props => props.theme.mobile} {
+    font-size: 20px;
+  }
+`;
