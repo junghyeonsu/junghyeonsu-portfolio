@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import { UNDER_LINE_COLOR } from '#/colors';
 import { BOLD_TEXT } from '#/constants';
 
-export const Container = styled.nav`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
-  width: 20vw;
+  /* padding: 20px; */
+  margin: auto;
+  width: 209.4px;
   height: 60vh;
 `;
 
