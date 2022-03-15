@@ -37,7 +37,7 @@ const ReactSeasonComponent = () => {
         <Styled.SkillItem>github actions</Styled.SkillItem>
       </Styled.SkillContainer>
 
-      <TodoLists todos={['hihi']} />
+      <TodoLists todos={['hihi', 'hihi2']} />
     </Styled.ExperienceCard>
   );
 };
