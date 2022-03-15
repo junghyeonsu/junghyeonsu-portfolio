@@ -1,6 +1,6 @@
 import React, { useContext, useCallback, useEffect, createContext, useState, ReactChild, ReactChildren, ReactElement } from 'react';
 
-import _ from 'lodash';
+// import _ from 'lodash';
 
 const LayoutContext = createContext<Record<string, unknown>>({});
 
@@ -26,20 +26,20 @@ const LayoutProvider = ({ children }: { children?: ReactChild | ReactChildren | 
   }, []);
 
   // 휠 이벤트 감지
-  useEffect(() => {
-    window.addEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
-    return () => {
-      window.removeEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
-    };
-  }, [handleResize]);
+  // useEffect(() => {
+  //   window.addEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
+  //   return () => {
+  //     window.removeEventListener('resize', _.throttle(handleResize, 200)); // eslint-disable-line no-undef
+  //   };
+  // }, [handleResize]);
 
   // 스크롤 이벤트 감지
-  useEffect(() => {
-    window.addEventListener('scroll', _.throttle(handleScroll, 200)); // eslint-disable-line no-undef
-    return () => {
-      window.removeEventListener('scroll', _.throttle(handleScroll, 200)); // eslint-disable-line no-undef
-    };
-  }, [handleScroll]);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', _.throttle(handleScroll, 200)); // eslint-disable-line no-undef
+  //   return () => {
+  //     window.removeEventListener('scroll', _.throttle(handleScroll, 200)); // eslint-disable-line no-undef
+  //   };
+  // }, [handleScroll]);
 
   // 소개 섹션 이동 함수
   const moveIntroArticle = useCallback(() => {

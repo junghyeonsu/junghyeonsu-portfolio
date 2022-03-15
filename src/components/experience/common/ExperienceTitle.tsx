@@ -5,13 +5,12 @@ import YellowPoint from '#/components/YellowPoint';
 import { BOLD_TEXT } from '#/constants';
 
 const StyledExperienceTitle = styled.h1`
-  width: 75vw;
   font-size: 70px;
   font-family: ${BOLD_TEXT};
   margin: 0;
 
   @media ${props => props.theme.desktop} {
-    width: 75vw;
+    width: 60vw;
   }
 
   @media ${props => props.theme.tablet} {
@@ -30,7 +29,7 @@ const Divide = styled.div`
   background-color: #f8cd07;
 
   @media ${props => props.theme.desktop} {
-    width: 75vw;
+    width: 60vw;
   }
 
   @media ${props => props.theme.tablet} {

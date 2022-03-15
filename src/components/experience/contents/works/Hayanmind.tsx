@@ -1,6 +1,17 @@
 import React from 'react';
 import * as Styled from '../../styled';
-import { Explain, Link, InlineLinkText } from '../../common';
+import { Explain, Links, InlineLinkText } from '../../common';
+
+const LINKS = [
+  {
+    href: 'https://redkiwiapp.com/ko/b2b',
+    text: 'B2B 프로그램 소개 페이지',
+  },
+  {
+    href: 'https://velog.io/@junghyeonsu/회고록-5월-및-인턴-회고',
+    text: '인턴 회고록 블로그 포스트 (어려웠던 점, 느낀 점 등등 정리)',
+  },
+];
 
 const Hayanmind = () => {
   return (
@@ -17,10 +28,7 @@ const Hayanmind = () => {
         <Explain>react-admin 프레임워크를 활용한 B2B 사이트 유지보수</Explain>
       </Styled.ExperienceCardExplainContainer>
 
-      <Styled.HyperLinkContainer>
-        <Link href="https://redkiwiapp.com/ko/b2b">B2B 프로그램 소개 페이지</Link>
-        <Link href="https://velog.io/@junghyeonsu/회고록-5월-및-인턴-회고">인턴 회고록 블로그 포스트 (어려웠던 점, 느낀 점 등등 정리)</Link>
-      </Styled.HyperLinkContainer>
+      <Links links={LINKS} />
     </Styled.ExperienceCard>
   );
 };
