@@ -6,7 +6,7 @@ const LayoutContext = createContext<Record<string, unknown>>({});
 
 const LayoutProvider = ({ children }: { children?: ReactChild | ReactChildren | ReactChildren[] | ReactChild[] }): ReactElement => {
   const [windowWidth, setWindowWidth] = useState(0);
-  const [currentScrollTop, setCurrentScrollTop] = useState(0);
+  // const [currentScrollTop, setCurrentScrollTop] = useState(0);
   const [introductionOffsetTop, setIntroductionOffsetTop] = useState(0); // 1
   const [experienceOffsetTop, setExperienceOffsetTop] = useState(0); // 2
 
@@ -15,15 +15,15 @@ const LayoutProvider = ({ children }: { children?: ReactChild | ReactChildren | 
     setWindowWidth(window.innerWidth);
   }, []);
 
-  const handleResize = useCallback(() => {
-    const { innerWidth } = window;
-    setWindowWidth(innerWidth);
-  }, []);
+  // const handleResize = useCallback(() => {
+  //   const { innerWidth } = window;
+  //   setWindowWidth(innerWidth);
+  // }, []);
 
-  const handleScroll = useCallback(() => {
-    const { scrollTop } = document.documentElement;
-    setCurrentScrollTop(scrollTop);
-  }, []);
+  // const handleScroll = useCallback(() => {
+  //   const { scrollTop } = document.documentElement;
+  //   setCurrentScrollTop(scrollTop);
+  // }, []);
 
   // 휠 이벤트 감지
   // useEffect(() => {
@@ -56,7 +56,7 @@ const LayoutProvider = ({ children }: { children?: ReactChild | ReactChildren | 
       value={{
         introductionOffsetTop,
         experienceOffsetTop,
-        currentScrollTop,
+        // currentScrollTop,
         windowWidth,
         setIntroductionOffsetTop,
         setExperienceOffsetTop,
