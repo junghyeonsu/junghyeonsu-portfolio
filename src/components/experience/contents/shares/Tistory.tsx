@@ -13,8 +13,8 @@ const Tistory = () => {
 
         <Styled.ExperienceCardExplainContainer>
           <Explain>알고리즘, CS지식 공부 내용, 회고록 등등 정리</Explain>
-          <Explain>2022년 2월 기준 일 평균 150명, 월 평균 4000명 방문</Explain>
-          <Explain>2022년 2월 기준 총 방문자 28,000명</Explain>
+          <Explain>2022년 3월 기준 일 평균 150명, 월 평균 4000명 방문</Explain>
+          <Explain>2022년 3월 기준 총 방문자 31,000명</Explain>
         </Styled.ExperienceCardExplainContainer>
       </Styled.ExperienceCardTopContainer>
     </Styled.ExperienceCard>
