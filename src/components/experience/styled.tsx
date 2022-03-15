@@ -42,8 +42,8 @@ export const ExperienceContainer = styled.article`
 
 export const ExperienceCard = styled.article`
   display: flex;
-  justify-content: start;
-  align-items: center;
+  flex-direction: column;
+  row-gap: 25px;
   position: relative;
   width: ${DESKTOP_CONTENT_WIDTH};
   background-color: rgb(245, 245, 245);
@@ -58,16 +58,6 @@ export const ExperienceCard = styled.article`
 
   @media ${props => props.theme.mobile} {
     width: 80vw;
-  }
-`;
-
-export const ExperienceCardTopContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  row-gap: 25px;
-
-  @media ${props => props.theme.mobile} {
     row-gap: 15px;
   }
 `;
