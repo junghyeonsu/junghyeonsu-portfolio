@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Styled from '../../styled';
-import { Explain, InlineLinkText, Skills, Links } from '../../common';
+import { Explain, InlineLinkText, Todos, Skills, Links } from '../../common';
+import EXPLAIN from './explains';
 
 const LINKS = [
   {
@@ -13,18 +14,47 @@ const LINKS = [
   },
 ];
 
-const SKILLS = ['React', 'TypeScript', 'styled-components', 'MUI', 'ESLint', 'Prettier', 'github pages', 'github actions'];
+const SKILLS = [
+  {
+    skill: 'React',
+    explain: EXPLAIN.react,
+  },
+  {
+    skill: 'TypeScript',
+    explain: EXPLAIN.typescript,
+  },
+  {
+    skill: 'styled-components',
+    explain: `${EXPLAIN.styledComponents}\n 하지만 CSS-in-JS보다 CSS-in-CSS가 속도가 더 빠르고, UI 컴포넌트 라이브러리인 만큼 유저 경험이 중요하기 때문에 더 나은 속도를 제공하기 위해 CSS-in-CSS로 변경할 예정입니다.`,
+  },
+  {
+    skill: 'MUI',
+    explain: EXPLAIN.mui,
+  },
+  {
+    skill: 'ESLint',
+    explain: EXPLAIN.eslint,
+  },
+  {
+    skill: 'Prettier',
+    explain: EXPLAIN.prettier,
+  },
+  {
+    skill: 'github pages',
+    explain: EXPLAIN.githubPages,
+  },
+  {
+    skill: 'github actions',
+    explain: EXPLAIN.githubActions,
+  },
+];
 
-// const TODOS = [
-//   {
-//     text: 'todo1',
-//     checked: true,
-//   },
-//   {
-//     text: 'todo2',
-//     checked: false,
-//   },
-// ];
+const TODOS = [
+  {
+    text: 'CSS-IN-JS를 CSS-IN-CSS로 바꾸기',
+    checked: false,
+  },
+];
 
 const ReactSeasonComponent = () => {
   return (
@@ -44,7 +74,7 @@ const ReactSeasonComponent = () => {
       </Styled.ExperienceCardExplainContainer>
       <Links links={LINKS} />
       <Skills skills={SKILLS} />
-      {/* <Todos todos={TODOS} /> */}
+      <Todos todos={TODOS} />
     </Styled.ExperienceCard>
   );
 };

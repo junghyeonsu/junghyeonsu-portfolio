@@ -62,7 +62,7 @@ const Introduction = () => {
             <Styled.BodyText>공유의 중요성을 잘 알기에 항상 새기고 실천하려고 노력합니다.</Styled.BodyText>
           </Styled.BodyTextContainer>
         </FadeInBodyText>
-        <FadeInContent delay={1}>
+        <FadeInContent delay={0}>
           <Styled.ImageBox>
             <img src="/hyeonsu.jpeg" alt="hyeonsu-background" draggable={false} />
           </Styled.ImageBox>

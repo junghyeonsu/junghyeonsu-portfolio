@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Styled from '../../styled';
 import { Explain, Links, Skills, InlineLinkText } from '../../common';
+import EXPLAIN from './explains';
 
 const VERSION_ONE_LINKS = [
   {
@@ -9,7 +10,24 @@ const VERSION_ONE_LINKS = [
   },
 ];
 
-const VERSION_ONE_SKILLS = ['React', 'JavaScript', 'styled-components', 'github pages'];
+const VERSION_ONE_SKILLS = [
+  {
+    skill: 'React',
+    explain: EXPLAIN.react,
+  },
+  {
+    skill: 'TypeScript',
+    explain: EXPLAIN.typescript,
+  },
+  {
+    skill: 'styled-components',
+    explain: EXPLAIN.styledComponents,
+  },
+  {
+    skill: 'github pages',
+    explain: EXPLAIN.githubPages,
+  },
+];
 
 const VERSION_TWO_LINKS = [
   {
@@ -22,7 +40,40 @@ const VERSION_TWO_LINKS = [
   },
 ];
 
-const VERSION_TWO_SKILLS = ['React', 'Next.JS', 'TypeScript', 'styled-components', 'MUI', 'ESLint', 'Prettier', 'Vercel'];
+const VERSION_TWO_SKILLS = [
+  {
+    skill: 'React',
+    explain: EXPLAIN.react,
+  },
+  {
+    skill: 'Next.JS',
+    explain: EXPLAIN.nextjs,
+  },
+  {
+    skill: 'TypeScript',
+    explain: EXPLAIN.typescript,
+  },
+  {
+    skill: 'styled-components',
+    explain: EXPLAIN.styledComponents,
+  },
+  {
+    skill: 'MUI',
+    explain: EXPLAIN.mui,
+  },
+  {
+    skill: 'ESLint',
+    explain: EXPLAIN.eslint,
+  },
+  {
+    skill: 'Prettier',
+    explain: EXPLAIN.prettier,
+  },
+  {
+    skill: 'Vercel',
+    explain: EXPLAIN.vercel,
+  },
+];
 
 const VERSION_THREE_LINKS = [
   {
@@ -31,7 +82,40 @@ const VERSION_THREE_LINKS = [
   },
 ];
 
-const VERSION_THREE_SKILLS = ['React', 'Next.JS', 'TypeScript', 'styled-components', 'MUI', 'ESLint', 'Prettier', 'Vercel'];
+const VERSION_THREE_SKILLS = [
+  {
+    skill: 'React',
+    explain: EXPLAIN.react,
+  },
+  {
+    skill: 'Next.JS',
+    explain: EXPLAIN.nextjs,
+  },
+  {
+    skill: 'TypeScript',
+    explain: EXPLAIN.typescript,
+  },
+  {
+    skill: 'styled-components',
+    explain: EXPLAIN.styledComponents,
+  },
+  {
+    skill: 'MUI',
+    explain: EXPLAIN.mui,
+  },
+  {
+    skill: 'ESLint',
+    explain: EXPLAIN.eslint,
+  },
+  {
+    skill: 'Prettier',
+    explain: EXPLAIN.prettier,
+  },
+  {
+    skill: 'Vercel',
+    explain: EXPLAIN.vercel,
+  },
+];
 
 const Portfolio = () => {
   return (

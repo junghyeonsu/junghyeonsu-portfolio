@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Styled from '../../styled';
 import { Explain, Skills, Links, InlineLinkText } from '../../common';
+import EXPLAIN from './explains';
 
 const LINKS = [
   {
@@ -12,7 +13,37 @@ const LINKS = [
     href: 'https://velog.io/@junghyeonsu/React-Numble-Challenge-%EB%8B%A4%EB%A5%B8-%EC%83%89%EA%B9%94-%EC%B0%BE%EA%B8%B0-%EA%B2%8C%EC%9E%84-%EB%A7%8C%EB%93%A4%EA%B8%B0',
   },
 ];
-const SKILLS = ['React', 'TypeScript', 'react-router-dom', 'styled-components', 'ESLint', 'Prettier', 'Vercel'];
+
+const SKILLS = [
+  {
+    skill: 'React',
+    explain: EXPLAIN.react,
+  },
+  {
+    skill: 'TypeScript',
+    explain: EXPLAIN.typescript,
+  },
+  {
+    skill: 'react-router-dom',
+    explain: EXPLAIN.reactRouterDom,
+  },
+  {
+    skill: 'styled-components',
+    explain: EXPLAIN.styledComponents,
+  },
+  {
+    skill: 'ESLint',
+    explain: EXPLAIN.eslint,
+  },
+  {
+    skill: 'Prettier',
+    explain: EXPLAIN.prettier,
+  },
+  {
+    skill: 'Vercel',
+    explain: EXPLAIN.vercel,
+  },
+];
 
 const FindDifferentColor = () => {
   return (
