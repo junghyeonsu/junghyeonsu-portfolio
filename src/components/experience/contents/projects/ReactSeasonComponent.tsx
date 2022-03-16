@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from '../../styled';
-import { Explain, InlineLinkText, Todos, Skills, Links } from '../../common';
+import { Explain, InlineLinkText, Skills, Links } from '../../common';
 import EXPLAIN from './explains';
 
 const LINKS = [
@@ -49,13 +49,6 @@ const SKILLS = [
   },
 ];
 
-const TODOS = [
-  {
-    text: 'CSS-IN-JS를 CSS-IN-CSS로 바꾸기',
-    checked: false,
-  },
-];
-
 const ReactSeasonComponent = () => {
   return (
     <Styled.ExperienceCard>
@@ -74,7 +67,6 @@ const ReactSeasonComponent = () => {
       </Styled.ExperienceCardExplainContainer>
       <Links links={LINKS} />
       <Skills skills={SKILLS} />
-      <Todos todos={TODOS} />
     </Styled.ExperienceCard>
   );
 };
