@@ -7,7 +7,12 @@ import Typography from '@material-ui/core/Typography';
 import BorderColorOutlinedIcon from '@material-ui/icons/BorderColorOutlined';
 import { CommonArticleContainer, CommonArticleContainerTitle } from '../../styled';
 
-const Skills = ({ skills }: { skills: string[] }) => {
+interface SkillProps {
+  skill: string;
+  explain: string;
+}
+
+const Skills = ({ skills }: { skills: SkillProps[] }) => {
   return (
     <CommonArticleContainer>
       <CommonArticleContainerTitle>
@@ -15,12 +20,12 @@ const Skills = ({ skills }: { skills: string[] }) => {
         사용기술들
       </CommonArticleContainerTitle>
       {skills.map((skill, index) => (
-        <Accordion key={`${index + 1}-${skill}`}>
+        <Accordion key={`${index + 1}-${skill.skill}`}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="content" id="header">
-            <Typography>{skill}</Typography>
+            <Typography>{skill.skill}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>{skill}</Typography>
+            <Typography>{skill.explain}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}
