@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Introduction from '#/components/introduction';
 import Experience from '#/components/experience';
+import ScrollTopButton from '#/components/ScrollTopButton';
 
 const Section = styled.section`
   position: relative;
@@ -32,6 +33,7 @@ export default function Main() {
         <Section>
           <Introduction />
           <Experience />
+          <ScrollTopButton />
         </Section>
       </main>
     </>
