@@ -13,6 +13,7 @@ export { default as ReactSeasonComponent } from './projects/ReactSeasonComponent
 export { default as FindDifferentColor } from './projects/FindDifferentColor';
 
 /* Shares */
+export { default as MyTechBlog } from './shares/MyTechBlog';
 export { default as Velog } from './shares/Velog';
 export { default as Tistory } from './shares/Tistory';
 export { default as YouTube } from './shares/YouTube';

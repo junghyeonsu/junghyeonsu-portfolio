@@ -51,6 +51,9 @@ const Experience = () => {
             <ExperienceTitle title="Share" />
           </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Content.MyTechBlog />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.Tistory />
           </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
