@@ -69,13 +69,13 @@ const Experience = () => {
             <ExperienceTitle title="Education" />
           </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Content.NextStepCleanCodeWithJavaScript />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.Univercity />
           </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.WooahanTechCource />
-          </FadeInContent>
-          <FadeInContent delay={CONTENT_DELAY_TIME}>
-            <Content.NextStepCleanCodeWithJavaScript />
           </FadeInContent>
         </Styled.ExperienceContainer>
 

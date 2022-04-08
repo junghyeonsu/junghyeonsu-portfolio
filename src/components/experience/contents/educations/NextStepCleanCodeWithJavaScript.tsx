@@ -16,6 +16,17 @@ const NextStepCleanCodeWithJavaScript = () => {
         <SecondIndentExplain>
           <InlineLinkText href="https://github.com/next-step/js-calculator/pull/97">온보딩 미션 PR</InlineLinkText>
         </SecondIndentExplain>
+        <Explain>1단계 로또 미션 진행 (2022/3/15 - 2022/3/29)</Explain>
+        <SecondIndentExplain>
+          <InlineLinkText href="https://github.com/next-step/js-lotto/pull/77">STEP1 PR</InlineLinkText>
+        </SecondIndentExplain>
+        <SecondIndentExplain>
+          <InlineLinkText href="https://github.com/next-step/js-lotto/pull/100">STEP2 PR</InlineLinkText>
+        </SecondIndentExplain>
+        <Explain>2단계 자동차 경주 미션 진행 (2022/3/29 - 2022/4/12)</Explain>
+        <SecondIndentExplain>
+          <InlineLinkText href="https://github.com/next-step/js-racingcar/pull/68">STEP1 PR</InlineLinkText>
+        </SecondIndentExplain>
       </Styled.ExperienceCardExplainContainer>
     </Styled.ExperienceCard>
   );
