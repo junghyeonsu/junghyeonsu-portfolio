@@ -5,7 +5,7 @@ import { FadeInContent, Underline, FadeInBodyText, FadeInHeaderText } from '#/co
 import YellowPoint from '#/components/YellowPoint';
 import * as Styled from './styled';
 
-const Introduction = () => {
+const IntroductionContainer = () => {
   return (
     <Styled.Container>
       <FadeInContent delay={1}>
@@ -67,4 +67,4 @@ const Introduction = () => {
   );
 };
 
-export default Introduction;
+export default IntroductionContainer;

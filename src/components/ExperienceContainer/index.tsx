@@ -8,7 +8,7 @@ import * as Content from './contents';
 
 const CONTENT_DELAY_TIME = 0.3;
 
-const Experience = () => {
+const ExperienceContainer = () => {
   const isOver1100px = useMediaQuery('(min-width:1100px)');
 
   return (
@@ -113,4 +113,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default ExperienceContainer;

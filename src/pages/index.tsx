@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 
-import Introduction from '#/components/introduction';
-import Experience from '#/components/experience';
+import IntroductionContainer from '#/components/IntroductionContainer';
+import ExperienceContainer from '#/components/ExperienceContainer';
 import ScrollTopButton from '#/components/ScrollTopButton';
 
 const Section = styled.section`
@@ -31,8 +31,8 @@ export default function Main() {
       </Head>
       <main>
         <Section>
-          <Introduction />
-          <Experience />
+          <IntroductionContainer />
+          <ExperienceContainer />
           <ScrollTopButton />
         </Section>
       </main>
