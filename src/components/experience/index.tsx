@@ -7,7 +7,7 @@ import TableOfContents from '../TableOfContents';
 import * as Styled from './styled';
 import * as Content from './contents';
 
-const CONTENT_DELAY_TIME = 0.6;
+const CONTENT_DELAY_TIME = 0.3;
 
 const Experience = () => {
   const { setExperienceOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
