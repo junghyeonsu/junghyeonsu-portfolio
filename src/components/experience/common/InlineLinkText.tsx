@@ -6,7 +6,7 @@ const ExplainLinkText = styled.a`
   background-size: 200%;
   background-position: 0 0;
 
-  text-underline-offset: 5px;
+  text-underline-offset: 3.5px;
   transition: 0.25s ease;
 
   :hover {
