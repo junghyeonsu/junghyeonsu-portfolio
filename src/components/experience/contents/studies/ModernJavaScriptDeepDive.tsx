@@ -14,6 +14,7 @@ const ModernJavaScriptDeepDive = () => {
     <Styled.ExperienceCard>
       <Styled.ExperienceCardTitleType>스터디</Styled.ExperienceCardTitleType>
       <Styled.ExperienceCardTitle id="모던-자바스크립트-딥다이브-스터디">모던 자바스크립트 딥다이브 스터디</Styled.ExperienceCardTitle>
+      <Styled.ExperienceCardPeriod>2022년 3월 28일 - 진행중</Styled.ExperienceCardPeriod>
       <Styled.ExperienceCardExplainContainer>
         <Explain>
           <InlineLinkText href="http://www.yes24.com/Product/Goods/92742567">모던 자바스크립트 딥다이브</InlineLinkText>를 일주일에{' '}
