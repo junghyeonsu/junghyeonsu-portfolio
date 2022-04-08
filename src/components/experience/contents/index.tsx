@@ -24,3 +24,6 @@ export { default as Vite } from './openSources/Vite';
 export { default as GoogleWebFundamentals } from './openSources/GoogleWebFundamentals';
 export { default as ReactContribute } from './openSources/ReactContribute';
 export { default as Kubernetes } from './openSources/Kubernetes';
+
+/* Study */
+export { default as ModernJavaScriptDeepDive } from './studies/ModernJavaScriptDeepDive';

@@ -99,6 +99,15 @@ const Experience = () => {
             <Content.Kubernetes />
           </FadeInContent>
         </Styled.ExperienceContainer>
+
+        <Styled.ExperienceContainer>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <ExperienceTitle title="Study" />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Content.ModernJavaScriptDeepDive />
+          </FadeInContent>
+        </Styled.ExperienceContainer>
       </Styled.Contents>
     </Styled.Container>
   );
