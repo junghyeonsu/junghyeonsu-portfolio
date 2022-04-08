@@ -4,6 +4,8 @@ import { BOLD_TEXT } from '#/constants';
 
 export const Container = styled.div`
   display: flex;
+  position: relative;
+  top: 85px;
   flex-direction: column;
   justify-content: space-between;
   /* padding: 20px; */
