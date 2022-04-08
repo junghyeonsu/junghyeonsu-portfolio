@@ -6,7 +6,6 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import smoothscroll from 'smoothscroll-polyfill';
 
 import GlobalStyle from '#/styles/globalStyles';
-import LayoutProvider from '#/contexts/LayoutContext';
 import { theme } from '#/styles/theme';
 
 if (typeof window !== 'undefined') {
@@ -18,11 +17,9 @@ if (typeof window !== 'undefined') {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <LayoutProvider>
-        <GlobalStyle />
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
-      </LayoutProvider>
+      <GlobalStyle />
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 }
