@@ -1,7 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { useMediaQuery } from '@material-ui/core';
 import { ExperienceTitle } from './common';
-import { useLayoutContext } from '#/contexts/LayoutContext';
 import { FadeInContent } from '#/components/gsap';
 import TableOfContents from '../TableOfContents';
 import * as Styled from './styled';
@@ -10,17 +9,10 @@ import * as Content from './contents';
 const CONTENT_DELAY_TIME = 0.3;
 
 const Experience = () => {
-  const { setExperienceOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
   const isOver1100px = useMediaQuery('(min-width:1100px)');
-  const containerRef = useRef<any>(null); // eslint-disable-line
-
-  useEffect(() => {
-    const containerOffsetTop = containerRef.current.offsetTop;
-    setExperienceOffsetTop(containerOffsetTop);
-  }, [setExperienceOffsetTop, windowWidth]);
 
   return (
-    <Styled.Container id="experience-container" ref={containerRef}>
+    <Styled.Container id="experience-container">
       {isOver1100px && (
         <Styled.TableOfContents>
           <TableOfContents />

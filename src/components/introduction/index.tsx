@@ -1,5 +1,4 @@
-import React, { useRef, useEffect } from 'react';
-import { useLayoutContext } from '#/contexts/LayoutContext';
+import React from 'react';
 import { UNDER_LINE_COLOR } from '#/colors';
 import { LAST_UPDATED } from '#/constants';
 import { FadeInContent, Underline, FadeInBodyText, FadeInHeaderText } from '#/components/gsap';
@@ -7,16 +6,8 @@ import YellowPoint from '#/components/YellowPoint';
 import * as Styled from './styled';
 
 const Introduction = () => {
-  const { setIntroductionOffsetTop, windowWidth }: any = useLayoutContext(); // eslint-disable-line
-  const containerRef = useRef<any>(null); // eslint-disable-line
-
-  useEffect(() => {
-    const containerOffsetTop = containerRef.current.offsetTop;
-    setIntroductionOffsetTop(containerOffsetTop);
-  }, [setIntroductionOffsetTop, windowWidth]);
-
   return (
-    <Styled.Container ref={containerRef}>
+    <Styled.Container>
       <FadeInContent delay={1}>
         <Styled.Sidebar>
           <Styled.LinkContainer>
