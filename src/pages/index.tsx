@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import IntroductionContainer from '#/components/IntroductionContainer';
 import ExperienceContainer from '#/components/ExperienceContainer';
+import Footer from '#/components/Footer';
 import ScrollTopButton from '#/components/ScrollTopButton';
 
 const Section = styled.section`
@@ -33,6 +34,7 @@ export default function Main() {
         <Section>
           <IntroductionContainer />
           <ExperienceContainer />
+          <Footer />
           <ScrollTopButton />
         </Section>
       </main>
