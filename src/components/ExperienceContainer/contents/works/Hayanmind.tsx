@@ -25,7 +25,14 @@ const Hayanmind = () => {
       <Styled.ExperienceCardExplainContainer>
         <Explain>영어 쉐도잉 애플리케이션 제작 스타트업의 프론트엔드 개발자로 참여</Explain>
         <Explain>B2B 소개 페이지 제작 프로젝트 참여 (디자이너1, 개발자1)</Explain>
-        <Explain>react-admin 프레임워크를 활용한 B2B 사이트 유지보수</Explain>
+        <Explain>B2B 소개 페이지 반응형 디자인 적용</Explain>
+        <Explain>
+          B2B 소개 페이지{' '}
+          <InlineLinkText href="https://velog.io/@junghyeonsu/React-useForm">
+            custom form hook을 통해 form 데이터 관리(validation 처리 등)
+          </InlineLinkText>
+        </Explain>
+        <Explain>react-admin 프레임워크를 활용한 B2B 사이트 유지보수(firestore를 이용한 CRUD 구현)</Explain>
       </Styled.ExperienceCardExplainContainer>
 
       <Links links={LINKS} />
