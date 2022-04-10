@@ -58,10 +58,11 @@ const FindDifferentColor = () => {
           <InlineLinkText href="https://www.numble.it/?t=1643872858661#c2c8e9ba996c4dd197a5e13af68bfeea">Numble</InlineLinkText>
           에서 진행하는 챌린지 참여
         </Explain>
-        <Explain>요구사항 구현 이후 랭킹 시스템까지 도입</Explain>
         <Explain>
           챌린지 내 상위 10% 달성 <InlineLinkText href="https://www.numble.it/45cee9d3-49ad-4f67-9d2a-14607c2eeba7">(점수 기준)</InlineLinkText>
         </Explain>
+        <Explain>전역 상태 라이브러리를 사용하지 않고 state, props를 적절한 위치에 구현</Explain>
+        <Explain>챌린지 이후 firestore를 이용한 랭킹 시스템 구현</Explain>
       </Styled.ExperienceCardExplainContainer>
       <Links links={LINKS} />
       <Skills skills={SKILLS} />
