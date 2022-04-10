@@ -7,9 +7,15 @@ import Typography from '@material-ui/core/Typography';
 import BorderColorOutlinedIcon from '@material-ui/icons/BorderColorOutlined';
 import { CommonArticleContainer, CommonArticleContainerTitle } from '../../styled';
 
+interface ImageProps {
+  src: string;
+  alt: string;
+}
+
 interface SkillProps {
   skill: string;
   explain: string;
+  image?: ImageProps;
 }
 
 const Skills = ({ skills }: { skills: SkillProps[] }) => {
@@ -25,8 +31,13 @@ const Skills = ({ skills }: { skills: SkillProps[] }) => {
             <Typography>{skill.skill}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>{skill.explain}</Typography>
+            <Typography style={{ whiteSpace: 'pre-wrap' }}>{skill.explain}</Typography>
           </AccordionDetails>
+          {skill.image ? (
+            <AccordionDetails>
+              <img style={{ width: '100%', objectFit: 'contain' }} src={skill.image.src} alt={skill.image.alt} />
+            </AccordionDetails>
+          ) : null}
         </Accordion>
       ))}
     </CommonArticleContainer>

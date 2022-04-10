@@ -36,6 +36,9 @@ const ExperienceContainer = () => {
             <ExperienceTitle title="Project" />
           </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Content.MyTechBlogAsProjects />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.ReactSeasonComponent />
           </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
@@ -51,7 +54,7 @@ const ExperienceContainer = () => {
             <ExperienceTitle title="Share" />
           </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
-            <Content.MyTechBlog />
+            <Content.MyTechBlogAsShares />
           </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.Tistory />
