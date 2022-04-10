@@ -64,7 +64,7 @@ const SKILLS = [
 const Portfolio = () => {
   return (
     <Styled.ExperienceCard>
-      <Styled.ExperienceCardTitleType>프로젝트</Styled.ExperienceCardTitleType>
+      <Styled.ExperienceCardTitleType>개인 프로젝트</Styled.ExperienceCardTitleType>
       <Styled.ExperienceCardTitle id="나만의-포트폴리오-개발">나만의 포트폴리오 개발 (현재 페이지)</Styled.ExperienceCardTitle>
       <Styled.ExperienceCardPeriod>2022년 1월 - 3월 개발</Styled.ExperienceCardPeriod>
       <Explain>나만의 포트폴리오를 가지기 위해서 개발</Explain>

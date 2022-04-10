@@ -52,7 +52,7 @@ const SKILLS = [
 const ReactSeasonComponent = () => {
   return (
     <Styled.ExperienceCard>
-      <Styled.ExperienceCardTitleType>프로젝트</Styled.ExperienceCardTitleType>
+      <Styled.ExperienceCardTitleType>팀 프로젝트</Styled.ExperienceCardTitleType>
       <Styled.ExperienceCardTitle id="react-season-component">
         <InlineLinkText href="https://www.npmjs.com/package/react-season-component">react-season-component</InlineLinkText>
       </Styled.ExperienceCardTitle>
