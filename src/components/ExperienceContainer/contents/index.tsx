@@ -20,6 +20,7 @@ export { default as Tistory } from './shares/Tistory';
 export { default as YouTube } from './shares/YouTube';
 
 /* Open Sources */
+export { default as TypeChallenges } from './openSources/TypeChallenges';
 export { default as MDNWebDocsClass } from './openSources/MDNWebDocsClass';
 export { default as Vite } from './openSources/Vite';
 export { default as GoogleWebFundamentals } from './openSources/GoogleWebFundamentals';
@@ -27,6 +28,6 @@ export { default as ReactContribute } from './openSources/ReactContribute';
 export { default as Kubernetes } from './openSources/Kubernetes';
 
 /* Study */
-export { default as ModernJavaScriptDeepDive } from './studies/ModernJavaScriptDeepDive';
-export { default as FrontEndJobPrepare } from './studies/FrontEndJobPrepare';
 export { default as TypeScriptOOP } from './studies/TypeScriptOOP';
+export { default as FrontEndJobPrepare } from './studies/FrontEndJobPrepare';
+export { default as ModernJavaScriptDeepDive } from './studies/ModernJavaScriptDeepDive';

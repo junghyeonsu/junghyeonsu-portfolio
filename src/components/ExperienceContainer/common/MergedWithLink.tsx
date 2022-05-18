@@ -50,7 +50,7 @@ const Image = styled.img`
   }
 `;
 
-const MergedWithLink = ({ href, date, merged }: { href: string; date: string; merged: boolean }) => {
+const MergedWithLink = ({ href, date, merged, explain }: { href: string; date: string; merged: boolean; explain?: string }) => {
   const image = useMemo(
     () => (merged ? <Image draggable={false} src="/icons/Merged.png" alt="merged" /> : <Image draggable={false} src="/icons/Open.png" alt="open" />),
     [merged],
@@ -66,7 +66,9 @@ const MergedWithLink = ({ href, date, merged }: { href: string; date: string; me
       </MergedContainer>
       <MergedContainer>
         <ExplainCheckIcon />
-        <InlineLinkText href={href}>{text}</InlineLinkText>
+        <InlineLinkText href={href}>
+          {explain || ''} {text}
+        </InlineLinkText>
       </MergedContainer>
     </>
   );

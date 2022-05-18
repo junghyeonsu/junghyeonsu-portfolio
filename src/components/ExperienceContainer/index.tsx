@@ -86,6 +86,10 @@ const ExperienceContainer = () => {
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <ExperienceTitle title="OpenSource" />
           </FadeInContent>
+
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Content.TypeChallenges />
+          </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.MDNWebDocsClass />
           </FadeInContent>
@@ -111,11 +115,9 @@ const ExperienceContainer = () => {
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.TypeScriptOOP />
           </FadeInContent>
-
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.FrontEndJobPrepare />
           </FadeInContent>
-
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.ModernJavaScriptDeepDive />
           </FadeInContent>
