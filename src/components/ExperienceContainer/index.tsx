@@ -109,6 +109,10 @@ const ExperienceContainer = () => {
           </FadeInContent>
 
           <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Content.TypeScriptOOP />
+          </FadeInContent>
+
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.FrontEndJobPrepare />
           </FadeInContent>
 
