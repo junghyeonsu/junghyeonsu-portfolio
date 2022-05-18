@@ -28,3 +28,4 @@ export { default as Kubernetes } from './openSources/Kubernetes';
 
 /* Study */
 export { default as ModernJavaScriptDeepDive } from './studies/ModernJavaScriptDeepDive';
+export { default as FrontEndJobPrepare } from './studies/FrontEndJobPrepare';

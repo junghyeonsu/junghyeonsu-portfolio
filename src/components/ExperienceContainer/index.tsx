@@ -107,6 +107,11 @@ const ExperienceContainer = () => {
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <ExperienceTitle title="Study" />
           </FadeInContent>
+
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Content.FrontEndJobPrepare />
+          </FadeInContent>
+
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.ModernJavaScriptDeepDive />
           </FadeInContent>
