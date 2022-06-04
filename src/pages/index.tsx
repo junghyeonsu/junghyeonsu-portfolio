@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
+import { useMediaQuery } from '@material-ui/core';
 
 import IntroductionContainer from '#/components/IntroductionContainer';
 import ExperienceContainer from '#/components/ExperienceContainer';
@@ -14,6 +15,8 @@ const Section = styled.section`
 `;
 
 export default function Main() {
+  const isOver1100px = useMediaQuery('(min-width:1100px)');
+
   return (
     <>
       <Head>
@@ -47,7 +50,7 @@ export default function Main() {
           <IntroductionContainer />
           <ExperienceContainer />
           <Footer />
-          <ScrollTopButton />
+          {isOver1100px && <ScrollTopButton />}
         </Section>
       </main>
     </>
