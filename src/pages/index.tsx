@@ -21,7 +21,7 @@ export default function Main() {
         <title>정현수 포트폴리오</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="최고의 프론트엔드 개발자를 꿈꾸는 정현수의 포트폴리오입니다." />
-        <meta name="google-site-verification" content="03tUkcTUQFs2twM6WNUdGdFy78xmlW1U0EfmTfRGCS8" />
+        <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_KEY} />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 maximum-scale=1, user-scalable=no" />
 
         {/* Facebook Meta Tags */}

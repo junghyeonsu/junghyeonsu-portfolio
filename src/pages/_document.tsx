@@ -22,7 +22,7 @@ class MyDocument extends Document {
               s.charset = 'UTF-8'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); } if (document.readyState ===
               'complete') { l(); } else if (window.attachEvent) { window.attachEvent('onload', l); } else {
               window.addEventListener('DOMContentLoaded', l, false); window.addEventListener('load', l, false); } })(); ChannelIO('boot', {
-              "pluginKey": "659fe0c4-125b-4bf8-9788-32b309b9a7bc" });`,
+              "pluginKey": "${process.env.NEXT_PUBLIC_CHANNAL_IO_API_KEY}" });`,
             }}
           />
         </Head>
