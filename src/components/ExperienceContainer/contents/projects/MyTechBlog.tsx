@@ -11,7 +11,7 @@ const LINKS = [
   {
     text: '블로그는 사드세요... 제발 프롤로그: 블로그를 만들자',
     href: 'https://junghyeonsu-dev.vercel.app/posts/please-buy-the-blog-prolog',
-  }
+  },
 ];
 
 const SKILLS = [
@@ -65,10 +65,18 @@ const MyTechBlog = () => {
         <Explain>다크모드 구현</Explain>
         <Explain>모바일 반응형 디자인 적용</Explain>
         <Explain>rss.xml, sitemap.xml, robots.txt 생성 후 크롤러가 잘 읽어갈 수 있도록 구현</Explain>
-        <Explain>open graph<InlineLinkText href="https://github.com/junghyeonsu/junghyeonsu.dev/blob/main/src/components/CustomHead/index.tsx">(적용 코드)</InlineLinkText>를 적용하여 공유 시 북마크 생성되도록 구현</Explain>
+        <Explain>
+          open graph
+          <InlineLinkText href="https://github.com/junghyeonsu/junghyeonsu.dev/blob/main/src/components/CustomHead/index.tsx">
+            (적용 코드)
+          </InlineLinkText>
+          를 적용하여 공유 시 북마크 생성되도록 구현
+        </Explain>
         <Explain>SEO를 위한 시멘틱 태그 배치에 신경 씀</Explain>
         <Explain>Table of Contents 생성하여 목차를 한 눈에 볼 수 있도록 구현</Explain>
-        <Explain><InlineLinkText href="https://giscus.app/ko">Giscus</InlineLinkText>를 이용한 댓글 시스템 구현</Explain>
+        <Explain>
+          <InlineLinkText href="https://giscus.app/ko">Giscus</InlineLinkText>를 이용한 댓글 시스템 구현
+        </Explain>
       </Styled.ExperienceCardExplainContainer>
       <Links links={LINKS} />
       <Skills skills={SKILLS} />
