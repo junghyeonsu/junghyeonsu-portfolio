@@ -31,3 +31,8 @@ export { default as Kubernetes } from './openSources/Kubernetes';
 export { default as TypeScriptOOP } from './studies/TypeScriptOOP';
 export { default as FrontEndJobPrepare } from './studies/FrontEndJobPrepare';
 export { default as ModernJavaScriptDeepDive } from './studies/ModernJavaScriptDeepDive';
+
+/* Study On My Own */
+export { default as VideoLectures } from './studies/VideoLectures';
+export { default as IImproveEveryday } from './studies/IImproveEveryday';
+export { default as TypeChallengeStudy } from './studies/TypeChallengeStudy';

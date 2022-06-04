@@ -123,6 +123,22 @@ const ExperienceContainer = () => {
             <Content.ModernJavaScriptDeepDive />
           </FadeInContent>
         </Styled.ExperienceContainer>
+
+        <Styled.ExperienceContainer>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <ExperienceTitle title="Study On My Own" />
+          </FadeInContent>
+
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Content.VideoLectures />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Content.IImproveEveryday />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Content.TypeChallengeStudy />
+          </FadeInContent>
+        </Styled.ExperienceContainer>
       </Styled.Contents>
     </Styled.Container>
   );
