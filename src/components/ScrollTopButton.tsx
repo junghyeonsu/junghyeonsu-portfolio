@@ -4,14 +4,16 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 const Button = styled.button`
   position: fixed;
-  right: 0;
+  right: 68px;
   bottom: 0;
+  width: 60px;
+  height: 60px;
   background-color: #efefef;
-  border-radius: 10px;
+  border-radius: 26px;
   border: none;
-  padding-top: 5px;
   transition: 0.3s all ease;
-  margin: 20px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px, rgb(0 0 0 / 15%) 0px 8px 30px, rgb(255 255 255 / 20%) 0px 0px 0px 1px inset !important;
+  margin: 25px;
   z-index: 100;
 
   :hover {
@@ -25,7 +27,7 @@ const ScrollTopButton = () => {
 
   return (
     <Button onClick={scrollToTop}>
-      <ArrowUpwardIcon />
+      <ArrowUpwardIcon fontSize="large" />
     </Button>
   );
 };
