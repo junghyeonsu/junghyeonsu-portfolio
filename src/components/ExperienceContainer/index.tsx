@@ -24,6 +24,10 @@ const ExperienceContainer = () => {
             <ExperienceTitle title="Work" />
           </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
+            {/* eslint-disable-next-line react/jsx-pascal-case */}
+            <Content.당근마켓 />
+          </FadeInContent>
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.Hayanmind />
           </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>

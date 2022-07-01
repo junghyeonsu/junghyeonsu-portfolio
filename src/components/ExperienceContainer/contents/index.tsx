@@ -4,6 +4,7 @@ export { default as NextStepCleanCodeWithJavaScript } from './educations/NextSte
 export { default as WooahanTechCource } from './educations/WooahanTechCource';
 
 /* Works */
+export { default as 당근마켓 } from './works/당근마켓';
 export { default as Hayanmind } from './works/Hayanmind';
 export { default as SatrecI } from './works/SatrecI';
 
