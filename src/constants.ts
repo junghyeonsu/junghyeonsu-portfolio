@@ -1,4 +1,4 @@
-export const LAST_UPDATED = '2022/06/04';
+export const LAST_UPDATED = '2022/07/01';
 
 export const REGULAR_TEXT = 'NEXON Lv2 Gothic';
 export const BOLD_TEXT = 'NEXON Lv2 Gothic Bold';
