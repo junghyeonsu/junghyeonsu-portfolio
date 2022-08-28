@@ -37,3 +37,6 @@ export { default as ModernJavaScriptDeepDive } from './studies/ModernJavaScriptD
 export { default as VideoLectures } from './studies/VideoLectures';
 export { default as IImproveEveryday } from './studies/IImproveEveryday';
 export { default as TypeChallengeStudy } from './studies/TypeChallengeStudy';
+
+/* Posted */
+export { default as FastCampus } from './posted/FastCampus';

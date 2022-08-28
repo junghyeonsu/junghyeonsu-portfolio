@@ -116,10 +116,6 @@ const ExperienceContainer = () => {
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <ExperienceTitle title="Study" />
           </FadeInContent>
-
-          {/* <FadeInContent delay={CONTENT_DELAY_TIME}>
-            <Content.TypeScriptOOP />
-          </FadeInContent> */}
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.FrontEndJobPrepare />
           </FadeInContent>
@@ -128,21 +124,14 @@ const ExperienceContainer = () => {
           </FadeInContent>
         </Styled.ExperienceContainer>
 
-        {/* <Styled.ExperienceContainer>
+        <Styled.ExperienceContainer>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
-            <ExperienceTitle title="Study On My Own" />
-          </FadeInContent>
-
-          <FadeInContent delay={CONTENT_DELAY_TIME}>
-            <Content.VideoLectures />
+            <ExperienceTitle title="Posted" />
           </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
-            <Content.IImproveEveryday />
+            <Content.FastCampus />
           </FadeInContent>
-          <FadeInContent delay={CONTENT_DELAY_TIME}>
-            <Content.TypeChallengeStudy />
-          </FadeInContent>
-        </Styled.ExperienceContainer> */}
+        </Styled.ExperienceContainer>
       </Styled.Contents>
     </Styled.Container>
   );
