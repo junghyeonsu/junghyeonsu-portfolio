@@ -1,6 +1,6 @@
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 const Button = styled.button`
   position: fixed;

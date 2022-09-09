@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   extends: ['airbnb', 'airbnb/hooks', 'plugin:@typescript-eslint/recommended', 'prettier', 'plugin:prettier/recommended'],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'simple-import-sort'],
   // Ref: https://stackoverflow.com/a/55280867
   settings: {
     'import/resolver': {
@@ -34,5 +34,7 @@ module.exports = {
     'linebreak-style': 'off',
     'object-curly-newline': 'off',
     'import/no-unresolved': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
 };

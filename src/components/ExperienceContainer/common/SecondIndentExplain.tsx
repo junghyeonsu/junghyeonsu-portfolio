@@ -1,6 +1,6 @@
+import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordOutlined';
 import React from 'react';
 import styled from 'styled-components';
-import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordOutlined';
 
 const ExplainContainer = styled.div`
   position: relative;

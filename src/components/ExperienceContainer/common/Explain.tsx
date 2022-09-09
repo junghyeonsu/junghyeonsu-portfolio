@@ -1,6 +1,6 @@
+import CheckIcon from '@material-ui/icons/Check';
 import React from 'react';
 import styled from 'styled-components';
-import CheckIcon from '@material-ui/icons/Check';
 
 const ExplainContainer = styled.div`
   display: flex;

@@ -1,10 +1,11 @@
-import React from 'react';
 import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Typography from '@material-ui/core/Typography';
 import BorderColorOutlinedIcon from '@material-ui/icons/BorderColorOutlined';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import React from 'react';
+
 import { CommonArticleContainer, CommonArticleContainerTitle } from '../../styled';
 
 interface ImageProps {

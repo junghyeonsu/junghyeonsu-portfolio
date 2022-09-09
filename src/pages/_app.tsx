@@ -1,9 +1,9 @@
-import React from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import type { AppProps } from 'next/app';
+import React from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import { ThemeProvider } from 'styled-components';
-import type { AppProps } from 'next/app';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import GlobalStyle from '#/styles/globalStyles';
 import { theme } from '#/styles/theme';

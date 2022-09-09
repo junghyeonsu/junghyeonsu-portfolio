@@ -1,6 +1,7 @@
 import React from 'react';
-import * as Styled from '../../styled';
+
 import { Explain, InlineLinkText, MergedWithLink } from '../../common';
+import * as Styled from '../../styled';
 
 const Kubernetes = () => {
   return (

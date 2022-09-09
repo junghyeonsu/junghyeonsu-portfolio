@@ -1,11 +1,11 @@
-import React from 'react';
-import Head from 'next/head';
-import styled from 'styled-components';
 import { useMediaQuery } from '@material-ui/core';
+import Head from 'next/head';
+import React from 'react';
+import styled from 'styled-components';
 
-import IntroductionContainer from '#/components/IntroductionContainer';
 import ExperienceContainer from '#/components/ExperienceContainer';
 import Footer from '#/components/Footer';
+import IntroductionContainer from '#/components/IntroductionContainer';
 import ScrollTopButton from '#/components/ScrollTopButton';
 
 const Section = styled.section`

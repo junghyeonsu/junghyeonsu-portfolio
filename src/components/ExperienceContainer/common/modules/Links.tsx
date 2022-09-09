@@ -1,9 +1,9 @@
+import LinkIcon from '@material-ui/icons/Link';
 import React from 'react';
 import styled from 'styled-components';
-import LinkIcon from '@material-ui/icons/Link';
 
-import { Explain, InlineLinkText } from '../index';
 import { CommonArticleContainer, CommonArticleContainerTitle } from '../../styled';
+import { Explain, InlineLinkText } from '../index';
 
 interface LinkProps {
   text: string;

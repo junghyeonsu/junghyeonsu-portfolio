@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import styled from 'styled-components';
 
 import { BOLD_TEXT } from '#/constants';
 

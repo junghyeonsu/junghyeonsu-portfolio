@@ -1,6 +1,7 @@
 import React from 'react';
-import * as Styled from '../../styled';
+
 import { Explain } from '../../common';
+import * as Styled from '../../styled';
 
 const ReactContribute = () => {
   return (

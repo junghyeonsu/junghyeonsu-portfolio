@@ -1,6 +1,7 @@
 import React from 'react';
+
+import { Explain, InlineLinkText, Links, Skills } from '../../common';
 import * as Styled from '../../styled';
-import { Explain, Skills, Links, InlineLinkText } from '../../common';
 import EXPLAIN from './explains';
 
 const LINKS = [

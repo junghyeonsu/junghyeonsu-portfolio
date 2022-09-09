@@ -1,8 +1,10 @@
+import CheckIcon from '@material-ui/icons/Check';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import CheckIcon from '@material-ui/icons/Check';
-import { InlineLinkText } from '.';
+
 import { BOLD_TEXT } from '#/constants';
+
+import { InlineLinkText } from '.';
 
 const MergedContainer = styled.div`
   display: flex;

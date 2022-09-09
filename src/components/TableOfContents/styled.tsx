@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { UNDER_LINE_COLOR } from '#/colors';
 import { BOLD_TEXT } from '#/constants';
 

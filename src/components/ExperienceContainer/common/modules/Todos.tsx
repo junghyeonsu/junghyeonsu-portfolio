@@ -1,7 +1,8 @@
-import React from 'react';
 import PlaylistAddCheckOutlinedIcon from '@material-ui/icons/PlaylistAddCheckOutlined';
-import Explain from '../Explain';
+import React from 'react';
+
 import { CommonArticleContainer, CommonArticleContainerTitle } from '../../styled';
+import Explain from '../Explain';
 
 interface TodoProps {
   text: string;

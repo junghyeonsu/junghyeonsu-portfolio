@@ -1,6 +1,7 @@
 import React from 'react';
-import * as Styled from '../../styled';
+
 import { Explain, Links } from '../../common';
+import * as Styled from '../../styled';
 
 const LINKS = [
   {

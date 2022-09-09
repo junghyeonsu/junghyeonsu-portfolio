@@ -1,6 +1,7 @@
 import React from 'react';
+
+import { Explain, InlineLinkText, SecondIndentExplain } from '../../common';
 import * as Styled from '../../styled';
-import { Explain, SecondIndentExplain, InlineLinkText } from '../../common';
 
 const NextStepCleanCodeWithJavaScript = () => {
   return (

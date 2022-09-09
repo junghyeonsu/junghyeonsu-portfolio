@@ -1,10 +1,12 @@
-import React from 'react';
 import { useMediaQuery } from '@material-ui/core';
-import { ExperienceTitle } from './common';
+import React from 'react';
+
 import { FadeInContent } from '#/components/gsap';
+
 import TableOfContents from '../TableOfContents';
-import * as Styled from './styled';
+import { ExperienceTitle } from './common';
 import * as Content from './contents';
+import * as Styled from './styled';
 
 const CONTENT_DELAY_TIME = 0.3;
 
@@ -92,6 +94,9 @@ const ExperienceContainer = () => {
             <ExperienceTitle title="OpenSource" />
           </FadeInContent>
 
+          <FadeInContent delay={CONTENT_DELAY_TIME}>
+            <Content.StorybookAddonRootAttributes />
+          </FadeInContent>
           <FadeInContent delay={CONTENT_DELAY_TIME}>
             <Content.TypeChallenges />
           </FadeInContent>
